@@ -1,0 +1,92 @@
+{
+  "format": "replycheck-release-read-only-source-v1",
+  "status": "PASS_CURRENT_DEPLOYED_SOURCE_AND_SAVED_EXAMPLE",
+  "requested_at_utc": "2026-09-13T12:52:36.100Z",
+  "observed_at_utc": "2026-09-13T12:52:42.753Z",
+  "repository_commit_at_observation": "059c84a0537df2532c35ff1a837655f6c2f8e7b6",
+  "deployment": {
+    "network": "studionet",
+    "chainId": 61999,
+    "rpc": "https://studio.genlayer.com/api",
+    "address": "0xBD35B1E68aeC803Bd793Db9c6B9762b60f60029A",
+    "sourceSha256": "cb09037c7ba0b4dc4a675eb09ee561eb828d82b57ff5eb703d76e204f555c1eb",
+    "deploymentTransaction": "0x3cdfb52022ae0aa7e5e28d2dba2998f2f23fd37abfae6d4f84b4a59756c2d000",
+    "protocol": "replycheck-v1"
+  },
+  "source": {
+    "repository_sha256": "cb09037c7ba0b4dc4a675eb09ee561eb828d82b57ff5eb703d76e204f555c1eb",
+    "deployed_sha256": "cb09037c7ba0b4dc4a675eb09ee561eb828d82b57ff5eb703d76e204f555c1eb",
+    "exact_match": true,
+    "runner": "# { \"Depends\": \"py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6\" }"
+  },
+  "protocol_verified": true,
+  "workspace": {
+    "archived": false,
+    "card_count": 2,
+    "created_at": "2026-09-10T12:06:06.848821+00:00",
+    "id": "reply-wallet-20260910-105817",
+    "member_addresses": [],
+    "name": "ReplyCheck human wallet test",
+    "owner": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0",
+    "review_count": 16,
+    "version": 2
+  },
+  "example": {
+    "input": {
+      "args": [
+        "reply-wallet-20260910-105817",
+        2,
+        "How long do I have to request a refund?",
+        "Refund requests must be submitted within 14 days of purchase.",
+        "27273873-7883-49fc-916d-44b7db1ab801",
+        true
+      ],
+      "method": "submit_review"
+    },
+    "transaction_hash": "0xd066a1ac1d9f6192b69e81235751efd8b68a7d32ec9e17d16b1d137fffdb5c84",
+    "stored_chain_timestamp": "2026-09-13T10:33:04.390478+00:00",
+    "output_payload": {
+      "assessment": {
+        "findings": [
+          {
+            "citations": [
+              {
+                "quote": "Refund requests must be submitted within 14 days of purchase.",
+                "reference_id": "faq"
+              }
+            ],
+            "reason": "The claim that refund requests must be submitted within 14 days of purchase is directly stated in the FAQ reference.",
+            "reason_code": "CLAIM_SUPPORTED",
+            "segment_id": 1,
+            "suggestion": "",
+            "text": "Refund requests must be submitted within 14 days of purchase.",
+            "verdict": "SUPPORTED"
+          }
+        ],
+        "question_status": "ANSWERED",
+        "summary": "The draft correctly states that refund requests must be submitted within 14 days of purchase, which is directly supported by the FAQ reference.",
+        "verdict": "MATCHES_REFERENCES"
+      },
+      "author": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0",
+      "draft": "Refund requests must be submitted within 14 days of purchase.",
+      "id": "a1b507a470346dafee0035b8761c1e54507ac4808248cc3c48263d7a2ecd5d10",
+      "protocol": "replycheck-v1",
+      "question": "How long do I have to request a refund?",
+      "recorded_at": "2026-09-13T10:33:04.390478+00:00",
+      "reference_digest": "1041401ae7c08750497e55652d30fc9119a0a27e6e712c016e13b9faaa1ca9f0",
+      "request_digest": "2ae740d30b55e5991fe14ba32b3e9d41d247db9e66232f47823048f48067686c",
+      "version": 2,
+      "workspace_id": "reply-wallet-20260910-105817"
+    },
+    "expected_reason_codes": [
+      "CLAIM_SUPPORTED"
+    ],
+    "unchanged_from_saved_human_receipt": true
+  },
+  "provenance": {
+    "checkpoint": "evidence/human-wallet/20260913-native-hash-recovery-reconciled.json",
+    "checkpoint_sha256": "d8406fb44a583fba23b1cc3ebab3934d17359a19f0efc410dcd580c2eb22f438"
+  },
+  "transaction_submitted": false,
+  "time_scope": "requested/observed timestamps describe this inspection only; stored_chain_timestamp is read from the contract, not inferred from the local clock."
+}
