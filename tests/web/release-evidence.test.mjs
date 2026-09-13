@@ -41,6 +41,9 @@ const archives = (
     proof(
       'evidence/source-snapshots/20260913-before-screen-reader-closure/document-bytes.json',
     ),
+    proof(
+      'evidence/source-snapshots/20260913-before-release-clarification/document-bytes.json',
+    ),
   ])
 ).flat();
 
@@ -143,6 +146,63 @@ test('release evidence: all current source pins and explicitly registered proof 
   for (const path of Object.keys(manifest.proof_pins)) await proof(path);
   await assert.rejects(local('../outside.json'), /inside this project/);
   await assert.rejects(proof('unregistered.json'), /Explicit evidence/);
+});
+
+test('release evidence: current release reports preserve exact historical document bytes without relaxing runtime pins', async () => {
+  const documents = await proof(
+    'evidence/source-snapshots/20260913-before-release-clarification/document-bytes.json',
+  );
+  assert.deepEqual(
+    documents.map((entry) => entry.path),
+    ['UI-AUDIT.md', 'TESTING.md', 'RELEASE-CHECKLIST.md'],
+  );
+  const historical = await proof(
+    'evidence/browser/20260913-native-screen-reader-closure.json',
+  );
+  for (const entry of documents) {
+    assert.equal(entry.encoding, 'base64');
+    assert.equal(entry.sha256, historical.current_source_pins[entry.path]);
+    assert.equal(sha(Buffer.from(entry.data, 'base64')), entry.sha256);
+    assert.notEqual(sha(await local(entry.path)), entry.sha256);
+    assert.equal(
+      sha(await local(entry.path)),
+      manifest.current_pins[entry.path],
+    );
+    assert.ok(!Object.hasOwn(manifest.deployment_source_pins, entry.path));
+  }
+  await recordedPins(historical.current_source_pins);
+  await assert.rejects(
+    recordedPins({ 'RELEASE-CHECKLIST.md': '0'.repeat(64) }),
+    /no exact archived scope/,
+  );
+});
+
+test('release evidence: current documentation distinguishes owner submission from historical test checkpoints', async () => {
+  for (const path of [
+    'RELEASE-CHECKLIST.md',
+    'TESTING.md',
+    'UI-AUDIT.md',
+    'LIVE-VALIDATION.md',
+    'DEVICE-RELEASE-PREFLIGHT.md',
+  ]) {
+    const document = (await local(path)).toString('utf8');
+    const [current, ...history] = document.split(/\n## Historical[^\n]*\n/);
+    assert.ok(history.length > 0, path + ': explicit historical boundary');
+    assert.match(current, /owner review and portal submission remain/i);
+    assert.ok(current.includes('(STEWARD-RESPONSE.md)'), path);
+    assert.doesNotMatch(
+      current,
+      /website is still local|not submission-ready|public release verification remains open/,
+    );
+    assert.match(current, /not claimed|not full|not guarantee|not presented/i);
+  }
+  const checklist = (await local('RELEASE-CHECKLIST.md'))
+    .toString('utf8')
+    .split('\n## Historical')[0];
+  assert.equal((checklist.match(/^- \[ \]/gm) ?? []).length, 1);
+  assert.match(checklist, /CAPTCHA.*explicitly approves/);
+  assert.match(checklist, /already-persisted incorrect legacy hash/);
+  assert.match(checklist, /team-attested/);
 });
 
 for (const [index, path] of ledgerPaths.entries()) {

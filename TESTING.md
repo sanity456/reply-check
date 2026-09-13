@@ -1,5 +1,17 @@
 # Verification map
 
+## Current release verification — September 13, 2026
+
+The agreed desktop release verification is complete; owner review and portal submission remain. [STEWARD-RESPONSE.md](STEWARD-RESPONSE.md) maps the nine supplied requirements to immutable source, exact live inputs/outputs and public access evidence. [RELEASE-CHECKLIST.md](RELEASE-CHECKLIST.md) distinguishes current gates from broader untested paths.
+
+The complete clean [Ubuntu suite on release commit 25376e8](https://github.com/sanity456/reply-check/actions/runs/34758798061) passed: 194 frontend tests, 97 contract/tooling tests, all 20 registered offline replays, formatting, lint, types, the production build and dependency audits. Test counts are checkpoint-specific; later documentation consistency tests add coverage without recreating live or human observations. Run the entire suite for the commit under review, not just the affected test.
+
+The final [public-origin human-wallet record](evidence/release/20260913-public-wallet-reconciled.json) proves one finalized review (16 to 17), stored at chain timestamp `2026-09-13T12:59:48.716658+00:00`, with `MATCHES_REFERENCES / ANSWERED / CLAIM_SUPPORTED`. Receipt, exact calldata, decoded return and full stored state agree. [Anonymous access evidence](evidence/release/20260913-evaluator-link-audit.json) covers the public example and immutable evidence links. No new wallet action is implied by this documentation update.
+
+Historical reports below preserve their original failures, open cases and test totals. Their statements that publication, public CI or later wallet/accessibility cases remain pending describe those earlier checkpoints only. Current application/runtime pins remain strict; [exact previous report bytes](evidence/source-snapshots/20260913-before-release-clarification/document-bytes.json) resolve historical document hashes without substituting new text into old evidence. Full accessibility certification, every live race/adversarial path and physical-phone testing are not claimed.
+
+## Historical checkpoints and test procedures
+
 Latest native listening checkpoint (September 13): the human confirmed Narrator read the question's label/error guidance, reply-error guidance, and confirmation-dialog title/consent label. Correction and safe unsigned cancellation also passed DOM/UI checks. Narrator is off again and the original public fixture/latest review with 16 rows is restored. See [scoped speech evidence](evidence/browser/20260913-native-screen-reader-closure.json). No audio recording, complete screen-reader matrix or exact “invalid” announcement is claimed. Application/test/contract/lock files are unchanged; the prior 280-test and 20-replay results were not rerun for these documentation/evidence-only checks. Physical devices, other engines and public release gates remain open; earlier speech-pending records below are historical.
 
 Latest UI fix (September 13): [A11Y-05 field feedback](evidence/local/20260913-draft-field-feedback-fix.json) is implemented and retested on the rebuilt preview. The complete existing Windows suites pass **280 tests (183 frontend, 97 contract/tooling)**, plus 20 registered evidence replays, lint, formatting, types and production build. Sixteen scoped Chrome checks across 19 observations verify field errors, limits, correction and restored history. This is not a clean Ubuntu run or complete accessibility certification. Older checkpoints below retain their original source and counts.

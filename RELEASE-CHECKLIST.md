@@ -1,5 +1,29 @@
 # ReplyCheck release gates
 
+## Current release status — September 13, 2026
+
+**Release verification is complete for the agreed desktop submission scope; owner review and portal submission remain.** Use this section and [STEWARD-RESPONSE.md](STEWARD-RESPONSE.md) for the current decision. The older checklist below is historical, not a second list of outstanding submission tasks.
+
+- [x] Public [application](https://reply-check-sanity3.vercel.app/) and [GitHub repository](https://github.com/sanity456/reply-check), with a [recorded example](https://reply-check-sanity3.vercel.app/?workspace=reply-wallet-20260910-105817&review=5a9ac6b517d8aab06a67373d34ef2e506e772ccc392fa331507279cfc18bd5ab) readable without an owner wallet or Vercel login.
+- [x] Complete clean Ubuntu release suite, production build, 20 registered offline replays and dependency audits: [passing run for immutable release commit 25376e8](https://github.com/sanity456/reply-check/actions/runs/34758798061). Consolidated release-evidence checks run inside the complete frontend suite.
+- [x] Exact dependency and GenVM runner pins; [deployed contract source match](evidence/release/20260913-deployed-source-read-only.json); immutable links, exact inputs, stored chain timestamps, payloads and reason codes in the steward response.
+- [x] Recorded human-wallet roles/lifecycle, rejection, pending-account/network recovery, two-tab guard and native hashless recovery cases. The final [public-origin wallet test](evidence/release/20260913-public-wallet-reconciled.json) added exactly one review (16 to 17), preserving all earlier reviews.
+- [x] Scoped keyboard/layout/200% zoom, reduced-motion/high-contrast and human-reported Narrator checks. [UI audit](UI-AUDIT.md) retains their exact limits; this is not full accessibility certification.
+- [x] [Anonymous evaluator access audit](evidence/release/20260913-evaluator-link-audit.json) and one concise steward response with public evidence.
+- [ ] Human completes the portal CAPTCHA and explicitly approves the final submission. Preparing a form is not submitting it.
+
+### Broader coverage and enduring limits
+
+Not claimed complete: a full live concurrency/adversarial matrix, native replacement of an already-persisted incorrect legacy hash, every browser/screen-reader combination, independent security audit or perfect model robustness. Physical-phone testing is optional and outside the agreed submission scope. References are team-attested, not independently authenticated facts; submitted data is public and cannot be erased. These limits remain visible in [SECURITY.md](SECURITY.md). Evidence supports the stated scope, not guaranteed portal acceptance.
+
+### Documentation and historical evidence
+
+This clarification changes documentation and offline verification only. It does not change the deployed application, contract, locks or workflow and does not repeat a wallet test. The pre-clarification copies of this report, TESTING.md and UI-AUDIT.md are preserved byte-for-byte in [this explicitly pinned archive](evidence/source-snapshots/20260913-before-release-clarification/document-bytes.json). The release tests continue to check current document hashes separately from historical records and all 100 deployed runtime-file hashes.
+
+## Historical checkpoints — not current release gates
+
+Everything below records earlier observations, original counts and then-open tasks. Later evidence in the current section closes the applicable gates; unchecked historical boxes must not be read as current status. Broader untested paths remain disclosed above.
+
 Status: **automated Studionet milestone passed; human/browser and public release gates remain**.
 
 Latest native accessibility result (September 13 UTC): the human confirmed Narrator's question/reply error guidance and confirmation-dialog title/consent label. The valid fixture was restored, the unsigned dialog cancelled and Narrator switched off, with all 16 reviews still loaded. See `evidence/browser/20260913-native-screen-reader-closure.json`. This is a scoped human listening result, not captured audio or complete accessibility certification. Source/tests/contract/locks are unchanged; the previous 280-test/20-replay run is retained without a new-suite claim.

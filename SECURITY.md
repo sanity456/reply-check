@@ -20,11 +20,11 @@ ReplyCheck is a public-reference consistency checker, not a private helpdesk or 
 | Frontend rendering   | React text rendering, no model-generated HTML execution, no remote URL fetching, constrained HTTPS attribution links, no embedded private key.                        |
 | Model trust          | Suggested rewrites invalidate the displayed draft assessment and must be checked again. Only a reviewer or owner may publish an eligible current answer card.         |
 
-## Limits and unresolved release risks
+## Verified scope and remaining risks
 
-- Real GenVM deployment and matching source bytes have been verified. Real model disagreement, prompt-injection resilience and the complete consensus timing matrix still need live evidence.
-- The observed Studionet deployment receipt is regression-tested, including idle validator records, final-history conflicts and dropped zero values. Human wallet/provider and interrupted-session paths still require verification. Unsupported or conflicting receipt shapes stay unverified rather than being accepted.
-- A finalized action can be followed quickly by another authorized change. If its expected postcondition is no longer visible, the app retains the recovery record instead of assuming success. Live concurrency testing must examine those cases.
+- Real GenVM deployment and matching source bytes, six recorded live classification fixtures (including an injection input), and the final public-origin human-wallet review have evidence in [STEWARD-RESPONSE.md](STEWARD-RESPONSE.md). Independent-validator disagreement is exercised by offline adversarial tests; this does not prove exhaustive real-model injection resilience or a complete live consensus timing matrix.
+- Receipt regressions include idle validator records, final-history conflicts and dropped zero values. Human wallet rejection, role/lifecycle, pending-account/network, two-tab guards and native hashless recovery have scoped live/browser evidence. Native replacement of an already-persisted incorrect legacy hash remains unexercised; local coverage is not a native-wallet pass. Unsupported or conflicting receipt shapes stay unverified rather than being accepted.
+- A finalized action can be followed quickly by another authorized change. If its expected postcondition is no longer visible, the app retains the recovery record instead of assuming success. The tested two-tab send guard does not establish a complete live matrix of concurrent membership, reference, ownership or archive changes.
 - Privacy pattern matching is intentionally incomplete and may produce false positives. Public references can include public contact information; neither contract nor browser guarantees secret removal.
 - A malicious owner can publish misleading references. The product must not present owner-attested content as independent fact checking.
 - Global workspace and per-workspace limits are capacity bounds, not Sybil resistance. Public discovery and abuse policy need review before a broader launch.
@@ -36,4 +36,4 @@ ReplyCheck is a public-reference consistency checker, not a private helpdesk or 
 
 Never publish `.env` files, seed phrases, test account private keys, generated wallet exports, Sites credentials, raw validator/model configuration or database credentials. The live harness exports only whitelisted public evidence fields, retaining only the public validator address from `node_config` where needed to bind a final-round result.
 
-Before publication, run all local checks, repeat them from a clean Ubuntu checkout, execute the live and human-wallet matrix, verify deployed source bytes and inspect evidence while signed out. Do not submit until every applicable gate in `RELEASE-CHECKLIST.md` is backed by actual evidence.
+For each release, run the complete suites, repeat them from a clean Ubuntu checkout, execute the declared live/human-wallet scope, verify deployed source bytes and inspect evidence while signed out. The current desktop release has recorded these checks; see [RELEASE-CHECKLIST.md](RELEASE-CHECKLIST.md) for current gates and [STEWARD-RESPONSE.md](STEWARD-RESPONSE.md) for immutable proof. Historical unchecked items are not silently promoted to passes. Owner review and explicit portal submission approval remain required.

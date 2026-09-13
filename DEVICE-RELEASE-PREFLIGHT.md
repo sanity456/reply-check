@@ -1,5 +1,13 @@
 # ReplyCheck device and release preflight
 
+## Current status
+
+The agreed desktop release verification is complete; owner review and portal submission remain. The public site, repository, complete clean Ubuntu run, public-origin wallet test and anonymous access audit are linked in [STEWARD-RESPONSE.md](STEWARD-RESPONSE.md). [RELEASE-CHECKLIST.md](RELEASE-CHECKLIST.md) is the current gate list. Physical-phone testing is optional and not claimed.
+
+## Historical pre-publication checkpoint
+
+Everything below describes the original 12:21 UTC preflight, including its then-open publication tasks and original test counts. It is retained as history, not the current submission checklist; this documentation clarification does not rerun browser tests or change old evidence.
+
 Recorded 2026-09-13T12:21:13.7081340Z. **Local checks passed within scope; public release verification remains open.**
 
 ## Completed

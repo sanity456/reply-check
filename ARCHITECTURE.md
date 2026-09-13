@@ -32,12 +32,12 @@ Wallet rejection makes no recorded review. Account or network changes clear auth
 
 ## Delivery gates
 
-- [x] User and owner workflows implemented; browser and live verification remain separate gates below.
+- [x] User and owner workflows implemented; source, offline tests and actual live observations remain distinct evidence types.
 - [x] Contract linter, direct tests, and independent-validator adversarial tests pass.
 - [x] Frontend logic tests, formatting, lint, types, production build and npm dependency audit pass locally.
 - [x] Real GenVM deployment and six-case automated live model/workflow run, with exact source hash and application-client replay.
-- [ ] Broader live adversarial/reliability and interrupted-session browser tests.
-- [ ] Human wallet rejection, account switch, role acceptance and complete happy path.
-- [ ] Reviewer access, immutable evidence, clean Ubuntu CI, and submission approval.
+- [x] Recorded human-wallet rejection, account/network changes, role acceptance, ownership/archive lifecycle and scoped interrupted-session/hashless recovery cases. The final public-site review also passed.
+- [x] Anonymous reviewer access, immutable release evidence and the complete clean Ubuntu suite. See [STEWARD-RESPONSE.md](STEWARD-RESPONSE.md).
+- [ ] Owner review, portal CAPTCHA and explicit final submission approval.
 
-These gates distinguish implemented source, local test coverage, actual network evidence and submission readiness. No unfinished gate is a claim of completion.
+The agreed desktop verification scope is complete. A full live adversarial/concurrency matrix, every native recovery path and independent security/accessibility certification are not claimed. Those broader limits are distinct from the remaining portal action; [RELEASE-CHECKLIST.md](RELEASE-CHECKLIST.md) is the current gate list. Passing evidence does not guarantee acceptance.

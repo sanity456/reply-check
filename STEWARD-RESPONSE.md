@@ -2,6 +2,8 @@
 
 Verification scope: the nine supplied release requirements. No additional steward-specific failing input was supplied; no unrequested test is claimed.
 
+Why GenLayer: validators independently assess the same immutable public reference version; the contract makes only a matching current assessment eligible for human-approved answer-card publication. Reference updates stale earlier cards without rewriting review history. This addresses version-bound approval and evidence integrity, not just reply generation. References are team-attested, not independently verified facts. [Architecture](ARCHITECTURE.md) explains the boundary; [current release gates](RELEASE-CHECKLIST.md) separate completed desktop verification from remaining owner actions and broader untested paths. Older report sections are explicitly historical.
+
 App: [public ReplyCheck](https://reply-check-sanity3.vercel.app/) · [read-only recorded example](https://reply-check-sanity3.vercel.app/?workspace=reply-wallet-20260910-105817&review=5a9ac6b517d8aab06a67373d34ef2e506e772ccc392fa331507279cfc18bd5ab)
 
 Release evidence/source: [immutable commit 25376e8](https://github.com/sanity456/reply-check/tree/25376e8a5e025e7a6b80b33e3319a0a80d6e14e4)

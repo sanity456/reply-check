@@ -50,9 +50,9 @@
     "evidence/browser/20260913-native-reduced-motion.json": "156ad29c58c7e13656adc4e2613dc8e43885030a117af9a478b00a2ad7cce45e",
     "evidence/browser/20260913-native-contrast-restoration.json": "41c6c399b68f5a231e654aeb6ad10871131bd5ab294175b778d2ffbbb143180f",
     "evidence/human-wallet/20260913-native-hash-recovery-reconciled.json": "d8406fb44a583fba23b1cc3ebab3934d17359a19f0efc410dcd580c2eb22f438",
-    "UI-AUDIT.md": "895f7c71a3f2f0ac48500d238b23ac13c4eced992a0b6e240cdf5271ebca8e59",
-    "TESTING.md": "7288cf2d406da42c1552fc210ed9c1e6c8a5e1329d2dc624fa45288e31c4174e",
-    "RELEASE-CHECKLIST.md": "503fa05aa235fb8ae0167651e36771010707ae580fe2307ed0388b54341c75cd",
+    "UI-AUDIT.md": "2afa163e155c65c22680190b480c7d2a0cc24d3f4aab2e079bcda629fa494c3b",
+    "TESTING.md": "dc21044ffa5c74d7ce7f68263901b8509f21f621c852cb53c2754d966632b1df",
+    "RELEASE-CHECKLIST.md": "c468792d3c59b6292906b6b3425996c9ed398e3fe590d36adb124969ff75742f",
     "evidence/source-snapshots/README.md": "675be4b3c80d4ff2cb75ca353f50a15b008861651f47f45b0d6e39c58f6516ae",
     "evidence/local/20260913-draft-field-feedback-fix.json": "060917bdbe01265a9cfda313302d1e6078876d6ea79a0979e4bda022ccb59db4",
     "evidence/source-snapshots/20260913-before-screen-reader-closure/document-bytes.json": "86a64ebaced9d9eaeb70b4b93ffbed988983cff94de349d4c6f5212262790a6b",
@@ -79,7 +79,8 @@
     "evidence/source-snapshots/20260913-before-screen-reader-closure/document-bytes.json": "86a64ebaced9d9eaeb70b4b93ffbed988983cff94de349d4c6f5212262790a6b",
     "evidence/release/20260913-public-wallet-baseline.json": "8fc0f607e4976f51cf30e01b883ee49e697b2076eda04ac538ad3a28cfffa20b",
     "evidence/release/20260913-public-wallet-reconciled.json": "c3dc30677537e50dc49763e816a46a623a7ae74c4685aeb582f74801c7df7140",
-    "evidence/release/20260913-public-wallet-browser-close.json": "7bc72c101e7588228bbd6de0c304797289a99e0a1a79430763b22d48f6b4887a"
+    "evidence/release/20260913-public-wallet-browser-close.json": "7bc72c101e7588228bbd6de0c304797289a99e0a1a79430763b22d48f6b4887a",
+    "evidence/source-snapshots/20260913-before-release-clarification/document-bytes.json": "e05b3b62d87819313bb70b82e6d03b56dfb9ea120aaf0b21758cf31b71d529b1"
   },
   "deployment_source_commit": "bccee402d67e0e8007773b1763bb1fd1d5c7c411",
   "deployment_source_pins": {

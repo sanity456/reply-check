@@ -1,5 +1,15 @@
 # ReplyCheck — Studionet validation
 
+## Current release — September 13, 2026
+
+**The agreed desktop release verification is complete; owner review and portal submission remain.** The [public app](https://reply-check-sanity3.vercel.app/) and [public repository](https://github.com/sanity456/reply-check) are available. The [steward response](STEWARD-RESPONSE.md) links the complete passing Ubuntu suite, pinned evidence and anonymous evaluator checks. Consult [RELEASE-CHECKLIST.md](RELEASE-CHECKLIST.md) for the current gates and stated limits.
+
+The latest [public-origin human-wallet test](evidence/release/20260913-public-wallet-reconciled.json) finalized transaction `0x0ab18b98ac37b140991fbb3bf8506ce9b9e8ed4180fd4368519f8fcaf57e1c75`, stored at chain timestamp `2026-09-13T12:59:48.716658+00:00`, with `MATCHES_REFERENCES / ANSWERED / CLAIM_SUPPORTED`. Reviews increased only from 16 to 17; all prior reviews were preserved. Exact calldata, receipt, returned/stored payload and deployed source were verified. [Browser closure](evidence/release/20260913-public-wallet-browser-close.json) records safe recovery completion. The agent did not approve the wallet transaction. Exhaustive live adversarial/concurrency coverage is not claimed.
+
+## Historical validation checkpoints
+
+All status claims below, including “local”, “not submission-ready” and then-pending cases, describe their original checkpoints. They are preserved to retain failures and test history, not presented as current release status. The automated disposable-account run and later human-approved wallet runs are distinct evidence; no new transaction was sent for this documentation clarification.
+
 Status: **automated Studionet milestone passed; not submission-ready**.
 
 Latest native recovery result: **passed end to end** on September 13. Transaction `0xd066a1ac1d9f6192b69e81235751efd8b68a7d32ec9e17d16b1d137fffdb5c84` was recovered through the actual form after the original page reload, missing-hash feedback and unrelated-hash rejection. The unique original request finalized successfully and added review `a1b507a470346dafee0035b8761c1e54507ac4808248cc3c48263d7a2ecd5d10`, recorded by the chain at `2026-09-13T10:33:04.390478+00:00`. Output: `MATCHES_REFERENCES / ANSWERED / CLAIM_SUPPORTED`. All earlier full state was preserved; only review count changed from 15 to 16. [Exact receipt, inputs, returned/stored payloads and source verification](evidence/human-wallet/20260913-native-hash-recovery-reconciled.json); [safe browser closure](evidence/human-wallet/20260913-native-hash-recovery-browser-close.json). This closes the native missing-hash/hashless recovery case left open in the historical wording checkpoint below, not the whole release matrix. No new request remains to approve.

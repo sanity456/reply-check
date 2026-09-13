@@ -1,5 +1,13 @@
 # ReplyCheck UI audit — September 13, 2026
 
+## Current release scope
+
+The scoped desktop checks below are complete and retained as historical observations, not full accessibility certification. The app is now [publicly hosted](https://reply-check-sanity3.vercel.app/); [STEWARD-RESPONSE.md](STEWARD-RESPONSE.md) and [RELEASE-CHECKLIST.md](RELEASE-CHECKLIST.md) describe current release verification. Owner review and portal submission remain. Physical-phone testing is optional and outside the agreed scope; other engines, broader speech coverage and independent conformance certification are not claimed.
+
+All checkpoints below retain their original counts, source references and then-pending work. They do not override current release status. [Exact pre-clarification report bytes](evidence/source-snapshots/20260913-before-release-clarification/document-bytes.json) preserve the document hashes recorded by the original evidence. No browser, wallet or native preference test is rerun by this text change.
+
+## Historical checkpoints
+
 ## Latest native follow-up: human-reported Narrator speech
 
 **Scoped listening checks completed.** With Windows Narrator 10.0.26100.8972 running against the rebuilt Chrome preview, the human reported hearing the Question label and its 1,500-byte error guidance, the reply's 3,000-byte error guidance, and the “Check this reply” dialog title plus consent-checkbox label. These are human reports, not captured audio or an exact speech transcript. The earlier general-page-reading response remains inconclusive for the reply error; the specific later confirmation is preserved separately.
