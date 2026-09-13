@@ -4,7 +4,11 @@ Reference-led reply reviews for GenLayer Studionet. A team publishes public info
 
 **Status: public source release; submission verification is still in progress.** The verified Studionet contract is configured in the local app. The earlier automated milestone covered six live model fixtures and 26 transactions, including six deliberate rejections; see [LIVE-VALIDATION.md](LIVE-VALIDATION.md) for its exact source hash, receipts and preserved failures. Subsequent human-wallet, recovery and accessibility observations are saved under `evidence/`.
 
-The latest local suite passed 183 frontend tests, 97 contract tests and 20 registered evidence replays. Scoped Narrator checks and 25 responsive layout checks also passed. These are not a claim of complete accessibility conformance or public Ubuntu CI success. See [DEVICE-RELEASE-PREFLIGHT.md](DEVICE-RELEASE-PREFLIGHT.md) for the dated pre-publication findings and remaining gates: clean public CI, real-phone testing, a published evaluator site and signed-out evidence access. Reply Gym works without a wallet. The website is not yet published, and no portal submission has been made for ReplyCheck.
+**Live app: [reply-check-sanity3.vercel.app](https://reply-check-sanity3.vercel.app).** Visitors can open the app and browse public workspaces without a Vercel login; Reply Gym needs no wallet. Workspace writes still require an authorized wallet on GenLayer Studionet.
+
+The complete clean [Ubuntu CI run for the deployed commit](https://github.com/sanity456/reply-check/actions/runs/34757674999) passed, including frontend and contract tests, the build, 20 registered saved-evidence replays and dependency audits. The prior local totals were 183 frontend and 97 contract tests. Scoped Narrator checks and 25 responsive layout checks also passed. These are not a claim of complete accessibility conformance or submission readiness.
+
+See the [public deployment and access record](evidence/hosting/20260913-vercel-public-access.json) for the immutable deployed source commit and signed-out access checks. [DEVICE-RELEASE-PREFLIGHT.md](DEVICE-RELEASE-PREFLIGHT.md) records the earlier pre-publication state. Real-phone checks, final evaluator evidence packaging and release contract/source comparison remain. No portal submission has been made for ReplyCheck.
 
 ## What is built
 
@@ -38,7 +42,7 @@ npm run build
 npm start
 ```
 
-The static hosting directory is `dist/client`. `.openai/hosting.json` identifies the reserved, unpublished Sites project. Do not substitute a mock contract address to enable buttons.
+The static hosting directory is `dist/client`. Public hosting uses Vercel: `vercel.json` selects the static build and `.vercelignore` excludes local credentials, tooling and test evidence from the website upload. `.openai/hosting.json` identifies an unused, unpublished Sites reservation; it is not the live host. Do not substitute a mock contract address to enable buttons.
 
 ## Verify the source
 
