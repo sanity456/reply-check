@@ -324,3 +324,47 @@ test('release evidence: fresh source check binds actual source bytes and stored-
     (await proof(ledgerPaths[1])).stored_review,
   );
 });
+
+test('release evidence: the public-origin wallet smoke adds exactly one verified review and closes recovery', async () => {
+  const baseline = await proof(
+    'evidence/release/20260913-public-wallet-baseline.json',
+  );
+  const record = await proof(
+    'evidence/release/20260913-public-wallet-reconciled.json',
+  );
+  const close = await proof(
+    'evidence/release/20260913-public-wallet-browser-close.json',
+  );
+  await recordedReview(record);
+  assert.equal(record.origin, 'https://reply-check-sanity3.vercel.app');
+  assert.equal(sha(await local(record.baseline.path)), record.baseline.sha256);
+  const before = baseline.observations.find(
+    (row) => row.key === 'workspace',
+  ).output;
+  assert.equal(before.review_count, 16);
+  assert.deepEqual(
+    record.observations.find((row) => row.key === 'workspace').output,
+    { ...before, review_count: 17 },
+  );
+  const reviews = record.observations.find(
+    (row) => row.key === 'reviews',
+  ).output;
+  assert.equal(reviews.length, 17);
+  assert.deepEqual(
+    reviews.filter((row) => row.id !== record.stored_review.id),
+    baseline.observations.find((row) => row.key === 'reviews').output,
+  );
+  assert.equal(close.hash, record.expected.hash);
+  assert.ok(close.before.includes('TRANSACTION CHECKED'));
+  assert.ok(close.before.includes(record.expected.hash));
+  assert.ok(!close.after.includes('region "Transaction recovery"'));
+  assert.ok(!close.after.includes('dialog "Check this reply"'));
+  assert.ok(close.after.includes('heading "Matches the references"'));
+  // Extension-origin warnings are retained, not relabelled as a clean console.
+  assert.ok(
+    close.logs.every(
+      (row) =>
+        row.level === 'warn' && row.url.startsWith('chrome-extension://'),
+    ),
+  );
+});

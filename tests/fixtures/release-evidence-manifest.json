@@ -76,7 +76,10 @@
     "evidence/release/20260913-deployed-source-read-only.json": "ccb72488b088121ef83d50cae63323aa25ab3e11491409549600c5785be6b182",
     "evidence/human-wallet/20260910-105817-reply-batch.json": "8a34b4e53f46e72cd18cfae79586eba933c8cce377e8e66a1b300447e156718e",
     "evidence/source-snapshots/20260913-before-draft-errors/source-bytes.json": "65c083639326842f49d765e229e30beb18b9dfb3ea8ab93d5e0d645a899a4e11",
-    "evidence/source-snapshots/20260913-before-screen-reader-closure/document-bytes.json": "86a64ebaced9d9eaeb70b4b93ffbed988983cff94de349d4c6f5212262790a6b"
+    "evidence/source-snapshots/20260913-before-screen-reader-closure/document-bytes.json": "86a64ebaced9d9eaeb70b4b93ffbed988983cff94de349d4c6f5212262790a6b",
+    "evidence/release/20260913-public-wallet-baseline.json": "8fc0f607e4976f51cf30e01b883ee49e697b2076eda04ac538ad3a28cfffa20b",
+    "evidence/release/20260913-public-wallet-reconciled.json": "c3dc30677537e50dc49763e816a46a623a7ae74c4685aeb582f74801c7df7140",
+    "evidence/release/20260913-public-wallet-browser-close.json": "7bc72c101e7588228bbd6de0c304797289a99e0a1a79430763b22d48f6b4887a"
   },
   "deployment_source_commit": "bccee402d67e0e8007773b1763bb1fd1d5c7c411",
   "deployment_source_pins": {
