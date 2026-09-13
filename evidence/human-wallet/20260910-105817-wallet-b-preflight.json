@@ -1,0 +1,31 @@
+{
+  "format": "replycheck-human-wallet-preflight-v1",
+  "status": "PASS",
+  "observed_at_utc": "2026-09-10T14:07:31.948Z",
+  "network": "studionet",
+  "chain_id": 61999,
+  "contract": "0xBD35B1E68aeC803Bd793Db9c6B9762b60f60029A",
+  "source_sha256": "cb09037c7ba0b4dc4a675eb09ee561eb828d82b57ff5eb703d76e204f555c1eb",
+  "workspace_id": "reply-wallet-20260910-105817",
+  "account_a": "0x29b8b7d7cbf534eba01e56919de19d79d1509360",
+  "account_b_supplied": "0x7Cef5DBbD598ba74EF9C665c9853E573448d97D0",
+  "account_b_normalized": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0",
+  "account_b_checksummed": "0x7Cef5DBbD598ba74EF9C665c9853E573448d97D0",
+  "account_b_source": "Explicit user message; wallet control/acceptance not yet verified.",
+  "wallet_control_verified": false,
+  "proposed_role": "member",
+  "current_role": "visitor",
+  "current_invitation": "",
+  "stored_workspace": {
+    "archived": false,
+    "card_count": 0,
+    "created_at": "2026-09-10T12:06:06.848821+00:00",
+    "id": "reply-wallet-20260910-105817",
+    "member_addresses": [],
+    "name": "ReplyCheck human wallet test",
+    "owner": "0x29b8b7d7cbf534eba01e56919de19d79d1509360",
+    "review_count": 6,
+    "version": 1
+  },
+  "note": "Read-only preparation: source verified again and existing membership/invitation checked to avoid overwriting access. No wallet access, signature, invitation or transaction was requested."
+}

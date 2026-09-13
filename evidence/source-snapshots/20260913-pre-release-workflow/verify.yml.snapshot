@@ -1,0 +1,59 @@
+name: Clean Ubuntu source verification
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: verify-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      PYTEST_DISABLE_PLUGIN_AUTOLOAD: '1'
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version-file: .python-version
+      - name: Clean locked dependency installs
+        run: |
+          npm ci
+          python -m pip install --require-hashes -r requirements.lock
+      - name: Formatting, lint and types
+        run: |
+          npm run format:check
+          npm run lint
+          npm run typecheck
+      - name: Complete frontend logic suite
+        run: npm test
+      - name: Lint contract before complete direct and validator suites
+        run: |
+          genvm-lint check contracts/reply_check.py
+          python -m pytest tests/direct tests/consensus -q --tb=short
+      - name: Production static build
+        run: npm run build
+      - name: Saved evidence consistency (offline, no wallet)
+        run: |
+          node evidence/browser/replay-20260912-usability.mjs --historical-ui
+          node evidence/browser/replay-20260912-ui-fix-browser.mjs --historical-ui
+          node evidence/browser/replay-20260912-focus-wording.mjs --historical-ui
+          node evidence/human-wallet/replays/20260912-after-signing-recovery.mjs --historical-ui
+          node evidence/browser/replay-20260912-reliability-accessibility.mjs
+      - name: Dependency audit
+        run: |
+          npm audit --audit-level=low
+          pip-audit --require-hashes --disable-pip -r requirements.lock --progress-spinner off
+
+# This workflow does not claim to run live consensus or human wallet tests.
+# It receives no signing key and never deploys a contract from a pull request.

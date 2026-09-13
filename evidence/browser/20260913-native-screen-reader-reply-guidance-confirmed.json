@@ -1,0 +1,175 @@
+{
+  "format": "replycheck-native-screen-reader-reply-guidance-v1",
+  "status": "REPLY_ERROR_GUIDANCE_HUMAN_CONFIRMED_DIALOG_LISTENING_PENDING",
+  "recorded_at_utc": "2026-09-13T11:57:46.8679656Z",
+  "previous_record": {
+    "path": "evidence/browser/20260913-native-screen-reader-reply-witness.json",
+    "sha256": "656a269dbf833f99250c373ec361fd49f72bd76fd4a0cab02be32aa7ac0c1bba"
+  },
+  "human_response": {
+    "question": "Did it read “Add a reply of up to 3,000 bytes”?",
+    "response_verbatim": "yes it did",
+    "result": "REPLY_ERROR_GUIDANCE_REPORTED_HEARD",
+    "limits": "Human report, not an audio recording; exact invalid-state wording and full speech output remain unconfirmed."
+  },
+  "question_guidance": "Previously human-confirmed separately.",
+  "correction": {
+    "result": "PASS_DOM_AND_UI",
+    "observation": {
+      "at": "2026-09-13T11:58:12.943Z",
+      "errors": [
+        "",
+        ""
+      ],
+      "fields": [
+        {
+          "describedBy": "question-count",
+          "id": "question",
+          "invalid": "false",
+          "value": "How long do I have to request a refund?"
+        },
+        {
+          "describedBy": "reply-count reply-sentences",
+          "id": "reply",
+          "invalid": "false",
+          "value": "Refund requests must be submitted within 14 days of purchase."
+        }
+      ],
+      "reviewDisabled": false
+    },
+    "speech": "No claim about spoken correction feedback."
+  },
+  "dialog": {
+    "status": "AWAITING_HUMAN",
+    "condition": "One Check this reply dialog, consent unchecked, Continue to wallet disabled.",
+    "data": {
+      "correction": {
+        "at": "2026-09-13T11:58:12.943Z",
+        "errors": [
+          "",
+          ""
+        ],
+        "fields": [
+          {
+            "describedBy": "question-count",
+            "id": "question",
+            "invalid": "false",
+            "value": "How long do I have to request a refund?"
+          },
+          {
+            "describedBy": "reply-count reply-sentences",
+            "id": "reply",
+            "invalid": "false",
+            "value": "Refund requests must be submitted within 14 days of purchase."
+          }
+        ],
+        "reviewDisabled": false
+      },
+      "dialog_state": {
+        "at": "2026-09-13T11:59:00.951Z",
+        "dialogs": [
+          {
+            "buttons": [
+              {
+                "disabled": false,
+                "text": "Cancel"
+              },
+              {
+                "disabled": true,
+                "text": "Continue to wallet"
+              },
+              {
+                "disabled": false,
+                "text": "Close"
+              }
+            ],
+            "checkboxes": [
+              {
+                "ariaChecked": "false",
+                "checked": false,
+                "role": "checkbox"
+              },
+              {
+                "ariaChecked": null,
+                "checked": false,
+                "role": null
+              }
+            ],
+            "describedBy": "base-ui-_r_c_",
+            "labelledBy": "base-ui-_r_b_",
+            "text": "Check this replyOne wallet-signed action on GenLayer Studionet.Wallet0x7cef5d…8d97d0Contract payment0 GEN · network fees may applyWorkspace: ReplyCheck human wallet test · references v2Question: How long do I have to request a refund?Draft: Refund requests must be submitted within 14 days of purchase.GenLayer will assess the complete draft. No customer message is sent.This content and your wallet address can become public permanently, even if the transaction fails. Remove private tickets, personal details and secrets.I checked the content and agree to publish it.CancelContinue to walletClose"
+          }
+        ],
+        "focus": {
+          "id": "base-ui-_r_d_",
+          "role": "checkbox",
+          "text": ""
+        }
+      },
+      "dialog_record": {
+        "label": "narrator-unsigned-dialog-awaiting-human",
+        "snapshot": "- link:\n  - /url: \"#main-content\"\n  - text: Skip to workspace\n- banner:\n  - link:\n    - /url: /\n    - generic: ReplyCheck\n  - button:\n    - generic: ReplyCheck human wallet test\n  - button:\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading [level=1]: Check a reply\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button:\n    - text: Refresh\n  - tablist:\n    - tab [selected]:\n      - generic: Check a reply\n    - tab:\n      - text: Library\n    - tab:\n      - text: History\n    - tab:\n      - generic: Reply Gym\n    - tab:\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading [level=2]: Your draft\n    - generic: References v2\n    - generic: Question\n    - generic: 39 / 1,500 bytes\n    - textbox:\n      - /placeholder: What are they asking?\n      - text: How long do I have to request a refund?\n    - paragraph\n    - generic: Your reply\n    - generic: 61 / 3,000 bytes\n    - textbox:\n      - /placeholder: Write or paste your reply…\n      - text: Refund requests must be submitted within 14 days of purchase.\n    - paragraph\n    - text: Public information only\n    - generic: 1 / 12 sentences\n    - button:\n      - text: Review draft\n    - paragraph: Confirm the public submission before signing.\n    - complementary:\n      - heading [level=2]:\n        - text: References\n      - generic: v2\n      - text: Fictional refund policy\n      - button:\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button:\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic: Build information\n- dialog \"Check this reply\":\n  - heading \"Check this reply\" [level=2]\n  - paragraph: One wallet-signed action on GenLayer Studionet.\n  - term: Wallet\n  - definition: 0x7cef5d…8d97d0\n  - term: Contract payment\n  - definition: 0 GEN · network fees may apply\n  - paragraph: \"Workspace: ReplyCheck human wallet test · references v2\"\n  - paragraph: \"Question: How long do I have to request a refund?\"\n  - paragraph: \"Draft: Refund requests must be submitted within 14 days of purchase.\"\n  - paragraph: GenLayer will assess the complete draft. No customer message is sent.\n  - status: This content and your wallet address can become public permanently, even if the transaction fails. Remove private tickets, personal details and secrets.\n  - checkbox \"I checked the content and agree to publish it.\" [active]\n  - checkbox\n  - generic: I checked the content and agree to publish it.\n  - button \"Cancel\"\n  - button \"Continue to wallet\" [disabled]\n  - button \"Close\":\n    - generic: Close",
+        "metrics": {
+          "at": "2026-09-13T11:59:00.917Z",
+          "clientWidth": 638,
+          "dialogs": [
+            {
+              "clientHeight": 575,
+              "describedBy": "base-ui-_r_c_",
+              "labelledBy": "base-ui-_r_b_",
+              "overflowY": "auto",
+              "rect": {
+                "h": 576,
+                "w": 591,
+                "x": 15.833333969116213,
+                "y": 16
+              },
+              "scrollHeight": 669
+            }
+          ],
+          "dpr": 1.5,
+          "fields": [],
+          "focus": {
+            "id": "base-ui-_r_d_",
+            "outline": "oklab(0.841629 0.0126044 0.107122 / 0.5) none 2.66667px",
+            "rect": {
+              "h": 16,
+              "w": 16,
+              "x": 46.5,
+              "y": 509.4479370117187
+            },
+            "tag": "SPAN",
+            "text": ""
+          },
+          "forcedColors": false,
+          "height": 608,
+          "live": [
+            {
+              "live": "polite",
+              "role": null,
+              "text": "Confirm the public submission before signing."
+            },
+            {
+              "live": null,
+              "role": "status",
+              "text": "This content and your wallet address can become public permanently, even if the transaction fails. Remove private tickets, personal details and secrets."
+            }
+          ],
+          "overflow": [],
+          "reducedMotion": false,
+          "reviewRows": 16,
+          "scrollWidth": 623,
+          "width": 638
+        }
+      }
+    }
+  },
+  "narrator_running_before_check": true,
+  "safety": {
+    "app_changes": 0,
+    "wallet_requests": 0,
+    "transactions": 0,
+    "old_evidence_modified": false
+  },
+  "next": "Obtain the spoken dialog title and consent-checkbox report, then cancel without checking consent or continuing to the wallet. Restore original fixture/history and Narrator off."
+}

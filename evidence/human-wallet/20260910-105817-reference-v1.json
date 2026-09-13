@@ -1,0 +1,220 @@
+{
+  "format": "replycheck-human-wallet-step-v1",
+  "status": "PASS",
+  "observed_at_utc": "2026-09-10T12:22:03.837Z",
+  "network": "studionet",
+  "expected": {
+    "hash": "0x1a53cee719a30f2947b918b0fe1a16cdaf56aff9c070d4ed63e04fb24bc6a709",
+    "account": "0x29b8b7d7cbf534eba01e56919de19d79d1509360",
+    "contract": "0xBD35B1E68aeC803Bd793Db9c6B9762b60f60029A",
+    "chainId": 61999,
+    "method": "publish_references",
+    "callDigest": "c3a26abe12d999ef14d9c4e2fb13f83547f81942791b8b5dadaa89fa361dee94",
+    "args": [
+      "reply-wallet-20260910-105817",
+      0,
+      "[{\"id\":\"faq\",\"title\":\"Fictional refund policy\",\"body\":\"Refund requests must be submitted within 7 days of purchase.\",\"url\":\"\"}]",
+      true
+    ],
+    "attached_value_wei": "0"
+  },
+  "source_sha256": "cb09037c7ba0b4dc4a675eb09ee561eb828d82b57ff5eb703d76e204f555c1eb",
+  "receipt_verifier_sha256": "5af35ec5c94b65a4bfd4fa51299c74dc29f39a1217b293582823a2d896ce4141",
+  "chain_client_sha256": "39f78a310bacdcaa9b4130a05f808aa3e292aab3140bf35cf049d3f9d32d30f0",
+  "package_lock_sha256": "07653e595abb64d6523b2867499e7bd8e9d4d004dea2dd083e4edb5521c83e19",
+  "execution": {
+    "state": "success",
+    "label": "Finalized; execution succeeded."
+  },
+  "stored_bundle": {
+    "digest": "22b7a475d9248d548cfdc66739d230033a27316d76b6eade9c30ac1786233d3c",
+    "documents": [
+      {
+        "body": "Refund requests must be submitted within 7 days of purchase.",
+        "id": "faq",
+        "title": "Fictional refund policy",
+        "url": ""
+      }
+    ],
+    "published_at": "2026-09-10T12:19:19.107669+00:00",
+    "published_by": "0x29b8b7d7cbf534eba01e56919de19d79d1509360",
+    "version": 1,
+    "workspace_id": "reply-wallet-20260910-105817"
+  },
+  "stored_workspace": {
+    "archived": false,
+    "card_count": 0,
+    "created_at": "2026-09-10T12:06:06.848821+00:00",
+    "id": "reply-wallet-20260910-105817",
+    "member_addresses": [],
+    "name": "ReplyCheck human wallet test",
+    "owner": "0x29b8b7d7cbf534eba01e56919de19d79d1509360",
+    "review_count": 0,
+    "version": 1
+  },
+  "receipt": {
+    "hash": "0x1a53cee719a30f2947b918b0fe1a16cdaf56aff9c070d4ed63e04fb24bc6a709",
+    "status": "FINALIZED",
+    "from_address": "0x29B8b7D7CBF534Eba01E56919dE19d79d1509360",
+    "to_address": "0xBD35B1E68aeC803Bd793Db9c6B9762b60f60029A",
+    "value": 0,
+    "created_at": "2026-09-10T12:19:19.107669+00:00",
+    "leader_only": false,
+    "last_leader": "0x4EDbE1FC9EAeC7b0EBA849b0C76AE73Eb0ad5C47",
+    "last_round": {
+      "round": "0",
+      "leader_index": "0",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "appeal_bond": "0",
+      "rotations_left": "3",
+      "result": 6,
+      "round_validators": [
+        "0x4EDbE1FC9EAeC7b0EBA849b0C76AE73Eb0ad5C47",
+        "0x90402341F0B0e97b23023c0a87de957FB7148E0F",
+        "0x9ea87b28DcA2F79fe108CF06a4c13B4c876AC23d",
+        "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67",
+        "0x4404Fb70d490c935758146f42A73DC850FF95C71"
+      ],
+      "validator_votes_hash": [
+        "0x1821495670f85338acb559d492042f627d71823f2089c375e220a1ae800c9594",
+        "0x1cf4091dc3018e0e8e60b4641661bf96cf74705c4f8049072076f0f293d226a9",
+        "0x21301af98bf2e3c5c0dd9b593a66ee70c1ad560cd52ff4a09e4f44d1716974af",
+        "0x64a0592b83ca6ef19e73765ad7a1edc0de90035b9ee97a5f1a5d4d67002723d0",
+        "0xd774d5f123cf5359fa34e3260dcba272cfa94e1a57ee80aed610a74c5becb2cc"
+      ],
+      "validator_votes": [
+        1,
+        1,
+        5,
+        1,
+        5
+      ],
+      "validator_votes_name": [
+        "AGREE",
+        "AGREE",
+        "IDLE",
+        "AGREE",
+        "IDLE"
+      ]
+    },
+    "result": 6,
+    "result_name": "MAJORITY_AGREE",
+    "data": {
+      "calldata": "FgRhcmdzJeQBcmVwbHktd2FsbGV0LTIwMjYwOTEwLTEwNTgxNwH8B1t7ImlkIjoiZmFxIiwidGl0bGUiOiJGaWN0aW9uYWwgcmVmdW5kIHBvbGljeSIsImJvZHkiOiJSZWZ1bmQgcmVxdWVzdHMgbXVzdCBiZSBzdWJtaXR0ZWQgd2l0aGluIDcgZGF5cyBvZiBwdXJjaGFzZS4iLCJ1cmwiOiIifV0QBm1ldGhvZJQBcHVibGlzaF9yZWZlcmVuY2Vz"
+    },
+    "consensus_data": {
+      "votes": {
+        "0x4404Fb70d490c935758146f42A73DC850FF95C71": "idle",
+        "0x4EDbE1FC9EAeC7b0EBA849b0C76AE73Eb0ad5C47": "agree",
+        "0x90402341F0B0e97b23023c0a87de957FB7148E0F": "agree",
+        "0x9ea87b28DcA2F79fe108CF06a4c13B4c876AC23d": "idle",
+        "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67": "agree"
+      },
+      "leader_receipt": [
+        {
+          "mode": "leader",
+          "vote": null,
+          "execution_result": "SUCCESS",
+          "result": "ADYGZGlnZXN0hAQyMmI3YTQ3NWQ5MjQ4ZDU0OGNmZGM2NjczOWQyMzAwMzNhMjczMTZkNzZiNmVhZGU5YzMwYWMxNzg2MjMzZDNjCWRvY3VtZW50cw0mBGJvZHnkA1JlZnVuZCByZXF1ZXN0cyBtdXN0IGJlIHN1Ym1pdHRlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLgJpZBxmYXEFdGl0bGW8AUZpY3Rpb25hbCByZWZ1bmQgcG9saWN5A3VybAQMcHVibGlzaGVkX2F0hAIyMDI2LTA5LTEwVDEyOjE5OjE5LjEwNzY2OSswMDowMAxwdWJsaXNoZWRfYnnUAjB4MjliOGI3ZDdjYmY1MzRlYmEwMWU1NjkxOWRlMTlkNzlkMTUwOTM2MAd2ZXJzaW9uCQx3b3Jrc3BhY2VfaWTkAXJlcGx5LXdhbGxldC0yMDI2MDkxMC0xMDU4MTc=",
+          "node_config": {
+            "address": "0x4EDbE1FC9EAeC7b0EBA849b0C76AE73Eb0ad5C47"
+          },
+          "validation_diagnostics": []
+        },
+        {
+          "mode": "validator",
+          "vote": "agree",
+          "execution_result": "SUCCESS",
+          "result": "ADYGZGlnZXN0hAQyMmI3YTQ3NWQ5MjQ4ZDU0OGNmZGM2NjczOWQyMzAwMzNhMjczMTZkNzZiNmVhZGU5YzMwYWMxNzg2MjMzZDNjCWRvY3VtZW50cw0mBGJvZHnkA1JlZnVuZCByZXF1ZXN0cyBtdXN0IGJlIHN1Ym1pdHRlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLgJpZBxmYXEFdGl0bGW8AUZpY3Rpb25hbCByZWZ1bmQgcG9saWN5A3VybAQMcHVibGlzaGVkX2F0hAIyMDI2LTA5LTEwVDEyOjE5OjE5LjEwNzY2OSswMDowMAxwdWJsaXNoZWRfYnnUAjB4MjliOGI3ZDdjYmY1MzRlYmEwMWU1NjkxOWRlMTlkNzlkMTUwOTM2MAd2ZXJzaW9uCQx3b3Jrc3BhY2VfaWTkAXJlcGx5LXdhbGxldC0yMDI2MDkxMC0xMDU4MTc=",
+          "node_config": {
+            "address": "0x4EDbE1FC9EAeC7b0EBA849b0C76AE73Eb0ad5C47"
+          },
+          "validation_diagnostics": []
+        }
+      ]
+    },
+    "consensus_history": {
+      "current_status_changes": [
+        "FINALIZED"
+      ],
+      "consensus_results": [
+        {
+          "consensus_round": "Accepted",
+          "status_changes": [
+            "PENDING",
+            "PROPOSING",
+            "COMMITTING",
+            "REVEALING",
+            "ACCEPTED"
+          ],
+          "leader_result": [
+            {
+              "mode": "leader",
+              "vote": null,
+              "execution_result": "SUCCESS",
+              "result": "ADYGZGlnZXN0hAQyMmI3YTQ3NWQ5MjQ4ZDU0OGNmZGM2NjczOWQyMzAwMzNhMjczMTZkNzZiNmVhZGU5YzMwYWMxNzg2MjMzZDNjCWRvY3VtZW50cw0mBGJvZHnkA1JlZnVuZCByZXF1ZXN0cyBtdXN0IGJlIHN1Ym1pdHRlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLgJpZBxmYXEFdGl0bGW8AUZpY3Rpb25hbCByZWZ1bmQgcG9saWN5A3VybAQMcHVibGlzaGVkX2F0hAIyMDI2LTA5LTEwVDEyOjE5OjE5LjEwNzY2OSswMDowMAxwdWJsaXNoZWRfYnnUAjB4MjliOGI3ZDdjYmY1MzRlYmEwMWU1NjkxOWRlMTlkNzlkMTUwOTM2MAd2ZXJzaW9uCQx3b3Jrc3BhY2VfaWTkAXJlcGx5LXdhbGxldC0yMDI2MDkxMC0xMDU4MTc=",
+              "node_config": {
+                "address": "0x4EDbE1FC9EAeC7b0EBA849b0C76AE73Eb0ad5C47"
+              },
+              "validation_diagnostics": []
+            },
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "execution_result": "SUCCESS",
+              "result": "ADYGZGlnZXN0hAQyMmI3YTQ3NWQ5MjQ4ZDU0OGNmZGM2NjczOWQyMzAwMzNhMjczMTZkNzZiNmVhZGU5YzMwYWMxNzg2MjMzZDNjCWRvY3VtZW50cw0mBGJvZHnkA1JlZnVuZCByZXF1ZXN0cyBtdXN0IGJlIHN1Ym1pdHRlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLgJpZBxmYXEFdGl0bGW8AUZpY3Rpb25hbCByZWZ1bmQgcG9saWN5A3VybAQMcHVibGlzaGVkX2F0hAIyMDI2LTA5LTEwVDEyOjE5OjE5LjEwNzY2OSswMDowMAxwdWJsaXNoZWRfYnnUAjB4MjliOGI3ZDdjYmY1MzRlYmEwMWU1NjkxOWRlMTlkNzlkMTUwOTM2MAd2ZXJzaW9uCQx3b3Jrc3BhY2VfaWTkAXJlcGx5LXdhbGxldC0yMDI2MDkxMC0xMDU4MTc=",
+              "node_config": {
+                "address": "0x4EDbE1FC9EAeC7b0EBA849b0C76AE73Eb0ad5C47"
+              },
+              "validation_diagnostics": []
+            }
+          ],
+          "validator_results": [
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "execution_result": "SUCCESS",
+              "result": "ADYGZGlnZXN0hAQyMmI3YTQ3NWQ5MjQ4ZDU0OGNmZGM2NjczOWQyMzAwMzNhMjczMTZkNzZiNmVhZGU5YzMwYWMxNzg2MjMzZDNjCWRvY3VtZW50cw0mBGJvZHnkA1JlZnVuZCByZXF1ZXN0cyBtdXN0IGJlIHN1Ym1pdHRlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLgJpZBxmYXEFdGl0bGW8AUZpY3Rpb25hbCByZWZ1bmQgcG9saWN5A3VybAQMcHVibGlzaGVkX2F0hAIyMDI2LTA5LTEwVDEyOjE5OjE5LjEwNzY2OSswMDowMAxwdWJsaXNoZWRfYnnUAjB4MjliOGI3ZDdjYmY1MzRlYmEwMWU1NjkxOWRlMTlkNzlkMTUwOTM2MAd2ZXJzaW9uCQx3b3Jrc3BhY2VfaWTkAXJlcGx5LXdhbGxldC0yMDI2MDkxMC0xMDU4MTc=",
+              "node_config": {
+                "address": "0x90402341F0B0e97b23023c0a87de957FB7148E0F"
+              },
+              "validation_diagnostics": []
+            },
+            {
+              "mode": "validator",
+              "vote": "idle",
+              "execution_result": "ERROR",
+              "result": "AmlkbGU=",
+              "node_config": {
+                "address": "0x9ea87b28DcA2F79fe108CF06a4c13B4c876AC23d"
+              },
+              "validation_diagnostics": []
+            },
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "execution_result": "SUCCESS",
+              "result": "ADYGZGlnZXN0hAQyMmI3YTQ3NWQ5MjQ4ZDU0OGNmZGM2NjczOWQyMzAwMzNhMjczMTZkNzZiNmVhZGU5YzMwYWMxNzg2MjMzZDNjCWRvY3VtZW50cw0mBGJvZHnkA1JlZnVuZCByZXF1ZXN0cyBtdXN0IGJlIHN1Ym1pdHRlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLgJpZBxmYXEFdGl0bGW8AUZpY3Rpb25hbCByZWZ1bmQgcG9saWN5A3VybAQMcHVibGlzaGVkX2F0hAIyMDI2LTA5LTEwVDEyOjE5OjE5LjEwNzY2OSswMDowMAxwdWJsaXNoZWRfYnnUAjB4MjliOGI3ZDdjYmY1MzRlYmEwMWU1NjkxOWRlMTlkNzlkMTUwOTM2MAd2ZXJzaW9uCQx3b3Jrc3BhY2VfaWTkAXJlcGx5LXdhbGxldC0yMDI2MDkxMC0xMDU4MTc=",
+              "node_config": {
+                "address": "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67"
+              },
+              "validation_diagnostics": []
+            },
+            {
+              "mode": "validator",
+              "vote": "idle",
+              "execution_result": "ERROR",
+              "result": "AmlkbGU=",
+              "node_config": {
+                "address": "0x4404Fb70d490c935758146f42A73DC850FF95C71"
+              },
+              "validation_diagnostics": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "note": "Read-only public RPC checks through the pinned app client. Final successful execution and exact method/arguments/zero value verified before stored-state reads. Exact reference text, digest, publisher and chain-stored timestamp preserved; deployed source verified again. No wallet access, signing or transaction sending."
+}

@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "evidence_sha256": "aaf0777dcf7cc73e5593e54091c9fcdff6faba2de733f250be840c332875e270",
+  "contract": "0xBD35B1E68aeC803Bd793Db9c6B9762b60f60029A",
+  "source_sha256": "cb09037c7ba0b4dc4a675eb09ee561eb828d82b57ff5eb703d76e204f555c1eb",
+  "receipt_verifier_sha256": "5af35ec5c94b65a4bfd4fa51299c74dc29f39a1217b293582823a2d896ce4141",
+  "total_transactions": 26,
+  "expected_rejections": 6,
+  "successful_transactions": 20,
+  "cases": [
+    {
+      "name": "unanswered",
+      "verdict": "NOT_ENOUGH_INFORMATION",
+      "reason_codes": [
+        "NON_FACTUAL_TEXT"
+      ],
+      "question_status": "UNANSWERED",
+      "recorded_at": "2026-09-10T10:17:27.367955+00:00",
+      "review_id": "fd7e54465dcfcd82f014aad9a884afa42e7d85e002d0395762f172d3022bb8a0"
+    },
+    {
+      "name": "good",
+      "verdict": "MATCHES_REFERENCES",
+      "reason_codes": [
+        "CLAIM_SUPPORTED"
+      ],
+      "question_status": "ANSWERED",
+      "recorded_at": "2026-09-10T10:18:24.994147+00:00",
+      "review_id": "2078b4f8d84c5af099216fd3b8fc223fe353a9db0f9a5569325014dc5e5d2723"
+    },
+    {
+      "name": "bad",
+      "verdict": "NEEDS_CHANGES",
+      "reason_codes": [
+        "CONTRADICTS_REFERENCE"
+      ],
+      "question_status": "ANSWERED",
+      "recorded_at": "2026-09-10T10:19:22.888301+00:00",
+      "review_id": "b13d0b2238c2e688274d1e6ef354f756454f1d26aa6b2809c355592c545684ff"
+    },
+    {
+      "name": "unknown",
+      "verdict": "NEEDS_CHANGES",
+      "reason_codes": [
+        "NOT_IN_REFERENCES"
+      ],
+      "question_status": "UNANSWERED",
+      "recorded_at": "2026-09-10T10:20:19.941104+00:00",
+      "review_id": "a2a117f37c0019a452be7089e047466b17c9762b57edfc0dcc826f2a545db269"
+    },
+    {
+      "name": "mixed",
+      "verdict": "NEEDS_CHANGES",
+      "reason_codes": [
+        "CLAIM_SUPPORTED",
+        "NOT_IN_REFERENCES"
+      ],
+      "question_status": "ANSWERED",
+      "recorded_at": "2026-09-10T10:21:16.576271+00:00",
+      "review_id": "9a731eeefbe783dce0fa609a378e2c2b54dc0fff78a94b385cacb13ee39fc358"
+    },
+    {
+      "name": "injection",
+      "verdict": "NEEDS_CHANGES",
+      "reason_codes": [
+        "CONTRADICTS_REFERENCE"
+      ],
+      "question_status": "ANSWERED",
+      "recorded_at": "2026-09-10T10:22:25.188894+00:00",
+      "review_id": "bf75ca51ec5749639ca31627e6784ae2dc593713d82b9fafa774f227b3a36c74"
+    }
+  ],
+  "verification": "Saved network payloads replayed through current application checks; no new transactions sent."
+}

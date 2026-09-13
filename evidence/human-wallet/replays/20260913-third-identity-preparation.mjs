@@ -1,0 +1,48 @@
+/** Offline preparation replay; no RPC, wallet action or pending-switch pass. */
+import assert from 'node:assert/strict';
+import { createEvidenceReader } from '../../read-evidence.mjs';
+import { createHash } from 'node:crypto';
+import { receiptState, verifyReceiptCall } from '../../../lib/reply/receipt.ts';
+const root = new URL('../../../', import.meta.url);
+const read = createEvidenceReader(root);
+const sha = (bytes) => createHash('sha256').update(bytes).digest('hex');
+const bytes = await read('evidence/human-wallet/20260913-pending-identity-third-preparation.json');
+assert.equal(sha(bytes), 'f34a0952252570bc8152de691d4033e67246507dd329419dc249866b3ddf9c08');
+const proof = JSON.parse(bytes), live = proof.fresh_read_only_checkpoint;
+assert.equal(proof.status, 'PREPARED_AWAITING_SITE_WALLET_B_NO_REQUEST_STAGED');
+for (const pin of [proof.baseline, live.generator, proof.receipt_capture_helper]) assert.equal(sha(await read(pin.path)), pin.sha256, pin.path);
+for (const [path, hash] of Object.entries(proof.source_pins)) assert.equal(sha(await read(path)), hash, path);
+const before = JSON.parse(await read(proof.baseline.path));
+assert.deepEqual(live.expected, before.expected);
+assert.equal(receiptState(live.receipt, live.expected).state, 'success');
+assert.equal(await verifyReceiptCall(live.receipt, live.expected), true);
+assert.deepEqual(live.decoded_return_payload, live.stored_review);
+assert.deepEqual(live.stored_review, before.stored_review);
+assert.equal(live.deployment_verification.matched, true);
+assert.equal(live.deployment_verification.source_sha256, proof.source_pins['contracts/reply_check.py']);
+assert.equal(live.observations.length, 10);
+assert.deepEqual(live.observations.map((row) => row.key), before.observations.map((row) => row.key));
+for (const row of live.observations) {
+  const old = before.observations.find((entry) => entry.key === row.key);
+  assert.equal(row.method, old.method);
+  assert.deepEqual(row.args, old.args);
+  assert.deepEqual(row.output, old.output);
+  assert.ok(Date.parse(row.observed_at_utc) >= Date.parse(row.requested_at_utc));
+}
+assert.equal(proof.intended_operation.expected_review_count_before, 12);
+assert.equal(proof.intended_operation.expected_review_count_after, 13);
+assert.ok(proof.intended_operation.prohibited_resubmission_hashes.includes(live.expected.hash));
+for (const field of ['request_id', 'review_id', 'transaction_hash']) assert.equal(proof.intended_operation[field], null);
+const browser = proof.browser_recorder;
+assert.equal(browser.parser_checks.length, 3);
+assert.equal(browser.parser_checks[0].observed.account, 'B');
+assert.equal(browser.parser_checks[0].observed.pending_ui, true);
+assert.equal(browser.parser_checks[1].observed.account, 'A');
+assert.equal(browser.parser_checks[1].observed.pending_ui, false);
+assert.equal(browser.parser_checks[1].observed.terminal_ui, true);
+assert.equal(browser.parser_checks[2].observed.hash, null);
+assert.equal(browser.current.visible.account, 'A');
+assert.equal(browser.current.visible.recovery_present, false);
+assert.equal(browser.current.visible.consent_dialog_open, false);
+assert.equal(proof.readiness_checks.length, 5);
+console.log(JSON.stringify({ preparation: 'PASS', checks: 5, parser_self_checks: 3, complete_public_outputs: 10, baseline_review_count: 12, expected_next_count: 13, wallet_required: 'B on Studionet', request_staged: false, continuous_capture_started: false, pending_transition_result: 'NOT_EXERCISED' }, null, 2));

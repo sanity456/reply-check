@@ -1,0 +1,239 @@
+{
+  "format": "replycheck-human-wallet-step-v1",
+  "status": "PASS",
+  "observed_at_utc": "2026-09-11T07:11:51.347Z",
+  "network": "studionet",
+  "expected": {
+    "hash": "0x651b287f25ab096fbd3ef251079f2dca21adfe1d2d64c81c185abb9ca03dff63",
+    "account": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0",
+    "contract": "0xBD35B1E68aeC803Bd793Db9c6B9762b60f60029A",
+    "chainId": 61999,
+    "method": "accept_invitation",
+    "callDigest": "9d8babd40af99233df28b40050c51e2ca60b3a3d9e1345fc86635955536be5cb",
+    "args": [
+      "reply-wallet-20260910-105817"
+    ],
+    "attached_value_wei": "0",
+    "role": "member",
+    "invitation_after_acceptance": "",
+    "workspace_member_addresses": [
+      "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0"
+    ]
+  },
+  "app_transaction_export": {
+    "filename": "replycheck-transaction-0x651b287f25ab096fbd3ef251079f2dca21adfe1d2d64c81c185abb9ca03dff63.json",
+    "sha256": "6f772a86c90b45093c07025cffcee5f39b60bcaa9b2d80ace4500d8a381c14bd",
+    "payload": {
+      "account": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0",
+      "contract": "0xBD35B1E68aeC803Bd793Db9c6B9762b60f60029A",
+      "chainId": 61999,
+      "method": "accept_invitation",
+      "title": "Accept workspace role",
+      "workspace": "reply-wallet-20260910-105817",
+      "effect": {
+        "method": "get_role",
+        "args": [
+          "reply-wallet-20260910-105817",
+          "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0"
+        ],
+        "equals": "member"
+      },
+      "startedAt": "2026-09-11T07:09:43.438Z",
+      "callDigest": "9d8babd40af99233df28b40050c51e2ca60b3a3d9e1345fc86635955536be5cb",
+      "hash": "0x651b287f25ab096fbd3ef251079f2dca21adfe1d2d64c81c185abb9ca03dff63"
+    }
+  },
+  "invitation_evidence": {
+    "filename": "20260910-105817-invite-wallet-b.json",
+    "sha256": "358250502df193e5bfa35f36ee6e3610e8ab848c1bbac311a62c16a678c03f06"
+  },
+  "source_sha256": "cb09037c7ba0b4dc4a675eb09ee561eb828d82b57ff5eb703d76e204f555c1eb",
+  "receipt_verifier_sha256": "5af35ec5c94b65a4bfd4fa51299c74dc29f39a1217b293582823a2d896ce4141",
+  "chain_client_sha256": "39f78a310bacdcaa9b4130a05f808aa3e292aab3140bf35cf049d3f9d32d30f0",
+  "package_lock_sha256": "07653e595abb64d6523b2867499e7bd8e9d4d004dea2dd083e4edb5521c83e19",
+  "execution": {
+    "state": "success",
+    "label": "Finalized; execution succeeded."
+  },
+  "receipt": {
+    "hash": "0x651b287f25ab096fbd3ef251079f2dca21adfe1d2d64c81c185abb9ca03dff63",
+    "status": "FINALIZED",
+    "from_address": "0x7Cef5DBbD598ba74EF9C665c9853E573448d97D0",
+    "to_address": "0xBD35B1E68aeC803Bd793Db9c6B9762b60f60029A",
+    "value": 0,
+    "created_at": "2026-09-11T07:09:54.720619+00:00",
+    "leader_only": false,
+    "last_leader": "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67",
+    "last_round": {
+      "round": "0",
+      "leader_index": "0",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "appeal_bond": "0",
+      "rotations_left": "3",
+      "result": 6,
+      "round_validators": [
+        "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67",
+        "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3",
+        "0x76c25AFC12c75485703cCFfd0083AA6201455B25",
+        "0xDB1c35c1f05d885999b8f13e5735307BcC16Be88",
+        "0x36728d2a123aB444E603EE5b2ad17d18Bb193557"
+      ],
+      "validator_votes_hash": [
+        "0xf1087610684eecc79dfb22c2ce28e97489bce0f15560860bfab34132525fa6ce",
+        "0x533b0de687f483411a8ce0a20902043c9588447a5dcddf97b73ec752737dcc56",
+        "0x3e68a7af274aeae95773ab69366cc1d6a0e7048d6c91a9406b604d122398427b",
+        "0x3dedb7de41e197152351597b7b33b61f8bae816c6172ad35c8546af5fc39f834",
+        "0x61cdc88c717645fdae4bae4fa5ce9d6f59cc6f662584bd4e132e8afea8422292"
+      ],
+      "validator_votes": [
+        1,
+        1,
+        1,
+        5,
+        1
+      ],
+      "validator_votes_name": [
+        "AGREE",
+        "AGREE",
+        "AGREE",
+        "IDLE",
+        "AGREE"
+      ]
+    },
+    "result": 6,
+    "result_name": "MAJORITY_AGREE",
+    "data": {
+      "calldata": "FgRhcmdzDeQBcmVwbHktd2FsbGV0LTIwMjYwOTEwLTEwNTgxNwZtZXRob2SMAWFjY2VwdF9pbnZpdGF0aW9u"
+    },
+    "consensus_data": {
+      "votes": {
+        "0x36728d2a123aB444E603EE5b2ad17d18Bb193557": "agree",
+        "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3": "agree",
+        "0x76c25AFC12c75485703cCFfd0083AA6201455B25": "agree",
+        "0xDB1c35c1f05d885999b8f13e5735307BcC16Be88": "idle",
+        "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67": "agree"
+      },
+      "leader_receipt": [
+        {
+          "mode": "leader",
+          "vote": null,
+          "execution_result": "SUCCESS",
+          "result": "AAA=",
+          "node_config": {
+            "address": "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67"
+          },
+          "validation_diagnostics": []
+        },
+        {
+          "mode": "validator",
+          "vote": "agree",
+          "execution_result": "SUCCESS",
+          "result": "AAA=",
+          "node_config": {
+            "address": "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67"
+          },
+          "validation_diagnostics": []
+        }
+      ]
+    },
+    "consensus_history": {
+      "current_status_changes": [
+        "FINALIZED"
+      ],
+      "consensus_results": [
+        {
+          "consensus_round": "Accepted",
+          "status_changes": [
+            "PENDING",
+            "PROPOSING",
+            "COMMITTING",
+            "REVEALING",
+            "ACCEPTED"
+          ],
+          "leader_result": [
+            {
+              "mode": "leader",
+              "vote": null,
+              "execution_result": "SUCCESS",
+              "result": "AAA=",
+              "node_config": {
+                "address": "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67"
+              },
+              "validation_diagnostics": []
+            },
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "execution_result": "SUCCESS",
+              "result": "AAA=",
+              "node_config": {
+                "address": "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67"
+              },
+              "validation_diagnostics": []
+            }
+          ],
+          "validator_results": [
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "execution_result": "SUCCESS",
+              "result": "AAA=",
+              "node_config": {
+                "address": "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3"
+              },
+              "validation_diagnostics": []
+            },
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "execution_result": "SUCCESS",
+              "result": "AAA=",
+              "node_config": {
+                "address": "0x76c25AFC12c75485703cCFfd0083AA6201455B25"
+              },
+              "validation_diagnostics": []
+            },
+            {
+              "mode": "validator",
+              "vote": "idle",
+              "execution_result": "ERROR",
+              "result": "AmlkbGU=",
+              "node_config": {
+                "address": "0xDB1c35c1f05d885999b8f13e5735307BcC16Be88"
+              },
+              "validation_diagnostics": []
+            },
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "execution_result": "SUCCESS",
+              "result": "AAA=",
+              "node_config": {
+                "address": "0x36728d2a123aB444E603EE5b2ad17d18Bb193557"
+              },
+              "validation_diagnostics": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "stored_role": "member",
+  "stored_invitation": "",
+  "stored_owner_role": "owner",
+  "stored_workspace": {
+    "archived": false,
+    "card_count": 0,
+    "created_at": "2026-09-10T12:06:06.848821+00:00",
+    "id": "reply-wallet-20260910-105817",
+    "member_addresses": [
+      "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0"
+    ],
+    "name": "ReplyCheck human wallet test",
+    "owner": "0x29b8b7d7cbf534eba01e56919de19d79d1509360",
+    "review_count": 6,
+    "version": 1
+  },
+  "note": "Read-only verification through the pinned app client. Final successful execution, sender Wallet B, target, exact accept_invitation calldata and zero value were verified before source/state reads. The public recovery export independently matched the expected operation. Wallet B is now a member and appears exactly once; its invitation is consumed. The remaining workspace fields exactly match the verified invitation snapshot, including owner A, reference version 1, six reviews, zero cards and the original chain-stored created_at string. Membership has no stored acceptance timestamp field; none is invented. No wallet approval, signing or transaction sending by the verifier."
+}

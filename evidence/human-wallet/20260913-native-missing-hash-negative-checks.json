@@ -1,0 +1,733 @@
+{
+  "format": 1,
+  "status": "PASS_SCOPED_NATIVE_NEGATIVE_HASH_CHECKS_ORIGINAL_WALLET_OUTCOME_UNRESOLVED",
+  "recorded_at_utc": "2026-09-13T10:32:19.282Z",
+  "baseline_path": "evidence/human-wallet/20260913-native-missing-hash-baseline.json",
+  "source_pins": {
+    "requirements.lock": "af618b47c494bb9cabeea640ed676bada6dc703b484b7ec99a996e6ff6fbd228",
+    ".github/workflows/verify.yml": "23ecf2baca133d6c95589f70dfc5dc5230ff3625decc52358ad8277b34857227",
+    "components/reply/reply-app.tsx": "3ae7e2932a1fc284f05ecd052d06d13eb50b9cafe6393d994cccda6faf1545a7",
+    "hooks/use-reply-chain.ts": "c9c025dbb02a48bea80212cac936900bf3c8357de1f8ed12efcbeeaa225b4afa",
+    "components/reply/review-result.tsx": "0e678fada70d1140891f217e4dc631e947ea1c197a72575d2074b21ca72cb6b6",
+    "lib/reply/journal.ts": "b751afd0fdc38a82a946ccedaa45e045abe48b456442f46156252ee655c451d5",
+    "lib/reply/dialog-focus.ts": "c482c9d1963b08141848bc6175e9ecb72e69026348e2e60bd44cd47606700719",
+    "tests/web/accessibility-guards.test.mjs": "43d0f1703e7d5375fa417b2a8cfcc080c8c595577fda879dad1f1965fb71d1e3",
+    "contracts/reply_check.py": "cb09037c7ba0b4dc4a675eb09ee561eb828d82b57ff5eb703d76e204f555c1eb",
+    "tests/web/focus-wording.test.mjs": "f20498c834f93f06cb5baa72b949c02f1df7adfa3bbe17c4795500a52b375eee",
+    "components/ui/dialog.tsx": "8bc85def62538b4e62e8530c6b0ba167a192c38519c05f104bf6e10de73b811f",
+    "app/globals.css": "554769307fa9bf6bff3c629952354c6fa3e89d84658fcaa178b67fb790d4586b",
+    "lib/reply/receipt.ts": "5af35ec5c94b65a4bfd4fa51299c74dc29f39a1217b293582823a2d896ce4141",
+    "lib/reply/chain.ts": "39f78a310bacdcaa9b4130a05f808aa3e292aab3140bf35cf049d3f9d32d30f0",
+    "package.json": "850b859ddea43daeff88f81a58ece6d257094e25f0461fdb6e5622189dcfcd22",
+    ".openai/hosting.json": "1e57531566ba0cda88c259847e0b40818a3356b7ece2b7a09b675c4565f3eca7",
+    "lib/reply/suggestions.ts": "f56c7f9ccfcab0662f29d1bc82fc2ff530634ad099c7cf843a6ef8841117704a",
+    "components/reply/common.tsx": "ad4930794fb3bfa516baa2067480f60b3c089f935365017f882d06714bf7d83a",
+    "lib/reply/deployment.json": "63cf020eae7d627b44866726e03c9faa8dc34d6b79a0bf98c2d2de79f8927267",
+    ".gitattributes": "1bf09ac7aa77483d2a6007d105e24ed6b9db15c6515fb5b0b7e15899e92f71aa",
+    "app/reply.css": "7ac3c54f42e580e06220084817baa731e8b81816f18a1056cbd67312dc366cd2",
+    "tests/web/ui-audit-regression.test.mjs": "1aa48ed396f174e7ad8013fa7f1c96ce81b3581acd0920eb4f4db308121333d2",
+    "tests/web/session-reliability.test.mjs": "f81b360f50bff82a7b05967be757224f6b4156375ae5ebc105a31627956c72a0",
+    "package-lock.json": "07653e595abb64d6523b2867499e7bd8e9d4d004dea2dd083e4edb5521c83e19",
+    "evidence/read-evidence.mjs": "fc1a5a306b8b4c058f0b9e0d73c46d309c82d0efacc85b8bb508af32d909721d",
+    "evidence/offline-replays.json": "8fc2741d089affebdf80c220f78edab8e72ab8fa9af3ddc396bd2848346f546c",
+    "scripts/verify-saved-evidence.mjs": "45ac1792552e07cbdb99f42bec6f4790da75acb30fb022d9a7c4f9438d0397e9",
+    "tests/web/evidence-replay.test.mjs": "3ecbf215c102f742a0e762ecb2209ae3ef1d878316084b9bbf25b9359fcd0979",
+    "tests/web/recovery-hash-correction.test.mjs": "21f49e8fe5ad2c8738b5a8a636f544e07602acd59248a7521c67c58ac0d982dd",
+    "evidence/verify-checkpoint-pins.mjs": "9a00f9e67655418293168807a7f0b4fa6e9937215862849ce8f319a6b9afecf9",
+    "tests/web/checkpoint-inventory.test.mjs": "5b72056067b6dcb2986fd74df9edd0bc36a508060d03b686ef41556b5a918291",
+    "evidence/browser/replay-20260913-recovery-hash-fix.mjs": "b5ba81295dfe521bf265e5b1e6cdfcc49018c82484af7c739ffb37e2872df772",
+    "evidence/human-wallet/replays/20260913-pending-network-after-fix.mjs": "168e2633ab2970d12e18907ff19af94c1ca645a28f406cb83a9aa08f6a74671e",
+    "lib/reply/core.ts": "29fe0ca69944c1de9e2ae4092160cf8c4a3a2bbb55a4d1d74d8e138ce73ea3e3",
+    "tests/web/missing-transaction.test.mjs": "475c41a5f4a2e24e6271dec505a31f4869e4ad71613a1d9edf367f5b62ec9087",
+    "evidence/source-snapshots/20260913-before-missing-hash-wording/core.ts.snapshot": "6a7173848e7ba926dd9dffa8e6cf97e95ee45aedeb9d2d7c3f48001e0c6b919d",
+    "evidence/human-wallet/preflights/20260913-verify-missing-hash-wording.mjs": "2289fc99893bd75dbaaf41622362781b0b03a1d6e775aa614f85a5515436ac43",
+    "evidence/human-wallet/20260913-missing-hash-wording-finding.json": "802475bd1192aaaaec0239624aa7a837ff50ee59d2b81cc6670f5eb9e78f7c48",
+    "evidence/human-wallet/20260913-two-tab-hash-reconciled.json": "533364ca5f9bda89a9353bbf4f8ce08929f34b4b04dc833824cdbdbf80e3a8c4"
+  },
+  "intended": {
+    "account": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0",
+    "contract": "0xBD35B1E68aeC803Bd793Db9c6B9762b60f60029A",
+    "chainId": 61999,
+    "method": "submit_review",
+    "workspace": "reply-wallet-20260910-105817",
+    "version": 2,
+    "question": "How long do I have to request a refund?",
+    "draft": "Refund requests must be submitted within 14 days of purchase.",
+    "request_digest": "2ae740d30b55e5991fe14ba32b3e9d41d247db9e66232f47823048f48067686c",
+    "reference_digest": "1041401ae7c08750497e55652d30fc9119a0a27e6e712c016e13b9faaa1ca9f0",
+    "attached_value_wei": "0",
+    "expected_verdict": "MATCHES_REFERENCES",
+    "expected_question_status": "ANSWERED",
+    "expected_reason_codes": [
+      "CLAIM_SUPPORTED"
+    ],
+    "expected_review_count_before": 15,
+    "expected_review_count_after": 16,
+    "request_id": null,
+    "review_id": null,
+    "transaction_hash": null,
+    "prohibited_resubmission_hashes": [
+      "0xd968466ecff091c494e36e75646c6c70ea8e6ed85c61a592b8f21d10e68993fb",
+      "0xeb94cb35bc3bb2d21d8c65059f43a79c5775091b63df40fa3da1ea33e8b7fb99",
+      "0x508dfeec460005432da63ba4742e797ff6f901ff9f68b8af372e511f9753d72e",
+      "0x6f8bccb77b08ca2ace92e78a858e84fae002c16e11e0324fa7b619dc187cdfec",
+      "0x88440d641b31d15c9b66cb81e994bc55d1fb57dd89b2b0dc045ede4b83fcd41a",
+      "0xf311de10a7afbf3ba0dc72d9736abfb007cc6ca91dd9d420c6e8b02ae144c3a7"
+    ]
+  },
+  "unsigned_dialog": {
+    "tab": "primary",
+    "label": "native-missing-hash-unsigned-dialog",
+    "snapshotRequestedAt": "2026-09-13T10:28:50.756Z",
+    "snapshotCompletedAt": "2026-09-13T10:28:50.830Z",
+    "snapshot": "- link:\n  - /url: \"#main-content\"\n  - text: Skip to workspace\n- banner:\n  - link:\n    - /url: /\n    - generic: ReplyCheck\n  - button:\n    - generic: ReplyCheck human wallet test\n  - button:\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading [level=1]: Check a reply\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button:\n    - text: Refresh\n  - tablist:\n    - tab [selected]:\n      - generic: Check\n    - tab:\n      - text: Library\n    - tab:\n      - text: History\n    - tab:\n      - generic: Gym\n    - tab:\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading [level=2]: Your draft\n    - generic: References v2\n    - generic: Question\n    - generic: 39 / 1,500 bytes\n    - textbox:\n      - /placeholder: What are they asking?\n      - text: How long do I have to request a refund?\n    - generic: Your reply\n    - generic: 61 / 3,000 bytes\n    - textbox:\n      - /placeholder: Write or paste your reply…\n      - text: Refund requests must be submitted within 14 days of purchase.\n    - text: Public information only\n    - generic: 1 / 12 sentences\n    - button:\n      - text: Review draft\n    - paragraph: Confirm the public submission before signing.\n    - complementary:\n      - heading [level=2]:\n        - text: References\n      - generic: v2\n      - text: Fictional refund policy\n      - button:\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button:\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic: Build information\n- dialog \"Check this reply\":\n  - heading \"Check this reply\" [level=2]\n  - paragraph: One wallet-signed action on GenLayer Studionet.\n  - term: Wallet\n  - definition: 0x7cef5d…8d97d0\n  - term: Contract payment\n  - definition: 0 GEN · network fees may apply\n  - paragraph: \"Workspace: ReplyCheck human wallet test · references v2\"\n  - paragraph: \"Question: How long do I have to request a refund?\"\n  - paragraph: \"Draft: Refund requests must be submitted within 14 days of purchase.\"\n  - paragraph: GenLayer will assess the complete draft. No customer message is sent.\n  - status: This content and your wallet address can become public permanently, even if the transaction fails. Remove private tickets, personal details and secrets.\n  - checkbox \"I checked the content and agree to publish it.\" [active]\n  - checkbox\n  - generic: I checked the content and agree to publish it.\n  - button \"Cancel\"\n  - button \"Continue to wallet\" [disabled]\n  - button \"Close\":\n    - generic: Close",
+    "visible": {
+      "account": "unobserved",
+      "role": "owner",
+      "hash": null,
+      "recovery_present": false,
+      "pending_ui": false,
+      "terminal_ui": false,
+      "recovery_signer_b": false,
+      "valid_draft_denied": false,
+      "consent_dialog_open": true,
+      "off_studionet_ui": false,
+      "waiting_wallet": false,
+      "uncertain": false,
+      "recovery_input": false,
+      "checking_hash": false
+    }
+  },
+  "checked_dialog": {
+    "tab": "primary",
+    "label": "native-missing-hash-local-fictional-consent-checked",
+    "snapshotRequestedAt": "2026-09-13T10:29:20.175Z",
+    "snapshotCompletedAt": "2026-09-13T10:29:20.204Z",
+    "snapshot": "- link:\n  - /url: \"#main-content\"\n  - text: Skip to workspace\n- banner:\n  - link:\n    - /url: /\n    - generic: ReplyCheck\n  - button:\n    - generic: ReplyCheck human wallet test\n  - button:\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading [level=1]: Check a reply\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button:\n    - text: Refresh\n  - tablist:\n    - tab [selected]:\n      - generic: Check\n    - tab:\n      - text: Library\n    - tab:\n      - text: History\n    - tab:\n      - generic: Gym\n    - tab:\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading [level=2]: Your draft\n    - generic: References v2\n    - generic: Question\n    - generic: 39 / 1,500 bytes\n    - textbox:\n      - /placeholder: What are they asking?\n      - text: How long do I have to request a refund?\n    - generic: Your reply\n    - generic: 61 / 3,000 bytes\n    - textbox:\n      - /placeholder: Write or paste your reply…\n      - text: Refund requests must be submitted within 14 days of purchase.\n    - text: Public information only\n    - generic: 1 / 12 sentences\n    - button:\n      - text: Review draft\n    - paragraph: Confirm the public submission before signing.\n    - complementary:\n      - heading [level=2]:\n        - text: References\n      - generic: v2\n      - text: Fictional refund policy\n      - button:\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button:\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic: Build information\n- dialog \"Check this reply\":\n  - heading \"Check this reply\" [level=2]\n  - paragraph: One wallet-signed action on GenLayer Studionet.\n  - term: Wallet\n  - definition: 0x7cef5d…8d97d0\n  - term: Contract payment\n  - definition: 0 GEN · network fees may apply\n  - paragraph: \"Workspace: ReplyCheck human wallet test · references v2\"\n  - paragraph: \"Question: How long do I have to request a refund?\"\n  - paragraph: \"Draft: Refund requests must be submitted within 14 days of purchase.\"\n  - paragraph: GenLayer will assess the complete draft. No customer message is sent.\n  - status: This content and your wallet address can become public permanently, even if the transaction fails. Remove private tickets, personal details and secrets.\n  - checkbox \"I checked the content and agree to publish it.\" [checked] [active]:\n  - checkbox [checked]\n  - generic: I checked the content and agree to publish it.\n  - button \"Cancel\"\n  - button \"Continue to wallet\"\n  - button \"Close\":\n    - generic: Close",
+    "visible": {
+      "account": "unobserved",
+      "role": "owner",
+      "hash": null,
+      "recovery_present": false,
+      "pending_ui": false,
+      "terminal_ui": false,
+      "recovery_signer_b": false,
+      "valid_draft_denied": false,
+      "consent_dialog_open": true,
+      "off_studionet_ui": false,
+      "waiting_wallet": false,
+      "uncertain": false,
+      "recovery_input": false,
+      "checking_hash": false
+    }
+  },
+  "dispatch": {
+    "tab": "primary",
+    "label": "native-missing-hash-original-request-dispatched",
+    "snapshotRequestedAt": "2026-09-13T10:29:28.727Z",
+    "snapshotCompletedAt": "2026-09-13T10:29:28.763Z",
+    "snapshot": "- link:\n  - /url: \"#main-content\"\n  - text: Skip to workspace\n- banner:\n  - link:\n    - /url: /\n    - generic: ReplyCheck\n  - button [disabled]:\n    - generic: ReplyCheck human wallet test\n  - button [disabled]:\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading [level=1]: Check a reply\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button [disabled]:\n    - text: Refresh\n  - tablist:\n    - tab [selected]:\n      - generic: Check\n    - tab:\n      - text: Library\n    - tab:\n      - text: History\n    - tab:\n      - generic: Gym\n    - tab:\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading [level=2]: Your draft\n    - generic: References v2\n    - generic: Question\n    - generic: 39 / 1,500 bytes\n    - textbox:\n      - /placeholder: What are they asking?\n      - text: How long do I have to request a refund?\n    - generic: Your reply\n    - generic: 61 / 3,000 bytes\n    - textbox:\n      - /placeholder: Write or paste your reply…\n      - text: Refund requests must be submitted within 14 days of purchase.\n    - text: Public information only\n    - generic: 1 / 12 sentences\n    - button [disabled]:\n      - text: Review draft\n    - paragraph: Confirm the public submission before signing.\n    - complementary:\n      - heading [level=2]:\n        - text: References\n      - generic: v2\n      - text: Fictional refund policy\n      - button:\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button:\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic: Build information\n- dialog \"Check this reply\":\n  - heading \"Check this reply\" [level=2]\n  - paragraph: One wallet-signed action on GenLayer Studionet.\n  - term: Wallet\n  - definition: 0x7cef5d…8d97d0\n  - term: Contract payment\n  - definition: 0 GEN · network fees may apply\n  - paragraph: \"Workspace: ReplyCheck human wallet test · references v2\"\n  - paragraph: \"Question: How long do I have to request a refund?\"\n  - paragraph: \"Draft: Refund requests must be submitted within 14 days of purchase.\"\n  - paragraph: GenLayer will assess the complete draft. No customer message is sent.\n  - status: This content and your wallet address can become public permanently, even if the transaction fails. Remove private tickets, personal details and secrets.\n  - checkbox \"I checked the content and agree to publish it.\" [disabled]\n  - checkbox [disabled]\n  - generic: I checked the content and agree to publish it.\n  - button \"Cancel\" [disabled]\n  - button \"Waiting for wallet…\" [disabled]",
+    "visible": {
+      "account": "unobserved",
+      "role": "owner",
+      "hash": null,
+      "recovery_present": false,
+      "pending_ui": false,
+      "terminal_ui": false,
+      "recovery_signer_b": false,
+      "valid_draft_denied": false,
+      "consent_dialog_open": true,
+      "off_studionet_ui": false,
+      "waiting_wallet": true,
+      "uncertain": false,
+      "recovery_input": false,
+      "checking_hash": false
+    }
+  },
+  "durable_before_reload": {
+    "label": "durable-intent-visible-before-origin-reload",
+    "requested_at": "2026-09-13T10:30:08.085Z",
+    "observed_at": "2026-09-13T10:30:08.191Z",
+    "primary": {
+      "tab": "primary",
+      "label": "durable-intent-visible-before-origin-reload",
+      "snapshotRequestedAt": "2026-09-13T10:30:08.085Z",
+      "snapshotCompletedAt": "2026-09-13T10:30:08.118Z",
+      "snapshot": "- link:\n  - /url: \"#main-content\"\n  - text: Skip to workspace\n- banner:\n  - link:\n    - /url: /\n    - generic: ReplyCheck\n  - button [disabled]:\n    - generic: ReplyCheck human wallet test\n  - button [disabled]:\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading [level=1]: Check a reply\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button [disabled]:\n    - text: Refresh\n  - tablist:\n    - tab [selected]:\n      - generic: Check\n    - tab:\n      - text: Library\n    - tab:\n      - text: History\n    - tab:\n      - generic: Gym\n    - tab:\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading [level=2]: Your draft\n    - generic: References v2\n    - generic: Question\n    - generic: 39 / 1,500 bytes\n    - textbox:\n      - /placeholder: What are they asking?\n      - text: How long do I have to request a refund?\n    - generic: Your reply\n    - generic: 61 / 3,000 bytes\n    - textbox:\n      - /placeholder: Write or paste your reply…\n      - text: Refund requests must be submitted within 14 days of purchase.\n    - text: Public information only\n    - generic: 1 / 12 sentences\n    - button [disabled]:\n      - text: Review draft\n    - paragraph: Confirm the public submission before signing.\n    - complementary:\n      - heading [level=2]:\n        - text: References\n      - generic: v2\n      - text: Fictional refund policy\n      - button:\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button:\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic: Build information\n- dialog \"Check this reply\":\n  - heading \"Check this reply\" [level=2]\n  - paragraph: One wallet-signed action on GenLayer Studionet.\n  - term: Wallet\n  - definition: 0x7cef5d…8d97d0\n  - term: Contract payment\n  - definition: 0 GEN · network fees may apply\n  - paragraph: \"Workspace: ReplyCheck human wallet test · references v2\"\n  - paragraph: \"Question: How long do I have to request a refund?\"\n  - paragraph: \"Draft: Refund requests must be submitted within 14 days of purchase.\"\n  - paragraph: GenLayer will assess the complete draft. No customer message is sent.\n  - status: This content and your wallet address can become public permanently, even if the transaction fails. Remove private tickets, personal details and secrets.\n  - checkbox \"I checked the content and agree to publish it.\" [disabled]\n  - checkbox [disabled]\n  - generic: I checked the content and agree to publish it.\n  - button \"Cancel\" [disabled]\n  - button \"Waiting for wallet…\" [disabled]",
+      "visible": {
+        "account": "unobserved",
+        "role": "owner",
+        "hash": null,
+        "recovery_present": false,
+        "pending_ui": false,
+        "terminal_ui": false,
+        "recovery_signer_b": false,
+        "valid_draft_denied": false,
+        "consent_dialog_open": true,
+        "off_studionet_ui": false,
+        "waiting_wallet": true,
+        "uncertain": false,
+        "recovery_input": false,
+        "checking_hash": false
+      }
+    },
+    "witness": {
+      "snapshot": "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x7cef5d…8d97d0\":\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - text: WALLET OUTCOME UNKNOWN\n  - heading \"Check this reply\" [level=3]\n  - paragraph: Check wallet Activity. If a transaction was sent, recover its hash below. No new actions can be sent until this is resolved.\n  - generic: Transaction hash from wallet Activity\n  - textbox \"Transaction hash from wallet Activity\":\n    - /placeholder: 0x…\n  - button \"Recover transaction\"\n  - 'button \"I checked: nothing was sent\"'\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 0 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n    - generic: Your reply\n    - generic: 0 / 3,000 bytes\n    - textbox \"Your reply\":\n      - /placeholder: Write or paste your reply…\n    - text: Public information only\n    - generic: 0 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph: Add a question of up to 1,500 UTF-8 bytes.\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\"",
+      "visible": {
+        "account": "B",
+        "role": "owner",
+        "hash": null,
+        "recovery_present": false,
+        "pending_ui": false,
+        "terminal_ui": false,
+        "recovery_signer_b": false,
+        "valid_draft_denied": false,
+        "consent_dialog_open": false,
+        "off_studionet_ui": false,
+        "uncertain": true,
+        "hashless_input": true,
+        "waiting_wallet": false
+      }
+    }
+  },
+  "missing_hash_case": {
+    "lookup_started": "2026-09-13T10:30:40.409Z",
+    "wait_error": null,
+    "after": {
+      "label": "after-actual-missing-hash-lookup",
+      "requested_at": "2026-09-13T10:30:41.216Z",
+      "observed_at": "2026-09-13T10:30:41.290Z",
+      "primary": {
+        "tab": "primary",
+        "label": "after-actual-missing-hash-lookup",
+        "snapshotRequestedAt": "2026-09-13T10:30:41.216Z",
+        "snapshotCompletedAt": "2026-09-13T10:30:41.247Z",
+        "snapshot": "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x7cef5d…8d97d0\":\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - alert:\n    - generic: Transaction not found on Studionet. Check the hash in wallet Activity and try the lookup again. Keep your recovery record; do not resend.\n    - button \"Dismiss\"\n  - text: WALLET OUTCOME UNKNOWN\n  - heading \"Check this reply\" [level=3]\n  - paragraph: Check wallet Activity. If a transaction was sent, recover its hash below. No new actions can be sent until this is resolved.\n  - generic: Transaction hash from wallet Activity\n  - textbox \"Transaction hash from wallet Activity\":\n    - /placeholder: 0x…\n    - text: \"0x0000000000000000000000000000000000000000000000000000000000000000\"\n  - button \"Recover transaction\"\n  - 'button \"I checked: nothing was sent\"'\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 39 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n      - text: How long do I have to request a refund?\n    - generic: Your reply\n    - generic: 61 / 3,000 bytes\n    - textbox \"Your reply\":\n      - /placeholder: Write or paste your reply…\n      - text: Refund requests must be submitted within 14 days of purchase.\n    - text: Public information only\n    - generic: 1 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph: Confirm the public submission before signing.\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\"",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        }
+      },
+      "witness": {
+        "snapshot": "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x7cef5d…8d97d0\":\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - text: WALLET OUTCOME UNKNOWN\n  - heading \"Check this reply\" [level=3]\n  - paragraph: Check wallet Activity. If a transaction was sent, recover its hash below. No new actions can be sent until this is resolved.\n  - generic: Transaction hash from wallet Activity\n  - textbox \"Transaction hash from wallet Activity\":\n    - /placeholder: 0x…\n  - button \"Recover transaction\"\n  - 'button \"I checked: nothing was sent\"'\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 0 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n    - generic: Your reply\n    - generic: 0 / 3,000 bytes\n    - textbox \"Your reply\":\n      - /placeholder: Write or paste your reply…\n    - text: Public information only\n    - generic: 0 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph: Add a question of up to 1,500 UTF-8 bytes.\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\"",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "uncertain": true,
+          "hashless_input": true,
+          "waiting_wallet": false
+        }
+      }
+    }
+  },
+  "unrelated_hash_case": {
+    "wait_error": null,
+    "after": {
+      "label": "unrelated-completed-hash-rejected-after-reload",
+      "requested_at": "2026-09-13T10:31:05.910Z",
+      "observed_at": "2026-09-13T10:31:05.987Z",
+      "primary": {
+        "tab": "primary",
+        "label": "unrelated-completed-hash-rejected-after-reload",
+        "snapshotRequestedAt": "2026-09-13T10:31:05.910Z",
+        "snapshotCompletedAt": "2026-09-13T10:31:05.936Z",
+        "snapshot": "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x7cef5d…8d97d0\":\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - alert:\n    - generic: This hash could not be verified for the original action. Check wallet Activity and try again.\n    - button \"Dismiss\"\n  - text: WALLET OUTCOME UNKNOWN\n  - heading \"Check this reply\" [level=3]\n  - paragraph: Check wallet Activity. If a transaction was sent, recover its hash below. No new actions can be sent until this is resolved.\n  - generic: Transaction hash from wallet Activity\n  - textbox \"Transaction hash from wallet Activity\":\n    - /placeholder: 0x…\n    - text: \"0xf311de10a7afbf3ba0dc72d9736abfb007cc6ca91dd9d420c6e8b02ae144c3a7\"\n  - button \"Recover transaction\"\n  - 'button \"I checked: nothing was sent\"'\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 39 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n      - text: How long do I have to request a refund?\n    - generic: Your reply\n    - generic: 61 / 3,000 bytes\n    - textbox \"Your reply\":\n      - /placeholder: Write or paste your reply…\n      - text: Refund requests must be submitted within 14 days of purchase.\n    - text: Public information only\n    - generic: 1 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph: Confirm the public submission before signing.\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\"",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        }
+      },
+      "witness": {
+        "snapshot": "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x7cef5d…8d97d0\":\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - text: WALLET OUTCOME UNKNOWN\n  - heading \"Check this reply\" [level=3]\n  - paragraph: Check wallet Activity. If a transaction was sent, recover its hash below. No new actions can be sent until this is resolved.\n  - generic: Transaction hash from wallet Activity\n  - textbox \"Transaction hash from wallet Activity\":\n    - /placeholder: 0x…\n  - button \"Recover transaction\"\n  - 'button \"I checked: nothing was sent\"'\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 0 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n    - generic: Your reply\n    - generic: 0 / 3,000 bytes\n    - textbox \"Your reply\":\n      - /placeholder: Write or paste your reply…\n    - text: Public information only\n    - generic: 0 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph: Add a question of up to 1,500 UTF-8 bytes.\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\"",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "uncertain": true,
+          "hashless_input": true,
+          "waiting_wallet": false
+        }
+      }
+    }
+  },
+  "observations": [
+    {
+      "label": "durable-intent-visible-before-origin-reload",
+      "requested_at": "2026-09-13T10:30:08.085Z",
+      "observed_at": "2026-09-13T10:30:08.191Z",
+      "primary": {
+        "tab": "primary",
+        "label": "durable-intent-visible-before-origin-reload",
+        "snapshotRequestedAt": "2026-09-13T10:30:08.085Z",
+        "snapshotCompletedAt": "2026-09-13T10:30:08.118Z",
+        "snapshot": "- link:\n  - /url: \"#main-content\"\n  - text: Skip to workspace\n- banner:\n  - link:\n    - /url: /\n    - generic: ReplyCheck\n  - button [disabled]:\n    - generic: ReplyCheck human wallet test\n  - button [disabled]:\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading [level=1]: Check a reply\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button [disabled]:\n    - text: Refresh\n  - tablist:\n    - tab [selected]:\n      - generic: Check\n    - tab:\n      - text: Library\n    - tab:\n      - text: History\n    - tab:\n      - generic: Gym\n    - tab:\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading [level=2]: Your draft\n    - generic: References v2\n    - generic: Question\n    - generic: 39 / 1,500 bytes\n    - textbox:\n      - /placeholder: What are they asking?\n      - text: How long do I have to request a refund?\n    - generic: Your reply\n    - generic: 61 / 3,000 bytes\n    - textbox:\n      - /placeholder: Write or paste your reply…\n      - text: Refund requests must be submitted within 14 days of purchase.\n    - text: Public information only\n    - generic: 1 / 12 sentences\n    - button [disabled]:\n      - text: Review draft\n    - paragraph: Confirm the public submission before signing.\n    - complementary:\n      - heading [level=2]:\n        - text: References\n      - generic: v2\n      - text: Fictional refund policy\n      - button:\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button:\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic: Build information\n- dialog \"Check this reply\":\n  - heading \"Check this reply\" [level=2]\n  - paragraph: One wallet-signed action on GenLayer Studionet.\n  - term: Wallet\n  - definition: 0x7cef5d…8d97d0\n  - term: Contract payment\n  - definition: 0 GEN · network fees may apply\n  - paragraph: \"Workspace: ReplyCheck human wallet test · references v2\"\n  - paragraph: \"Question: How long do I have to request a refund?\"\n  - paragraph: \"Draft: Refund requests must be submitted within 14 days of purchase.\"\n  - paragraph: GenLayer will assess the complete draft. No customer message is sent.\n  - status: This content and your wallet address can become public permanently, even if the transaction fails. Remove private tickets, personal details and secrets.\n  - checkbox \"I checked the content and agree to publish it.\" [disabled]\n  - checkbox [disabled]\n  - generic: I checked the content and agree to publish it.\n  - button \"Cancel\" [disabled]\n  - button \"Waiting for wallet…\" [disabled]",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        }
+      },
+      "witness": {
+        "snapshot": "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x7cef5d…8d97d0\":\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - text: WALLET OUTCOME UNKNOWN\n  - heading \"Check this reply\" [level=3]\n  - paragraph: Check wallet Activity. If a transaction was sent, recover its hash below. No new actions can be sent until this is resolved.\n  - generic: Transaction hash from wallet Activity\n  - textbox \"Transaction hash from wallet Activity\":\n    - /placeholder: 0x…\n  - button \"Recover transaction\"\n  - 'button \"I checked: nothing was sent\"'\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 0 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n    - generic: Your reply\n    - generic: 0 / 3,000 bytes\n    - textbox \"Your reply\":\n      - /placeholder: Write or paste your reply…\n    - text: Public information only\n    - generic: 0 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph: Add a question of up to 1,500 UTF-8 bytes.\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\"",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "uncertain": true,
+          "hashless_input": true,
+          "waiting_wallet": false
+        }
+      }
+    },
+    {
+      "label": "origin-reloaded-request-not-resent",
+      "requested_at": "2026-09-13T10:30:09.006Z",
+      "observed_at": "2026-09-13T10:30:09.217Z",
+      "primary": {
+        "tab": "primary",
+        "label": "origin-reloaded-request-not-resent",
+        "snapshotRequestedAt": "2026-09-13T10:30:09.006Z",
+        "snapshotCompletedAt": "2026-09-13T10:30:09.154Z",
+        "snapshot": "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"Open workspace\":\n    - generic: Open workspace\n  - button \"Connect wallet\":\n    - text: Connect wallet\n- main:\n  - heading \"Check a reply\" [level=1]\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel:\n    - heading \"Your draft\" [level=2]\n    - generic: Draft mode\n    - generic: Question\n    - generic: 0 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n    - generic: Your reply\n    - generic: 0 / 3,000 bytes\n    - textbox \"Your reply\":\n      - /placeholder: Write or paste your reply…\n    - text: Public information only\n    - generic: 0 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph: Open a workspace to check a reply.\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - heading \"No references selected\" [level=3]\n      - paragraph: Choose a workspace to load its reference library.\n      - button \"Choose a workspace\"\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\"",
+        "visible": {
+          "account": "unobserved",
+          "role": "unobserved",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        }
+      },
+      "witness": {
+        "snapshot": "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x7cef5d…8d97d0\":\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - text: WALLET OUTCOME UNKNOWN\n  - heading \"Check this reply\" [level=3]\n  - paragraph: Check wallet Activity. If a transaction was sent, recover its hash below. No new actions can be sent until this is resolved.\n  - generic: Transaction hash from wallet Activity\n  - textbox \"Transaction hash from wallet Activity\":\n    - /placeholder: 0x…\n  - button \"Recover transaction\"\n  - 'button \"I checked: nothing was sent\"'\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 0 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n    - generic: Your reply\n    - generic: 0 / 3,000 bytes\n    - textbox \"Your reply\":\n      - /placeholder: Write or paste your reply…\n    - text: Public information only\n    - generic: 0 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph: Add a question of up to 1,500 UTF-8 bytes.\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\"",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "uncertain": true,
+          "hashless_input": true,
+          "waiting_wallet": false
+        }
+      }
+    },
+    {
+      "label": "reloaded-hashless-intent-hydrated",
+      "requested_at": "2026-09-13T10:30:23.367Z",
+      "observed_at": "2026-09-13T10:30:23.458Z",
+      "primary": {
+        "tab": "primary",
+        "label": "reloaded-hashless-intent-hydrated",
+        "snapshotRequestedAt": "2026-09-13T10:30:23.367Z",
+        "snapshotCompletedAt": "2026-09-13T10:30:23.409Z",
+        "snapshot": "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x7cef5d…8d97d0\":\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - text: WALLET OUTCOME UNKNOWN\n  - heading \"Check this reply\" [level=3]\n  - paragraph: Check wallet Activity. If a transaction was sent, recover its hash below. No new actions can be sent until this is resolved.\n  - generic: Transaction hash from wallet Activity\n  - textbox \"Transaction hash from wallet Activity\":\n    - /placeholder: 0x…\n  - button \"Recover transaction\"\n  - 'button \"I checked: nothing was sent\"'\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 0 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n    - generic: Your reply\n    - generic: 0 / 3,000 bytes\n    - textbox \"Your reply\":\n      - /placeholder: Write or paste your reply…\n    - text: Public information only\n    - generic: 0 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph: Add a question of up to 1,500 UTF-8 bytes.\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\"",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        }
+      },
+      "witness": {
+        "snapshot": "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x7cef5d…8d97d0\":\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - text: WALLET OUTCOME UNKNOWN\n  - heading \"Check this reply\" [level=3]\n  - paragraph: Check wallet Activity. If a transaction was sent, recover its hash below. No new actions can be sent until this is resolved.\n  - generic: Transaction hash from wallet Activity\n  - textbox \"Transaction hash from wallet Activity\":\n    - /placeholder: 0x…\n  - button \"Recover transaction\"\n  - 'button \"I checked: nothing was sent\"'\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 0 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n    - generic: Your reply\n    - generic: 0 / 3,000 bytes\n    - textbox \"Your reply\":\n      - /placeholder: Write or paste your reply…\n    - text: Public information only\n    - generic: 0 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph: Add a question of up to 1,500 UTF-8 bytes.\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\"",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "uncertain": true,
+          "hashless_input": true,
+          "waiting_wallet": false
+        }
+      }
+    },
+    {
+      "label": "valid-draft-blocked-by-recovered-intent",
+      "requested_at": "2026-09-13T10:30:23.524Z",
+      "observed_at": "2026-09-13T10:30:23.627Z",
+      "primary": {
+        "tab": "primary",
+        "label": "valid-draft-blocked-by-recovered-intent",
+        "snapshotRequestedAt": "2026-09-13T10:30:23.525Z",
+        "snapshotCompletedAt": "2026-09-13T10:30:23.576Z",
+        "snapshot": "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x7cef5d…8d97d0\":\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - text: WALLET OUTCOME UNKNOWN\n  - heading \"Check this reply\" [level=3]\n  - paragraph: Check wallet Activity. If a transaction was sent, recover its hash below. No new actions can be sent until this is resolved.\n  - generic: Transaction hash from wallet Activity\n  - textbox \"Transaction hash from wallet Activity\":\n    - /placeholder: 0x…\n  - button \"Recover transaction\"\n  - 'button \"I checked: nothing was sent\"'\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 39 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n      - text: How long do I have to request a refund?\n    - generic: Your reply\n    - generic: 61 / 3,000 bytes\n    - textbox \"Your reply\" [active]:\n      - /placeholder: Write or paste your reply…\n      - text: Refund requests must be submitted within 14 days of purchase.\n    - text: Public information only\n    - generic: 1 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph: Confirm the public submission before signing.\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\"",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        }
+      },
+      "witness": {
+        "snapshot": "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x7cef5d…8d97d0\":\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - text: WALLET OUTCOME UNKNOWN\n  - heading \"Check this reply\" [level=3]\n  - paragraph: Check wallet Activity. If a transaction was sent, recover its hash below. No new actions can be sent until this is resolved.\n  - generic: Transaction hash from wallet Activity\n  - textbox \"Transaction hash from wallet Activity\":\n    - /placeholder: 0x…\n  - button \"Recover transaction\"\n  - 'button \"I checked: nothing was sent\"'\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 0 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n    - generic: Your reply\n    - generic: 0 / 3,000 bytes\n    - textbox \"Your reply\":\n      - /placeholder: Write or paste your reply…\n    - text: Public information only\n    - generic: 0 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph: Add a question of up to 1,500 UTF-8 bytes.\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\"",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "uncertain": true,
+          "hashless_input": true,
+          "waiting_wallet": false
+        }
+      }
+    },
+    {
+      "label": "before-actual-missing-hash-lookup",
+      "requested_at": "2026-09-13T10:30:40.304Z",
+      "observed_at": "2026-09-13T10:30:40.377Z",
+      "primary": {
+        "tab": "primary",
+        "label": "before-actual-missing-hash-lookup",
+        "snapshotRequestedAt": "2026-09-13T10:30:40.304Z",
+        "snapshotCompletedAt": "2026-09-13T10:30:40.336Z",
+        "snapshot": "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x7cef5d…8d97d0\":\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - text: WALLET OUTCOME UNKNOWN\n  - heading \"Check this reply\" [level=3]\n  - paragraph: Check wallet Activity. If a transaction was sent, recover its hash below. No new actions can be sent until this is resolved.\n  - generic: Transaction hash from wallet Activity\n  - textbox \"Transaction hash from wallet Activity\":\n    - /placeholder: 0x…\n  - button \"Recover transaction\"\n  - 'button \"I checked: nothing was sent\"'\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 39 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n      - text: How long do I have to request a refund?\n    - generic: Your reply\n    - generic: 61 / 3,000 bytes\n    - textbox \"Your reply\" [active]:\n      - /placeholder: Write or paste your reply…\n      - text: Refund requests must be submitted within 14 days of purchase.\n    - text: Public information only\n    - generic: 1 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph: Confirm the public submission before signing.\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\"",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        }
+      },
+      "witness": {
+        "snapshot": "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x7cef5d…8d97d0\":\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - text: WALLET OUTCOME UNKNOWN\n  - heading \"Check this reply\" [level=3]\n  - paragraph: Check wallet Activity. If a transaction was sent, recover its hash below. No new actions can be sent until this is resolved.\n  - generic: Transaction hash from wallet Activity\n  - textbox \"Transaction hash from wallet Activity\":\n    - /placeholder: 0x…\n  - button \"Recover transaction\"\n  - 'button \"I checked: nothing was sent\"'\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 0 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n    - generic: Your reply\n    - generic: 0 / 3,000 bytes\n    - textbox \"Your reply\":\n      - /placeholder: Write or paste your reply…\n    - text: Public information only\n    - generic: 0 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph: Add a question of up to 1,500 UTF-8 bytes.\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\"",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "uncertain": true,
+          "hashless_input": true,
+          "waiting_wallet": false
+        }
+      }
+    },
+    {
+      "label": "after-actual-missing-hash-lookup",
+      "requested_at": "2026-09-13T10:30:41.216Z",
+      "observed_at": "2026-09-13T10:30:41.290Z",
+      "primary": {
+        "tab": "primary",
+        "label": "after-actual-missing-hash-lookup",
+        "snapshotRequestedAt": "2026-09-13T10:30:41.216Z",
+        "snapshotCompletedAt": "2026-09-13T10:30:41.247Z",
+        "snapshot": "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x7cef5d…8d97d0\":\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - alert:\n    - generic: Transaction not found on Studionet. Check the hash in wallet Activity and try the lookup again. Keep your recovery record; do not resend.\n    - button \"Dismiss\"\n  - text: WALLET OUTCOME UNKNOWN\n  - heading \"Check this reply\" [level=3]\n  - paragraph: Check wallet Activity. If a transaction was sent, recover its hash below. No new actions can be sent until this is resolved.\n  - generic: Transaction hash from wallet Activity\n  - textbox \"Transaction hash from wallet Activity\":\n    - /placeholder: 0x…\n    - text: \"0x0000000000000000000000000000000000000000000000000000000000000000\"\n  - button \"Recover transaction\"\n  - 'button \"I checked: nothing was sent\"'\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 39 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n      - text: How long do I have to request a refund?\n    - generic: Your reply\n    - generic: 61 / 3,000 bytes\n    - textbox \"Your reply\":\n      - /placeholder: Write or paste your reply…\n      - text: Refund requests must be submitted within 14 days of purchase.\n    - text: Public information only\n    - generic: 1 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph: Confirm the public submission before signing.\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\"",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        }
+      },
+      "witness": {
+        "snapshot": "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x7cef5d…8d97d0\":\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - text: WALLET OUTCOME UNKNOWN\n  - heading \"Check this reply\" [level=3]\n  - paragraph: Check wallet Activity. If a transaction was sent, recover its hash below. No new actions can be sent until this is resolved.\n  - generic: Transaction hash from wallet Activity\n  - textbox \"Transaction hash from wallet Activity\":\n    - /placeholder: 0x…\n  - button \"Recover transaction\"\n  - 'button \"I checked: nothing was sent\"'\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 0 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n    - generic: Your reply\n    - generic: 0 / 3,000 bytes\n    - textbox \"Your reply\":\n      - /placeholder: Write or paste your reply…\n    - text: Public information only\n    - generic: 0 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph: Add a question of up to 1,500 UTF-8 bytes.\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\"",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "uncertain": true,
+          "hashless_input": true,
+          "waiting_wallet": false
+        }
+      }
+    },
+    {
+      "label": "unrelated-completed-hash-rejected-after-reload",
+      "requested_at": "2026-09-13T10:31:05.910Z",
+      "observed_at": "2026-09-13T10:31:05.987Z",
+      "primary": {
+        "tab": "primary",
+        "label": "unrelated-completed-hash-rejected-after-reload",
+        "snapshotRequestedAt": "2026-09-13T10:31:05.910Z",
+        "snapshotCompletedAt": "2026-09-13T10:31:05.936Z",
+        "snapshot": "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x7cef5d…8d97d0\":\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - alert:\n    - generic: This hash could not be verified for the original action. Check wallet Activity and try again.\n    - button \"Dismiss\"\n  - text: WALLET OUTCOME UNKNOWN\n  - heading \"Check this reply\" [level=3]\n  - paragraph: Check wallet Activity. If a transaction was sent, recover its hash below. No new actions can be sent until this is resolved.\n  - generic: Transaction hash from wallet Activity\n  - textbox \"Transaction hash from wallet Activity\":\n    - /placeholder: 0x…\n    - text: \"0xf311de10a7afbf3ba0dc72d9736abfb007cc6ca91dd9d420c6e8b02ae144c3a7\"\n  - button \"Recover transaction\"\n  - 'button \"I checked: nothing was sent\"'\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 39 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n      - text: How long do I have to request a refund?\n    - generic: Your reply\n    - generic: 61 / 3,000 bytes\n    - textbox \"Your reply\":\n      - /placeholder: Write or paste your reply…\n      - text: Refund requests must be submitted within 14 days of purchase.\n    - text: Public information only\n    - generic: 1 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph: Confirm the public submission before signing.\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\"",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        }
+      },
+      "witness": {
+        "snapshot": "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x7cef5d…8d97d0\":\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - text: WALLET OUTCOME UNKNOWN\n  - heading \"Check this reply\" [level=3]\n  - paragraph: Check wallet Activity. If a transaction was sent, recover its hash below. No new actions can be sent until this is resolved.\n  - generic: Transaction hash from wallet Activity\n  - textbox \"Transaction hash from wallet Activity\":\n    - /placeholder: 0x…\n  - button \"Recover transaction\"\n  - 'button \"I checked: nothing was sent\"'\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 0 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n    - generic: Your reply\n    - generic: 0 / 3,000 bytes\n    - textbox \"Your reply\":\n      - /placeholder: Write or paste your reply…\n    - text: Public information only\n    - generic: 0 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph: Add a question of up to 1,500 UTF-8 bytes.\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\"",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "uncertain": true,
+          "hashless_input": true,
+          "waiting_wallet": false
+        }
+      }
+    },
+    {
+      "label": "negative-candidates-cleared-original-recovery-retained",
+      "requested_at": "2026-09-13T10:31:22.209Z",
+      "observed_at": "2026-09-13T10:31:22.282Z",
+      "primary": {
+        "tab": "primary",
+        "label": "negative-candidates-cleared-original-recovery-retained",
+        "snapshotRequestedAt": "2026-09-13T10:31:22.209Z",
+        "snapshotCompletedAt": "2026-09-13T10:31:22.241Z",
+        "snapshot": "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x7cef5d…8d97d0\":\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - alert:\n    - generic: This hash could not be verified for the original action. Check wallet Activity and try again.\n    - button \"Dismiss\"\n  - text: WALLET OUTCOME UNKNOWN\n  - heading \"Check this reply\" [level=3]\n  - paragraph: Check wallet Activity. If a transaction was sent, recover its hash below. No new actions can be sent until this is resolved.\n  - generic: Transaction hash from wallet Activity\n  - textbox \"Transaction hash from wallet Activity\" [active]:\n    - /placeholder: 0x…\n    - text: \"0xf311de10a7afbf3ba0dc72d9736abfb007cc6ca91dd9d420c6e8b02ae144c3a7\"\n  - button \"Recover transaction\"\n  - 'button \"I checked: nothing was sent\"'\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 39 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n      - text: How long do I have to request a refund?\n    - generic: Your reply\n    - generic: 61 / 3,000 bytes\n    - textbox \"Your reply\":\n      - /placeholder: Write or paste your reply…\n      - text: Refund requests must be submitted within 14 days of purchase.\n    - text: Public information only\n    - generic: 1 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph: Confirm the public submission before signing.\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\"",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        }
+      },
+      "witness": {
+        "snapshot": "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x7cef5d…8d97d0\":\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - text: WALLET OUTCOME UNKNOWN\n  - heading \"Check this reply\" [level=3]\n  - paragraph: Check wallet Activity. If a transaction was sent, recover its hash below. No new actions can be sent until this is resolved.\n  - generic: Transaction hash from wallet Activity\n  - textbox \"Transaction hash from wallet Activity\":\n    - /placeholder: 0x…\n  - button \"Recover transaction\"\n  - 'button \"I checked: nothing was sent\"'\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 0 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n    - generic: Your reply\n    - generic: 0 / 3,000 bytes\n    - textbox \"Your reply\":\n      - /placeholder: Write or paste your reply…\n    - text: Public information only\n    - generic: 0 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph: Add a question of up to 1,500 UTF-8 bytes.\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\"",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "uncertain": true,
+          "hashless_input": true,
+          "waiting_wallet": false
+        }
+      }
+    }
+  ],
+  "final": {
+    "label": "negative-candidates-cleared-original-recovery-retained",
+    "requested_at": "2026-09-13T10:31:22.209Z",
+    "observed_at": "2026-09-13T10:31:22.282Z",
+    "primary": {
+      "tab": "primary",
+      "label": "negative-candidates-cleared-original-recovery-retained",
+      "snapshotRequestedAt": "2026-09-13T10:31:22.209Z",
+      "snapshotCompletedAt": "2026-09-13T10:31:22.241Z",
+      "snapshot": "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x7cef5d…8d97d0\":\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - alert:\n    - generic: This hash could not be verified for the original action. Check wallet Activity and try again.\n    - button \"Dismiss\"\n  - text: WALLET OUTCOME UNKNOWN\n  - heading \"Check this reply\" [level=3]\n  - paragraph: Check wallet Activity. If a transaction was sent, recover its hash below. No new actions can be sent until this is resolved.\n  - generic: Transaction hash from wallet Activity\n  - textbox \"Transaction hash from wallet Activity\" [active]:\n    - /placeholder: 0x…\n    - text: \"0xf311de10a7afbf3ba0dc72d9736abfb007cc6ca91dd9d420c6e8b02ae144c3a7\"\n  - button \"Recover transaction\"\n  - 'button \"I checked: nothing was sent\"'\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 39 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n      - text: How long do I have to request a refund?\n    - generic: Your reply\n    - generic: 61 / 3,000 bytes\n    - textbox \"Your reply\":\n      - /placeholder: Write or paste your reply…\n      - text: Refund requests must be submitted within 14 days of purchase.\n    - text: Public information only\n    - generic: 1 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph: Confirm the public submission before signing.\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\"",
+      "visible": {
+        "account": "B",
+        "role": "owner",
+        "hash": null,
+        "recovery_present": false,
+        "pending_ui": false,
+        "terminal_ui": false,
+        "recovery_signer_b": false,
+        "valid_draft_denied": true,
+        "consent_dialog_open": false,
+        "off_studionet_ui": false,
+        "waiting_wallet": false,
+        "uncertain": true,
+        "recovery_input": true,
+        "checking_hash": false
+      }
+    },
+    "witness": {
+      "snapshot": "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x7cef5d…8d97d0\":\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - text: WALLET OUTCOME UNKNOWN\n  - heading \"Check this reply\" [level=3]\n  - paragraph: Check wallet Activity. If a transaction was sent, recover its hash below. No new actions can be sent until this is resolved.\n  - generic: Transaction hash from wallet Activity\n  - textbox \"Transaction hash from wallet Activity\":\n    - /placeholder: 0x…\n  - button \"Recover transaction\"\n  - 'button \"I checked: nothing was sent\"'\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 0 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n    - generic: Your reply\n    - generic: 0 / 3,000 bytes\n    - textbox \"Your reply\":\n      - /placeholder: Write or paste your reply…\n    - text: Public information only\n    - generic: 0 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph: Add a question of up to 1,500 UTF-8 bytes.\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\"",
+      "visible": {
+        "account": "B",
+        "role": "owner",
+        "hash": null,
+        "recovery_present": false,
+        "pending_ui": false,
+        "terminal_ui": false,
+        "recovery_signer_b": false,
+        "valid_draft_denied": false,
+        "consent_dialog_open": false,
+        "off_studionet_ui": false,
+        "uncertain": true,
+        "hashless_input": true,
+        "waiting_wallet": false
+      }
+    }
+  },
+  "actors": {
+    "agent_checked_fictional_consent": true,
+    "agent_clicked_continue_once": true,
+    "agent_reloaded_original_page": true,
+    "agent_approved_wallet": false,
+    "human_wallet_outcome": "NOT_YET_REPORTED"
+  },
+  "verification_scope": {
+    "native_missing_hash_message_observed": true,
+    "unrelated_completed_hash_rejected": true,
+    "original_hashless_recovery_ui_retained": true,
+    "valid_draft_still_disabled": true,
+    "recovery_lookup_reenabled": true,
+    "browser_storage_injected": false,
+    "raw_hashless_journal_bytes_accessed": false,
+    "positive_hash_attachment_completed": false,
+    "chain_execution_confirmed": false,
+    "new_transaction_hash": null
+  },
+  "limits": [
+    "Hashless recovery UI has no export button; exact pre-check journal bytes are not claimed. No private browser storage was read or injected.",
+    "Original wallet request was deliberately interrupted by reloading the app. Resolve that exact request through the human wallet; do not send another.",
+    "Only the scoped negative recovery checks pass. Positive hash attachment, exact final outcome and closure remain."
+  ],
+  "next_step": "Human approves the original zero-value Studionet test request if it is still present and supplies its transaction hash, or reports the prompt disappeared/rejected. Never resend or clear recovery based on missing RPC data."
+}

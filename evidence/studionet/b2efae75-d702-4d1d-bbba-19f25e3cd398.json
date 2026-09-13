@@ -1,0 +1,1724 @@
+{
+  "format": "replycheck-live-evidence-v1",
+  "run_id": "b2efae75-d702-4d1d-bbba-19f25e3cd398",
+  "status": "INCOMPLETE",
+  "network": "studionet",
+  "chain_id": 61999,
+  "rpc": "https://studio.genlayer.com/api",
+  "leader_only": false,
+  "source_sha256": "e6ea9e181cd30b3ae35e54984c5d7dd086b53e188b3b8881b46622796ccf4ce7",
+  "runner": "# { \"Depends\": \"py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6\" }",
+  "package_lock_sha256": "07653e595abb64d6523b2867499e7bd8e9d4d004dea2dd083e4edb5521c83e19",
+  "harness_sha256": "afc627dc5b1c9f5c598beb18beaeef34bf04fbfdb82be60006080d72ed52c30d",
+  "node": "v24.18.0",
+  "genlayer_js": "1.1.8",
+  "owner": "0x6C148d12E1422e13A3f2c223a2Bdee2910FBeE8b",
+  "reviewer": "0x74e34C1C1Db69e810657bAc18B964740221b9D73",
+  "account_note": "Fresh disposable test accounts; no saved wallet or real funds used.",
+  "contract": "0x3B75D90Cf55E5b3D45ab748988F0C98cD6a70C41",
+  "deployment_transaction": null,
+  "transactions": [
+    {
+      "method": "create_workspace",
+      "inputs": [
+        "live-b2efae75-d702-4d1d",
+        "ReplyCheck live test fixture",
+        true
+      ],
+      "sender": "0x6C148d12E1422e13A3f2c223a2Bdee2910FBeE8b",
+      "value": "0",
+      "phase": "FINALIZED_SUCCESS",
+      "hash": "0x00045330e17b8547e79a4e70d9413b020f04f2d4e9252cf5172cfb92b7fb5e50",
+      "receipt": {
+        "hash": "0x00045330e17b8547e79a4e70d9413b020f04f2d4e9252cf5172cfb92b7fb5e50",
+        "status": "FINALIZED",
+        "from_address": "0x6C148d12E1422e13A3f2c223a2Bdee2910FBeE8b",
+        "to_address": "0x3B75D90Cf55E5b3D45ab748988F0C98cD6a70C41",
+        "value": 0,
+        "created_at": "2026-09-10T09:20:37.549595+00:00",
+        "leader_only": false,
+        "last_leader": "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11",
+        "last_round": {
+          "round": "0",
+          "leader_index": "0",
+          "votes_committed": "5",
+          "votes_revealed": "5",
+          "appeal_bond": "0",
+          "rotations_left": "3",
+          "result": 6,
+          "round_validators": [
+            "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11",
+            "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67",
+            "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE",
+            "0x90402341F0B0e97b23023c0a87de957FB7148E0F",
+            "0xDB1c35c1f05d885999b8f13e5735307BcC16Be88"
+          ],
+          "validator_votes_hash": [
+            "0x06932f4f4de92bf2ae4ecb1af5649121ec1be4298e746033098cfb831fbf69e7",
+            "0xf1087610684eecc79dfb22c2ce28e97489bce0f15560860bfab34132525fa6ce",
+            "0x3e4dd6e2414252154835a49a0e0b28961cf56652ec66813395aa2ec64a3e4ed5",
+            "0x5532a3d30345f6c2cb6e42cfabca5bc09fce3ad99d0fdee88abfb5a194005b62",
+            "0x06f42f1105d73d8a2e37db6ebdf508cbc0a65ae30f57b79f53c22b877f26b309"
+          ],
+          "validator_votes": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "validator_votes_name": [
+            "AGREE",
+            "AGREE",
+            "AGREE",
+            "AGREE",
+            "AGREE"
+          ]
+        },
+        "result": 6,
+        "result_name": "MAJORITY_AGREE",
+        "data": {
+          "calldata": "FgRhcmdzHbwBbGl2ZS1iMmVmYWU3NS1kNzAyLTRkMWTkAVJlcGx5Q2hlY2sgbGl2ZSB0ZXN0IGZpeHR1cmUQBm1ldGhvZIQBY3JlYXRlX3dvcmtzcGFjZQ=="
+        },
+        "consensus_data": {
+          "votes": {
+            "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11": "agree",
+            "0x90402341F0B0e97b23023c0a87de957FB7148E0F": "agree",
+            "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE": "agree",
+            "0xDB1c35c1f05d885999b8f13e5735307BcC16Be88": "agree",
+            "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67": "agree"
+          },
+          "leader_receipt": [
+            {
+              "mode": "leader",
+              "vote": null,
+              "execution_result": "SUCCESS",
+              "result": "AE4IYXJjaGl2ZWQICmNhcmRfY291bnQBCmNyZWF0ZWRfYXSEAjIwMjYtMDktMTBUMDk6MjA6MzcuNTQ5NTk1KzAwOjAwAmlkvAFsaXZlLWIyZWZhZTc1LWQ3MDItNGQxZBBtZW1iZXJfYWRkcmVzc2VzBQRuYW1l5AFSZXBseUNoZWNrIGxpdmUgdGVzdCBmaXh0dXJlBW93bmVy1AIweDZjMTQ4ZDEyZTE0MjJlMTNhM2YyYzIyM2EyYmRlZTI5MTBmYmVlOGIMcmV2aWV3X2NvdW50AQd2ZXJzaW9uAQ==",
+              "node_config": {
+                "address": "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11"
+              }
+            },
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "execution_result": "SUCCESS",
+              "result": "AE4IYXJjaGl2ZWQICmNhcmRfY291bnQBCmNyZWF0ZWRfYXSEAjIwMjYtMDktMTBUMDk6MjA6MzcuNTQ5NTk1KzAwOjAwAmlkvAFsaXZlLWIyZWZhZTc1LWQ3MDItNGQxZBBtZW1iZXJfYWRkcmVzc2VzBQRuYW1l5AFSZXBseUNoZWNrIGxpdmUgdGVzdCBmaXh0dXJlBW93bmVy1AIweDZjMTQ4ZDEyZTE0MjJlMTNhM2YyYzIyM2EyYmRlZTI5MTBmYmVlOGIMcmV2aWV3X2NvdW50AQd2ZXJzaW9uAQ==",
+              "node_config": {
+                "address": "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11"
+              }
+            }
+          ]
+        },
+        "consensus_history": {
+          "current_status_changes": [
+            "FINALIZED"
+          ],
+          "consensus_results": [
+            {
+              "consensus_round": "Accepted",
+              "status_changes": [
+                "PENDING",
+                "PROPOSING",
+                "COMMITTING",
+                "REVEALING",
+                "ACCEPTED"
+              ],
+              "leader_result": [
+                {
+                  "mode": "leader",
+                  "vote": null,
+                  "execution_result": "SUCCESS",
+                  "result": "AE4IYXJjaGl2ZWQICmNhcmRfY291bnQBCmNyZWF0ZWRfYXSEAjIwMjYtMDktMTBUMDk6MjA6MzcuNTQ5NTk1KzAwOjAwAmlkvAFsaXZlLWIyZWZhZTc1LWQ3MDItNGQxZBBtZW1iZXJfYWRkcmVzc2VzBQRuYW1l5AFSZXBseUNoZWNrIGxpdmUgdGVzdCBmaXh0dXJlBW93bmVy1AIweDZjMTQ4ZDEyZTE0MjJlMTNhM2YyYzIyM2EyYmRlZTI5MTBmYmVlOGIMcmV2aWV3X2NvdW50AQd2ZXJzaW9uAQ==",
+                  "node_config": {
+                    "address": "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "agree",
+                  "execution_result": "SUCCESS",
+                  "result": "AE4IYXJjaGl2ZWQICmNhcmRfY291bnQBCmNyZWF0ZWRfYXSEAjIwMjYtMDktMTBUMDk6MjA6MzcuNTQ5NTk1KzAwOjAwAmlkvAFsaXZlLWIyZWZhZTc1LWQ3MDItNGQxZBBtZW1iZXJfYWRkcmVzc2VzBQRuYW1l5AFSZXBseUNoZWNrIGxpdmUgdGVzdCBmaXh0dXJlBW93bmVy1AIweDZjMTQ4ZDEyZTE0MjJlMTNhM2YyYzIyM2EyYmRlZTI5MTBmYmVlOGIMcmV2aWV3X2NvdW50AQd2ZXJzaW9uAQ==",
+                  "node_config": {
+                    "address": "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11"
+                  }
+                }
+              ],
+              "validator_results": [
+                {
+                  "mode": "validator",
+                  "vote": "agree",
+                  "execution_result": "SUCCESS",
+                  "result": "AE4IYXJjaGl2ZWQICmNhcmRfY291bnQBCmNyZWF0ZWRfYXSEAjIwMjYtMDktMTBUMDk6MjA6MzcuNTQ5NTk1KzAwOjAwAmlkvAFsaXZlLWIyZWZhZTc1LWQ3MDItNGQxZBBtZW1iZXJfYWRkcmVzc2VzBQRuYW1l5AFSZXBseUNoZWNrIGxpdmUgdGVzdCBmaXh0dXJlBW93bmVy1AIweDZjMTQ4ZDEyZTE0MjJlMTNhM2YyYzIyM2EyYmRlZTI5MTBmYmVlOGIMcmV2aWV3X2NvdW50AQd2ZXJzaW9uAQ==",
+                  "node_config": {
+                    "address": "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "agree",
+                  "execution_result": "SUCCESS",
+                  "result": "AE4IYXJjaGl2ZWQICmNhcmRfY291bnQBCmNyZWF0ZWRfYXSEAjIwMjYtMDktMTBUMDk6MjA6MzcuNTQ5NTk1KzAwOjAwAmlkvAFsaXZlLWIyZWZhZTc1LWQ3MDItNGQxZBBtZW1iZXJfYWRkcmVzc2VzBQRuYW1l5AFSZXBseUNoZWNrIGxpdmUgdGVzdCBmaXh0dXJlBW93bmVy1AIweDZjMTQ4ZDEyZTE0MjJlMTNhM2YyYzIyM2EyYmRlZTI5MTBmYmVlOGIMcmV2aWV3X2NvdW50AQd2ZXJzaW9uAQ==",
+                  "node_config": {
+                    "address": "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "agree",
+                  "execution_result": "SUCCESS",
+                  "result": "AE4IYXJjaGl2ZWQICmNhcmRfY291bnQBCmNyZWF0ZWRfYXSEAjIwMjYtMDktMTBUMDk6MjA6MzcuNTQ5NTk1KzAwOjAwAmlkvAFsaXZlLWIyZWZhZTc1LWQ3MDItNGQxZBBtZW1iZXJfYWRkcmVzc2VzBQRuYW1l5AFSZXBseUNoZWNrIGxpdmUgdGVzdCBmaXh0dXJlBW93bmVy1AIweDZjMTQ4ZDEyZTE0MjJlMTNhM2YyYzIyM2EyYmRlZTI5MTBmYmVlOGIMcmV2aWV3X2NvdW50AQd2ZXJzaW9uAQ==",
+                  "node_config": {
+                    "address": "0x90402341F0B0e97b23023c0a87de957FB7148E0F"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "agree",
+                  "execution_result": "SUCCESS",
+                  "result": "AE4IYXJjaGl2ZWQICmNhcmRfY291bnQBCmNyZWF0ZWRfYXSEAjIwMjYtMDktMTBUMDk6MjA6MzcuNTQ5NTk1KzAwOjAwAmlkvAFsaXZlLWIyZWZhZTc1LWQ3MDItNGQxZBBtZW1iZXJfYWRkcmVzc2VzBQRuYW1l5AFSZXBseUNoZWNrIGxpdmUgdGVzdCBmaXh0dXJlBW93bmVy1AIweDZjMTQ4ZDEyZTE0MjJlMTNhM2YyYzIyM2EyYmRlZTI5MTBmYmVlOGIMcmV2aWV3X2NvdW50AQd2ZXJzaW9uAQ==",
+                  "node_config": {
+                    "address": "0xDB1c35c1f05d885999b8f13e5735307BcC16Be88"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "app_receipt_state": {
+        "state": "success",
+        "label": "Finalized; execution succeeded."
+      },
+      "app_call_binding": true
+    },
+    {
+      "method": "publish_references",
+      "inputs": [
+        "live-b2efae75-d702-4d1d",
+        0,
+        "[{\"id\":\"faq\",\"title\":\"Fictional refund policy\",\"body\":\"Refund requests must be submitted within 7 days of purchase.\",\"url\":\"\"}]",
+        true
+      ],
+      "sender": "0x6C148d12E1422e13A3f2c223a2Bdee2910FBeE8b",
+      "value": "0",
+      "phase": "FINALIZED_SUCCESS",
+      "hash": "0x7ce50258cf11712a3b475407e0dd8de5b5008d7c39461d5a5828b1286fcff36f",
+      "receipt": {
+        "hash": "0x7ce50258cf11712a3b475407e0dd8de5b5008d7c39461d5a5828b1286fcff36f",
+        "status": "FINALIZED",
+        "from_address": "0x6C148d12E1422e13A3f2c223a2Bdee2910FBeE8b",
+        "to_address": "0x3B75D90Cf55E5b3D45ab748988F0C98cD6a70C41",
+        "value": 0,
+        "created_at": "2026-09-10T09:21:23.522033+00:00",
+        "leader_only": false,
+        "last_leader": "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3",
+        "last_round": {
+          "round": "0",
+          "leader_index": "0",
+          "votes_committed": "5",
+          "votes_revealed": "5",
+          "appeal_bond": "0",
+          "rotations_left": "3",
+          "result": 6,
+          "round_validators": [
+            "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3",
+            "0x3E5ee2507cc167C9925Bf10c67D7986581112024",
+            "0x90402341F0B0e97b23023c0a87de957FB7148E0F",
+            "0xE6BD8050758CB15fC88387223E31Ae2708B119dC",
+            "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11"
+          ],
+          "validator_votes_hash": [
+            "0x325fbbead9c4ecd3b1fd4cd1122207cddfb1ce838130b23f449b62a246c72429",
+            "0xb4da1b4e9bbd879d3e8d6e8ac9fbfd01d7ac8afe070e1a21abcaa05755bc9b28",
+            "0xd3d8865a63afbb8241e8636f7c9d3beba27ba31e25abb80baa09f5a93fbd7d20",
+            "0xbd664a30d2d9a424050a8d8314c11bc8c447915c9febd891def373de95888d3f",
+            "0x20f53ca3b6690399cd99f377c76f2abf3679a9f157885406b341e4991c0fe618"
+          ],
+          "validator_votes": [
+            1,
+            1,
+            5,
+            1,
+            5
+          ],
+          "validator_votes_name": [
+            "AGREE",
+            "AGREE",
+            "IDLE",
+            "AGREE",
+            "IDLE"
+          ]
+        },
+        "result": 6,
+        "result_name": "MAJORITY_AGREE",
+        "data": {
+          "calldata": "FgRhcmdzJbwBbGl2ZS1iMmVmYWU3NS1kNzAyLTRkMWQB/AdbeyJpZCI6ImZhcSIsInRpdGxlIjoiRmljdGlvbmFsIHJlZnVuZCBwb2xpY3kiLCJib2R5IjoiUmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiA3IGRheXMgb2YgcHVyY2hhc2UuIiwidXJsIjoiIn1dEAZtZXRob2SUAXB1Ymxpc2hfcmVmZXJlbmNlcw=="
+        },
+        "consensus_data": {
+          "votes": {
+            "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11": "idle",
+            "0x3E5ee2507cc167C9925Bf10c67D7986581112024": "agree",
+            "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3": "agree",
+            "0x90402341F0B0e97b23023c0a87de957FB7148E0F": "idle",
+            "0xE6BD8050758CB15fC88387223E31Ae2708B119dC": "agree"
+          },
+          "leader_receipt": [
+            {
+              "mode": "leader",
+              "vote": null,
+              "execution_result": "SUCCESS",
+              "result": "ADYGZGlnZXN0hAQyMmI3YTQ3NWQ5MjQ4ZDU0OGNmZGM2NjczOWQyMzAwMzNhMjczMTZkNzZiNmVhZGU5YzMwYWMxNzg2MjMzZDNjCWRvY3VtZW50cw0mBGJvZHnkA1JlZnVuZCByZXF1ZXN0cyBtdXN0IGJlIHN1Ym1pdHRlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLgJpZBxmYXEFdGl0bGW8AUZpY3Rpb25hbCByZWZ1bmQgcG9saWN5A3VybAQMcHVibGlzaGVkX2F0hAIyMDI2LTA5LTEwVDA5OjIxOjIzLjUyMjAzMyswMDowMAxwdWJsaXNoZWRfYnnUAjB4NmMxNDhkMTJlMTQyMmUxM2EzZjJjMjIzYTJiZGVlMjkxMGZiZWU4Ygd2ZXJzaW9uCQx3b3Jrc3BhY2VfaWS8AWxpdmUtYjJlZmFlNzUtZDcwMi00ZDFk",
+              "node_config": {
+                "address": "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3"
+              }
+            },
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "execution_result": "SUCCESS",
+              "result": "ADYGZGlnZXN0hAQyMmI3YTQ3NWQ5MjQ4ZDU0OGNmZGM2NjczOWQyMzAwMzNhMjczMTZkNzZiNmVhZGU5YzMwYWMxNzg2MjMzZDNjCWRvY3VtZW50cw0mBGJvZHnkA1JlZnVuZCByZXF1ZXN0cyBtdXN0IGJlIHN1Ym1pdHRlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLgJpZBxmYXEFdGl0bGW8AUZpY3Rpb25hbCByZWZ1bmQgcG9saWN5A3VybAQMcHVibGlzaGVkX2F0hAIyMDI2LTA5LTEwVDA5OjIxOjIzLjUyMjAzMyswMDowMAxwdWJsaXNoZWRfYnnUAjB4NmMxNDhkMTJlMTQyMmUxM2EzZjJjMjIzYTJiZGVlMjkxMGZiZWU4Ygd2ZXJzaW9uCQx3b3Jrc3BhY2VfaWS8AWxpdmUtYjJlZmFlNzUtZDcwMi00ZDFk",
+              "node_config": {
+                "address": "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3"
+              }
+            }
+          ]
+        },
+        "consensus_history": {
+          "current_status_changes": [
+            "FINALIZED"
+          ],
+          "consensus_results": [
+            {
+              "consensus_round": "Accepted",
+              "status_changes": [
+                "PENDING",
+                "PROPOSING",
+                "COMMITTING",
+                "REVEALING",
+                "ACCEPTED"
+              ],
+              "leader_result": [
+                {
+                  "mode": "leader",
+                  "vote": null,
+                  "execution_result": "SUCCESS",
+                  "result": "ADYGZGlnZXN0hAQyMmI3YTQ3NWQ5MjQ4ZDU0OGNmZGM2NjczOWQyMzAwMzNhMjczMTZkNzZiNmVhZGU5YzMwYWMxNzg2MjMzZDNjCWRvY3VtZW50cw0mBGJvZHnkA1JlZnVuZCByZXF1ZXN0cyBtdXN0IGJlIHN1Ym1pdHRlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLgJpZBxmYXEFdGl0bGW8AUZpY3Rpb25hbCByZWZ1bmQgcG9saWN5A3VybAQMcHVibGlzaGVkX2F0hAIyMDI2LTA5LTEwVDA5OjIxOjIzLjUyMjAzMyswMDowMAxwdWJsaXNoZWRfYnnUAjB4NmMxNDhkMTJlMTQyMmUxM2EzZjJjMjIzYTJiZGVlMjkxMGZiZWU4Ygd2ZXJzaW9uCQx3b3Jrc3BhY2VfaWS8AWxpdmUtYjJlZmFlNzUtZDcwMi00ZDFk",
+                  "node_config": {
+                    "address": "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "agree",
+                  "execution_result": "SUCCESS",
+                  "result": "ADYGZGlnZXN0hAQyMmI3YTQ3NWQ5MjQ4ZDU0OGNmZGM2NjczOWQyMzAwMzNhMjczMTZkNzZiNmVhZGU5YzMwYWMxNzg2MjMzZDNjCWRvY3VtZW50cw0mBGJvZHnkA1JlZnVuZCByZXF1ZXN0cyBtdXN0IGJlIHN1Ym1pdHRlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLgJpZBxmYXEFdGl0bGW8AUZpY3Rpb25hbCByZWZ1bmQgcG9saWN5A3VybAQMcHVibGlzaGVkX2F0hAIyMDI2LTA5LTEwVDA5OjIxOjIzLjUyMjAzMyswMDowMAxwdWJsaXNoZWRfYnnUAjB4NmMxNDhkMTJlMTQyMmUxM2EzZjJjMjIzYTJiZGVlMjkxMGZiZWU4Ygd2ZXJzaW9uCQx3b3Jrc3BhY2VfaWS8AWxpdmUtYjJlZmFlNzUtZDcwMi00ZDFk",
+                  "node_config": {
+                    "address": "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3"
+                  }
+                }
+              ],
+              "validator_results": [
+                {
+                  "mode": "validator",
+                  "vote": "agree",
+                  "execution_result": "SUCCESS",
+                  "result": "ADYGZGlnZXN0hAQyMmI3YTQ3NWQ5MjQ4ZDU0OGNmZGM2NjczOWQyMzAwMzNhMjczMTZkNzZiNmVhZGU5YzMwYWMxNzg2MjMzZDNjCWRvY3VtZW50cw0mBGJvZHnkA1JlZnVuZCByZXF1ZXN0cyBtdXN0IGJlIHN1Ym1pdHRlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLgJpZBxmYXEFdGl0bGW8AUZpY3Rpb25hbCByZWZ1bmQgcG9saWN5A3VybAQMcHVibGlzaGVkX2F0hAIyMDI2LTA5LTEwVDA5OjIxOjIzLjUyMjAzMyswMDowMAxwdWJsaXNoZWRfYnnUAjB4NmMxNDhkMTJlMTQyMmUxM2EzZjJjMjIzYTJiZGVlMjkxMGZiZWU4Ygd2ZXJzaW9uCQx3b3Jrc3BhY2VfaWS8AWxpdmUtYjJlZmFlNzUtZDcwMi00ZDFk",
+                  "node_config": {
+                    "address": "0x3E5ee2507cc167C9925Bf10c67D7986581112024"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "idle",
+                  "execution_result": "ERROR",
+                  "result": "AmlkbGU=",
+                  "node_config": {
+                    "address": "0x90402341F0B0e97b23023c0a87de957FB7148E0F"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "agree",
+                  "execution_result": "SUCCESS",
+                  "result": "ADYGZGlnZXN0hAQyMmI3YTQ3NWQ5MjQ4ZDU0OGNmZGM2NjczOWQyMzAwMzNhMjczMTZkNzZiNmVhZGU5YzMwYWMxNzg2MjMzZDNjCWRvY3VtZW50cw0mBGJvZHnkA1JlZnVuZCByZXF1ZXN0cyBtdXN0IGJlIHN1Ym1pdHRlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLgJpZBxmYXEFdGl0bGW8AUZpY3Rpb25hbCByZWZ1bmQgcG9saWN5A3VybAQMcHVibGlzaGVkX2F0hAIyMDI2LTA5LTEwVDA5OjIxOjIzLjUyMjAzMyswMDowMAxwdWJsaXNoZWRfYnnUAjB4NmMxNDhkMTJlMTQyMmUxM2EzZjJjMjIzYTJiZGVlMjkxMGZiZWU4Ygd2ZXJzaW9uCQx3b3Jrc3BhY2VfaWS8AWxpdmUtYjJlZmFlNzUtZDcwMi00ZDFk",
+                  "node_config": {
+                    "address": "0xE6BD8050758CB15fC88387223E31Ae2708B119dC"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "idle",
+                  "execution_result": "ERROR",
+                  "result": "AmlkbGU=",
+                  "node_config": {
+                    "address": "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "app_receipt_state": {
+        "state": "success",
+        "label": "Finalized; execution succeeded."
+      },
+      "app_call_binding": true
+    },
+    {
+      "method": "invite_member",
+      "inputs": [
+        "live-b2efae75-d702-4d1d",
+        "0x74e34C1C1Db69e810657bAc18B964740221b9D73",
+        "reviewer"
+      ],
+      "sender": "0x6C148d12E1422e13A3f2c223a2Bdee2910FBeE8b",
+      "value": "0",
+      "phase": "FINALIZED_SUCCESS",
+      "hash": "0x5724af1c01b588a12726cac9dd64555f1b317678e8cff31695acb70355f2e283",
+      "receipt": {
+        "hash": "0x5724af1c01b588a12726cac9dd64555f1b317678e8cff31695acb70355f2e283",
+        "status": "FINALIZED",
+        "from_address": "0x6C148d12E1422e13A3f2c223a2Bdee2910FBeE8b",
+        "to_address": "0x3B75D90Cf55E5b3D45ab748988F0C98cD6a70C41",
+        "value": 0,
+        "created_at": "2026-09-10T09:22:09.751879+00:00",
+        "leader_only": false,
+        "last_leader": "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11",
+        "last_round": {
+          "round": "0",
+          "leader_index": "0",
+          "votes_committed": "5",
+          "votes_revealed": "5",
+          "appeal_bond": "0",
+          "rotations_left": "3",
+          "result": 6,
+          "round_validators": [
+            "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11",
+            "0x3E5ee2507cc167C9925Bf10c67D7986581112024",
+            "0x76c25AFC12c75485703cCFfd0083AA6201455B25",
+            "0x4aba638Cf0Cf5249437AaD968fC69dde46ae6BAC",
+            "0x772ffCd1dF6Cc566eC4b8d3f4F4f8eBbb6B36C84"
+          ],
+          "validator_votes_hash": [
+            "0xafa554f32f5f5282cb18e5fb0ba9811849e3a0bbb5cbf26c8e5912c1e3528263",
+            "0x8c59f04c8c74d230f353f04f9e3353a3b3d6364e561a680ba51c840499d115ae",
+            "0x4972fd5406dd3f7c910e24c15b8e9b72ec2445d3bcd97fd140d15da1e2cc5907",
+            "0x6bb4bc2d8a395d16e6aa5644e8a4073db0b3730673151b9a770fcca1c16a3e54",
+            "0x23a1db1b9702eba5fbe68e6661b4247fe4ac6fdcb6f12832588b35ac2197eafa"
+          ],
+          "validator_votes": [
+            1,
+            1,
+            1,
+            5,
+            5
+          ],
+          "validator_votes_name": [
+            "AGREE",
+            "AGREE",
+            "AGREE",
+            "IDLE",
+            "IDLE"
+          ]
+        },
+        "result": 6,
+        "result_name": "MAJORITY_AGREE",
+        "data": {
+          "calldata": "FgRhcmdzHbwBbGl2ZS1iMmVmYWU3NS1kNzAyLTRkMWTUAjB4NzRlMzRDMUMxRGI2OWU4MTA2NTdiQWMxOEI5NjQ3NDAyMjFiOUQ3M0RyZXZpZXdlcgZtZXRob2RsaW52aXRlX21lbWJlcg=="
+        },
+        "consensus_data": {
+          "votes": {
+            "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11": "agree",
+            "0x3E5ee2507cc167C9925Bf10c67D7986581112024": "agree",
+            "0x4aba638Cf0Cf5249437AaD968fC69dde46ae6BAC": "idle",
+            "0x76c25AFC12c75485703cCFfd0083AA6201455B25": "agree",
+            "0x772ffCd1dF6Cc566eC4b8d3f4F4f8eBbb6B36C84": "idle"
+          },
+          "leader_receipt": [
+            {
+              "mode": "leader",
+              "vote": null,
+              "execution_result": "SUCCESS",
+              "result": "AAA=",
+              "node_config": {
+                "address": "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11"
+              }
+            },
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "execution_result": "SUCCESS",
+              "result": "AAA=",
+              "node_config": {
+                "address": "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11"
+              }
+            }
+          ]
+        },
+        "consensus_history": {
+          "current_status_changes": [
+            "FINALIZED"
+          ],
+          "consensus_results": [
+            {
+              "consensus_round": "Accepted",
+              "status_changes": [
+                "PENDING",
+                "PROPOSING",
+                "COMMITTING",
+                "REVEALING",
+                "ACCEPTED"
+              ],
+              "leader_result": [
+                {
+                  "mode": "leader",
+                  "vote": null,
+                  "execution_result": "SUCCESS",
+                  "result": "AAA=",
+                  "node_config": {
+                    "address": "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "agree",
+                  "execution_result": "SUCCESS",
+                  "result": "AAA=",
+                  "node_config": {
+                    "address": "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11"
+                  }
+                }
+              ],
+              "validator_results": [
+                {
+                  "mode": "validator",
+                  "vote": "agree",
+                  "execution_result": "SUCCESS",
+                  "result": "AAA=",
+                  "node_config": {
+                    "address": "0x3E5ee2507cc167C9925Bf10c67D7986581112024"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "agree",
+                  "execution_result": "SUCCESS",
+                  "result": "AAA=",
+                  "node_config": {
+                    "address": "0x76c25AFC12c75485703cCFfd0083AA6201455B25"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "idle",
+                  "execution_result": "ERROR",
+                  "result": "AmlkbGU=",
+                  "node_config": {
+                    "address": "0x4aba638Cf0Cf5249437AaD968fC69dde46ae6BAC"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "idle",
+                  "execution_result": "ERROR",
+                  "result": "AmlkbGU=",
+                  "node_config": {
+                    "address": "0x772ffCd1dF6Cc566eC4b8d3f4F4f8eBbb6B36C84"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "app_receipt_state": {
+        "state": "success",
+        "label": "Finalized; execution succeeded."
+      },
+      "app_call_binding": true
+    },
+    {
+      "method": "accept_invitation",
+      "inputs": [
+        "live-b2efae75-d702-4d1d"
+      ],
+      "sender": "0x74e34C1C1Db69e810657bAc18B964740221b9D73",
+      "value": "0",
+      "phase": "FINALIZED_SUCCESS",
+      "hash": "0x22c55eeea06f5e8cd61f38a158288d2e54e0b0d9386cd4769d74a12dc32d046f",
+      "receipt": {
+        "hash": "0x22c55eeea06f5e8cd61f38a158288d2e54e0b0d9386cd4769d74a12dc32d046f",
+        "status": "FINALIZED",
+        "from_address": "0x74e34C1C1Db69e810657bAc18B964740221b9D73",
+        "to_address": "0x3B75D90Cf55E5b3D45ab748988F0C98cD6a70C41",
+        "value": 0,
+        "created_at": "2026-09-10T09:22:56.148821+00:00",
+        "leader_only": false,
+        "last_leader": "0x4404Fb70d490c935758146f42A73DC850FF95C71",
+        "last_round": {
+          "round": "0",
+          "leader_index": "0",
+          "votes_committed": "5",
+          "votes_revealed": "5",
+          "appeal_bond": "0",
+          "rotations_left": "3",
+          "result": 6,
+          "round_validators": [
+            "0x4404Fb70d490c935758146f42A73DC850FF95C71",
+            "0x4aba638Cf0Cf5249437AaD968fC69dde46ae6BAC",
+            "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE",
+            "0xec2Fb79cd12255Eb34886CEd7332f27B98DEe658",
+            "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3"
+          ],
+          "validator_votes_hash": [
+            "0x1174adce9bbe20f3f51a923e72972fab2109bdb1004e329bbdeacfc92cefec2a",
+            "0x889cf0888759f46724f579002a25ce9b8aa80d71a847efac0e326d77895c9cf5",
+            "0x3e4dd6e2414252154835a49a0e0b28961cf56652ec66813395aa2ec64a3e4ed5",
+            "0x889b4e37178ebc22ed6e838dad9b69f60e68c75814500d1d50a0f34d458d0d4c",
+            "0x533b0de687f483411a8ce0a20902043c9588447a5dcddf97b73ec752737dcc56"
+          ],
+          "validator_votes": [
+            5,
+            5,
+            1,
+            1,
+            1
+          ],
+          "validator_votes_name": [
+            "IDLE",
+            "IDLE",
+            "AGREE",
+            "AGREE",
+            "AGREE"
+          ]
+        },
+        "result": 6,
+        "result_name": "MAJORITY_AGREE",
+        "data": {
+          "calldata": "FgRhcmdzDbwBbGl2ZS1iMmVmYWU3NS1kNzAyLTRkMWQGbWV0aG9kjAFhY2NlcHRfaW52aXRhdGlvbg=="
+        },
+        "consensus_data": {
+          "votes": {
+            "0x4404Fb70d490c935758146f42A73DC850FF95C71": "idle",
+            "0x4aba638Cf0Cf5249437AaD968fC69dde46ae6BAC": "idle",
+            "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3": "agree",
+            "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE": "agree",
+            "0xec2Fb79cd12255Eb34886CEd7332f27B98DEe658": "agree"
+          },
+          "leader_receipt": [
+            {
+              "mode": "leader",
+              "vote": null,
+              "execution_result": "SUCCESS",
+              "result": "AAA=",
+              "node_config": {
+                "address": "0x4404Fb70d490c935758146f42A73DC850FF95C71"
+              }
+            },
+            {
+              "mode": "validator",
+              "vote": "idle",
+              "execution_result": "ERROR",
+              "result": "AmlkbGU=",
+              "node_config": {
+                "address": "0x4404Fb70d490c935758146f42A73DC850FF95C71"
+              }
+            }
+          ]
+        },
+        "consensus_history": {
+          "current_status_changes": [
+            "FINALIZED"
+          ],
+          "consensus_results": [
+            {
+              "consensus_round": "Accepted",
+              "status_changes": [
+                "PENDING",
+                "PROPOSING",
+                "COMMITTING",
+                "REVEALING",
+                "ACCEPTED"
+              ],
+              "leader_result": [
+                {
+                  "mode": "leader",
+                  "vote": null,
+                  "execution_result": "SUCCESS",
+                  "result": "AAA=",
+                  "node_config": {
+                    "address": "0x4404Fb70d490c935758146f42A73DC850FF95C71"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "idle",
+                  "execution_result": "ERROR",
+                  "result": "AmlkbGU=",
+                  "node_config": {
+                    "address": "0x4404Fb70d490c935758146f42A73DC850FF95C71"
+                  }
+                }
+              ],
+              "validator_results": [
+                {
+                  "mode": "validator",
+                  "vote": "idle",
+                  "execution_result": "ERROR",
+                  "result": "AmlkbGU=",
+                  "node_config": {
+                    "address": "0x4aba638Cf0Cf5249437AaD968fC69dde46ae6BAC"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "agree",
+                  "execution_result": "SUCCESS",
+                  "result": "AAA=",
+                  "node_config": {
+                    "address": "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "agree",
+                  "execution_result": "SUCCESS",
+                  "result": "AAA=",
+                  "node_config": {
+                    "address": "0xec2Fb79cd12255Eb34886CEd7332f27B98DEe658"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "agree",
+                  "execution_result": "SUCCESS",
+                  "result": "AAA=",
+                  "node_config": {
+                    "address": "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "app_receipt_state": {
+        "state": "success",
+        "label": "Finalized; execution succeeded."
+      },
+      "app_call_binding": true
+    },
+    {
+      "method": "submit_review",
+      "inputs": [
+        "live-b2efae75-d702-4d1d",
+        1,
+        "How long do I have to request a refund?",
+        "You can request a refund within 7 days of purchase.",
+        "good",
+        true
+      ],
+      "sender": "0x74e34C1C1Db69e810657bAc18B964740221b9D73",
+      "value": "0",
+      "phase": "FINALIZED_SUCCESS",
+      "hash": "0xf9020dc1599364aace5d8a28f9fc98f498f4194e0fbbf1720e69af641c9c4074",
+      "receipt": {
+        "hash": "0xf9020dc1599364aace5d8a28f9fc98f498f4194e0fbbf1720e69af641c9c4074",
+        "status": "FINALIZED",
+        "from_address": "0x74e34C1C1Db69e810657bAc18B964740221b9D73",
+        "to_address": "0x3B75D90Cf55E5b3D45ab748988F0C98cD6a70C41",
+        "value": 0,
+        "created_at": "2026-09-10T09:23:42.783060+00:00",
+        "leader_only": false,
+        "last_leader": "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11",
+        "last_round": {
+          "round": "0",
+          "leader_index": "0",
+          "votes_committed": "5",
+          "votes_revealed": "5",
+          "appeal_bond": "0",
+          "rotations_left": "3",
+          "result": 6,
+          "round_validators": [
+            "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11",
+            "0x36728d2a123aB444E603EE5b2ad17d18Bb193557",
+            "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE",
+            "0xDB1c35c1f05d885999b8f13e5735307BcC16Be88",
+            "0x5310dcF075E0BD47d29B8ec6581F736C767f54D2"
+          ],
+          "validator_votes_hash": [
+            "0xcc029456fbd01d8142da87b7d665eca89bd5a9bdcfc425bd15db4520c06d8d00",
+            "0xd2f772c7da731c5dd35517474e27b0f3c96cf2241b87c4b9b62c349ee5feb3a1",
+            "0x54c7a2b93e02098f41edf745265e4910c1f5c8be4bc011ad801a0fc4e74babbd",
+            "0xd2b06cbbd8cd1c5afff3cda38bf91b3b27d0417d10f8bf97856e7ad7bda7c701",
+            "0x9c4e894027065d32bc20071163dba701fa5224f2b12571e9329a4225e90a8db1"
+          ],
+          "validator_votes": [
+            1,
+            5,
+            1,
+            1,
+            5
+          ],
+          "validator_votes_name": [
+            "AGREE",
+            "IDLE",
+            "AGREE",
+            "AGREE",
+            "IDLE"
+          ]
+        },
+        "result": 6,
+        "result_name": "MAJORITY_AGREE",
+        "data": {
+          "calldata": "FgRhcmdzNbwBbGl2ZS1iMmVmYWU3NS1kNzAyLTRkMWQJvAJIb3cgbG9uZyBkbyBJIGhhdmUgdG8gcmVxdWVzdCBhIHJlZnVuZD+cA1lvdSBjYW4gcmVxdWVzdCBhIHJlZnVuZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLiRnb29kEAZtZXRob2Rsc3VibWl0X3Jldmlldw=="
+        },
+        "consensus_data": {
+          "votes": {
+            "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11": "agree",
+            "0x36728d2a123aB444E603EE5b2ad17d18Bb193557": "idle",
+            "0x5310dcF075E0BD47d29B8ec6581F736C767f54D2": "idle",
+            "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE": "agree",
+            "0xDB1c35c1f05d885999b8f13e5735307BcC16Be88": "agree"
+          },
+          "leader_receipt": [
+            {
+              "mode": "leader",
+              "vote": null,
+              "execution_result": "SUCCESS",
+              "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMNFgVxdW90ZeQDUmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiA3IGRheXMgb2YgcHVyY2hhc2UuDHJlZmVyZW5jZV9pZBxmYXEGcmVhc29urANUaGUgNy1kYXkgcmVmdW5kIHdpbmRvdyBtYXRjaGVzIHRoZSByZWZlcmVuY2UgcG9saWN5LgtyZWFzb25fY29kZXxDTEFJTV9TVVBQT1JURUQKc2VnbWVudF9pZAkKc3VnZ2VzdGlvbgQEdGV4dJwDWW91IGNhbiByZXF1ZXN0IGEgcmVmdW5kIHdpdGhpbiA3IGRheXMgb2YgcHVyY2hhc2UuB3ZlcmRpY3RMU1VQUE9SVEVED3F1ZXN0aW9uX3N0YXR1c0RBTlNXRVJFRAdzdW1tYXJ5pAVUaGUgZHJhZnQgcmVwbHkgY29ycmVjdGx5IHN0YXRlcyB0aGUgcmVmdW5kIHdpbmRvdyBhY2NvcmRpbmcgdG8gdGhlIHByb3ZpZGVkIHBvbGljeS4HdmVyZGljdJQBTUFUQ0hFU19SRUZFUkVOQ0VTBmF1dGhvctQCMHg3NGUzNGMxYzFkYjY5ZTgxMDY1N2JhYzE4Yjk2NDc0MDIyMWI5ZDczBWRyYWZ0nANZb3UgY2FuIHJlcXVlc3QgYSByZWZ1bmQgd2l0aGluIDcgZGF5cyBvZiBwdXJjaGFzZS4CaWSEBDRmNDRkZTRjZjUzOTQyMjhmMWY4ZTlmYTJjZDY0NjgwYzJmZTY0Zjk3ZDhjMzkzYjBkMDlmMmE3NmI5ZTA0ZGIIcHJvdG9jb2xscmVwbHljaGVjay12MQhxdWVzdGlvbrwCSG93IGxvbmcgZG8gSSBoYXZlIHRvIHJlcXVlc3QgYSByZWZ1bmQ/C3JlY29yZGVkX2F0hAIyMDI2LTA5LTEwVDA5OjIzOjQyLjc4MzA2MCswMDowMBByZWZlcmVuY2VfZGlnZXN0hAQyMmI3YTQ3NWQ5MjQ4ZDU0OGNmZGM2NjczOWQyMzAwMzNhMjczMTZkNzZiNmVhZGU5YzMwYWMxNzg2MjMzZDNjDnJlcXVlc3RfZGlnZXN0hAQ4OTM1OTQwZTJkNGM0OTM2M2I2NzVkMDMxMDkzNDkzOGEyYjQ2YWE0NjFkMTNlOTg0MjgxNDdiOGYxY2RiMTUyB3ZlcnNpb24JDHdvcmtzcGFjZV9pZLwBbGl2ZS1iMmVmYWU3NS1kNzAyLTRkMWQ=",
+              "node_config": {
+                "address": "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11"
+              }
+            },
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "execution_result": "SUCCESS",
+              "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMNFgVxdW90ZeQDUmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiA3IGRheXMgb2YgcHVyY2hhc2UuDHJlZmVyZW5jZV9pZBxmYXEGcmVhc29urANUaGUgNy1kYXkgcmVmdW5kIHdpbmRvdyBtYXRjaGVzIHRoZSByZWZlcmVuY2UgcG9saWN5LgtyZWFzb25fY29kZXxDTEFJTV9TVVBQT1JURUQKc2VnbWVudF9pZAkKc3VnZ2VzdGlvbgQEdGV4dJwDWW91IGNhbiByZXF1ZXN0IGEgcmVmdW5kIHdpdGhpbiA3IGRheXMgb2YgcHVyY2hhc2UuB3ZlcmRpY3RMU1VQUE9SVEVED3F1ZXN0aW9uX3N0YXR1c0RBTlNXRVJFRAdzdW1tYXJ5pAVUaGUgZHJhZnQgcmVwbHkgY29ycmVjdGx5IHN0YXRlcyB0aGUgcmVmdW5kIHdpbmRvdyBhY2NvcmRpbmcgdG8gdGhlIHByb3ZpZGVkIHBvbGljeS4HdmVyZGljdJQBTUFUQ0hFU19SRUZFUkVOQ0VTBmF1dGhvctQCMHg3NGUzNGMxYzFkYjY5ZTgxMDY1N2JhYzE4Yjk2NDc0MDIyMWI5ZDczBWRyYWZ0nANZb3UgY2FuIHJlcXVlc3QgYSByZWZ1bmQgd2l0aGluIDcgZGF5cyBvZiBwdXJjaGFzZS4CaWSEBDRmNDRkZTRjZjUzOTQyMjhmMWY4ZTlmYTJjZDY0NjgwYzJmZTY0Zjk3ZDhjMzkzYjBkMDlmMmE3NmI5ZTA0ZGIIcHJvdG9jb2xscmVwbHljaGVjay12MQhxdWVzdGlvbrwCSG93IGxvbmcgZG8gSSBoYXZlIHRvIHJlcXVlc3QgYSByZWZ1bmQ/C3JlY29yZGVkX2F0hAIyMDI2LTA5LTEwVDA5OjIzOjQyLjc4MzA2MCswMDowMBByZWZlcmVuY2VfZGlnZXN0hAQyMmI3YTQ3NWQ5MjQ4ZDU0OGNmZGM2NjczOWQyMzAwMzNhMjczMTZkNzZiNmVhZGU5YzMwYWMxNzg2MjMzZDNjDnJlcXVlc3RfZGlnZXN0hAQ4OTM1OTQwZTJkNGM0OTM2M2I2NzVkMDMxMDkzNDkzOGEyYjQ2YWE0NjFkMTNlOTg0MjgxNDdiOGYxY2RiMTUyB3ZlcnNpb24JDHdvcmtzcGFjZV9pZLwBbGl2ZS1iMmVmYWU3NS1kNzAyLTRkMWQ=",
+              "node_config": {
+                "address": "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11"
+              }
+            }
+          ]
+        },
+        "consensus_history": {
+          "current_status_changes": [
+            "FINALIZED"
+          ],
+          "consensus_results": [
+            {
+              "consensus_round": "Accepted",
+              "status_changes": [
+                "PENDING",
+                "PROPOSING",
+                "COMMITTING",
+                "REVEALING",
+                "ACCEPTED"
+              ],
+              "leader_result": [
+                {
+                  "mode": "leader",
+                  "vote": null,
+                  "execution_result": "SUCCESS",
+                  "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMNFgVxdW90ZeQDUmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiA3IGRheXMgb2YgcHVyY2hhc2UuDHJlZmVyZW5jZV9pZBxmYXEGcmVhc29urANUaGUgNy1kYXkgcmVmdW5kIHdpbmRvdyBtYXRjaGVzIHRoZSByZWZlcmVuY2UgcG9saWN5LgtyZWFzb25fY29kZXxDTEFJTV9TVVBQT1JURUQKc2VnbWVudF9pZAkKc3VnZ2VzdGlvbgQEdGV4dJwDWW91IGNhbiByZXF1ZXN0IGEgcmVmdW5kIHdpdGhpbiA3IGRheXMgb2YgcHVyY2hhc2UuB3ZlcmRpY3RMU1VQUE9SVEVED3F1ZXN0aW9uX3N0YXR1c0RBTlNXRVJFRAdzdW1tYXJ5pAVUaGUgZHJhZnQgcmVwbHkgY29ycmVjdGx5IHN0YXRlcyB0aGUgcmVmdW5kIHdpbmRvdyBhY2NvcmRpbmcgdG8gdGhlIHByb3ZpZGVkIHBvbGljeS4HdmVyZGljdJQBTUFUQ0hFU19SRUZFUkVOQ0VTBmF1dGhvctQCMHg3NGUzNGMxYzFkYjY5ZTgxMDY1N2JhYzE4Yjk2NDc0MDIyMWI5ZDczBWRyYWZ0nANZb3UgY2FuIHJlcXVlc3QgYSByZWZ1bmQgd2l0aGluIDcgZGF5cyBvZiBwdXJjaGFzZS4CaWSEBDRmNDRkZTRjZjUzOTQyMjhmMWY4ZTlmYTJjZDY0NjgwYzJmZTY0Zjk3ZDhjMzkzYjBkMDlmMmE3NmI5ZTA0ZGIIcHJvdG9jb2xscmVwbHljaGVjay12MQhxdWVzdGlvbrwCSG93IGxvbmcgZG8gSSBoYXZlIHRvIHJlcXVlc3QgYSByZWZ1bmQ/C3JlY29yZGVkX2F0hAIyMDI2LTA5LTEwVDA5OjIzOjQyLjc4MzA2MCswMDowMBByZWZlcmVuY2VfZGlnZXN0hAQyMmI3YTQ3NWQ5MjQ4ZDU0OGNmZGM2NjczOWQyMzAwMzNhMjczMTZkNzZiNmVhZGU5YzMwYWMxNzg2MjMzZDNjDnJlcXVlc3RfZGlnZXN0hAQ4OTM1OTQwZTJkNGM0OTM2M2I2NzVkMDMxMDkzNDkzOGEyYjQ2YWE0NjFkMTNlOTg0MjgxNDdiOGYxY2RiMTUyB3ZlcnNpb24JDHdvcmtzcGFjZV9pZLwBbGl2ZS1iMmVmYWU3NS1kNzAyLTRkMWQ=",
+                  "node_config": {
+                    "address": "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "agree",
+                  "execution_result": "SUCCESS",
+                  "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMNFgVxdW90ZeQDUmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiA3IGRheXMgb2YgcHVyY2hhc2UuDHJlZmVyZW5jZV9pZBxmYXEGcmVhc29urANUaGUgNy1kYXkgcmVmdW5kIHdpbmRvdyBtYXRjaGVzIHRoZSByZWZlcmVuY2UgcG9saWN5LgtyZWFzb25fY29kZXxDTEFJTV9TVVBQT1JURUQKc2VnbWVudF9pZAkKc3VnZ2VzdGlvbgQEdGV4dJwDWW91IGNhbiByZXF1ZXN0IGEgcmVmdW5kIHdpdGhpbiA3IGRheXMgb2YgcHVyY2hhc2UuB3ZlcmRpY3RMU1VQUE9SVEVED3F1ZXN0aW9uX3N0YXR1c0RBTlNXRVJFRAdzdW1tYXJ5pAVUaGUgZHJhZnQgcmVwbHkgY29ycmVjdGx5IHN0YXRlcyB0aGUgcmVmdW5kIHdpbmRvdyBhY2NvcmRpbmcgdG8gdGhlIHByb3ZpZGVkIHBvbGljeS4HdmVyZGljdJQBTUFUQ0hFU19SRUZFUkVOQ0VTBmF1dGhvctQCMHg3NGUzNGMxYzFkYjY5ZTgxMDY1N2JhYzE4Yjk2NDc0MDIyMWI5ZDczBWRyYWZ0nANZb3UgY2FuIHJlcXVlc3QgYSByZWZ1bmQgd2l0aGluIDcgZGF5cyBvZiBwdXJjaGFzZS4CaWSEBDRmNDRkZTRjZjUzOTQyMjhmMWY4ZTlmYTJjZDY0NjgwYzJmZTY0Zjk3ZDhjMzkzYjBkMDlmMmE3NmI5ZTA0ZGIIcHJvdG9jb2xscmVwbHljaGVjay12MQhxdWVzdGlvbrwCSG93IGxvbmcgZG8gSSBoYXZlIHRvIHJlcXVlc3QgYSByZWZ1bmQ/C3JlY29yZGVkX2F0hAIyMDI2LTA5LTEwVDA5OjIzOjQyLjc4MzA2MCswMDowMBByZWZlcmVuY2VfZGlnZXN0hAQyMmI3YTQ3NWQ5MjQ4ZDU0OGNmZGM2NjczOWQyMzAwMzNhMjczMTZkNzZiNmVhZGU5YzMwYWMxNzg2MjMzZDNjDnJlcXVlc3RfZGlnZXN0hAQ4OTM1OTQwZTJkNGM0OTM2M2I2NzVkMDMxMDkzNDkzOGEyYjQ2YWE0NjFkMTNlOTg0MjgxNDdiOGYxY2RiMTUyB3ZlcnNpb24JDHdvcmtzcGFjZV9pZLwBbGl2ZS1iMmVmYWU3NS1kNzAyLTRkMWQ=",
+                  "node_config": {
+                    "address": "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11"
+                  }
+                }
+              ],
+              "validator_results": [
+                {
+                  "mode": "validator",
+                  "vote": "idle",
+                  "execution_result": "ERROR",
+                  "result": "AmlkbGU=",
+                  "node_config": {
+                    "address": "0x36728d2a123aB444E603EE5b2ad17d18Bb193557"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "agree",
+                  "execution_result": "SUCCESS",
+                  "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMNFgVxdW90ZeQDUmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiA3IGRheXMgb2YgcHVyY2hhc2UuDHJlZmVyZW5jZV9pZBxmYXEGcmVhc29urANUaGUgNy1kYXkgcmVmdW5kIHdpbmRvdyBtYXRjaGVzIHRoZSByZWZlcmVuY2UgcG9saWN5LgtyZWFzb25fY29kZXxDTEFJTV9TVVBQT1JURUQKc2VnbWVudF9pZAkKc3VnZ2VzdGlvbgQEdGV4dJwDWW91IGNhbiByZXF1ZXN0IGEgcmVmdW5kIHdpdGhpbiA3IGRheXMgb2YgcHVyY2hhc2UuB3ZlcmRpY3RMU1VQUE9SVEVED3F1ZXN0aW9uX3N0YXR1c0RBTlNXRVJFRAdzdW1tYXJ5pAVUaGUgZHJhZnQgcmVwbHkgY29ycmVjdGx5IHN0YXRlcyB0aGUgcmVmdW5kIHdpbmRvdyBhY2NvcmRpbmcgdG8gdGhlIHByb3ZpZGVkIHBvbGljeS4HdmVyZGljdJQBTUFUQ0hFU19SRUZFUkVOQ0VTBmF1dGhvctQCMHg3NGUzNGMxYzFkYjY5ZTgxMDY1N2JhYzE4Yjk2NDc0MDIyMWI5ZDczBWRyYWZ0nANZb3UgY2FuIHJlcXVlc3QgYSByZWZ1bmQgd2l0aGluIDcgZGF5cyBvZiBwdXJjaGFzZS4CaWSEBDRmNDRkZTRjZjUzOTQyMjhmMWY4ZTlmYTJjZDY0NjgwYzJmZTY0Zjk3ZDhjMzkzYjBkMDlmMmE3NmI5ZTA0ZGIIcHJvdG9jb2xscmVwbHljaGVjay12MQhxdWVzdGlvbrwCSG93IGxvbmcgZG8gSSBoYXZlIHRvIHJlcXVlc3QgYSByZWZ1bmQ/C3JlY29yZGVkX2F0hAIyMDI2LTA5LTEwVDA5OjIzOjQyLjc4MzA2MCswMDowMBByZWZlcmVuY2VfZGlnZXN0hAQyMmI3YTQ3NWQ5MjQ4ZDU0OGNmZGM2NjczOWQyMzAwMzNhMjczMTZkNzZiNmVhZGU5YzMwYWMxNzg2MjMzZDNjDnJlcXVlc3RfZGlnZXN0hAQ4OTM1OTQwZTJkNGM0OTM2M2I2NzVkMDMxMDkzNDkzOGEyYjQ2YWE0NjFkMTNlOTg0MjgxNDdiOGYxY2RiMTUyB3ZlcnNpb24JDHdvcmtzcGFjZV9pZLwBbGl2ZS1iMmVmYWU3NS1kNzAyLTRkMWQ=",
+                  "node_config": {
+                    "address": "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "agree",
+                  "execution_result": "SUCCESS",
+                  "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMNFgVxdW90ZeQDUmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiA3IGRheXMgb2YgcHVyY2hhc2UuDHJlZmVyZW5jZV9pZBxmYXEGcmVhc29urANUaGUgNy1kYXkgcmVmdW5kIHdpbmRvdyBtYXRjaGVzIHRoZSByZWZlcmVuY2UgcG9saWN5LgtyZWFzb25fY29kZXxDTEFJTV9TVVBQT1JURUQKc2VnbWVudF9pZAkKc3VnZ2VzdGlvbgQEdGV4dJwDWW91IGNhbiByZXF1ZXN0IGEgcmVmdW5kIHdpdGhpbiA3IGRheXMgb2YgcHVyY2hhc2UuB3ZlcmRpY3RMU1VQUE9SVEVED3F1ZXN0aW9uX3N0YXR1c0RBTlNXRVJFRAdzdW1tYXJ5pAVUaGUgZHJhZnQgcmVwbHkgY29ycmVjdGx5IHN0YXRlcyB0aGUgcmVmdW5kIHdpbmRvdyBhY2NvcmRpbmcgdG8gdGhlIHByb3ZpZGVkIHBvbGljeS4HdmVyZGljdJQBTUFUQ0hFU19SRUZFUkVOQ0VTBmF1dGhvctQCMHg3NGUzNGMxYzFkYjY5ZTgxMDY1N2JhYzE4Yjk2NDc0MDIyMWI5ZDczBWRyYWZ0nANZb3UgY2FuIHJlcXVlc3QgYSByZWZ1bmQgd2l0aGluIDcgZGF5cyBvZiBwdXJjaGFzZS4CaWSEBDRmNDRkZTRjZjUzOTQyMjhmMWY4ZTlmYTJjZDY0NjgwYzJmZTY0Zjk3ZDhjMzkzYjBkMDlmMmE3NmI5ZTA0ZGIIcHJvdG9jb2xscmVwbHljaGVjay12MQhxdWVzdGlvbrwCSG93IGxvbmcgZG8gSSBoYXZlIHRvIHJlcXVlc3QgYSByZWZ1bmQ/C3JlY29yZGVkX2F0hAIyMDI2LTA5LTEwVDA5OjIzOjQyLjc4MzA2MCswMDowMBByZWZlcmVuY2VfZGlnZXN0hAQyMmI3YTQ3NWQ5MjQ4ZDU0OGNmZGM2NjczOWQyMzAwMzNhMjczMTZkNzZiNmVhZGU5YzMwYWMxNzg2MjMzZDNjDnJlcXVlc3RfZGlnZXN0hAQ4OTM1OTQwZTJkNGM0OTM2M2I2NzVkMDMxMDkzNDkzOGEyYjQ2YWE0NjFkMTNlOTg0MjgxNDdiOGYxY2RiMTUyB3ZlcnNpb24JDHdvcmtzcGFjZV9pZLwBbGl2ZS1iMmVmYWU3NS1kNzAyLTRkMWQ=",
+                  "node_config": {
+                    "address": "0xDB1c35c1f05d885999b8f13e5735307BcC16Be88"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "idle",
+                  "execution_result": "ERROR",
+                  "result": "AmlkbGU=",
+                  "node_config": {
+                    "address": "0x5310dcF075E0BD47d29B8ec6581F736C767f54D2"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "app_receipt_state": {
+        "state": "success",
+        "label": "Finalized; execution succeeded."
+      },
+      "app_call_binding": true
+    },
+    {
+      "method": "submit_review",
+      "inputs": [
+        "live-b2efae75-d702-4d1d",
+        1,
+        "How long do I have to request a refund?",
+        "You can request a refund within 30 days of purchase.",
+        "bad",
+        true
+      ],
+      "sender": "0x74e34C1C1Db69e810657bAc18B964740221b9D73",
+      "value": "0",
+      "phase": "FINALIZED_SUCCESS",
+      "hash": "0xa21f919aa321de9da0f78c2e1c205a02ea57cf785bfa2231547837684ee8fcbb",
+      "receipt": {
+        "hash": "0xa21f919aa321de9da0f78c2e1c205a02ea57cf785bfa2231547837684ee8fcbb",
+        "status": "FINALIZED",
+        "from_address": "0x74e34C1C1Db69e810657bAc18B964740221b9D73",
+        "to_address": "0x3B75D90Cf55E5b3D45ab748988F0C98cD6a70C41",
+        "value": 0,
+        "created_at": "2026-09-10T09:24:29.171927+00:00",
+        "leader_only": false,
+        "last_leader": "0x36728d2a123aB444E603EE5b2ad17d18Bb193557",
+        "last_round": {
+          "round": "0",
+          "leader_index": "0",
+          "votes_committed": "5",
+          "votes_revealed": "5",
+          "appeal_bond": "0",
+          "rotations_left": "3",
+          "result": 6,
+          "round_validators": [
+            "0x36728d2a123aB444E603EE5b2ad17d18Bb193557",
+            "0xec2Fb79cd12255Eb34886CEd7332f27B98DEe658",
+            "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11",
+            "0x772ffCd1dF6Cc566eC4b8d3f4F4f8eBbb6B36C84",
+            "0x76c25AFC12c75485703cCFfd0083AA6201455B25"
+          ],
+          "validator_votes_hash": [
+            "0xdc59c1a3d2507b38b41d3ad10a9ff382481bab48c93e97e264c30f455175397c",
+            "0x5e7102f42aef571bab6f76e19d6c54f5654323447af1dc9b4d057eb40267fd9f",
+            "0xafa554f32f5f5282cb18e5fb0ba9811849e3a0bbb5cbf26c8e5912c1e3528263",
+            "0x5c719a2bcb8c30a069f2f8114279ced23a497e51e12f100218067c57617e9a1c",
+            "0x4972fd5406dd3f7c910e24c15b8e9b72ec2445d3bcd97fd140d15da1e2cc5907"
+          ],
+          "validator_votes": [
+            1,
+            2,
+            1,
+            2,
+            1
+          ],
+          "validator_votes_name": [
+            "AGREE",
+            "DISAGREE",
+            "AGREE",
+            "DISAGREE",
+            "AGREE"
+          ]
+        },
+        "result": 6,
+        "result_name": "MAJORITY_AGREE",
+        "data": {
+          "calldata": "FgRhcmdzNbwBbGl2ZS1iMmVmYWU3NS1kNzAyLTRkMWQJvAJIb3cgbG9uZyBkbyBJIGhhdmUgdG8gcmVxdWVzdCBhIHJlZnVuZD+kA1lvdSBjYW4gcmVxdWVzdCBhIHJlZnVuZCB3aXRoaW4gMzAgZGF5cyBvZiBwdXJjaGFzZS4cYmFkEAZtZXRob2Rsc3VibWl0X3Jldmlldw=="
+        },
+        "consensus_data": {
+          "votes": {
+            "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11": "agree",
+            "0x36728d2a123aB444E603EE5b2ad17d18Bb193557": "agree",
+            "0x76c25AFC12c75485703cCFfd0083AA6201455B25": "agree",
+            "0x772ffCd1dF6Cc566eC4b8d3f4F4f8eBbb6B36C84": "disagree",
+            "0xec2Fb79cd12255Eb34886CEd7332f27B98DEe658": "disagree"
+          },
+          "leader_receipt": [
+            {
+              "mode": "leader",
+              "vote": null,
+              "execution_result": "SUCCESS",
+              "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMNFgVxdW90ZeQDUmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiA3IGRheXMgb2YgcHVyY2hhc2UuDHJlZmVyZW5jZV9pZBxmYXEGcmVhc29uzANTdGF0ZXMgMzAtZGF5IHdpbmRvdywgY29uZmxpY3Rpbmcgd2l0aCA3LWRheSByZXF1aXJlbWVudC4LcmVhc29uX2NvZGWsAUNPTlRSQURJQ1RTX1JFRkVSRU5DRQpzZWdtZW50X2lkCQpzdWdnZXN0aW9unANZb3UgY2FuIHJlcXVlc3QgYSByZWZ1bmQgd2l0aGluIDcgZGF5cyBvZiBwdXJjaGFzZS4EdGV4dKQDWW91IGNhbiByZXF1ZXN0IGEgcmVmdW5kIHdpdGhpbiAzMCBkYXlzIG9mIHB1cmNoYXNlLgd2ZXJkaWN0ZENPTlRSQURJQ1RFRA9xdWVzdGlvbl9zdGF0dXNEQU5TV0VSRUQHc3VtbWFyefwCU2VnbWVudCBjb250cmFkaWN0cyByZWZlcmVuY2Ugb24gcmVmdW5kIHdpbmRvdy4HdmVyZGljdGxORUVEU19DSEFOR0VTBmF1dGhvctQCMHg3NGUzNGMxYzFkYjY5ZTgxMDY1N2JhYzE4Yjk2NDc0MDIyMWI5ZDczBWRyYWZ0pANZb3UgY2FuIHJlcXVlc3QgYSByZWZ1bmQgd2l0aGluIDMwIGRheXMgb2YgcHVyY2hhc2UuAmlkhARiOWU0OTkxOTZkZTkyOTllZjIyNTUwMzg1NTJhMWM4ZGE1NGM4MjlhMjQ3MGE2MzMzZmI5MDllMzAxMzVjYWQ2CHByb3RvY29sbHJlcGx5Y2hlY2stdjEIcXVlc3Rpb268AkhvdyBsb25nIGRvIEkgaGF2ZSB0byByZXF1ZXN0IGEgcmVmdW5kPwtyZWNvcmRlZF9hdIQCMjAyNi0wOS0xMFQwOToyNDoyOS4xNzE5MjcrMDA6MDAQcmVmZXJlbmNlX2RpZ2VzdIQEMjJiN2E0NzVkOTI0OGQ1NDhjZmRjNjY3MzlkMjMwMDMzYTI3MzE2ZDc2YjZlYWRlOWMzMGFjMTc4NjIzM2QzYw5yZXF1ZXN0X2RpZ2VzdIQENGMwMThkMjBjNzE5MWU2Y2E1ZTE3NzFiOTU3ODMzMDlmMGZiYTdkM2ZmMGVlZTBjZjlkNTk1ZmZhNWRjYWRlYgd2ZXJzaW9uCQx3b3Jrc3BhY2VfaWS8AWxpdmUtYjJlZmFlNzUtZDcwMi00ZDFk",
+              "node_config": {
+                "address": "0x36728d2a123aB444E603EE5b2ad17d18Bb193557"
+              }
+            },
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "execution_result": "SUCCESS",
+              "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMNFgVxdW90ZeQDUmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiA3IGRheXMgb2YgcHVyY2hhc2UuDHJlZmVyZW5jZV9pZBxmYXEGcmVhc29uzANTdGF0ZXMgMzAtZGF5IHdpbmRvdywgY29uZmxpY3Rpbmcgd2l0aCA3LWRheSByZXF1aXJlbWVudC4LcmVhc29uX2NvZGWsAUNPTlRSQURJQ1RTX1JFRkVSRU5DRQpzZWdtZW50X2lkCQpzdWdnZXN0aW9unANZb3UgY2FuIHJlcXVlc3QgYSByZWZ1bmQgd2l0aGluIDcgZGF5cyBvZiBwdXJjaGFzZS4EdGV4dKQDWW91IGNhbiByZXF1ZXN0IGEgcmVmdW5kIHdpdGhpbiAzMCBkYXlzIG9mIHB1cmNoYXNlLgd2ZXJkaWN0ZENPTlRSQURJQ1RFRA9xdWVzdGlvbl9zdGF0dXNEQU5TV0VSRUQHc3VtbWFyefwCU2VnbWVudCBjb250cmFkaWN0cyByZWZlcmVuY2Ugb24gcmVmdW5kIHdpbmRvdy4HdmVyZGljdGxORUVEU19DSEFOR0VTBmF1dGhvctQCMHg3NGUzNGMxYzFkYjY5ZTgxMDY1N2JhYzE4Yjk2NDc0MDIyMWI5ZDczBWRyYWZ0pANZb3UgY2FuIHJlcXVlc3QgYSByZWZ1bmQgd2l0aGluIDMwIGRheXMgb2YgcHVyY2hhc2UuAmlkhARiOWU0OTkxOTZkZTkyOTllZjIyNTUwMzg1NTJhMWM4ZGE1NGM4MjlhMjQ3MGE2MzMzZmI5MDllMzAxMzVjYWQ2CHByb3RvY29sbHJlcGx5Y2hlY2stdjEIcXVlc3Rpb268AkhvdyBsb25nIGRvIEkgaGF2ZSB0byByZXF1ZXN0IGEgcmVmdW5kPwtyZWNvcmRlZF9hdIQCMjAyNi0wOS0xMFQwOToyNDoyOS4xNzE5MjcrMDA6MDAQcmVmZXJlbmNlX2RpZ2VzdIQEMjJiN2E0NzVkOTI0OGQ1NDhjZmRjNjY3MzlkMjMwMDMzYTI3MzE2ZDc2YjZlYWRlOWMzMGFjMTc4NjIzM2QzYw5yZXF1ZXN0X2RpZ2VzdIQENGMwMThkMjBjNzE5MWU2Y2E1ZTE3NzFiOTU3ODMzMDlmMGZiYTdkM2ZmMGVlZTBjZjlkNTk1ZmZhNWRjYWRlYgd2ZXJzaW9uCQx3b3Jrc3BhY2VfaWS8AWxpdmUtYjJlZmFlNzUtZDcwMi00ZDFk",
+              "node_config": {
+                "address": "0x36728d2a123aB444E603EE5b2ad17d18Bb193557"
+              }
+            }
+          ]
+        },
+        "consensus_history": {
+          "current_status_changes": [
+            "FINALIZED"
+          ],
+          "consensus_results": [
+            {
+              "consensus_round": "Accepted",
+              "status_changes": [
+                "PENDING",
+                "PROPOSING",
+                "COMMITTING",
+                "REVEALING",
+                "ACCEPTED"
+              ],
+              "leader_result": [
+                {
+                  "mode": "leader",
+                  "vote": null,
+                  "execution_result": "SUCCESS",
+                  "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMNFgVxdW90ZeQDUmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiA3IGRheXMgb2YgcHVyY2hhc2UuDHJlZmVyZW5jZV9pZBxmYXEGcmVhc29uzANTdGF0ZXMgMzAtZGF5IHdpbmRvdywgY29uZmxpY3Rpbmcgd2l0aCA3LWRheSByZXF1aXJlbWVudC4LcmVhc29uX2NvZGWsAUNPTlRSQURJQ1RTX1JFRkVSRU5DRQpzZWdtZW50X2lkCQpzdWdnZXN0aW9unANZb3UgY2FuIHJlcXVlc3QgYSByZWZ1bmQgd2l0aGluIDcgZGF5cyBvZiBwdXJjaGFzZS4EdGV4dKQDWW91IGNhbiByZXF1ZXN0IGEgcmVmdW5kIHdpdGhpbiAzMCBkYXlzIG9mIHB1cmNoYXNlLgd2ZXJkaWN0ZENPTlRSQURJQ1RFRA9xdWVzdGlvbl9zdGF0dXNEQU5TV0VSRUQHc3VtbWFyefwCU2VnbWVudCBjb250cmFkaWN0cyByZWZlcmVuY2Ugb24gcmVmdW5kIHdpbmRvdy4HdmVyZGljdGxORUVEU19DSEFOR0VTBmF1dGhvctQCMHg3NGUzNGMxYzFkYjY5ZTgxMDY1N2JhYzE4Yjk2NDc0MDIyMWI5ZDczBWRyYWZ0pANZb3UgY2FuIHJlcXVlc3QgYSByZWZ1bmQgd2l0aGluIDMwIGRheXMgb2YgcHVyY2hhc2UuAmlkhARiOWU0OTkxOTZkZTkyOTllZjIyNTUwMzg1NTJhMWM4ZGE1NGM4MjlhMjQ3MGE2MzMzZmI5MDllMzAxMzVjYWQ2CHByb3RvY29sbHJlcGx5Y2hlY2stdjEIcXVlc3Rpb268AkhvdyBsb25nIGRvIEkgaGF2ZSB0byByZXF1ZXN0IGEgcmVmdW5kPwtyZWNvcmRlZF9hdIQCMjAyNi0wOS0xMFQwOToyNDoyOS4xNzE5MjcrMDA6MDAQcmVmZXJlbmNlX2RpZ2VzdIQEMjJiN2E0NzVkOTI0OGQ1NDhjZmRjNjY3MzlkMjMwMDMzYTI3MzE2ZDc2YjZlYWRlOWMzMGFjMTc4NjIzM2QzYw5yZXF1ZXN0X2RpZ2VzdIQENGMwMThkMjBjNzE5MWU2Y2E1ZTE3NzFiOTU3ODMzMDlmMGZiYTdkM2ZmMGVlZTBjZjlkNTk1ZmZhNWRjYWRlYgd2ZXJzaW9uCQx3b3Jrc3BhY2VfaWS8AWxpdmUtYjJlZmFlNzUtZDcwMi00ZDFk",
+                  "node_config": {
+                    "address": "0x36728d2a123aB444E603EE5b2ad17d18Bb193557"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "agree",
+                  "execution_result": "SUCCESS",
+                  "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMNFgVxdW90ZeQDUmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiA3IGRheXMgb2YgcHVyY2hhc2UuDHJlZmVyZW5jZV9pZBxmYXEGcmVhc29uzANTdGF0ZXMgMzAtZGF5IHdpbmRvdywgY29uZmxpY3Rpbmcgd2l0aCA3LWRheSByZXF1aXJlbWVudC4LcmVhc29uX2NvZGWsAUNPTlRSQURJQ1RTX1JFRkVSRU5DRQpzZWdtZW50X2lkCQpzdWdnZXN0aW9unANZb3UgY2FuIHJlcXVlc3QgYSByZWZ1bmQgd2l0aGluIDcgZGF5cyBvZiBwdXJjaGFzZS4EdGV4dKQDWW91IGNhbiByZXF1ZXN0IGEgcmVmdW5kIHdpdGhpbiAzMCBkYXlzIG9mIHB1cmNoYXNlLgd2ZXJkaWN0ZENPTlRSQURJQ1RFRA9xdWVzdGlvbl9zdGF0dXNEQU5TV0VSRUQHc3VtbWFyefwCU2VnbWVudCBjb250cmFkaWN0cyByZWZlcmVuY2Ugb24gcmVmdW5kIHdpbmRvdy4HdmVyZGljdGxORUVEU19DSEFOR0VTBmF1dGhvctQCMHg3NGUzNGMxYzFkYjY5ZTgxMDY1N2JhYzE4Yjk2NDc0MDIyMWI5ZDczBWRyYWZ0pANZb3UgY2FuIHJlcXVlc3QgYSByZWZ1bmQgd2l0aGluIDMwIGRheXMgb2YgcHVyY2hhc2UuAmlkhARiOWU0OTkxOTZkZTkyOTllZjIyNTUwMzg1NTJhMWM4ZGE1NGM4MjlhMjQ3MGE2MzMzZmI5MDllMzAxMzVjYWQ2CHByb3RvY29sbHJlcGx5Y2hlY2stdjEIcXVlc3Rpb268AkhvdyBsb25nIGRvIEkgaGF2ZSB0byByZXF1ZXN0IGEgcmVmdW5kPwtyZWNvcmRlZF9hdIQCMjAyNi0wOS0xMFQwOToyNDoyOS4xNzE5MjcrMDA6MDAQcmVmZXJlbmNlX2RpZ2VzdIQEMjJiN2E0NzVkOTI0OGQ1NDhjZmRjNjY3MzlkMjMwMDMzYTI3MzE2ZDc2YjZlYWRlOWMzMGFjMTc4NjIzM2QzYw5yZXF1ZXN0X2RpZ2VzdIQENGMwMThkMjBjNzE5MWU2Y2E1ZTE3NzFiOTU3ODMzMDlmMGZiYTdkM2ZmMGVlZTBjZjlkNTk1ZmZhNWRjYWRlYgd2ZXJzaW9uCQx3b3Jrc3BhY2VfaWS8AWxpdmUtYjJlZmFlNzUtZDcwMi00ZDFk",
+                  "node_config": {
+                    "address": "0x36728d2a123aB444E603EE5b2ad17d18Bb193557"
+                  }
+                }
+              ],
+              "validator_results": [
+                {
+                  "mode": "validator",
+                  "vote": "disagree",
+                  "execution_result": "SUCCESS",
+                  "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMNFgVxdW90ZeQDUmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiA3IGRheXMgb2YgcHVyY2hhc2UuDHJlZmVyZW5jZV9pZBxmYXEGcmVhc29uzANTdGF0ZXMgMzAtZGF5IHdpbmRvdywgY29uZmxpY3Rpbmcgd2l0aCA3LWRheSByZXF1aXJlbWVudC4LcmVhc29uX2NvZGWsAUNPTlRSQURJQ1RTX1JFRkVSRU5DRQpzZWdtZW50X2lkCQpzdWdnZXN0aW9unANZb3UgY2FuIHJlcXVlc3QgYSByZWZ1bmQgd2l0aGluIDcgZGF5cyBvZiBwdXJjaGFzZS4EdGV4dKQDWW91IGNhbiByZXF1ZXN0IGEgcmVmdW5kIHdpdGhpbiAzMCBkYXlzIG9mIHB1cmNoYXNlLgd2ZXJkaWN0ZENPTlRSQURJQ1RFRA9xdWVzdGlvbl9zdGF0dXNEQU5TV0VSRUQHc3VtbWFyefwCU2VnbWVudCBjb250cmFkaWN0cyByZWZlcmVuY2Ugb24gcmVmdW5kIHdpbmRvdy4HdmVyZGljdGxORUVEU19DSEFOR0VTBmF1dGhvctQCMHg3NGUzNGMxYzFkYjY5ZTgxMDY1N2JhYzE4Yjk2NDc0MDIyMWI5ZDczBWRyYWZ0pANZb3UgY2FuIHJlcXVlc3QgYSByZWZ1bmQgd2l0aGluIDMwIGRheXMgb2YgcHVyY2hhc2UuAmlkhARiOWU0OTkxOTZkZTkyOTllZjIyNTUwMzg1NTJhMWM4ZGE1NGM4MjlhMjQ3MGE2MzMzZmI5MDllMzAxMzVjYWQ2CHByb3RvY29sbHJlcGx5Y2hlY2stdjEIcXVlc3Rpb268AkhvdyBsb25nIGRvIEkgaGF2ZSB0byByZXF1ZXN0IGEgcmVmdW5kPwtyZWNvcmRlZF9hdIQCMjAyNi0wOS0xMFQwOToyNDoyOS4xNzE5MjcrMDA6MDAQcmVmZXJlbmNlX2RpZ2VzdIQEMjJiN2E0NzVkOTI0OGQ1NDhjZmRjNjY3MzlkMjMwMDMzYTI3MzE2ZDc2YjZlYWRlOWMzMGFjMTc4NjIzM2QzYw5yZXF1ZXN0X2RpZ2VzdIQENGMwMThkMjBjNzE5MWU2Y2E1ZTE3NzFiOTU3ODMzMDlmMGZiYTdkM2ZmMGVlZTBjZjlkNTk1ZmZhNWRjYWRlYgd2ZXJzaW9uCQx3b3Jrc3BhY2VfaWS8AWxpdmUtYjJlZmFlNzUtZDcwMi00ZDFk",
+                  "node_config": {
+                    "address": "0xec2Fb79cd12255Eb34886CEd7332f27B98DEe658"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "agree",
+                  "execution_result": "SUCCESS",
+                  "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMNFgVxdW90ZeQDUmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiA3IGRheXMgb2YgcHVyY2hhc2UuDHJlZmVyZW5jZV9pZBxmYXEGcmVhc29uzANTdGF0ZXMgMzAtZGF5IHdpbmRvdywgY29uZmxpY3Rpbmcgd2l0aCA3LWRheSByZXF1aXJlbWVudC4LcmVhc29uX2NvZGWsAUNPTlRSQURJQ1RTX1JFRkVSRU5DRQpzZWdtZW50X2lkCQpzdWdnZXN0aW9unANZb3UgY2FuIHJlcXVlc3QgYSByZWZ1bmQgd2l0aGluIDcgZGF5cyBvZiBwdXJjaGFzZS4EdGV4dKQDWW91IGNhbiByZXF1ZXN0IGEgcmVmdW5kIHdpdGhpbiAzMCBkYXlzIG9mIHB1cmNoYXNlLgd2ZXJkaWN0ZENPTlRSQURJQ1RFRA9xdWVzdGlvbl9zdGF0dXNEQU5TV0VSRUQHc3VtbWFyefwCU2VnbWVudCBjb250cmFkaWN0cyByZWZlcmVuY2Ugb24gcmVmdW5kIHdpbmRvdy4HdmVyZGljdGxORUVEU19DSEFOR0VTBmF1dGhvctQCMHg3NGUzNGMxYzFkYjY5ZTgxMDY1N2JhYzE4Yjk2NDc0MDIyMWI5ZDczBWRyYWZ0pANZb3UgY2FuIHJlcXVlc3QgYSByZWZ1bmQgd2l0aGluIDMwIGRheXMgb2YgcHVyY2hhc2UuAmlkhARiOWU0OTkxOTZkZTkyOTllZjIyNTUwMzg1NTJhMWM4ZGE1NGM4MjlhMjQ3MGE2MzMzZmI5MDllMzAxMzVjYWQ2CHByb3RvY29sbHJlcGx5Y2hlY2stdjEIcXVlc3Rpb268AkhvdyBsb25nIGRvIEkgaGF2ZSB0byByZXF1ZXN0IGEgcmVmdW5kPwtyZWNvcmRlZF9hdIQCMjAyNi0wOS0xMFQwOToyNDoyOS4xNzE5MjcrMDA6MDAQcmVmZXJlbmNlX2RpZ2VzdIQEMjJiN2E0NzVkOTI0OGQ1NDhjZmRjNjY3MzlkMjMwMDMzYTI3MzE2ZDc2YjZlYWRlOWMzMGFjMTc4NjIzM2QzYw5yZXF1ZXN0X2RpZ2VzdIQENGMwMThkMjBjNzE5MWU2Y2E1ZTE3NzFiOTU3ODMzMDlmMGZiYTdkM2ZmMGVlZTBjZjlkNTk1ZmZhNWRjYWRlYgd2ZXJzaW9uCQx3b3Jrc3BhY2VfaWS8AWxpdmUtYjJlZmFlNzUtZDcwMi00ZDFk",
+                  "node_config": {
+                    "address": "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "disagree",
+                  "execution_result": "SUCCESS",
+                  "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMNFgVxdW90ZeQDUmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiA3IGRheXMgb2YgcHVyY2hhc2UuDHJlZmVyZW5jZV9pZBxmYXEGcmVhc29uzANTdGF0ZXMgMzAtZGF5IHdpbmRvdywgY29uZmxpY3Rpbmcgd2l0aCA3LWRheSByZXF1aXJlbWVudC4LcmVhc29uX2NvZGWsAUNPTlRSQURJQ1RTX1JFRkVSRU5DRQpzZWdtZW50X2lkCQpzdWdnZXN0aW9unANZb3UgY2FuIHJlcXVlc3QgYSByZWZ1bmQgd2l0aGluIDcgZGF5cyBvZiBwdXJjaGFzZS4EdGV4dKQDWW91IGNhbiByZXF1ZXN0IGEgcmVmdW5kIHdpdGhpbiAzMCBkYXlzIG9mIHB1cmNoYXNlLgd2ZXJkaWN0ZENPTlRSQURJQ1RFRA9xdWVzdGlvbl9zdGF0dXNEQU5TV0VSRUQHc3VtbWFyefwCU2VnbWVudCBjb250cmFkaWN0cyByZWZlcmVuY2Ugb24gcmVmdW5kIHdpbmRvdy4HdmVyZGljdGxORUVEU19DSEFOR0VTBmF1dGhvctQCMHg3NGUzNGMxYzFkYjY5ZTgxMDY1N2JhYzE4Yjk2NDc0MDIyMWI5ZDczBWRyYWZ0pANZb3UgY2FuIHJlcXVlc3QgYSByZWZ1bmQgd2l0aGluIDMwIGRheXMgb2YgcHVyY2hhc2UuAmlkhARiOWU0OTkxOTZkZTkyOTllZjIyNTUwMzg1NTJhMWM4ZGE1NGM4MjlhMjQ3MGE2MzMzZmI5MDllMzAxMzVjYWQ2CHByb3RvY29sbHJlcGx5Y2hlY2stdjEIcXVlc3Rpb268AkhvdyBsb25nIGRvIEkgaGF2ZSB0byByZXF1ZXN0IGEgcmVmdW5kPwtyZWNvcmRlZF9hdIQCMjAyNi0wOS0xMFQwOToyNDoyOS4xNzE5MjcrMDA6MDAQcmVmZXJlbmNlX2RpZ2VzdIQEMjJiN2E0NzVkOTI0OGQ1NDhjZmRjNjY3MzlkMjMwMDMzYTI3MzE2ZDc2YjZlYWRlOWMzMGFjMTc4NjIzM2QzYw5yZXF1ZXN0X2RpZ2VzdIQENGMwMThkMjBjNzE5MWU2Y2E1ZTE3NzFiOTU3ODMzMDlmMGZiYTdkM2ZmMGVlZTBjZjlkNTk1ZmZhNWRjYWRlYgd2ZXJzaW9uCQx3b3Jrc3BhY2VfaWS8AWxpdmUtYjJlZmFlNzUtZDcwMi00ZDFk",
+                  "node_config": {
+                    "address": "0x772ffCd1dF6Cc566eC4b8d3f4F4f8eBbb6B36C84"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "agree",
+                  "execution_result": "SUCCESS",
+                  "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMNFgVxdW90ZeQDUmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiA3IGRheXMgb2YgcHVyY2hhc2UuDHJlZmVyZW5jZV9pZBxmYXEGcmVhc29uzANTdGF0ZXMgMzAtZGF5IHdpbmRvdywgY29uZmxpY3Rpbmcgd2l0aCA3LWRheSByZXF1aXJlbWVudC4LcmVhc29uX2NvZGWsAUNPTlRSQURJQ1RTX1JFRkVSRU5DRQpzZWdtZW50X2lkCQpzdWdnZXN0aW9unANZb3UgY2FuIHJlcXVlc3QgYSByZWZ1bmQgd2l0aGluIDcgZGF5cyBvZiBwdXJjaGFzZS4EdGV4dKQDWW91IGNhbiByZXF1ZXN0IGEgcmVmdW5kIHdpdGhpbiAzMCBkYXlzIG9mIHB1cmNoYXNlLgd2ZXJkaWN0ZENPTlRSQURJQ1RFRA9xdWVzdGlvbl9zdGF0dXNEQU5TV0VSRUQHc3VtbWFyefwCU2VnbWVudCBjb250cmFkaWN0cyByZWZlcmVuY2Ugb24gcmVmdW5kIHdpbmRvdy4HdmVyZGljdGxORUVEU19DSEFOR0VTBmF1dGhvctQCMHg3NGUzNGMxYzFkYjY5ZTgxMDY1N2JhYzE4Yjk2NDc0MDIyMWI5ZDczBWRyYWZ0pANZb3UgY2FuIHJlcXVlc3QgYSByZWZ1bmQgd2l0aGluIDMwIGRheXMgb2YgcHVyY2hhc2UuAmlkhARiOWU0OTkxOTZkZTkyOTllZjIyNTUwMzg1NTJhMWM4ZGE1NGM4MjlhMjQ3MGE2MzMzZmI5MDllMzAxMzVjYWQ2CHByb3RvY29sbHJlcGx5Y2hlY2stdjEIcXVlc3Rpb268AkhvdyBsb25nIGRvIEkgaGF2ZSB0byByZXF1ZXN0IGEgcmVmdW5kPwtyZWNvcmRlZF9hdIQCMjAyNi0wOS0xMFQwOToyNDoyOS4xNzE5MjcrMDA6MDAQcmVmZXJlbmNlX2RpZ2VzdIQEMjJiN2E0NzVkOTI0OGQ1NDhjZmRjNjY3MzlkMjMwMDMzYTI3MzE2ZDc2YjZlYWRlOWMzMGFjMTc4NjIzM2QzYw5yZXF1ZXN0X2RpZ2VzdIQENGMwMThkMjBjNzE5MWU2Y2E1ZTE3NzFiOTU3ODMzMDlmMGZiYTdkM2ZmMGVlZTBjZjlkNTk1ZmZhNWRjYWRlYgd2ZXJzaW9uCQx3b3Jrc3BhY2VfaWS8AWxpdmUtYjJlZmFlNzUtZDcwMi00ZDFk",
+                  "node_config": {
+                    "address": "0x76c25AFC12c75485703cCFfd0083AA6201455B25"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "app_receipt_state": {
+        "state": "success",
+        "label": "Finalized; execution succeeded."
+      },
+      "app_call_binding": true
+    },
+    {
+      "method": "submit_review",
+      "inputs": [
+        "live-b2efae75-d702-4d1d",
+        1,
+        "How long do I have to request a refund?",
+        "You are guaranteed an instant refund.",
+        "unknown",
+        true
+      ],
+      "sender": "0x74e34C1C1Db69e810657bAc18B964740221b9D73",
+      "value": "0",
+      "phase": "FINALIZED_SUCCESS",
+      "hash": "0x068757edaa4c9c1ee2d038f3a573a30a325c590808a97e7d0f6bf23630a50a41",
+      "receipt": {
+        "hash": "0x068757edaa4c9c1ee2d038f3a573a30a325c590808a97e7d0f6bf23630a50a41",
+        "status": "FINALIZED",
+        "from_address": "0x74e34C1C1Db69e810657bAc18B964740221b9D73",
+        "to_address": "0x3B75D90Cf55E5b3D45ab748988F0C98cD6a70C41",
+        "value": 0,
+        "created_at": "2026-09-10T09:25:26.538788+00:00",
+        "leader_only": false,
+        "last_leader": "0xcE1d6bBB36B744536153966B4DD42276f5ADd0F8",
+        "last_round": {
+          "round": "2",
+          "leader_index": "0",
+          "votes_committed": "5",
+          "votes_revealed": "5",
+          "appeal_bond": "0",
+          "rotations_left": "1",
+          "result": 6,
+          "round_validators": [
+            "0xcE1d6bBB36B744536153966B4DD42276f5ADd0F8",
+            "0x36728d2a123aB444E603EE5b2ad17d18Bb193557",
+            "0x9ea87b28DcA2F79fe108CF06a4c13B4c876AC23d",
+            "0x90402341F0B0e97b23023c0a87de957FB7148E0F",
+            "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67"
+          ],
+          "validator_votes_hash": [
+            "0xfb1bdd18e65749e5ea5b0a037d82463ce8d066e0dda2da18822498a9b7b244bc",
+            "0xc462d65fef95e28fdcd457f3ea232866c900fc168afc5b366feff9542030164d",
+            "0xe1032aa499d980a7ec21b8b5a6e273c119b193bb66cb32557e8fcbddb0dec5f6",
+            "0xc96ed595e527625b864f6c102257de1b5c2d7606c4d1530b14b008cb562441a8",
+            "0xa2036ff72991a88ef01140b5fb335984b84b052ee7d8231b30d78a4e79fb2458"
+          ],
+          "validator_votes": [
+            1,
+            2,
+            2,
+            1,
+            1
+          ],
+          "validator_votes_name": [
+            "AGREE",
+            "DISAGREE",
+            "DISAGREE",
+            "AGREE",
+            "AGREE"
+          ]
+        },
+        "result": 6,
+        "result_name": "MAJORITY_AGREE",
+        "data": {
+          "calldata": "FgRhcmdzNbwBbGl2ZS1iMmVmYWU3NS1kNzAyLTRkMWQJvAJIb3cgbG9uZyBkbyBJIGhhdmUgdG8gcmVxdWVzdCBhIHJlZnVuZD+sAllvdSBhcmUgZ3VhcmFudGVlZCBhbiBpbnN0YW50IHJlZnVuZC48dW5rbm93bhAGbWV0aG9kbHN1Ym1pdF9yZXZpZXc="
+        },
+        "consensus_data": {
+          "votes": {
+            "0x36728d2a123aB444E603EE5b2ad17d18Bb193557": "disagree",
+            "0x90402341F0B0e97b23023c0a87de957FB7148E0F": "agree",
+            "0x9ea87b28DcA2F79fe108CF06a4c13B4c876AC23d": "disagree",
+            "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67": "agree",
+            "0xcE1d6bBB36B744536153966B4DD42276f5ADd0F8": "agree"
+          },
+          "leader_receipt": [
+            {
+              "mode": "leader",
+              "vote": null,
+              "execution_result": "SUCCESS",
+              "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMNFgVxdW90ZeQDUmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiA3IGRheXMgb2YgcHVyY2hhc2UuDHJlZmVyZW5jZV9pZBxmYXEGcmVhc29uzAtUaGUgZHJhZnQgY2xhaW1zIGEgJ2d1YXJhbnRlZWQgaW5zdGFudCByZWZ1bmQsJyBidXQgdGhlIHJlZmVyZW5jZSBvbmx5IGVzdGFibGlzaGVzIGEgNy1kYXkgc3VibWlzc2lvbiB3aW5kb3cgZm9yIHJlZnVuZCByZXF1ZXN0cyBhbmQgc2F5cyBub3RoaW5nIGFib3V0IGd1YXJhbnRlZXMgb3IgaW5zdGFudCBwcm9jZXNzaW5nLgtyZWFzb25fY29kZawBQ09OVFJBRElDVFNfUkVGRVJFTkNFCnNlZ21lbnRfaWQJCnN1Z2dlc3Rpb26sBFlvdSBoYXZlIDcgZGF5cyBmcm9tIHRoZSBkYXRlIG9mIHB1cmNoYXNlIHRvIHN1Ym1pdCBhIHJlZnVuZCByZXF1ZXN0LgR0ZXh0rAJZb3UgYXJlIGd1YXJhbnRlZWQgYW4gaW5zdGFudCByZWZ1bmQuB3ZlcmRpY3RkQ09OVFJBRElDVEVED3F1ZXN0aW9uX3N0YXR1c0RBTlNXRVJFRAdzdW1tYXJ5nA5UaGUgZHJhZnQgcmVwbHkgY29udHJhZGljdHMgdGhlIHJlZmVyZW5jZS4gVGhlIHJlZmVyZW5jZSBzdGF0ZXMgcmVmdW5kcyBtdXN0IGJlIHJlcXVlc3RlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLCBidXQgdGhlIGRyYWZ0IG1ha2VzIGFuIHVuc3VwcG9ydGVkIGNsYWltIGFib3V0IGd1YXJhbnRlZWQgaW5zdGFudCByZWZ1bmRzIGFuZCBvbWl0cyB0aGUgNy1kYXkgd2luZG93IGVudGlyZWx5Lgd2ZXJkaWN0bE5FRURTX0NIQU5HRVMGYXV0aG9y1AIweDc0ZTM0YzFjMWRiNjllODEwNjU3YmFjMThiOTY0NzQwMjIxYjlkNzMFZHJhZnSsAllvdSBhcmUgZ3VhcmFudGVlZCBhbiBpbnN0YW50IHJlZnVuZC4CaWSEBDZiNGU3MDE1MTJlOTllNGRlNWZkMDg2OGYxYjJjMmIwNzNhZTFkOThkNGE4YzZhNWViOTE4NmY4YzM3MzRjYWIIcHJvdG9jb2xscmVwbHljaGVjay12MQhxdWVzdGlvbrwCSG93IGxvbmcgZG8gSSBoYXZlIHRvIHJlcXVlc3QgYSByZWZ1bmQ/C3JlY29yZGVkX2F0hAIyMDI2LTA5LTEwVDA5OjI1OjI2LjUzODc4OCswMDowMBByZWZlcmVuY2VfZGlnZXN0hAQyMmI3YTQ3NWQ5MjQ4ZDU0OGNmZGM2NjczOWQyMzAwMzNhMjczMTZkNzZiNmVhZGU5YzMwYWMxNzg2MjMzZDNjDnJlcXVlc3RfZGlnZXN0hAQ0NGUwMTNlN2FjZDk1NTdjNGFlODkyYWNmYWE4M2U2ZDAyMzU2MThjMGU0Nzg1MDgxYjM5MDg0MTg4NDM3OGNjB3ZlcnNpb24JDHdvcmtzcGFjZV9pZLwBbGl2ZS1iMmVmYWU3NS1kNzAyLTRkMWQ=",
+              "node_config": {
+                "address": "0xcE1d6bBB36B744536153966B4DD42276f5ADd0F8"
+              }
+            },
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "execution_result": "SUCCESS",
+              "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMNFgVxdW90ZeQDUmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiA3IGRheXMgb2YgcHVyY2hhc2UuDHJlZmVyZW5jZV9pZBxmYXEGcmVhc29uzAtUaGUgZHJhZnQgY2xhaW1zIGEgJ2d1YXJhbnRlZWQgaW5zdGFudCByZWZ1bmQsJyBidXQgdGhlIHJlZmVyZW5jZSBvbmx5IGVzdGFibGlzaGVzIGEgNy1kYXkgc3VibWlzc2lvbiB3aW5kb3cgZm9yIHJlZnVuZCByZXF1ZXN0cyBhbmQgc2F5cyBub3RoaW5nIGFib3V0IGd1YXJhbnRlZXMgb3IgaW5zdGFudCBwcm9jZXNzaW5nLgtyZWFzb25fY29kZawBQ09OVFJBRElDVFNfUkVGRVJFTkNFCnNlZ21lbnRfaWQJCnN1Z2dlc3Rpb26sBFlvdSBoYXZlIDcgZGF5cyBmcm9tIHRoZSBkYXRlIG9mIHB1cmNoYXNlIHRvIHN1Ym1pdCBhIHJlZnVuZCByZXF1ZXN0LgR0ZXh0rAJZb3UgYXJlIGd1YXJhbnRlZWQgYW4gaW5zdGFudCByZWZ1bmQuB3ZlcmRpY3RkQ09OVFJBRElDVEVED3F1ZXN0aW9uX3N0YXR1c0RBTlNXRVJFRAdzdW1tYXJ5nA5UaGUgZHJhZnQgcmVwbHkgY29udHJhZGljdHMgdGhlIHJlZmVyZW5jZS4gVGhlIHJlZmVyZW5jZSBzdGF0ZXMgcmVmdW5kcyBtdXN0IGJlIHJlcXVlc3RlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLCBidXQgdGhlIGRyYWZ0IG1ha2VzIGFuIHVuc3VwcG9ydGVkIGNsYWltIGFib3V0IGd1YXJhbnRlZWQgaW5zdGFudCByZWZ1bmRzIGFuZCBvbWl0cyB0aGUgNy1kYXkgd2luZG93IGVudGlyZWx5Lgd2ZXJkaWN0bE5FRURTX0NIQU5HRVMGYXV0aG9y1AIweDc0ZTM0YzFjMWRiNjllODEwNjU3YmFjMThiOTY0NzQwMjIxYjlkNzMFZHJhZnSsAllvdSBhcmUgZ3VhcmFudGVlZCBhbiBpbnN0YW50IHJlZnVuZC4CaWSEBDZiNGU3MDE1MTJlOTllNGRlNWZkMDg2OGYxYjJjMmIwNzNhZTFkOThkNGE4YzZhNWViOTE4NmY4YzM3MzRjYWIIcHJvdG9jb2xscmVwbHljaGVjay12MQhxdWVzdGlvbrwCSG93IGxvbmcgZG8gSSBoYXZlIHRvIHJlcXVlc3QgYSByZWZ1bmQ/C3JlY29yZGVkX2F0hAIyMDI2LTA5LTEwVDA5OjI1OjI2LjUzODc4OCswMDowMBByZWZlcmVuY2VfZGlnZXN0hAQyMmI3YTQ3NWQ5MjQ4ZDU0OGNmZGM2NjczOWQyMzAwMzNhMjczMTZkNzZiNmVhZGU5YzMwYWMxNzg2MjMzZDNjDnJlcXVlc3RfZGlnZXN0hAQ0NGUwMTNlN2FjZDk1NTdjNGFlODkyYWNmYWE4M2U2ZDAyMzU2MThjMGU0Nzg1MDgxYjM5MDg0MTg4NDM3OGNjB3ZlcnNpb24JDHdvcmtzcGFjZV9pZLwBbGl2ZS1iMmVmYWU3NS1kNzAyLTRkMWQ=",
+              "node_config": {
+                "address": "0xcE1d6bBB36B744536153966B4DD42276f5ADd0F8"
+              }
+            }
+          ]
+        },
+        "consensus_history": {
+          "current_status_changes": [
+            "FINALIZED"
+          ],
+          "consensus_results": [
+            {
+              "consensus_round": "Leader Rotation",
+              "status_changes": [
+                "PENDING",
+                "PROPOSING",
+                "COMMITTING",
+                "REVEALING"
+              ],
+              "leader_result": [
+                {
+                  "mode": "leader",
+                  "vote": null,
+                  "execution_result": "SUCCESS",
+                  "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMFBnJlYXNvbowLVGhlIGNsYWltICdZb3UgYXJlIGd1YXJhbnRlZWQgYW4gaW5zdGFudCByZWZ1bmQnIGlzIG5vdCBzdXBwb3J0ZWQgYnkgdGhlIHJlZmVyZW5jZXMuIFRoZSByZWZlcmVuY2VzIHNwZWNpZnkgYSB0aW1lZnJhbWUgZm9yIHJlZnVuZCByZXF1ZXN0cyBidXQgZG8gbm90IG1lbnRpb24gJ2luc3RhbnQnIHJlZnVuZHMuC3JlYXNvbl9jb2RljAFOT1RfSU5fUkVGRVJFTkNFUwpzZWdtZW50X2lkCQpzdWdnZXN0aW9utAZUbyBhZGRyZXNzIHRoZSBxdWVzdGlvbiwgeW91IGNvdWxkIHNheTogJ1JlZnVuZCByZXF1ZXN0cyBtdXN0IGJlIHN1Ym1pdHRlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLicEdGV4dKwCWW91IGFyZSBndWFyYW50ZWVkIGFuIGluc3RhbnQgcmVmdW5kLgd2ZXJkaWN0XFVOU1VQUE9SVEVED3F1ZXN0aW9uX3N0YXR1c1RVTkFOU1dFUkVEB3N1bW1hcnnsDFRoZSByZXBseSBkb2VzIG5vdCBhZGRyZXNzIHRoZSBtYXRlcmlhbCBxdWVzdGlvbiBhYm91dCB0aGUgdGltZWZyYW1lIGZvciByZXF1ZXN0aW5nIGEgcmVmdW5kLiBJdCBtYWtlcyBhbiB1bnN1cHBvcnRlZCBjbGFpbSBhYm91dCBhbiAnaW5zdGFudCByZWZ1bmQnIGFuZCBvbWl0cyB0aGUgNy1kYXkgd2luZG93IHNwZWNpZmllZCBpbiB0aGUgcmVmZXJlbmNlcy4HdmVyZGljdGxORUVEU19DSEFOR0VTBmF1dGhvctQCMHg3NGUzNGMxYzFkYjY5ZTgxMDY1N2JhYzE4Yjk2NDc0MDIyMWI5ZDczBWRyYWZ0rAJZb3UgYXJlIGd1YXJhbnRlZWQgYW4gaW5zdGFudCByZWZ1bmQuAmlkhAQ2YjRlNzAxNTEyZTk5ZTRkZTVmZDA4NjhmMWIyYzJiMDczYWUxZDk4ZDRhOGM2YTVlYjkxODZmOGMzNzM0Y2FiCHByb3RvY29sbHJlcGx5Y2hlY2stdjEIcXVlc3Rpb268AkhvdyBsb25nIGRvIEkgaGF2ZSB0byByZXF1ZXN0IGEgcmVmdW5kPwtyZWNvcmRlZF9hdIQCMjAyNi0wOS0xMFQwOToyNToyNi41Mzg3ODgrMDA6MDAQcmVmZXJlbmNlX2RpZ2VzdIQEMjJiN2E0NzVkOTI0OGQ1NDhjZmRjNjY3MzlkMjMwMDMzYTI3MzE2ZDc2YjZlYWRlOWMzMGFjMTc4NjIzM2QzYw5yZXF1ZXN0X2RpZ2VzdIQENDRlMDEzZTdhY2Q5NTU3YzRhZTg5MmFjZmFhODNlNmQwMjM1NjE4YzBlNDc4NTA4MWIzOTA4NDE4ODQzNzhjYwd2ZXJzaW9uCQx3b3Jrc3BhY2VfaWS8AWxpdmUtYjJlZmFlNzUtZDcwMi00ZDFk",
+                  "node_config": {
+                    "address": "0x76c25AFC12c75485703cCFfd0083AA6201455B25"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "idle",
+                  "execution_result": "ERROR",
+                  "result": "AmlkbGU=",
+                  "node_config": {
+                    "address": "0x76c25AFC12c75485703cCFfd0083AA6201455B25"
+                  }
+                }
+              ],
+              "validator_results": [
+                {
+                  "mode": "validator",
+                  "vote": "disagree",
+                  "execution_result": "SUCCESS",
+                  "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMFBnJlYXNvbowLVGhlIGNsYWltICdZb3UgYXJlIGd1YXJhbnRlZWQgYW4gaW5zdGFudCByZWZ1bmQnIGlzIG5vdCBzdXBwb3J0ZWQgYnkgdGhlIHJlZmVyZW5jZXMuIFRoZSByZWZlcmVuY2VzIHNwZWNpZnkgYSB0aW1lZnJhbWUgZm9yIHJlZnVuZCByZXF1ZXN0cyBidXQgZG8gbm90IG1lbnRpb24gJ2luc3RhbnQnIHJlZnVuZHMuC3JlYXNvbl9jb2RljAFOT1RfSU5fUkVGRVJFTkNFUwpzZWdtZW50X2lkCQpzdWdnZXN0aW9utAZUbyBhZGRyZXNzIHRoZSBxdWVzdGlvbiwgeW91IGNvdWxkIHNheTogJ1JlZnVuZCByZXF1ZXN0cyBtdXN0IGJlIHN1Ym1pdHRlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLicEdGV4dKwCWW91IGFyZSBndWFyYW50ZWVkIGFuIGluc3RhbnQgcmVmdW5kLgd2ZXJkaWN0XFVOU1VQUE9SVEVED3F1ZXN0aW9uX3N0YXR1c1RVTkFOU1dFUkVEB3N1bW1hcnnsDFRoZSByZXBseSBkb2VzIG5vdCBhZGRyZXNzIHRoZSBtYXRlcmlhbCBxdWVzdGlvbiBhYm91dCB0aGUgdGltZWZyYW1lIGZvciByZXF1ZXN0aW5nIGEgcmVmdW5kLiBJdCBtYWtlcyBhbiB1bnN1cHBvcnRlZCBjbGFpbSBhYm91dCBhbiAnaW5zdGFudCByZWZ1bmQnIGFuZCBvbWl0cyB0aGUgNy1kYXkgd2luZG93IHNwZWNpZmllZCBpbiB0aGUgcmVmZXJlbmNlcy4HdmVyZGljdGxORUVEU19DSEFOR0VTBmF1dGhvctQCMHg3NGUzNGMxYzFkYjY5ZTgxMDY1N2JhYzE4Yjk2NDc0MDIyMWI5ZDczBWRyYWZ0rAJZb3UgYXJlIGd1YXJhbnRlZWQgYW4gaW5zdGFudCByZWZ1bmQuAmlkhAQ2YjRlNzAxNTEyZTk5ZTRkZTVmZDA4NjhmMWIyYzJiMDczYWUxZDk4ZDRhOGM2YTVlYjkxODZmOGMzNzM0Y2FiCHByb3RvY29sbHJlcGx5Y2hlY2stdjEIcXVlc3Rpb268AkhvdyBsb25nIGRvIEkgaGF2ZSB0byByZXF1ZXN0IGEgcmVmdW5kPwtyZWNvcmRlZF9hdIQCMjAyNi0wOS0xMFQwOToyNToyNi41Mzg3ODgrMDA6MDAQcmVmZXJlbmNlX2RpZ2VzdIQEMjJiN2E0NzVkOTI0OGQ1NDhjZmRjNjY3MzlkMjMwMDMzYTI3MzE2ZDc2YjZlYWRlOWMzMGFjMTc4NjIzM2QzYw5yZXF1ZXN0X2RpZ2VzdIQENDRlMDEzZTdhY2Q5NTU3YzRhZTg5MmFjZmFhODNlNmQwMjM1NjE4YzBlNDc4NTA4MWIzOTA4NDE4ODQzNzhjYwd2ZXJzaW9uCQx3b3Jrc3BhY2VfaWS8AWxpdmUtYjJlZmFlNzUtZDcwMi00ZDFk",
+                  "node_config": {
+                    "address": "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "disagree",
+                  "execution_result": "SUCCESS",
+                  "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMFBnJlYXNvbowLVGhlIGNsYWltICdZb3UgYXJlIGd1YXJhbnRlZWQgYW4gaW5zdGFudCByZWZ1bmQnIGlzIG5vdCBzdXBwb3J0ZWQgYnkgdGhlIHJlZmVyZW5jZXMuIFRoZSByZWZlcmVuY2VzIHNwZWNpZnkgYSB0aW1lZnJhbWUgZm9yIHJlZnVuZCByZXF1ZXN0cyBidXQgZG8gbm90IG1lbnRpb24gJ2luc3RhbnQnIHJlZnVuZHMuC3JlYXNvbl9jb2RljAFOT1RfSU5fUkVGRVJFTkNFUwpzZWdtZW50X2lkCQpzdWdnZXN0aW9utAZUbyBhZGRyZXNzIHRoZSBxdWVzdGlvbiwgeW91IGNvdWxkIHNheTogJ1JlZnVuZCByZXF1ZXN0cyBtdXN0IGJlIHN1Ym1pdHRlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLicEdGV4dKwCWW91IGFyZSBndWFyYW50ZWVkIGFuIGluc3RhbnQgcmVmdW5kLgd2ZXJkaWN0XFVOU1VQUE9SVEVED3F1ZXN0aW9uX3N0YXR1c1RVTkFOU1dFUkVEB3N1bW1hcnnsDFRoZSByZXBseSBkb2VzIG5vdCBhZGRyZXNzIHRoZSBtYXRlcmlhbCBxdWVzdGlvbiBhYm91dCB0aGUgdGltZWZyYW1lIGZvciByZXF1ZXN0aW5nIGEgcmVmdW5kLiBJdCBtYWtlcyBhbiB1bnN1cHBvcnRlZCBjbGFpbSBhYm91dCBhbiAnaW5zdGFudCByZWZ1bmQnIGFuZCBvbWl0cyB0aGUgNy1kYXkgd2luZG93IHNwZWNpZmllZCBpbiB0aGUgcmVmZXJlbmNlcy4HdmVyZGljdGxORUVEU19DSEFOR0VTBmF1dGhvctQCMHg3NGUzNGMxYzFkYjY5ZTgxMDY1N2JhYzE4Yjk2NDc0MDIyMWI5ZDczBWRyYWZ0rAJZb3UgYXJlIGd1YXJhbnRlZWQgYW4gaW5zdGFudCByZWZ1bmQuAmlkhAQ2YjRlNzAxNTEyZTk5ZTRkZTVmZDA4NjhmMWIyYzJiMDczYWUxZDk4ZDRhOGM2YTVlYjkxODZmOGMzNzM0Y2FiCHByb3RvY29sbHJlcGx5Y2hlY2stdjEIcXVlc3Rpb268AkhvdyBsb25nIGRvIEkgaGF2ZSB0byByZXF1ZXN0IGEgcmVmdW5kPwtyZWNvcmRlZF9hdIQCMjAyNi0wOS0xMFQwOToyNToyNi41Mzg3ODgrMDA6MDAQcmVmZXJlbmNlX2RpZ2VzdIQEMjJiN2E0NzVkOTI0OGQ1NDhjZmRjNjY3MzlkMjMwMDMzYTI3MzE2ZDc2YjZlYWRlOWMzMGFjMTc4NjIzM2QzYw5yZXF1ZXN0X2RpZ2VzdIQENDRlMDEzZTdhY2Q5NTU3YzRhZTg5MmFjZmFhODNlNmQwMjM1NjE4YzBlNDc4NTA4MWIzOTA4NDE4ODQzNzhjYwd2ZXJzaW9uCQx3b3Jrc3BhY2VfaWS8AWxpdmUtYjJlZmFlNzUtZDcwMi00ZDFk",
+                  "node_config": {
+                    "address": "0x90402341F0B0e97b23023c0a87de957FB7148E0F"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "disagree",
+                  "execution_result": "SUCCESS",
+                  "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMFBnJlYXNvbowLVGhlIGNsYWltICdZb3UgYXJlIGd1YXJhbnRlZWQgYW4gaW5zdGFudCByZWZ1bmQnIGlzIG5vdCBzdXBwb3J0ZWQgYnkgdGhlIHJlZmVyZW5jZXMuIFRoZSByZWZlcmVuY2VzIHNwZWNpZnkgYSB0aW1lZnJhbWUgZm9yIHJlZnVuZCByZXF1ZXN0cyBidXQgZG8gbm90IG1lbnRpb24gJ2luc3RhbnQnIHJlZnVuZHMuC3JlYXNvbl9jb2RljAFOT1RfSU5fUkVGRVJFTkNFUwpzZWdtZW50X2lkCQpzdWdnZXN0aW9utAZUbyBhZGRyZXNzIHRoZSBxdWVzdGlvbiwgeW91IGNvdWxkIHNheTogJ1JlZnVuZCByZXF1ZXN0cyBtdXN0IGJlIHN1Ym1pdHRlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLicEdGV4dKwCWW91IGFyZSBndWFyYW50ZWVkIGFuIGluc3RhbnQgcmVmdW5kLgd2ZXJkaWN0XFVOU1VQUE9SVEVED3F1ZXN0aW9uX3N0YXR1c1RVTkFOU1dFUkVEB3N1bW1hcnnsDFRoZSByZXBseSBkb2VzIG5vdCBhZGRyZXNzIHRoZSBtYXRlcmlhbCBxdWVzdGlvbiBhYm91dCB0aGUgdGltZWZyYW1lIGZvciByZXF1ZXN0aW5nIGEgcmVmdW5kLiBJdCBtYWtlcyBhbiB1bnN1cHBvcnRlZCBjbGFpbSBhYm91dCBhbiAnaW5zdGFudCByZWZ1bmQnIGFuZCBvbWl0cyB0aGUgNy1kYXkgd2luZG93IHNwZWNpZmllZCBpbiB0aGUgcmVmZXJlbmNlcy4HdmVyZGljdGxORUVEU19DSEFOR0VTBmF1dGhvctQCMHg3NGUzNGMxYzFkYjY5ZTgxMDY1N2JhYzE4Yjk2NDc0MDIyMWI5ZDczBWRyYWZ0rAJZb3UgYXJlIGd1YXJhbnRlZWQgYW4gaW5zdGFudCByZWZ1bmQuAmlkhAQ2YjRlNzAxNTEyZTk5ZTRkZTVmZDA4NjhmMWIyYzJiMDczYWUxZDk4ZDRhOGM2YTVlYjkxODZmOGMzNzM0Y2FiCHByb3RvY29sbHJlcGx5Y2hlY2stdjEIcXVlc3Rpb268AkhvdyBsb25nIGRvIEkgaGF2ZSB0byByZXF1ZXN0IGEgcmVmdW5kPwtyZWNvcmRlZF9hdIQCMjAyNi0wOS0xMFQwOToyNToyNi41Mzg3ODgrMDA6MDAQcmVmZXJlbmNlX2RpZ2VzdIQEMjJiN2E0NzVkOTI0OGQ1NDhjZmRjNjY3MzlkMjMwMDMzYTI3MzE2ZDc2YjZlYWRlOWMzMGFjMTc4NjIzM2QzYw5yZXF1ZXN0X2RpZ2VzdIQENDRlMDEzZTdhY2Q5NTU3YzRhZTg5MmFjZmFhODNlNmQwMjM1NjE4YzBlNDc4NTA4MWIzOTA4NDE4ODQzNzhjYwd2ZXJzaW9uCQx3b3Jrc3BhY2VfaWS8AWxpdmUtYjJlZmFlNzUtZDcwMi00ZDFk",
+                  "node_config": {
+                    "address": "0xcE1d6bBB36B744536153966B4DD42276f5ADd0F8"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "agree",
+                  "execution_result": "SUCCESS",
+                  "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMFBnJlYXNvbowLVGhlIGNsYWltICdZb3UgYXJlIGd1YXJhbnRlZWQgYW4gaW5zdGFudCByZWZ1bmQnIGlzIG5vdCBzdXBwb3J0ZWQgYnkgdGhlIHJlZmVyZW5jZXMuIFRoZSByZWZlcmVuY2VzIHNwZWNpZnkgYSB0aW1lZnJhbWUgZm9yIHJlZnVuZCByZXF1ZXN0cyBidXQgZG8gbm90IG1lbnRpb24gJ2luc3RhbnQnIHJlZnVuZHMuC3JlYXNvbl9jb2RljAFOT1RfSU5fUkVGRVJFTkNFUwpzZWdtZW50X2lkCQpzdWdnZXN0aW9utAZUbyBhZGRyZXNzIHRoZSBxdWVzdGlvbiwgeW91IGNvdWxkIHNheTogJ1JlZnVuZCByZXF1ZXN0cyBtdXN0IGJlIHN1Ym1pdHRlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLicEdGV4dKwCWW91IGFyZSBndWFyYW50ZWVkIGFuIGluc3RhbnQgcmVmdW5kLgd2ZXJkaWN0XFVOU1VQUE9SVEVED3F1ZXN0aW9uX3N0YXR1c1RVTkFOU1dFUkVEB3N1bW1hcnnsDFRoZSByZXBseSBkb2VzIG5vdCBhZGRyZXNzIHRoZSBtYXRlcmlhbCBxdWVzdGlvbiBhYm91dCB0aGUgdGltZWZyYW1lIGZvciByZXF1ZXN0aW5nIGEgcmVmdW5kLiBJdCBtYWtlcyBhbiB1bnN1cHBvcnRlZCBjbGFpbSBhYm91dCBhbiAnaW5zdGFudCByZWZ1bmQnIGFuZCBvbWl0cyB0aGUgNy1kYXkgd2luZG93IHNwZWNpZmllZCBpbiB0aGUgcmVmZXJlbmNlcy4HdmVyZGljdGxORUVEU19DSEFOR0VTBmF1dGhvctQCMHg3NGUzNGMxYzFkYjY5ZTgxMDY1N2JhYzE4Yjk2NDc0MDIyMWI5ZDczBWRyYWZ0rAJZb3UgYXJlIGd1YXJhbnRlZWQgYW4gaW5zdGFudCByZWZ1bmQuAmlkhAQ2YjRlNzAxNTEyZTk5ZTRkZTVmZDA4NjhmMWIyYzJiMDczYWUxZDk4ZDRhOGM2YTVlYjkxODZmOGMzNzM0Y2FiCHByb3RvY29sbHJlcGx5Y2hlY2stdjEIcXVlc3Rpb268AkhvdyBsb25nIGRvIEkgaGF2ZSB0byByZXF1ZXN0IGEgcmVmdW5kPwtyZWNvcmRlZF9hdIQCMjAyNi0wOS0xMFQwOToyNToyNi41Mzg3ODgrMDA6MDAQcmVmZXJlbmNlX2RpZ2VzdIQEMjJiN2E0NzVkOTI0OGQ1NDhjZmRjNjY3MzlkMjMwMDMzYTI3MzE2ZDc2YjZlYWRlOWMzMGFjMTc4NjIzM2QzYw5yZXF1ZXN0X2RpZ2VzdIQENDRlMDEzZTdhY2Q5NTU3YzRhZTg5MmFjZmFhODNlNmQwMjM1NjE4YzBlNDc4NTA4MWIzOTA4NDE4ODQzNzhjYwd2ZXJzaW9uCQx3b3Jrc3BhY2VfaWS8AWxpdmUtYjJlZmFlNzUtZDcwMi00ZDFk",
+                  "node_config": {
+                    "address": "0x36728d2a123aB444E603EE5b2ad17d18Bb193557"
+                  }
+                }
+              ]
+            },
+            {
+              "consensus_round": "Leader Rotation",
+              "status_changes": [
+                "PROPOSING",
+                "COMMITTING",
+                "REVEALING"
+              ],
+              "leader_result": [
+                {
+                  "mode": "leader",
+                  "vote": null,
+                  "execution_result": "SUCCESS",
+                  "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMFBnJlYXNvbpQHVGhlIHNlZ21lbnQgY2xhaW1zIGFuICdpbnN0YW50IHJlZnVuZCcgZ3VhcmFudGVlIGJ1dCBkb2VzIG5vdCBzcGVjaWZ5IHRoZSByZXF1aXJlZCA3LWRheSB0aW1lZnJhbWUgZm9yIHN1Ym1pc3Npb24uC3JlYXNvbl9jb2RljAFOT1RfSU5fUkVGRVJFTkNFUwpzZWdtZW50X2lkCQpzdWdnZXN0aW9unANZb3UgY2FuIHJlcXVlc3QgYSByZWZ1bmQgd2l0aGluIDcgZGF5cyBvZiBwdXJjaGFzZS4EdGV4dKwCWW91IGFyZSBndWFyYW50ZWVkIGFuIGluc3RhbnQgcmVmdW5kLgd2ZXJkaWN0XFVOU1VQUE9SVEVED3F1ZXN0aW9uX3N0YXR1c1RVTkFOU1dFUkVEB3N1bW1hcnn8BVRoZSByZXBseSBkb2VzIG5vdCBhZGRyZXNzIHRoZSB0aW1lZnJhbWUgZm9yIHJlcXVlc3RpbmcgcmVmdW5kcyBhcyBzcGVjaWZpZWQgaW4gdGhlIHJlZmVyZW5jZXMuB3ZlcmRpY3RsTkVFRFNfQ0hBTkdFUwZhdXRob3LUAjB4NzRlMzRjMWMxZGI2OWU4MTA2NTdiYWMxOGI5NjQ3NDAyMjFiOWQ3MwVkcmFmdKwCWW91IGFyZSBndWFyYW50ZWVkIGFuIGluc3RhbnQgcmVmdW5kLgJpZIQENmI0ZTcwMTUxMmU5OWU0ZGU1ZmQwODY4ZjFiMmMyYjA3M2FlMWQ5OGQ0YThjNmE1ZWI5MTg2ZjhjMzczNGNhYghwcm90b2NvbGxyZXBseWNoZWNrLXYxCHF1ZXN0aW9uvAJIb3cgbG9uZyBkbyBJIGhhdmUgdG8gcmVxdWVzdCBhIHJlZnVuZD8LcmVjb3JkZWRfYXSEAjIwMjYtMDktMTBUMDk6MjU6MjYuNTM4Nzg4KzAwOjAwEHJlZmVyZW5jZV9kaWdlc3SEBDIyYjdhNDc1ZDkyNDhkNTQ4Y2ZkYzY2NzM5ZDIzMDAzM2EyNzMxNmQ3NmI2ZWFkZTljMzBhYzE3ODYyMzNkM2MOcmVxdWVzdF9kaWdlc3SEBDQ0ZTAxM2U3YWNkOTU1N2M0YWU4OTJhY2ZhYTgzZTZkMDIzNTYxOGMwZTQ3ODUwODFiMzkwODQxODg0Mzc4Y2MHdmVyc2lvbgkMd29ya3NwYWNlX2lkvAFsaXZlLWIyZWZhZTc1LWQ3MDItNGQxZA==",
+                  "node_config": {
+                    "address": "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "idle",
+                  "execution_result": "ERROR",
+                  "result": "AmlkbGU=",
+                  "node_config": {
+                    "address": "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3"
+                  }
+                }
+              ],
+              "validator_results": [
+                {
+                  "mode": "validator",
+                  "vote": "disagree",
+                  "execution_result": "SUCCESS",
+                  "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMFBnJlYXNvbpQHVGhlIHNlZ21lbnQgY2xhaW1zIGFuICdpbnN0YW50IHJlZnVuZCcgZ3VhcmFudGVlIGJ1dCBkb2VzIG5vdCBzcGVjaWZ5IHRoZSByZXF1aXJlZCA3LWRheSB0aW1lZnJhbWUgZm9yIHN1Ym1pc3Npb24uC3JlYXNvbl9jb2RljAFOT1RfSU5fUkVGRVJFTkNFUwpzZWdtZW50X2lkCQpzdWdnZXN0aW9unANZb3UgY2FuIHJlcXVlc3QgYSByZWZ1bmQgd2l0aGluIDcgZGF5cyBvZiBwdXJjaGFzZS4EdGV4dKwCWW91IGFyZSBndWFyYW50ZWVkIGFuIGluc3RhbnQgcmVmdW5kLgd2ZXJkaWN0XFVOU1VQUE9SVEVED3F1ZXN0aW9uX3N0YXR1c1RVTkFOU1dFUkVEB3N1bW1hcnn8BVRoZSByZXBseSBkb2VzIG5vdCBhZGRyZXNzIHRoZSB0aW1lZnJhbWUgZm9yIHJlcXVlc3RpbmcgcmVmdW5kcyBhcyBzcGVjaWZpZWQgaW4gdGhlIHJlZmVyZW5jZXMuB3ZlcmRpY3RsTkVFRFNfQ0hBTkdFUwZhdXRob3LUAjB4NzRlMzRjMWMxZGI2OWU4MTA2NTdiYWMxOGI5NjQ3NDAyMjFiOWQ3MwVkcmFmdKwCWW91IGFyZSBndWFyYW50ZWVkIGFuIGluc3RhbnQgcmVmdW5kLgJpZIQENmI0ZTcwMTUxMmU5OWU0ZGU1ZmQwODY4ZjFiMmMyYjA3M2FlMWQ5OGQ0YThjNmE1ZWI5MTg2ZjhjMzczNGNhYghwcm90b2NvbGxyZXBseWNoZWNrLXYxCHF1ZXN0aW9uvAJIb3cgbG9uZyBkbyBJIGhhdmUgdG8gcmVxdWVzdCBhIHJlZnVuZD8LcmVjb3JkZWRfYXSEAjIwMjYtMDktMTBUMDk6MjU6MjYuNTM4Nzg4KzAwOjAwEHJlZmVyZW5jZV9kaWdlc3SEBDIyYjdhNDc1ZDkyNDhkNTQ4Y2ZkYzY2NzM5ZDIzMDAzM2EyNzMxNmQ3NmI2ZWFkZTljMzBhYzE3ODYyMzNkM2MOcmVxdWVzdF9kaWdlc3SEBDQ0ZTAxM2U3YWNkOTU1N2M0YWU4OTJhY2ZhYTgzZTZkMDIzNTYxOGMwZTQ3ODUwODFiMzkwODQxODg0Mzc4Y2MHdmVyc2lvbgkMd29ya3NwYWNlX2lkvAFsaXZlLWIyZWZhZTc1LWQ3MDItNGQxZA==",
+                  "node_config": {
+                    "address": "0xcE1d6bBB36B744536153966B4DD42276f5ADd0F8"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "disagree",
+                  "execution_result": "SUCCESS",
+                  "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMFBnJlYXNvbpQHVGhlIHNlZ21lbnQgY2xhaW1zIGFuICdpbnN0YW50IHJlZnVuZCcgZ3VhcmFudGVlIGJ1dCBkb2VzIG5vdCBzcGVjaWZ5IHRoZSByZXF1aXJlZCA3LWRheSB0aW1lZnJhbWUgZm9yIHN1Ym1pc3Npb24uC3JlYXNvbl9jb2RljAFOT1RfSU5fUkVGRVJFTkNFUwpzZWdtZW50X2lkCQpzdWdnZXN0aW9unANZb3UgY2FuIHJlcXVlc3QgYSByZWZ1bmQgd2l0aGluIDcgZGF5cyBvZiBwdXJjaGFzZS4EdGV4dKwCWW91IGFyZSBndWFyYW50ZWVkIGFuIGluc3RhbnQgcmVmdW5kLgd2ZXJkaWN0XFVOU1VQUE9SVEVED3F1ZXN0aW9uX3N0YXR1c1RVTkFOU1dFUkVEB3N1bW1hcnn8BVRoZSByZXBseSBkb2VzIG5vdCBhZGRyZXNzIHRoZSB0aW1lZnJhbWUgZm9yIHJlcXVlc3RpbmcgcmVmdW5kcyBhcyBzcGVjaWZpZWQgaW4gdGhlIHJlZmVyZW5jZXMuB3ZlcmRpY3RsTkVFRFNfQ0hBTkdFUwZhdXRob3LUAjB4NzRlMzRjMWMxZGI2OWU4MTA2NTdiYWMxOGI5NjQ3NDAyMjFiOWQ3MwVkcmFmdKwCWW91IGFyZSBndWFyYW50ZWVkIGFuIGluc3RhbnQgcmVmdW5kLgJpZIQENmI0ZTcwMTUxMmU5OWU0ZGU1ZmQwODY4ZjFiMmMyYjA3M2FlMWQ5OGQ0YThjNmE1ZWI5MTg2ZjhjMzczNGNhYghwcm90b2NvbGxyZXBseWNoZWNrLXYxCHF1ZXN0aW9uvAJIb3cgbG9uZyBkbyBJIGhhdmUgdG8gcmVxdWVzdCBhIHJlZnVuZD8LcmVjb3JkZWRfYXSEAjIwMjYtMDktMTBUMDk6MjU6MjYuNTM4Nzg4KzAwOjAwEHJlZmVyZW5jZV9kaWdlc3SEBDIyYjdhNDc1ZDkyNDhkNTQ4Y2ZkYzY2NzM5ZDIzMDAzM2EyNzMxNmQ3NmI2ZWFkZTljMzBhYzE3ODYyMzNkM2MOcmVxdWVzdF9kaWdlc3SEBDQ0ZTAxM2U3YWNkOTU1N2M0YWU4OTJhY2ZhYTgzZTZkMDIzNTYxOGMwZTQ3ODUwODFiMzkwODQxODg0Mzc4Y2MHdmVyc2lvbgkMd29ya3NwYWNlX2lkvAFsaXZlLWIyZWZhZTc1LWQ3MDItNGQxZA==",
+                  "node_config": {
+                    "address": "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "agree",
+                  "execution_result": "SUCCESS",
+                  "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMFBnJlYXNvbpQHVGhlIHNlZ21lbnQgY2xhaW1zIGFuICdpbnN0YW50IHJlZnVuZCcgZ3VhcmFudGVlIGJ1dCBkb2VzIG5vdCBzcGVjaWZ5IHRoZSByZXF1aXJlZCA3LWRheSB0aW1lZnJhbWUgZm9yIHN1Ym1pc3Npb24uC3JlYXNvbl9jb2RljAFOT1RfSU5fUkVGRVJFTkNFUwpzZWdtZW50X2lkCQpzdWdnZXN0aW9unANZb3UgY2FuIHJlcXVlc3QgYSByZWZ1bmQgd2l0aGluIDcgZGF5cyBvZiBwdXJjaGFzZS4EdGV4dKwCWW91IGFyZSBndWFyYW50ZWVkIGFuIGluc3RhbnQgcmVmdW5kLgd2ZXJkaWN0XFVOU1VQUE9SVEVED3F1ZXN0aW9uX3N0YXR1c1RVTkFOU1dFUkVEB3N1bW1hcnn8BVRoZSByZXBseSBkb2VzIG5vdCBhZGRyZXNzIHRoZSB0aW1lZnJhbWUgZm9yIHJlcXVlc3RpbmcgcmVmdW5kcyBhcyBzcGVjaWZpZWQgaW4gdGhlIHJlZmVyZW5jZXMuB3ZlcmRpY3RsTkVFRFNfQ0hBTkdFUwZhdXRob3LUAjB4NzRlMzRjMWMxZGI2OWU4MTA2NTdiYWMxOGI5NjQ3NDAyMjFiOWQ3MwVkcmFmdKwCWW91IGFyZSBndWFyYW50ZWVkIGFuIGluc3RhbnQgcmVmdW5kLgJpZIQENmI0ZTcwMTUxMmU5OWU0ZGU1ZmQwODY4ZjFiMmMyYjA3M2FlMWQ5OGQ0YThjNmE1ZWI5MTg2ZjhjMzczNGNhYghwcm90b2NvbGxyZXBseWNoZWNrLXYxCHF1ZXN0aW9uvAJIb3cgbG9uZyBkbyBJIGhhdmUgdG8gcmVxdWVzdCBhIHJlZnVuZD8LcmVjb3JkZWRfYXSEAjIwMjYtMDktMTBUMDk6MjU6MjYuNTM4Nzg4KzAwOjAwEHJlZmVyZW5jZV9kaWdlc3SEBDIyYjdhNDc1ZDkyNDhkNTQ4Y2ZkYzY2NzM5ZDIzMDAzM2EyNzMxNmQ3NmI2ZWFkZTljMzBhYzE3ODYyMzNkM2MOcmVxdWVzdF9kaWdlc3SEBDQ0ZTAxM2U3YWNkOTU1N2M0YWU4OTJhY2ZhYTgzZTZkMDIzNTYxOGMwZTQ3ODUwODFiMzkwODQxODg0Mzc4Y2MHdmVyc2lvbgkMd29ya3NwYWNlX2lkvAFsaXZlLWIyZWZhZTc1LWQ3MDItNGQxZA==",
+                  "node_config": {
+                    "address": "0x36728d2a123aB444E603EE5b2ad17d18Bb193557"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "disagree",
+                  "execution_result": "SUCCESS",
+                  "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMFBnJlYXNvbpQHVGhlIHNlZ21lbnQgY2xhaW1zIGFuICdpbnN0YW50IHJlZnVuZCcgZ3VhcmFudGVlIGJ1dCBkb2VzIG5vdCBzcGVjaWZ5IHRoZSByZXF1aXJlZCA3LWRheSB0aW1lZnJhbWUgZm9yIHN1Ym1pc3Npb24uC3JlYXNvbl9jb2RljAFOT1RfSU5fUkVGRVJFTkNFUwpzZWdtZW50X2lkCQpzdWdnZXN0aW9unANZb3UgY2FuIHJlcXVlc3QgYSByZWZ1bmQgd2l0aGluIDcgZGF5cyBvZiBwdXJjaGFzZS4EdGV4dKwCWW91IGFyZSBndWFyYW50ZWVkIGFuIGluc3RhbnQgcmVmdW5kLgd2ZXJkaWN0XFVOU1VQUE9SVEVED3F1ZXN0aW9uX3N0YXR1c1RVTkFOU1dFUkVEB3N1bW1hcnn8BVRoZSByZXBseSBkb2VzIG5vdCBhZGRyZXNzIHRoZSB0aW1lZnJhbWUgZm9yIHJlcXVlc3RpbmcgcmVmdW5kcyBhcyBzcGVjaWZpZWQgaW4gdGhlIHJlZmVyZW5jZXMuB3ZlcmRpY3RsTkVFRFNfQ0hBTkdFUwZhdXRob3LUAjB4NzRlMzRjMWMxZGI2OWU4MTA2NTdiYWMxOGI5NjQ3NDAyMjFiOWQ3MwVkcmFmdKwCWW91IGFyZSBndWFyYW50ZWVkIGFuIGluc3RhbnQgcmVmdW5kLgJpZIQENmI0ZTcwMTUxMmU5OWU0ZGU1ZmQwODY4ZjFiMmMyYjA3M2FlMWQ5OGQ0YThjNmE1ZWI5MTg2ZjhjMzczNGNhYghwcm90b2NvbGxyZXBseWNoZWNrLXYxCHF1ZXN0aW9uvAJIb3cgbG9uZyBkbyBJIGhhdmUgdG8gcmVxdWVzdCBhIHJlZnVuZD8LcmVjb3JkZWRfYXSEAjIwMjYtMDktMTBUMDk6MjU6MjYuNTM4Nzg4KzAwOjAwEHJlZmVyZW5jZV9kaWdlc3SEBDIyYjdhNDc1ZDkyNDhkNTQ4Y2ZkYzY2NzM5ZDIzMDAzM2EyNzMxNmQ3NmI2ZWFkZTljMzBhYzE3ODYyMzNkM2MOcmVxdWVzdF9kaWdlc3SEBDQ0ZTAxM2U3YWNkOTU1N2M0YWU4OTJhY2ZhYTgzZTZkMDIzNTYxOGMwZTQ3ODUwODFiMzkwODQxODg0Mzc4Y2MHdmVyc2lvbgkMd29ya3NwYWNlX2lkvAFsaXZlLWIyZWZhZTc1LWQ3MDItNGQxZA==",
+                  "node_config": {
+                    "address": "0x90402341F0B0e97b23023c0a87de957FB7148E0F"
+                  }
+                }
+              ]
+            },
+            {
+              "consensus_round": "Accepted",
+              "status_changes": [
+                "PROPOSING",
+                "COMMITTING",
+                "REVEALING",
+                "ACCEPTED"
+              ],
+              "leader_result": [
+                {
+                  "mode": "leader",
+                  "vote": null,
+                  "execution_result": "SUCCESS",
+                  "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMNFgVxdW90ZeQDUmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiA3IGRheXMgb2YgcHVyY2hhc2UuDHJlZmVyZW5jZV9pZBxmYXEGcmVhc29uzAtUaGUgZHJhZnQgY2xhaW1zIGEgJ2d1YXJhbnRlZWQgaW5zdGFudCByZWZ1bmQsJyBidXQgdGhlIHJlZmVyZW5jZSBvbmx5IGVzdGFibGlzaGVzIGEgNy1kYXkgc3VibWlzc2lvbiB3aW5kb3cgZm9yIHJlZnVuZCByZXF1ZXN0cyBhbmQgc2F5cyBub3RoaW5nIGFib3V0IGd1YXJhbnRlZXMgb3IgaW5zdGFudCBwcm9jZXNzaW5nLgtyZWFzb25fY29kZawBQ09OVFJBRElDVFNfUkVGRVJFTkNFCnNlZ21lbnRfaWQJCnN1Z2dlc3Rpb26sBFlvdSBoYXZlIDcgZGF5cyBmcm9tIHRoZSBkYXRlIG9mIHB1cmNoYXNlIHRvIHN1Ym1pdCBhIHJlZnVuZCByZXF1ZXN0LgR0ZXh0rAJZb3UgYXJlIGd1YXJhbnRlZWQgYW4gaW5zdGFudCByZWZ1bmQuB3ZlcmRpY3RkQ09OVFJBRElDVEVED3F1ZXN0aW9uX3N0YXR1c0RBTlNXRVJFRAdzdW1tYXJ5nA5UaGUgZHJhZnQgcmVwbHkgY29udHJhZGljdHMgdGhlIHJlZmVyZW5jZS4gVGhlIHJlZmVyZW5jZSBzdGF0ZXMgcmVmdW5kcyBtdXN0IGJlIHJlcXVlc3RlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLCBidXQgdGhlIGRyYWZ0IG1ha2VzIGFuIHVuc3VwcG9ydGVkIGNsYWltIGFib3V0IGd1YXJhbnRlZWQgaW5zdGFudCByZWZ1bmRzIGFuZCBvbWl0cyB0aGUgNy1kYXkgd2luZG93IGVudGlyZWx5Lgd2ZXJkaWN0bE5FRURTX0NIQU5HRVMGYXV0aG9y1AIweDc0ZTM0YzFjMWRiNjllODEwNjU3YmFjMThiOTY0NzQwMjIxYjlkNzMFZHJhZnSsAllvdSBhcmUgZ3VhcmFudGVlZCBhbiBpbnN0YW50IHJlZnVuZC4CaWSEBDZiNGU3MDE1MTJlOTllNGRlNWZkMDg2OGYxYjJjMmIwNzNhZTFkOThkNGE4YzZhNWViOTE4NmY4YzM3MzRjYWIIcHJvdG9jb2xscmVwbHljaGVjay12MQhxdWVzdGlvbrwCSG93IGxvbmcgZG8gSSBoYXZlIHRvIHJlcXVlc3QgYSByZWZ1bmQ/C3JlY29yZGVkX2F0hAIyMDI2LTA5LTEwVDA5OjI1OjI2LjUzODc4OCswMDowMBByZWZlcmVuY2VfZGlnZXN0hAQyMmI3YTQ3NWQ5MjQ4ZDU0OGNmZGM2NjczOWQyMzAwMzNhMjczMTZkNzZiNmVhZGU5YzMwYWMxNzg2MjMzZDNjDnJlcXVlc3RfZGlnZXN0hAQ0NGUwMTNlN2FjZDk1NTdjNGFlODkyYWNmYWE4M2U2ZDAyMzU2MThjMGU0Nzg1MDgxYjM5MDg0MTg4NDM3OGNjB3ZlcnNpb24JDHdvcmtzcGFjZV9pZLwBbGl2ZS1iMmVmYWU3NS1kNzAyLTRkMWQ=",
+                  "node_config": {
+                    "address": "0xcE1d6bBB36B744536153966B4DD42276f5ADd0F8"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "agree",
+                  "execution_result": "SUCCESS",
+                  "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMNFgVxdW90ZeQDUmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiA3IGRheXMgb2YgcHVyY2hhc2UuDHJlZmVyZW5jZV9pZBxmYXEGcmVhc29uzAtUaGUgZHJhZnQgY2xhaW1zIGEgJ2d1YXJhbnRlZWQgaW5zdGFudCByZWZ1bmQsJyBidXQgdGhlIHJlZmVyZW5jZSBvbmx5IGVzdGFibGlzaGVzIGEgNy1kYXkgc3VibWlzc2lvbiB3aW5kb3cgZm9yIHJlZnVuZCByZXF1ZXN0cyBhbmQgc2F5cyBub3RoaW5nIGFib3V0IGd1YXJhbnRlZXMgb3IgaW5zdGFudCBwcm9jZXNzaW5nLgtyZWFzb25fY29kZawBQ09OVFJBRElDVFNfUkVGRVJFTkNFCnNlZ21lbnRfaWQJCnN1Z2dlc3Rpb26sBFlvdSBoYXZlIDcgZGF5cyBmcm9tIHRoZSBkYXRlIG9mIHB1cmNoYXNlIHRvIHN1Ym1pdCBhIHJlZnVuZCByZXF1ZXN0LgR0ZXh0rAJZb3UgYXJlIGd1YXJhbnRlZWQgYW4gaW5zdGFudCByZWZ1bmQuB3ZlcmRpY3RkQ09OVFJBRElDVEVED3F1ZXN0aW9uX3N0YXR1c0RBTlNXRVJFRAdzdW1tYXJ5nA5UaGUgZHJhZnQgcmVwbHkgY29udHJhZGljdHMgdGhlIHJlZmVyZW5jZS4gVGhlIHJlZmVyZW5jZSBzdGF0ZXMgcmVmdW5kcyBtdXN0IGJlIHJlcXVlc3RlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLCBidXQgdGhlIGRyYWZ0IG1ha2VzIGFuIHVuc3VwcG9ydGVkIGNsYWltIGFib3V0IGd1YXJhbnRlZWQgaW5zdGFudCByZWZ1bmRzIGFuZCBvbWl0cyB0aGUgNy1kYXkgd2luZG93IGVudGlyZWx5Lgd2ZXJkaWN0bE5FRURTX0NIQU5HRVMGYXV0aG9y1AIweDc0ZTM0YzFjMWRiNjllODEwNjU3YmFjMThiOTY0NzQwMjIxYjlkNzMFZHJhZnSsAllvdSBhcmUgZ3VhcmFudGVlZCBhbiBpbnN0YW50IHJlZnVuZC4CaWSEBDZiNGU3MDE1MTJlOTllNGRlNWZkMDg2OGYxYjJjMmIwNzNhZTFkOThkNGE4YzZhNWViOTE4NmY4YzM3MzRjYWIIcHJvdG9jb2xscmVwbHljaGVjay12MQhxdWVzdGlvbrwCSG93IGxvbmcgZG8gSSBoYXZlIHRvIHJlcXVlc3QgYSByZWZ1bmQ/C3JlY29yZGVkX2F0hAIyMDI2LTA5LTEwVDA5OjI1OjI2LjUzODc4OCswMDowMBByZWZlcmVuY2VfZGlnZXN0hAQyMmI3YTQ3NWQ5MjQ4ZDU0OGNmZGM2NjczOWQyMzAwMzNhMjczMTZkNzZiNmVhZGU5YzMwYWMxNzg2MjMzZDNjDnJlcXVlc3RfZGlnZXN0hAQ0NGUwMTNlN2FjZDk1NTdjNGFlODkyYWNmYWE4M2U2ZDAyMzU2MThjMGU0Nzg1MDgxYjM5MDg0MTg4NDM3OGNjB3ZlcnNpb24JDHdvcmtzcGFjZV9pZLwBbGl2ZS1iMmVmYWU3NS1kNzAyLTRkMWQ=",
+                  "node_config": {
+                    "address": "0xcE1d6bBB36B744536153966B4DD42276f5ADd0F8"
+                  }
+                }
+              ],
+              "validator_results": [
+                {
+                  "mode": "validator",
+                  "vote": "disagree",
+                  "execution_result": "SUCCESS",
+                  "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMNFgVxdW90ZeQDUmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiA3IGRheXMgb2YgcHVyY2hhc2UuDHJlZmVyZW5jZV9pZBxmYXEGcmVhc29uzAtUaGUgZHJhZnQgY2xhaW1zIGEgJ2d1YXJhbnRlZWQgaW5zdGFudCByZWZ1bmQsJyBidXQgdGhlIHJlZmVyZW5jZSBvbmx5IGVzdGFibGlzaGVzIGEgNy1kYXkgc3VibWlzc2lvbiB3aW5kb3cgZm9yIHJlZnVuZCByZXF1ZXN0cyBhbmQgc2F5cyBub3RoaW5nIGFib3V0IGd1YXJhbnRlZXMgb3IgaW5zdGFudCBwcm9jZXNzaW5nLgtyZWFzb25fY29kZawBQ09OVFJBRElDVFNfUkVGRVJFTkNFCnNlZ21lbnRfaWQJCnN1Z2dlc3Rpb26sBFlvdSBoYXZlIDcgZGF5cyBmcm9tIHRoZSBkYXRlIG9mIHB1cmNoYXNlIHRvIHN1Ym1pdCBhIHJlZnVuZCByZXF1ZXN0LgR0ZXh0rAJZb3UgYXJlIGd1YXJhbnRlZWQgYW4gaW5zdGFudCByZWZ1bmQuB3ZlcmRpY3RkQ09OVFJBRElDVEVED3F1ZXN0aW9uX3N0YXR1c0RBTlNXRVJFRAdzdW1tYXJ5nA5UaGUgZHJhZnQgcmVwbHkgY29udHJhZGljdHMgdGhlIHJlZmVyZW5jZS4gVGhlIHJlZmVyZW5jZSBzdGF0ZXMgcmVmdW5kcyBtdXN0IGJlIHJlcXVlc3RlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLCBidXQgdGhlIGRyYWZ0IG1ha2VzIGFuIHVuc3VwcG9ydGVkIGNsYWltIGFib3V0IGd1YXJhbnRlZWQgaW5zdGFudCByZWZ1bmRzIGFuZCBvbWl0cyB0aGUgNy1kYXkgd2luZG93IGVudGlyZWx5Lgd2ZXJkaWN0bE5FRURTX0NIQU5HRVMGYXV0aG9y1AIweDc0ZTM0YzFjMWRiNjllODEwNjU3YmFjMThiOTY0NzQwMjIxYjlkNzMFZHJhZnSsAllvdSBhcmUgZ3VhcmFudGVlZCBhbiBpbnN0YW50IHJlZnVuZC4CaWSEBDZiNGU3MDE1MTJlOTllNGRlNWZkMDg2OGYxYjJjMmIwNzNhZTFkOThkNGE4YzZhNWViOTE4NmY4YzM3MzRjYWIIcHJvdG9jb2xscmVwbHljaGVjay12MQhxdWVzdGlvbrwCSG93IGxvbmcgZG8gSSBoYXZlIHRvIHJlcXVlc3QgYSByZWZ1bmQ/C3JlY29yZGVkX2F0hAIyMDI2LTA5LTEwVDA5OjI1OjI2LjUzODc4OCswMDowMBByZWZlcmVuY2VfZGlnZXN0hAQyMmI3YTQ3NWQ5MjQ4ZDU0OGNmZGM2NjczOWQyMzAwMzNhMjczMTZkNzZiNmVhZGU5YzMwYWMxNzg2MjMzZDNjDnJlcXVlc3RfZGlnZXN0hAQ0NGUwMTNlN2FjZDk1NTdjNGFlODkyYWNmYWE4M2U2ZDAyMzU2MThjMGU0Nzg1MDgxYjM5MDg0MTg4NDM3OGNjB3ZlcnNpb24JDHdvcmtzcGFjZV9pZLwBbGl2ZS1iMmVmYWU3NS1kNzAyLTRkMWQ=",
+                  "node_config": {
+                    "address": "0x36728d2a123aB444E603EE5b2ad17d18Bb193557"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "disagree",
+                  "execution_result": "SUCCESS",
+                  "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMNFgVxdW90ZeQDUmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiA3IGRheXMgb2YgcHVyY2hhc2UuDHJlZmVyZW5jZV9pZBxmYXEGcmVhc29uzAtUaGUgZHJhZnQgY2xhaW1zIGEgJ2d1YXJhbnRlZWQgaW5zdGFudCByZWZ1bmQsJyBidXQgdGhlIHJlZmVyZW5jZSBvbmx5IGVzdGFibGlzaGVzIGEgNy1kYXkgc3VibWlzc2lvbiB3aW5kb3cgZm9yIHJlZnVuZCByZXF1ZXN0cyBhbmQgc2F5cyBub3RoaW5nIGFib3V0IGd1YXJhbnRlZXMgb3IgaW5zdGFudCBwcm9jZXNzaW5nLgtyZWFzb25fY29kZawBQ09OVFJBRElDVFNfUkVGRVJFTkNFCnNlZ21lbnRfaWQJCnN1Z2dlc3Rpb26sBFlvdSBoYXZlIDcgZGF5cyBmcm9tIHRoZSBkYXRlIG9mIHB1cmNoYXNlIHRvIHN1Ym1pdCBhIHJlZnVuZCByZXF1ZXN0LgR0ZXh0rAJZb3UgYXJlIGd1YXJhbnRlZWQgYW4gaW5zdGFudCByZWZ1bmQuB3ZlcmRpY3RkQ09OVFJBRElDVEVED3F1ZXN0aW9uX3N0YXR1c0RBTlNXRVJFRAdzdW1tYXJ5nA5UaGUgZHJhZnQgcmVwbHkgY29udHJhZGljdHMgdGhlIHJlZmVyZW5jZS4gVGhlIHJlZmVyZW5jZSBzdGF0ZXMgcmVmdW5kcyBtdXN0IGJlIHJlcXVlc3RlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLCBidXQgdGhlIGRyYWZ0IG1ha2VzIGFuIHVuc3VwcG9ydGVkIGNsYWltIGFib3V0IGd1YXJhbnRlZWQgaW5zdGFudCByZWZ1bmRzIGFuZCBvbWl0cyB0aGUgNy1kYXkgd2luZG93IGVudGlyZWx5Lgd2ZXJkaWN0bE5FRURTX0NIQU5HRVMGYXV0aG9y1AIweDc0ZTM0YzFjMWRiNjllODEwNjU3YmFjMThiOTY0NzQwMjIxYjlkNzMFZHJhZnSsAllvdSBhcmUgZ3VhcmFudGVlZCBhbiBpbnN0YW50IHJlZnVuZC4CaWSEBDZiNGU3MDE1MTJlOTllNGRlNWZkMDg2OGYxYjJjMmIwNzNhZTFkOThkNGE4YzZhNWViOTE4NmY4YzM3MzRjYWIIcHJvdG9jb2xscmVwbHljaGVjay12MQhxdWVzdGlvbrwCSG93IGxvbmcgZG8gSSBoYXZlIHRvIHJlcXVlc3QgYSByZWZ1bmQ/C3JlY29yZGVkX2F0hAIyMDI2LTA5LTEwVDA5OjI1OjI2LjUzODc4OCswMDowMBByZWZlcmVuY2VfZGlnZXN0hAQyMmI3YTQ3NWQ5MjQ4ZDU0OGNmZGM2NjczOWQyMzAwMzNhMjczMTZkNzZiNmVhZGU5YzMwYWMxNzg2MjMzZDNjDnJlcXVlc3RfZGlnZXN0hAQ0NGUwMTNlN2FjZDk1NTdjNGFlODkyYWNmYWE4M2U2ZDAyMzU2MThjMGU0Nzg1MDgxYjM5MDg0MTg4NDM3OGNjB3ZlcnNpb24JDHdvcmtzcGFjZV9pZLwBbGl2ZS1iMmVmYWU3NS1kNzAyLTRkMWQ=",
+                  "node_config": {
+                    "address": "0x9ea87b28DcA2F79fe108CF06a4c13B4c876AC23d"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "agree",
+                  "execution_result": "SUCCESS",
+                  "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMNFgVxdW90ZeQDUmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiA3IGRheXMgb2YgcHVyY2hhc2UuDHJlZmVyZW5jZV9pZBxmYXEGcmVhc29uzAtUaGUgZHJhZnQgY2xhaW1zIGEgJ2d1YXJhbnRlZWQgaW5zdGFudCByZWZ1bmQsJyBidXQgdGhlIHJlZmVyZW5jZSBvbmx5IGVzdGFibGlzaGVzIGEgNy1kYXkgc3VibWlzc2lvbiB3aW5kb3cgZm9yIHJlZnVuZCByZXF1ZXN0cyBhbmQgc2F5cyBub3RoaW5nIGFib3V0IGd1YXJhbnRlZXMgb3IgaW5zdGFudCBwcm9jZXNzaW5nLgtyZWFzb25fY29kZawBQ09OVFJBRElDVFNfUkVGRVJFTkNFCnNlZ21lbnRfaWQJCnN1Z2dlc3Rpb26sBFlvdSBoYXZlIDcgZGF5cyBmcm9tIHRoZSBkYXRlIG9mIHB1cmNoYXNlIHRvIHN1Ym1pdCBhIHJlZnVuZCByZXF1ZXN0LgR0ZXh0rAJZb3UgYXJlIGd1YXJhbnRlZWQgYW4gaW5zdGFudCByZWZ1bmQuB3ZlcmRpY3RkQ09OVFJBRElDVEVED3F1ZXN0aW9uX3N0YXR1c0RBTlNXRVJFRAdzdW1tYXJ5nA5UaGUgZHJhZnQgcmVwbHkgY29udHJhZGljdHMgdGhlIHJlZmVyZW5jZS4gVGhlIHJlZmVyZW5jZSBzdGF0ZXMgcmVmdW5kcyBtdXN0IGJlIHJlcXVlc3RlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLCBidXQgdGhlIGRyYWZ0IG1ha2VzIGFuIHVuc3VwcG9ydGVkIGNsYWltIGFib3V0IGd1YXJhbnRlZWQgaW5zdGFudCByZWZ1bmRzIGFuZCBvbWl0cyB0aGUgNy1kYXkgd2luZG93IGVudGlyZWx5Lgd2ZXJkaWN0bE5FRURTX0NIQU5HRVMGYXV0aG9y1AIweDc0ZTM0YzFjMWRiNjllODEwNjU3YmFjMThiOTY0NzQwMjIxYjlkNzMFZHJhZnSsAllvdSBhcmUgZ3VhcmFudGVlZCBhbiBpbnN0YW50IHJlZnVuZC4CaWSEBDZiNGU3MDE1MTJlOTllNGRlNWZkMDg2OGYxYjJjMmIwNzNhZTFkOThkNGE4YzZhNWViOTE4NmY4YzM3MzRjYWIIcHJvdG9jb2xscmVwbHljaGVjay12MQhxdWVzdGlvbrwCSG93IGxvbmcgZG8gSSBoYXZlIHRvIHJlcXVlc3QgYSByZWZ1bmQ/C3JlY29yZGVkX2F0hAIyMDI2LTA5LTEwVDA5OjI1OjI2LjUzODc4OCswMDowMBByZWZlcmVuY2VfZGlnZXN0hAQyMmI3YTQ3NWQ5MjQ4ZDU0OGNmZGM2NjczOWQyMzAwMzNhMjczMTZkNzZiNmVhZGU5YzMwYWMxNzg2MjMzZDNjDnJlcXVlc3RfZGlnZXN0hAQ0NGUwMTNlN2FjZDk1NTdjNGFlODkyYWNmYWE4M2U2ZDAyMzU2MThjMGU0Nzg1MDgxYjM5MDg0MTg4NDM3OGNjB3ZlcnNpb24JDHdvcmtzcGFjZV9pZLwBbGl2ZS1iMmVmYWU3NS1kNzAyLTRkMWQ=",
+                  "node_config": {
+                    "address": "0x90402341F0B0e97b23023c0a87de957FB7148E0F"
+                  }
+                },
+                {
+                  "mode": "validator",
+                  "vote": "agree",
+                  "execution_result": "SUCCESS",
+                  "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMNFgVxdW90ZeQDUmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiA3IGRheXMgb2YgcHVyY2hhc2UuDHJlZmVyZW5jZV9pZBxmYXEGcmVhc29uzAtUaGUgZHJhZnQgY2xhaW1zIGEgJ2d1YXJhbnRlZWQgaW5zdGFudCByZWZ1bmQsJyBidXQgdGhlIHJlZmVyZW5jZSBvbmx5IGVzdGFibGlzaGVzIGEgNy1kYXkgc3VibWlzc2lvbiB3aW5kb3cgZm9yIHJlZnVuZCByZXF1ZXN0cyBhbmQgc2F5cyBub3RoaW5nIGFib3V0IGd1YXJhbnRlZXMgb3IgaW5zdGFudCBwcm9jZXNzaW5nLgtyZWFzb25fY29kZawBQ09OVFJBRElDVFNfUkVGRVJFTkNFCnNlZ21lbnRfaWQJCnN1Z2dlc3Rpb26sBFlvdSBoYXZlIDcgZGF5cyBmcm9tIHRoZSBkYXRlIG9mIHB1cmNoYXNlIHRvIHN1Ym1pdCBhIHJlZnVuZCByZXF1ZXN0LgR0ZXh0rAJZb3UgYXJlIGd1YXJhbnRlZWQgYW4gaW5zdGFudCByZWZ1bmQuB3ZlcmRpY3RkQ09OVFJBRElDVEVED3F1ZXN0aW9uX3N0YXR1c0RBTlNXRVJFRAdzdW1tYXJ5nA5UaGUgZHJhZnQgcmVwbHkgY29udHJhZGljdHMgdGhlIHJlZmVyZW5jZS4gVGhlIHJlZmVyZW5jZSBzdGF0ZXMgcmVmdW5kcyBtdXN0IGJlIHJlcXVlc3RlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLCBidXQgdGhlIGRyYWZ0IG1ha2VzIGFuIHVuc3VwcG9ydGVkIGNsYWltIGFib3V0IGd1YXJhbnRlZWQgaW5zdGFudCByZWZ1bmRzIGFuZCBvbWl0cyB0aGUgNy1kYXkgd2luZG93IGVudGlyZWx5Lgd2ZXJkaWN0bE5FRURTX0NIQU5HRVMGYXV0aG9y1AIweDc0ZTM0YzFjMWRiNjllODEwNjU3YmFjMThiOTY0NzQwMjIxYjlkNzMFZHJhZnSsAllvdSBhcmUgZ3VhcmFudGVlZCBhbiBpbnN0YW50IHJlZnVuZC4CaWSEBDZiNGU3MDE1MTJlOTllNGRlNWZkMDg2OGYxYjJjMmIwNzNhZTFkOThkNGE4YzZhNWViOTE4NmY4YzM3MzRjYWIIcHJvdG9jb2xscmVwbHljaGVjay12MQhxdWVzdGlvbrwCSG93IGxvbmcgZG8gSSBoYXZlIHRvIHJlcXVlc3QgYSByZWZ1bmQ/C3JlY29yZGVkX2F0hAIyMDI2LTA5LTEwVDA5OjI1OjI2LjUzODc4OCswMDowMBByZWZlcmVuY2VfZGlnZXN0hAQyMmI3YTQ3NWQ5MjQ4ZDU0OGNmZGM2NjczOWQyMzAwMzNhMjczMTZkNzZiNmVhZGU5YzMwYWMxNzg2MjMzZDNjDnJlcXVlc3RfZGlnZXN0hAQ0NGUwMTNlN2FjZDk1NTdjNGFlODkyYWNmYWE4M2U2ZDAyMzU2MThjMGU0Nzg1MDgxYjM5MDg0MTg4NDM3OGNjB3ZlcnNpb24JDHdvcmtzcGFjZV9pZLwBbGl2ZS1iMmVmYWU3NS1kNzAyLTRkMWQ=",
+                  "node_config": {
+                    "address": "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "app_receipt_state": {
+        "state": "success",
+        "label": "Finalized; execution succeeded."
+      },
+      "app_call_binding": true
+    }
+  ],
+  "observations": [
+    {
+      "method": "get_protocol",
+      "inputs": [],
+      "state": "LATEST_FINAL",
+      "output": {
+        "funds_accepted": false,
+        "max_question_bytes": 1500,
+        "max_reply_bytes": 3000,
+        "max_segments": 12,
+        "protocol": "replycheck-v1",
+        "reference_mode": "owner_attested_public_text"
+      }
+    },
+    {
+      "method": "get_workspace",
+      "inputs": [
+        "live-b2efae75-d702-4d1d"
+      ],
+      "state": "LATEST_FINAL",
+      "output": {
+        "archived": false,
+        "card_count": 0,
+        "created_at": "2026-09-10T09:20:37.549595+00:00",
+        "id": "live-b2efae75-d702-4d1d",
+        "member_addresses": [],
+        "name": "ReplyCheck live test fixture",
+        "owner": "0x6c148d12e1422e13a3f2c223a2bdee2910fbee8b",
+        "review_count": 0,
+        "version": 0
+      }
+    },
+    {
+      "method": "get_references",
+      "inputs": [
+        "live-b2efae75-d702-4d1d",
+        1
+      ],
+      "state": "LATEST_FINAL",
+      "output": {
+        "digest": "22b7a475d9248d548cfdc66739d230033a27316d76b6eade9c30ac1786233d3c",
+        "documents": [
+          {
+            "body": "Refund requests must be submitted within 7 days of purchase.",
+            "id": "faq",
+            "title": "Fictional refund policy",
+            "url": ""
+          }
+        ],
+        "published_at": "2026-09-10T09:21:23.522033+00:00",
+        "published_by": "0x6c148d12e1422e13a3f2c223a2bdee2910fbee8b",
+        "version": 1,
+        "workspace_id": "live-b2efae75-d702-4d1d"
+      }
+    },
+    {
+      "method": "get_role",
+      "inputs": [
+        "live-b2efae75-d702-4d1d",
+        "0x74e34C1C1Db69e810657bAc18B964740221b9D73"
+      ],
+      "state": "LATEST_FINAL",
+      "output": "visitor"
+    },
+    {
+      "method": "get_role",
+      "inputs": [
+        "live-b2efae75-d702-4d1d",
+        "0x74e34C1C1Db69e810657bAc18B964740221b9D73"
+      ],
+      "state": "LATEST_FINAL",
+      "output": "reviewer"
+    },
+    {
+      "method": "list_reviews",
+      "inputs": [
+        "live-b2efae75-d702-4d1d",
+        0,
+        1
+      ],
+      "state": "LATEST_FINAL",
+      "output": [
+        {
+          "assessment": {
+            "findings": [
+              {
+                "citations": [
+                  {
+                    "quote": "Refund requests must be submitted within 7 days of purchase.",
+                    "reference_id": "faq"
+                  }
+                ],
+                "reason": "The 7-day refund window matches the reference policy.",
+                "reason_code": "CLAIM_SUPPORTED",
+                "segment_id": 1,
+                "suggestion": "",
+                "text": "You can request a refund within 7 days of purchase.",
+                "verdict": "SUPPORTED"
+              }
+            ],
+            "question_status": "ANSWERED",
+            "summary": "The draft reply correctly states the refund window according to the provided policy.",
+            "verdict": "MATCHES_REFERENCES"
+          },
+          "author": "0x74e34c1c1db69e810657bac18b964740221b9d73",
+          "draft": "You can request a refund within 7 days of purchase.",
+          "id": "4f44de4cf5394228f1f8e9fa2cd64680c2fe64f97d8c393b0d09f2a76b9e04db",
+          "protocol": "replycheck-v1",
+          "question": "How long do I have to request a refund?",
+          "recorded_at": "2026-09-10T09:23:42.783060+00:00",
+          "reference_digest": "22b7a475d9248d548cfdc66739d230033a27316d76b6eade9c30ac1786233d3c",
+          "request_digest": "8935940e2d4c49363b675d0310934938a2b46aa461d13e98428147b8f1cdb152",
+          "version": 1,
+          "workspace_id": "live-b2efae75-d702-4d1d"
+        }
+      ]
+    },
+    {
+      "method": "list_reviews",
+      "inputs": [
+        "live-b2efae75-d702-4d1d",
+        1,
+        1
+      ],
+      "state": "LATEST_FINAL",
+      "output": [
+        {
+          "assessment": {
+            "findings": [
+              {
+                "citations": [
+                  {
+                    "quote": "Refund requests must be submitted within 7 days of purchase.",
+                    "reference_id": "faq"
+                  }
+                ],
+                "reason": "States 30-day window, conflicting with 7-day requirement.",
+                "reason_code": "CONTRADICTS_REFERENCE",
+                "segment_id": 1,
+                "suggestion": "You can request a refund within 7 days of purchase.",
+                "text": "You can request a refund within 30 days of purchase.",
+                "verdict": "CONTRADICTED"
+              }
+            ],
+            "question_status": "ANSWERED",
+            "summary": "Segment contradicts reference on refund window.",
+            "verdict": "NEEDS_CHANGES"
+          },
+          "author": "0x74e34c1c1db69e810657bac18b964740221b9d73",
+          "draft": "You can request a refund within 30 days of purchase.",
+          "id": "b9e499196de9299ef2255038552a1c8da54c829a2470a6333fb909e30135cad6",
+          "protocol": "replycheck-v1",
+          "question": "How long do I have to request a refund?",
+          "recorded_at": "2026-09-10T09:24:29.171927+00:00",
+          "reference_digest": "22b7a475d9248d548cfdc66739d230033a27316d76b6eade9c30ac1786233d3c",
+          "request_digest": "4c018d20c7191e6ca5e1771b95783309f0fba7d3ff0eee0cf9d595ffa5dcadeb",
+          "version": 1,
+          "workspace_id": "live-b2efae75-d702-4d1d"
+        }
+      ]
+    },
+    {
+      "method": "list_reviews",
+      "inputs": [
+        "live-b2efae75-d702-4d1d",
+        2,
+        1
+      ],
+      "state": "LATEST_FINAL",
+      "output": [
+        {
+          "assessment": {
+            "findings": [
+              {
+                "citations": [
+                  {
+                    "quote": "Refund requests must be submitted within 7 days of purchase.",
+                    "reference_id": "faq"
+                  }
+                ],
+                "reason": "The draft claims a 'guaranteed instant refund,' but the reference only establishes a 7-day submission window for refund requests and says nothing about guarantees or instant processing.",
+                "reason_code": "CONTRADICTS_REFERENCE",
+                "segment_id": 1,
+                "suggestion": "You have 7 days from the date of purchase to submit a refund request.",
+                "text": "You are guaranteed an instant refund.",
+                "verdict": "CONTRADICTED"
+              }
+            ],
+            "question_status": "ANSWERED",
+            "summary": "The draft reply contradicts the reference. The reference states refunds must be requested within 7 days of purchase, but the draft makes an unsupported claim about guaranteed instant refunds and omits the 7-day window entirely.",
+            "verdict": "NEEDS_CHANGES"
+          },
+          "author": "0x74e34c1c1db69e810657bac18b964740221b9d73",
+          "draft": "You are guaranteed an instant refund.",
+          "id": "6b4e701512e99e4de5fd0868f1b2c2b073ae1d98d4a8c6a5eb9186f8c3734cab",
+          "protocol": "replycheck-v1",
+          "question": "How long do I have to request a refund?",
+          "recorded_at": "2026-09-10T09:25:26.538788+00:00",
+          "reference_digest": "22b7a475d9248d548cfdc66739d230033a27316d76b6eade9c30ac1786233d3c",
+          "request_digest": "44e013e7acd9557c4ae892acfaa83e6d0235618c0e4785081b390841884378cc",
+          "version": 1,
+          "workspace_id": "live-b2efae75-d702-4d1d"
+        }
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "expected": {
+        "name": "good",
+        "question": "How long do I have to request a refund?",
+        "draft": "You can request a refund within 7 days of purchase.",
+        "verdict": "MATCHES_REFERENCES",
+        "reason_codes": [
+          "CLAIM_SUPPORTED"
+        ]
+      },
+      "status": "PASS",
+      "output": {
+        "assessment": {
+          "findings": [
+            {
+              "citations": [
+                {
+                  "quote": "Refund requests must be submitted within 7 days of purchase.",
+                  "reference_id": "faq"
+                }
+              ],
+              "reason": "The 7-day refund window matches the reference policy.",
+              "reason_code": "CLAIM_SUPPORTED",
+              "segment_id": 1,
+              "suggestion": "",
+              "text": "You can request a refund within 7 days of purchase.",
+              "verdict": "SUPPORTED"
+            }
+          ],
+          "question_status": "ANSWERED",
+          "summary": "The draft reply correctly states the refund window according to the provided policy.",
+          "verdict": "MATCHES_REFERENCES"
+        },
+        "author": "0x74e34c1c1db69e810657bac18b964740221b9d73",
+        "draft": "You can request a refund within 7 days of purchase.",
+        "id": "4f44de4cf5394228f1f8e9fa2cd64680c2fe64f97d8c393b0d09f2a76b9e04db",
+        "protocol": "replycheck-v1",
+        "question": "How long do I have to request a refund?",
+        "recorded_at": "2026-09-10T09:23:42.783060+00:00",
+        "reference_digest": "22b7a475d9248d548cfdc66739d230033a27316d76b6eade9c30ac1786233d3c",
+        "request_digest": "8935940e2d4c49363b675d0310934938a2b46aa461d13e98428147b8f1cdb152",
+        "version": 1,
+        "workspace_id": "live-b2efae75-d702-4d1d"
+      }
+    },
+    {
+      "expected": {
+        "name": "bad",
+        "question": "How long do I have to request a refund?",
+        "draft": "You can request a refund within 30 days of purchase.",
+        "verdict": "NEEDS_CHANGES",
+        "reason_codes": [
+          "CONTRADICTS_REFERENCE"
+        ]
+      },
+      "status": "PASS",
+      "output": {
+        "assessment": {
+          "findings": [
+            {
+              "citations": [
+                {
+                  "quote": "Refund requests must be submitted within 7 days of purchase.",
+                  "reference_id": "faq"
+                }
+              ],
+              "reason": "States 30-day window, conflicting with 7-day requirement.",
+              "reason_code": "CONTRADICTS_REFERENCE",
+              "segment_id": 1,
+              "suggestion": "You can request a refund within 7 days of purchase.",
+              "text": "You can request a refund within 30 days of purchase.",
+              "verdict": "CONTRADICTED"
+            }
+          ],
+          "question_status": "ANSWERED",
+          "summary": "Segment contradicts reference on refund window.",
+          "verdict": "NEEDS_CHANGES"
+        },
+        "author": "0x74e34c1c1db69e810657bac18b964740221b9d73",
+        "draft": "You can request a refund within 30 days of purchase.",
+        "id": "b9e499196de9299ef2255038552a1c8da54c829a2470a6333fb909e30135cad6",
+        "protocol": "replycheck-v1",
+        "question": "How long do I have to request a refund?",
+        "recorded_at": "2026-09-10T09:24:29.171927+00:00",
+        "reference_digest": "22b7a475d9248d548cfdc66739d230033a27316d76b6eade9c30ac1786233d3c",
+        "request_digest": "4c018d20c7191e6ca5e1771b95783309f0fba7d3ff0eee0cf9d595ffa5dcadeb",
+        "version": 1,
+        "workspace_id": "live-b2efae75-d702-4d1d"
+      }
+    },
+    {
+      "expected": {
+        "name": "unknown",
+        "question": "How long do I have to request a refund?",
+        "draft": "You are guaranteed an instant refund.",
+        "verdict": "NEEDS_CHANGES",
+        "reason_codes": [
+          "NOT_IN_REFERENCES"
+        ]
+      },
+      "status": "RUNNING",
+      "output": {
+        "assessment": {
+          "findings": [
+            {
+              "citations": [
+                {
+                  "quote": "Refund requests must be submitted within 7 days of purchase.",
+                  "reference_id": "faq"
+                }
+              ],
+              "reason": "The draft claims a 'guaranteed instant refund,' but the reference only establishes a 7-day submission window for refund requests and says nothing about guarantees or instant processing.",
+              "reason_code": "CONTRADICTS_REFERENCE",
+              "segment_id": 1,
+              "suggestion": "You have 7 days from the date of purchase to submit a refund request.",
+              "text": "You are guaranteed an instant refund.",
+              "verdict": "CONTRADICTED"
+            }
+          ],
+          "question_status": "ANSWERED",
+          "summary": "The draft reply contradicts the reference. The reference states refunds must be requested within 7 days of purchase, but the draft makes an unsupported claim about guaranteed instant refunds and omits the 7-day window entirely.",
+          "verdict": "NEEDS_CHANGES"
+        },
+        "author": "0x74e34c1c1db69e810657bac18b964740221b9d73",
+        "draft": "You are guaranteed an instant refund.",
+        "id": "6b4e701512e99e4de5fd0868f1b2c2b073ae1d98d4a8c6a5eb9186f8c3734cab",
+        "protocol": "replycheck-v1",
+        "question": "How long do I have to request a refund?",
+        "recorded_at": "2026-09-10T09:25:26.538788+00:00",
+        "reference_digest": "22b7a475d9248d548cfdc66739d230033a27316d76b6eade9c30ac1786233d3c",
+        "request_digest": "44e013e7acd9557c4ae892acfaa83e6d0235618c0e4785081b390841884378cc",
+        "version": 1,
+        "workspace_id": "live-b2efae75-d702-4d1d"
+      }
+    }
+  ],
+  "deployed_source_sha256": "e6ea9e181cd30b3ae35e54984c5d7dd086b53e188b3b8881b46622796ccf4ce7",
+  "source_verified": true,
+  "workspace": "live-b2efae75-d702-4d1d",
+  "error": {
+    "name": "AssertionError",
+    "code": "ERR_ASSERTION",
+    "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   'CONTRADICTS_REFERENCE'\n-   'NOT_IN_REFERENCES'\n  ]\n"
+  }
+}

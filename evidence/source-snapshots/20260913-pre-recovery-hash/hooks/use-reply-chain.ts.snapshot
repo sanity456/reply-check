@@ -1,0 +1,302 @@
+'use client';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import {
+  browserProvider,
+  connectWallet,
+  contractAddress,
+  configured,
+  getReceipt,
+  sendOperation,
+  switchNetwork,
+  verifyEffect,
+  walletState,
+} from '@/lib/reply/chain';
+import { CHAIN_ID, errorMessage, isHash } from '@/lib/reply/core';
+import { parseRecovery, recoveryFor, rejected } from '@/lib/reply/journal';
+import { saveBrowserValue, useBrowserValue } from './use-browser-value';
+import type { Address, Operation, Pending, Recovery } from '@/lib/reply/types';
+
+const pendingKey = () => `replycheck:pending:${CHAIN_ID}:${contractAddress}`;
+export function useReplyChain(
+  onConfirmed: (pending: Pending, stored: unknown) => Promise<void>,
+  onIdentityChanged: () => void,
+) {
+  const [account, setAccount] = useState<Address | null>(null);
+  const [chainId, setChainId] = useState<number | null>(null);
+  const [connecting, setConnecting] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [checking, setChecking] = useState(false);
+  const [memory, setMemory] = useState<Recovery | null>(null);
+  const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
+  const [terminalHash, setTerminalHash] = useState('');
+  const raw = useBrowserValue(pendingKey());
+  const recovery = useMemo(
+    () => memory ?? parseRecovery(raw, contractAddress),
+    [raw, memory],
+  );
+  const pending = recovery?.hash ? (recovery as Pending) : null;
+  const uncertain = recovery && !recovery.hash ? recovery : null;
+  const terminal = !!pending && terminalHash === pending.hash;
+  const malformed = !!raw && !parseRecovery(raw, contractAddress);
+  const active = useRef(false),
+    sendLock = useRef(false),
+    mounted = useRef(true);
+  const confirmed = useRef(onConfirmed);
+  const identityChanged = useRef(onIdentityChanged);
+  useEffect(() => {
+    confirmed.current = onConfirmed;
+  }, [onConfirmed]);
+  useEffect(() => {
+    identityChanged.current = onIdentityChanged;
+  }, [onIdentityChanged]);
+  useEffect(() => {
+    mounted.current = true;
+    const provider = browserProvider();
+    let refreshId = 0;
+    const refresh = () => {
+      const id = ++refreshId;
+      identityChanged.current();
+      setAccount(null);
+      setChainId(null);
+      if (provider)
+        void walletState(provider)
+          .then((state) => {
+            if (mounted.current && refreshId === id) {
+              setAccount(state.account);
+              setChainId(state.chainId);
+            }
+          })
+          .catch(() => {
+            if (mounted.current && refreshId === id)
+              setError('Could not read wallet state. Reconnect your wallet.');
+          });
+    };
+    // Initial wallet hydration is a read, not a permission request.
+    if (provider)
+      void walletState(provider)
+        .then((state) => {
+          if (mounted.current && refreshId === 0) {
+            setAccount(state.account);
+            setChainId(state.chainId);
+          }
+        })
+        .catch(() => {});
+    provider?.on?.('accountsChanged', refresh);
+    provider?.on?.('chainChanged', refresh);
+    provider?.on?.('disconnect', refresh);
+    return () => {
+      mounted.current = false;
+      provider?.removeListener?.('accountsChanged', refresh);
+      provider?.removeListener?.('chainChanged', refresh);
+      provider?.removeListener?.('disconnect', refresh);
+    };
+  }, []);
+  const connect = async (switchOnly = false) => {
+    if (connecting) return;
+    setConnecting(true);
+    setError('');
+    try {
+      const provider = browserProvider();
+      if (!provider)
+        throw new Error(
+          'ReplyCheck: Open ReplyCheck in a browser with an EIP-1193 wallet such as MetaMask.',
+        );
+      const state = switchOnly
+        ? await switchNetwork(provider)
+        : await connectWallet(provider);
+      setAccount(state.account);
+      setChainId(state.chainId);
+    } catch (e) {
+      setError(errorMessage(e));
+    } finally {
+      setConnecting(false);
+    }
+  };
+  const check = useCallback(async (record: Pending) => {
+    if (active.current) return;
+    active.current = true;
+    setChecking(true);
+    setError('');
+    try {
+      const result = await getReceipt(record);
+      if (!mounted.current) return;
+      setMessage(result.label);
+      if (result.state === 'success') {
+        const stored = await verifyEffect(record.effect);
+        if (!mounted.current) return;
+        setTerminalHash(record.hash);
+        await confirmed.current(record, stored);
+      } else if (result.state === 'failed') {
+        setTerminalHash(record.hash);
+        setError(result.label);
+      }
+    } catch (e) {
+      if (mounted.current) setError(errorMessage(e));
+    } finally {
+      active.current = false;
+      if (mounted.current) setChecking(false);
+    }
+  }, []);
+  useEffect(() => {
+    if (!pending || terminal) return;
+    let attempts = 0;
+    const initial = setTimeout(() => void check(pending), 0);
+    const timer = setInterval(() => {
+      if (++attempts >= 24) {
+        clearInterval(timer);
+        setMessage(
+          'Still waiting. Your hash is saved; use Check status when you return.',
+        );
+        return;
+      }
+      void check(pending);
+    }, 5000);
+    return () => {
+      clearTimeout(initial);
+      clearInterval(timer);
+    };
+  }, [pending, terminal, check]);
+  const persist = (value: Recovery | null) => {
+    saveBrowserValue(pendingKey(), value ? JSON.stringify(value) : null);
+    setMemory(null);
+  };
+  const send = async (operation: Operation, expectedAccount: Address) => {
+    if (sendLock.current || recovery || malformed)
+      throw new Error(
+        'ReplyCheck: Finish recovering the previous transaction first.',
+      );
+    if (!configured || account !== expectedAccount || chainId !== CHAIN_ID)
+      throw new Error(
+        'ReplyCheck: Your wallet or network changed. Review the action again.',
+      );
+    const provider = browserProvider();
+    if (!provider)
+      throw new Error('ReplyCheck: Your wallet is no longer available.');
+    sendLock.current = true;
+    setSending(true);
+    setError('');
+    setMessage('Review this action in your wallet.');
+    let requested = false;
+    const run = async () => {
+      const record = await recoveryFor(
+        operation,
+        expectedAccount,
+        contractAddress!,
+      );
+      if (localStorage.getItem(pendingKey()))
+        throw new Error(
+          'ReplyCheck: Another tab has an unresolved action. Recover it before sending.',
+        );
+      const hash = await sendOperation(
+        provider,
+        expectedAccount,
+        operation,
+        () => {
+          // Persist before invoking the wallet. A tab crash or lost response must not erase the intent.
+          persist(record);
+          requested = true;
+        },
+      );
+      const completed = { ...record, hash };
+      try {
+        persist(completed);
+      } catch {
+        setMemory(completed);
+        setError(
+          'Recovery storage failed. Copy the transaction hash before leaving.',
+        );
+      }
+      setMessage('Sent. Waiting for finalized execution and stored state.');
+    };
+    try {
+      // Origin-scoped serialization prevents two tabs opening simultaneous write requests.
+      if (navigator.locks)
+        await navigator.locks.request(
+          pendingKey(),
+          { ifAvailable: true },
+          async (lock) => {
+            if (!lock)
+              throw new Error(
+                'ReplyCheck: Another tab is using the wallet. Finish that action first.',
+              );
+            await run();
+          },
+        );
+      else
+        throw new Error(
+          'ReplyCheck: This browser cannot safely coordinate wallet requests. Use a current Chrome or Chromium browser.',
+        );
+    } catch (e) {
+      if (requested && rejected(e)) {
+        try {
+          persist(null);
+        } catch {
+          setError(
+            'The wallet declined the request, but local recovery metadata could not be cleared.',
+          );
+        }
+      }
+      setError(errorMessage(e));
+      if (requested && !rejected(e))
+        setMessage(
+          'The wallet outcome is uncertain. Recover the hash from wallet Activity. Do not send another action.',
+        );
+      throw e;
+    } finally {
+      sendLock.current = false;
+      setSending(false);
+    }
+  };
+  const attachHash = (hash: string) => {
+    if (!uncertain || !isHash(hash)) {
+      setError('Enter the complete transaction hash from wallet Activity.');
+      return;
+    }
+    try {
+      persist({ ...uncertain, hash });
+      setMessage('Checking the recovered transaction.');
+    } catch {
+      setError('Could not save the recovered hash.');
+    }
+  };
+  const confirmNotSent = () => {
+    if (!uncertain || sending) return;
+    try {
+      persist(null);
+      setMessage('You confirmed that no transaction was sent.');
+    } catch {
+      setError('Could not clear local recovery metadata.');
+    }
+  };
+  const dismiss = () => {
+    if (!terminal || checking) return;
+    try {
+      persist(null);
+      setTerminalHash('');
+      setMessage('');
+    } catch {
+      setError('Could not clear local recovery storage.');
+    }
+  };
+  return {
+    account,
+    chainId,
+    connecting,
+    sending,
+    checking,
+    pending,
+    uncertain,
+    malformed,
+    message,
+    error,
+    setError,
+    terminal,
+    connect,
+    send,
+    check,
+    dismiss,
+    attachHash,
+    confirmNotSent,
+  };
+}

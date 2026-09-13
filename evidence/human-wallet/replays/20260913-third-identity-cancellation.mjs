@@ -1,0 +1,44 @@
+/** Offline cancellation observation replay. No claim of non-broadcast or pending-switch success. */
+import assert from 'node:assert/strict';
+import { createEvidenceReader } from '../../read-evidence.mjs';
+import { createHash } from 'node:crypto';
+import { receiptState, verifyReceiptCall } from '../../../lib/reply/receipt.ts';
+const root = new URL('../../../', import.meta.url);
+const read = createEvidenceReader(root);
+const sha = (bytes) => createHash('sha256').update(bytes).digest('hex');
+const bytes = await read('evidence/human-wallet/20260913-third-identity-cancelled-observation.json');
+assert.equal(sha(bytes), '69276f8a77533277ed96d31e92601eb2b5b9cec357e3627dfb686b4bea543e22');
+const proof = JSON.parse(bytes), state = proof.fresh_stored_state;
+assert.equal(proof.status, 'HUMAN_REPORTED_CANCELLED_RECOVERY_UNRESOLVED');
+assert.equal(proof.human_report, 'sorry transaction was cancelled');
+assert.equal(proof.attempt_transaction_hash, null);
+for (const pin of [proof.baseline, proof.preparation, state.generator]) assert.equal(sha(await read(pin.path)), pin.sha256, pin.path);
+for (const [path, hash] of Object.entries(proof.source_pins)) assert.equal(sha(await read(path)), hash, path);
+const before = JSON.parse(await read(proof.baseline.path));
+assert.equal(receiptState(state.previous_transaction_receipt, state.previous_transaction_expected).state, 'success');
+assert.equal(await verifyReceiptCall(state.previous_transaction_receipt, state.previous_transaction_expected), true);
+assert.deepEqual(state.previous_transaction_expected, before.expected);
+assert.equal(state.deployment_verification.matched, true);
+assert.equal(state.deployment_verification.source_sha256, proof.source_pins['contracts/reply_check.py']);
+assert.equal(state.observations.length, 10);
+assert.deepEqual(state.observations.map((row) => row.key), before.observations.map((row) => row.key));
+for (const row of state.observations) {
+  const old = before.observations.find((entry) => entry.key === row.key);
+  assert.equal(row.method, old.method);
+  assert.deepEqual(row.args, old.args);
+  assert.deepEqual(row.output, old.output);
+}
+assert.equal(state.observations.find((row) => row.key === 'reviews').output.length, 12);
+assert.equal(proof.active_sampling.hash, null);
+assert.equal(proof.active_sampling.exported, false);
+assert.equal(proof.active_sampling.receipt_windows.length, 0);
+assert.equal(proof.active_sampling.observations.length, 32);
+assert.ok(proof.active_sampling.observations.every((observation) => observation.visible.hash === null));
+assert.ok(proof.after_report_browser_observations.some((observation) => observation.snapshot.includes('WALLET OUTCOME UNKNOWN') && observation.visible.account === 'A'));
+assert.equal(proof.public_history.scoped_count, 14);
+assert.equal(proof.public_history.transactions.length, 14);
+assert.ok(proof.public_history.transactions.every((transaction) => transaction.status === 'FINALIZED'));
+const newest = [...proof.public_history.transactions].sort((a, b) => Date.parse(b.created_at) - Date.parse(a.created_at))[0];
+assert.equal(newest.hash, before.expected.hash);
+assert.ok(Object.values(proof.constraints).every((value) => value === false));
+console.log(JSON.stringify({ saved_observation_replay: 'PASS', human_report: 'CANCELLED', current_review_count: 12, browser_samples: 32, new_hash_observed: false, pending_account_case: 'NOT_EXERCISED', recovery: 'RETAINED_UNTIL_WALLET_ACTIVITY_CONFIRMATION', note: 'Offline replay only; no proof that a wallet never broadcast and no new execution success claimed.' }, null, 2));

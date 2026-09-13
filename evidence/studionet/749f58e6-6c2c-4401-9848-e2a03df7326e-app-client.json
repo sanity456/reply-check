@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "contract": "0xBD35B1E68aeC803Bd793Db9c6B9762b60f60029A",
+  "source_sha256": "cb09037c7ba0b4dc4a675eb09ee561eb828d82b57ff5eb703d76e204f555c1eb",
+  "evidence_sha256": "aaf0777dcf7cc73e5593e54091c9fcdff6faba2de733f250be840c332875e270",
+  "immutable_reviews_rechecked": 6,
+  "workspace_state": {
+    "version": 2,
+    "reviews": 6,
+    "archived": false
+  },
+  "receipts": [
+    {
+      "method": "create_workspace",
+      "hash": "0xdb408a680e87407208bee64e18f8f13971f5610a8689defee43cef6d53fa5c62",
+      "state": "success"
+    },
+    {
+      "method": "publish_references",
+      "hash": "0xf6f1e1f2cfaa0d8f44fbbafc39e5c88cb592a591d467ce5827388673d4bc890f",
+      "state": "failed"
+    }
+  ],
+  "note": "Fresh read-only RPC checks through the app client. No wallet, signing or new transaction."
+}

@@ -1,0 +1,178 @@
+'use client';
+import {
+  ArrowRight,
+  BookmarkPlus,
+  CheckCircle2,
+  CircleHelp,
+  AlertTriangle,
+} from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { CopyButton, DownloadButton, Timestamp } from './common';
+import type { Bundle, Finding, Review } from '@/lib/reply/types';
+import { short } from '@/lib/reply/core';
+import {
+  draftSuggestion,
+  hasReferenceGap,
+  suggestedDraft,
+} from '@/lib/reply/suggestions';
+
+export function ReviewResult({
+  review,
+  bundle,
+  currentVersion,
+  approve,
+  apply,
+  recheck,
+}: {
+  review: Review;
+  bundle?: Bundle | null;
+  currentVersion: number;
+  approve?: (review: Review) => void;
+  apply?: (draft: string) => void;
+  recheck?: (review: Review) => void;
+}) {
+  const a = review.assessment;
+  const matched = a.verdict === 'MATCHES_REFERENCES';
+  const stale = review.version !== currentVersion;
+  const label = matched
+    ? 'Matches the references'
+    : a.verdict === 'NEEDS_CHANGES'
+      ? 'Changes needed'
+      : 'Not enough information';
+  const replacements = suggestedDraft(a.findings);
+  return (
+    <section
+      className={`review-result panel ${matched ? 'review-matched' : 'review-caution'}`}
+      aria-label="Recorded assessment"
+    >
+      <div className="panel-heading">
+        <div className="result-title">
+          {matched ? (
+            <CheckCircle2 />
+          ) : a.verdict === 'NEEDS_CHANGES' ? (
+            <AlertTriangle />
+          ) : (
+            <CircleHelp />
+          )}
+          <div>
+            <span className="eyebrow">RECORDED REVIEW · V{review.version}</span>
+            <h2>{label}</h2>
+          </div>
+        </div>
+        <span className={`pill ${stale ? 'stale' : ''}`}>
+          {stale ? 'Older reference version' : 'Current references'}
+        </span>
+      </div>
+      <p className="result-summary">{a.summary}</p>
+      <div className="result-coverage">
+        <span className="small-label">QUESTION COVERAGE</span>
+        <span>{a.question_status.toLowerCase().replaceAll('_', ' ')}</span>
+      </div>
+      <p className="context-hint">
+        Checks your team’s references, not independent truth.
+      </p>
+      <ol className="findings">
+        {a.findings.map((f, index) => (
+          <li key={f.segment_id}>
+            <div className="finding-top">
+              <span className="finding-number">Sentence {index + 1}</span>
+              <span
+                className={`finding-status status-${f.verdict.toLowerCase()}`}
+              >
+                {f.verdict.toLowerCase()}
+              </span>
+            </div>
+            <p className="finding-text">“{f.text}”</p>
+            <p className="muted">{f.reason}</p>
+            {f.citations.map((citation, index) => (
+              <div
+                className="citation"
+                key={`${citation.reference_id}-${index}`}
+              >
+                <blockquote>{citation.quote}</blockquote>
+                <span className="muted">
+                  {bundle?.documents.find((d) => d.id === citation.reference_id)
+                    ?.title ?? citation.reference_id}{' '}
+                  · reference v{review.version}
+                </span>
+              </div>
+            ))}
+            <FindingSuggestion finding={f} />
+          </li>
+        ))}
+      </ol>
+      <div className="button-row">
+        {apply && replacements && (
+          <Button variant="outline" onClick={() => apply(replacements)}>
+            Apply suggestions <ArrowRight />
+          </Button>
+        )}
+        {recheck && (
+          <Button variant="outline" onClick={() => recheck(review)}>
+            Recheck this reply
+          </Button>
+        )}
+        {approve && matched && !stale && (
+          <Button onClick={() => approve(review)}>
+            <BookmarkPlus /> Approve answer card
+          </Button>
+        )}
+        <CopyButton value={review.draft} label="Copy reviewed reply" />
+        <DownloadButton
+          value={{ review, reference_bundle: bundle ?? null }}
+          name={`replycheck-${review.id}.json`}
+        />
+      </div>
+      <details className="technical-details">
+        <summary>Review record</summary>
+        <dl>
+          <dt>ID</dt>
+          <dd className="mono">{review.id}</dd>
+          <dt>Author</dt>
+          <dd>{review.author}</dd>
+          <dt>Reference digest</dt>
+          <dd className="mono">{review.reference_digest}</dd>
+          <dt>Input digest</dt>
+          <dd className="mono">{review.request_digest}</dd>
+          <dt>Recorded</dt>
+          <dd>
+            <Timestamp value={review.recorded_at} />
+          </dd>
+        </dl>
+        <div className="reason-codes">
+          <h3>Reason codes</h3>
+          {a.findings.map((finding, index) => (
+            <p key={finding.segment_id}>
+              <span>Sentence {index + 1}</span>{' '}
+              <code>{finding.reason_code}</code>
+            </p>
+          ))}
+        </div>
+        <CopyButton
+          value={review.id}
+          label={`Copy review ID ${short(review.id)}`}
+        />
+      </details>
+    </section>
+  );
+}
+
+function FindingSuggestion({ finding }: { finding: Finding }) {
+  const suggestion = draftSuggestion(finding);
+  if (!suggestion) return null;
+  const local = hasReferenceGap(finding);
+  return (
+    <div className="suggestion">
+      <span className="small-label">
+        {local ? 'LOCAL REWRITE' : 'RECORDED SUGGESTION'} · RECHECK BEFORE USE
+      </span>
+      <p>{suggestion}</p>
+      {local && finding.suggestion && (
+        <details>
+          <summary>Original recorded suggestion</summary>
+          <p>{finding.suggestion}</p>
+        </details>
+      )}
+    </div>
+  );
+}

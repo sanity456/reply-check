@@ -1,0 +1,137 @@
+/** Offline evidence verification. No RPCs, wallet prompts or resubmissions. */
+import assert from 'node:assert/strict';
+import { createEvidenceReader } from '../../read-evidence.mjs';
+import { createHash } from 'node:crypto';
+import { abi } from 'genlayer-js';
+import { receiptState, verifyReceiptCall } from '../../../lib/reply/receipt.ts';
+import { digest } from '../../../lib/reply/core.ts';
+const root = new URL('../../../', import.meta.url), read = createEvidenceReader(root);
+const sha = (bytes) => createHash('sha256').update(bytes).digest('hex');
+const bytes = await read('evidence/human-wallet/20260913-fourth-identity-reconciled.json');
+assert.equal(sha(bytes), '6954427beeb52d2b1e4ad0e9b0d04ec55d81634b2e69affbbbbae56edade3128');
+const proof = JSON.parse(bytes);
+assert.equal(proof.status, 'PASS_SCOPED_PENDING_ACCOUNT_RECOVERY');
+for (const [path, hash] of Object.entries(proof.source_pins)) assert.equal(sha(await read(path)), hash, path);
+for (const pin of [proof.generator, proof.before_evidence, proof.setup_evidence, proof.pending_window_evidence, proof.final_receipt_evidence]) assert.equal(sha(await read(pin.path)), pin.sha256, pin.path);
+const before = JSON.parse(await read(proof.before_evidence.path));
+const setup = JSON.parse(await read(proof.setup_evidence.path));
+const pending = JSON.parse(await read(proof.pending_window_evidence.path));
+const final = JSON.parse(await read(proof.final_receipt_evidence.path));
+const window = pending.passing_window, expected = proof.expected, intended = setup.intended_operation;
+assert.deepEqual(final.expected, window.capture.expected);
+assert.deepEqual(final.app_transaction_export, window.capture.app_transaction_export);
+assert.deepEqual(final.receipt, proof.receipt);
+assert.equal(receiptState(window.capture.receipt, final.expected).state, 'pending');
+assert.equal(await verifyReceiptCall(window.capture.receipt, final.expected), true);
+assert.equal(window.capture.receipt.status, 'COMMITTING');
+assert.equal(window.capture.fixture_verified, true);
+assert.equal(window.pending_account_observed, true);
+assert.equal(receiptState(final.receipt, final.expected).state, 'success');
+assert.equal(await verifyReceiptCall(final.receipt, final.expected), true);
+assert.equal(final.receipt.status, 'FINALIZED');
+const times = [window.before.snapshotRequestedAt, window.before.snapshotCompletedAt, window.capture.requested_at_utc, window.capture.observed_at_utc, window.after.snapshotRequestedAt, window.after.snapshotCompletedAt, final.requested_at_utc, final.observed_at_utc, proof.deployment_verification.verified_at_utc].map(Date.parse);
+assert.ok(times.every(Number.isFinite));
+for (let index = 1; index < times.length; index++) assert.ok(times[index] >= times[index - 1]);
+for (const observation of [window.before, window.after]) {
+  const snapshot = observation.snapshot;
+  assert.ok(snapshot.split('- main:')[0].includes('button "0x29b8b7…509360"'));
+  assert.ok(snapshot.includes('· visitor · reference v2'));
+  assert.ok(snapshot.includes('TRANSACTION IN PROGRESS'));
+  assert.ok(!snapshot.includes('TRANSACTION CHECKED'));
+  assert.ok(snapshot.includes(expected.hash));
+  assert.ok(snapshot.includes('Wallet 0x7cef5d…8d97d0 · ' + expected.workspace));
+  assert.ok(snapshot.includes('button "Review draft" [disabled]'));
+  assert.ok(snapshot.includes('text: ' + intended.question));
+  assert.ok(snapshot.includes('text: ' + intended.draft));
+}
+const plain = (value) => {
+  if (value instanceof Map) return Object.fromEntries([...value].map(([key, item]) => [key, plain(item)]));
+  if (Array.isArray(value)) return value.map(plain);
+  if (typeof value === 'bigint') { assert.ok(Number.isSafeInteger(Number(value))); return Number(value); }
+  if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, plain(item)]));
+  return value;
+};
+const call = plain(abi.calldata.decode(Buffer.from(proof.receipt.data.calldata, 'base64')));
+assert.deepEqual(call, proof.decoded_call);
+assert.deepEqual(call, window.capture.decoded_call);
+assert.deepEqual(call.args, [intended.workspace, 2, intended.question, intended.draft, expected.request_id, true]);
+assert.equal(call.method, 'submit_review');
+assert.equal(expected.hash, '0x6f8bccb77b08ca2ace92e78a858e84fae002c16e11e0324fa7b619dc187cdfec');
+assert.equal(await digest([call.method, call.args]), expected.callDigest);
+assert.equal(await digest([expected.workspace, expected.account, expected.request_id]), expected.review_id);
+assert.ok(!intended.prohibited_resubmission_hashes.includes(expected.hash));
+assert.notEqual(expected.request_id, before.expected.request_id);
+const leaders = proof.receipt.consensus_data.leader_receipt.filter((entry) => entry.mode === 'leader');
+assert.equal(leaders.length, 1);
+assert.equal(leaders[0].node_config.address.toLowerCase(), proof.receipt.last_leader.toLowerCase());
+const encoded = Buffer.from(typeof leaders[0].result === 'string' ? leaders[0].result : leaders[0].result.raw, 'base64');
+assert.equal(encoded[0], 0);
+assert.deepEqual(plain(abi.calldata.decode(encoded.subarray(1))), proof.stored_review);
+assert.deepEqual(proof.decoded_return_payload, proof.stored_review);
+for (const [key, value] of Object.entries({ id: expected.review_id, author: intended.account, workspace_id: intended.workspace, question: intended.question, draft: intended.draft, version: 2, request_digest: intended.request_digest, reference_digest: intended.reference_digest })) assert.equal(proof.stored_review[key], value, key);
+assert.equal(proof.stored_review.assessment.verdict, intended.expected_verdict);
+assert.equal(proof.stored_review.assessment.question_status, intended.expected_question_status);
+assert.deepEqual(proof.stored_review.assessment.findings.map((finding) => finding.reason_code), intended.expected_reason_codes);
+assert.deepEqual(proof.stored_review.assessment.findings[0].citations, [{ quote: intended.draft, reference_id: 'faq' }]);
+assert.equal(proof.stored_review.recorded_at, '2026-09-13T07:41:09.548835+00:00');
+assert.equal(proof.stored_review.recorded_at, proof.timing.stored_recorded_at);
+assert.equal(proof.deployment_verification.matched, true);
+assert.equal(proof.deployment_verification.source_sha256, proof.source_pins['contracts/reply_check.py']);
+assert.equal(proof.observations.length, 10);
+assert.deepEqual(proof.observations.map((row) => row.key), before.observations.map((row) => row.key));
+for (const row of proof.observations) {
+  const old = before.observations.find((entry) => entry.key === row.key);
+  assert.equal(row.method, old.method); assert.deepEqual(row.args, old.args);
+  assert.ok(Date.parse(row.observed_at_utc) >= Date.parse(row.requested_at_utc));
+  assert.ok(Date.parse(row.requested_at_utc) >= Date.parse(proof.deployment_verification.verified_at_utc));
+  if (row.key === 'workspace') assert.deepEqual(row.output, { ...old.output, review_count: 13 });
+  else if (row.key === 'reviews') { assert.equal(old.output.length, 12); assert.equal(row.output.length, 13); assert.deepEqual(row.output.filter((review) => review.id !== expected.review_id), old.output); assert.deepEqual(row.output.filter((review) => review.id === expected.review_id), [proof.stored_review]); }
+  else assert.deepEqual(row.output, old.output, row.key);
+}
+assert.equal(proof.verified_checks.length, 8);
+assert.ok(Object.values(proof.constraints).every((value) => value === false));
+assert.equal(proof.actors.agent_checked_app_consent, false);
+assert.equal(pending.wallet_request_actor_record.agent_checked_app_consent, false);
+assert.ok(pending.wallet_request_actor_record.preparation_observations.before.snapshot.includes('checkbox "I checked the content and agree to publish it." [checked]'));
+assert.ok(pending.wallet_request_actor_record.preparation_observations.consent.snapshot.includes('checkbox "I checked the content and agree to publish it." [checked]'));
+assert.equal(proof.actors.agent_clicked_continue_to_wallet, true);
+assert.equal(proof.actors.agent_approved_metamask, false);
+assert.equal(proof.actors.agent_signed_transaction, false);
+assert.equal(pending.observer_trace.observations.length, 115);
+assert.equal(pending.observer_trace.snapshots.length, 4);
+for (const observation of pending.observer_trace.observations) assert.equal(typeof pending.observer_trace.snapshots[observation.snapshot_index], 'string');
+assert.ok(pending.observer_trace.observations.some((observation) => observation.snapshotCompletedAt === window.before.snapshotCompletedAt && pending.observer_trace.snapshots[observation.snapshot_index] === window.before.snapshot));
+assert.ok(pending.observer_trace.observations.some((observation) => observation.snapshotCompletedAt === window.after.snapshotCompletedAt && pending.observer_trace.snapshots[observation.snapshot_index] === window.after.snapshot));
+const closingBytes = await read('evidence/human-wallet/20260913-fourth-identity-browser-close.json');
+assert.equal(sha(closingBytes), '2d2f980d4efb09e11983342f62a0d25a8d7756f3441a315530292d6b36b57dfb');
+const closing = JSON.parse(closingBytes);
+assert.equal(closing.status, 'PASS_SCOPED_BROWSER_CLOSE');
+assert.equal(closing.reconciliation.sha256, sha(bytes));
+assert.equal(closing.observations.length, 6);
+assert.equal(closing.verified_checks.length, 4);
+assert.ok(Object.values(closing.constraints).every((value) => value === false));
+const initialClose = closing.observations[0].snapshot;
+assert.ok(initialClose.includes(expected.hash));
+assert.ok(initialClose.includes('TRANSACTION CHECKED'));
+assert.ok(initialClose.includes('Wallet 0x7cef5d…8d97d0 · ' + expected.workspace));
+for (const observation of closing.observations.slice(1)) {
+  assert.ok(!observation.snapshot.includes('region "Transaction recovery"'));
+  assert.ok(!observation.snapshot.includes('WALLET OUTCOME UNKNOWN'));
+  assert.ok(!observation.snapshot.includes('dialog "Check this reply"'));
+  assert.ok(observation.snapshot.includes('button "0x29b8b7…509360"'));
+  assert.ok(observation.snapshot.includes('· visitor · reference v2'));
+}
+assert.ok(closing.observations[2].snapshot.includes('button "Load older reviews"'));
+const last = closing.observations.at(-1).snapshot;
+assert.ok(!last.includes('Loading review…'));
+assert.ok(!last.includes('Could not load this review.'));
+assert.ok(last.includes('text: ' + expected.review_id));
+assert.ok(last.includes('paragraph: ' + proof.stored_review.assessment.summary));
+assert.equal((last.match(/- time: /g) || []).length, 13);
+for (const review of proof.observations.find((row) => row.key === 'reviews').output) {
+  const displayed = new Date(review.recorded_at).toISOString().slice(0, 19).replace('T', ' ') + ' UTC';
+  assert.ok(last.includes('- time: ' + displayed));
+}
+assert.equal(closing.actor_clarification.initial_replay_failure.actual, false);
+assert.equal(closing.actor_clarification.initial_replay_failure.expected, true);
+console.log(JSON.stringify({ pending_account_recovery: 'PASS', verification_groups: 8, full_public_state_outputs: 10, review_count: 13, hash: expected.hash, independent_pending_status: 'COMMITTING', final_execution: 'SUCCESS', browser_close: 'PASS', closing_checks: 4, closing_observations: 6, pending_network_test: 'NOT_EXERCISED', note: 'Offline replay of this scoped test; no new wallet action, RPC, resubmission or whole-release pass.' }, null, 2));

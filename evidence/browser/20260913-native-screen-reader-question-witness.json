@@ -1,0 +1,192 @@
+{
+  "format": "replycheck-native-screen-reader-question-witness-v1",
+  "status": "QUESTION_LABEL_AND_ERROR_GUIDANCE_HUMAN_REPORTED_REPLY_CHECK_PREPARED",
+  "recorded_at_utc": "2026-09-13T11:52:21.4190110Z",
+  "source": {
+    "path": "components/reply/reply-app.tsx",
+    "sha256": "6653c8724edd43452f274b1f5ef0b2e9768f65ce2f2d70f2e177159e131a1129"
+  },
+  "prior_records": [
+    {
+      "path": "evidence/browser/20260913-native-screen-reader-setup.json",
+      "sha256": "402eb79268906380a5be655b1a3823021d32c9cfec33df357e44c2eb3c40783d"
+    },
+    {
+      "path": "evidence/browser/20260913-native-screen-reader-label-witness.json",
+      "sha256": "a668f4d9b30fa42113f1599f444373a85e4f1ae15e6fd1e9165d2b84e0ef1162"
+    }
+  ],
+  "human_reports": [
+    {
+      "response_verbatim": "question",
+      "meaning": "Question label reported."
+    },
+    {
+      "response_verbatim": "question of up to 1500 bytes",
+      "meaning": "Question error guidance reported; this is the human's paraphrase, not an audio recording or exact speech transcript."
+    }
+  ],
+  "conclusion": {
+    "question_label": "HUMAN_REPORTED_HEARD",
+    "question_error_guidance": "HUMAN_REPORTED_HEARD",
+    "invalid_state_wording": "NOT_CONFIRMED",
+    "live_vs_focus_announcement": "NOT_DISTINGUISHED",
+    "whole_screen_reader_matrix": "INCOMPLETE"
+  },
+  "reply_check": {
+    "status": "AWAITING_HUMAN",
+    "expected_label": "Your reply",
+    "expected_error": "Add a reply of up to 3,000 UTF-8 bytes.",
+    "question": "How long do I have to request a refund?",
+    "reply": "",
+    "focus": "reply",
+    "aria_invalid": "true",
+    "narrator_running_at_checkpoint": true,
+    "observations": {
+      "preparation": {
+        "label": "narrator-reply-empty-before-restart",
+        "snapshot": "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x7cef5d…8d97d0\":\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check a reply\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Reply Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 39 / 1,500 bytes\n    - textbox \"Question\" [active]:\n      - /placeholder: What are they asking?\n      - text: How long do I have to request a refund?\n    - paragraph\n    - generic: Your reply\n    - generic: 0 / 3,000 bytes\n    - textbox \"Your reply\":\n      - /placeholder: Write or paste your reply…\n    - paragraph: Add a reply of up to 3,000 UTF-8 bytes.\n    - text: Public information only\n    - generic: 0 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\"",
+        "metrics": {
+          "at": "2026-09-13T11:50:30.909Z",
+          "clientWidth": 623,
+          "dialogs": [],
+          "dpr": 1.5,
+          "fields": [
+            {
+              "describedBy": "question-count",
+              "id": "question",
+              "invalid": "false",
+              "name": "Question",
+              "rect": {
+                "h": 84,
+                "w": 515.9166870117188,
+                "x": 53.375,
+                "y": 83.54167175292969
+              },
+              "value": "How long do I have to request a refund?"
+            },
+            {
+              "describedBy": "reply-count reply-sentences reply-error",
+              "id": "reply",
+              "invalid": "true",
+              "name": "Your reply",
+              "rect": {
+                "h": 180,
+                "w": 515.9166870117188,
+                "x": 53.375,
+                "y": 214.0104217529297
+              },
+              "value": ""
+            }
+          ],
+          "focus": {
+            "id": "question",
+            "outline": "oklab(0.841629 0.0126044 0.107122 / 0.5) none 0.666667px",
+            "rect": {
+              "h": 84,
+              "w": 515.9166870117188,
+              "x": 53.375,
+              "y": 83.54167175292969
+            },
+            "tag": "TEXTAREA",
+            "text": "How long do I have to request a refund?"
+          },
+          "forcedColors": false,
+          "height": 608,
+          "live": [
+            {
+              "live": "polite",
+              "role": null,
+              "text": "Add a reply of up to 3,000 UTF-8 bytes."
+            }
+          ],
+          "overflow": [],
+          "reducedMotion": false,
+          "reviewRows": 16,
+          "scrollWidth": 623,
+          "width": 638
+        }
+      },
+      "ready": {
+        "label": "narrator-empty-reply-ready",
+        "snapshot": "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x7cef5d…8d97d0\":\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check a reply\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Reply Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 39 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n      - text: How long do I have to request a refund?\n    - paragraph\n    - generic: Your reply\n    - generic: 0 / 3,000 bytes\n    - textbox \"Your reply\" [active]:\n      - /placeholder: Write or paste your reply…\n    - paragraph: Add a reply of up to 3,000 UTF-8 bytes.\n    - text: Public information only\n    - generic: 0 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\"",
+        "metrics": {
+          "at": "2026-09-13T11:51:41.121Z",
+          "clientWidth": 623,
+          "dialogs": [],
+          "dpr": 1.5,
+          "fields": [
+            {
+              "describedBy": "question-count",
+              "id": "question",
+              "invalid": "false",
+              "name": "Question",
+              "rect": {
+                "h": 84,
+                "w": 515.9166870117188,
+                "x": 53.375,
+                "y": 262.2083435058594
+              },
+              "value": "How long do I have to request a refund?"
+            },
+            {
+              "describedBy": "reply-count reply-sentences reply-error",
+              "id": "reply",
+              "invalid": "true",
+              "name": "Your reply",
+              "rect": {
+                "h": 180,
+                "w": 515.9166870117188,
+                "x": 53.375,
+                "y": 392.6770935058594
+              },
+              "value": ""
+            }
+          ],
+          "focus": {
+            "id": "reply",
+            "outline": "oklab(0.841629 0.0126044 0.107122 / 0.5) none 0.666667px",
+            "rect": {
+              "h": 180,
+              "w": 515.9166870117188,
+              "x": 53.375,
+              "y": 392.6770935058594
+            },
+            "tag": "TEXTAREA",
+            "text": ""
+          },
+          "forcedColors": false,
+          "height": 608,
+          "live": [
+            {
+              "live": "polite",
+              "role": null,
+              "text": "Add a reply of up to 3,000 UTF-8 bytes."
+            }
+          ],
+          "overflow": [],
+          "reducedMotion": false,
+          "reviewRows": 16,
+          "scrollWidth": 623,
+          "width": 638
+        }
+      }
+    }
+  },
+  "runtime_notes": [
+    "Narrator was off when the response arrived; the reason is unknown. Announced and performed a temporary restart for the next ongoing test.",
+    "The launch call reported no targetable window, but subsequent discovery confirmed Narrator and its informational updates notice.",
+    "The first notice click reported unavailable coordinate geometry; a fresh screenshot/state was obtained and the single retry closed the notice. No browser or app data was affected.",
+    "Narrator is currently left on for the pending listening response; restore its original off state after the test."
+  ],
+  "safety": {
+    "application_changes": 0,
+    "tests_rerun": false,
+    "prior_evidence_changed": false,
+    "wallet_requests": 0,
+    "transactions": 0,
+    "publications": 0,
+    "submission": false
+  },
+  "next": "Ask what the human heard on the reply field. Do not mark reply guidance or invalid-state speech passed until explicitly reported."
+}

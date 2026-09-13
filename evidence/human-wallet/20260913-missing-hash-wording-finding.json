@@ -1,0 +1,61 @@
+{
+  "format": "replycheck-missing-hash-observation-v1",
+  "status": "OBSERVED_RESOURCE_NOT_FOUND_WITH_GENERIC_UI_FEEDBACK",
+  "recorded_at_utc": "2026-09-13T09:38:48.036Z",
+  "original_read_test": {
+    "status": "INCONCLUSIVE_PUBLIC_READ_FAILED",
+    "candidate": {
+      "account": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0",
+      "contract": "0xBD35B1E68aeC803Bd793Db9c6B9762b60f60029A",
+      "chainId": 61999,
+      "method": "submit_review",
+      "title": "Check this reply",
+      "workspace": "reply-wallet-20260910-105817",
+      "effect": {
+        "method": "get_review",
+        "args": [
+          "reply-wallet-20260910-105817",
+          "490184259220514dd03d0b7771d03979d45fb13a7f1c65bfb20bd074ac487137"
+        ],
+        "fields": {
+          "id": "490184259220514dd03d0b7771d03979d45fb13a7f1c65bfb20bd074ac487137",
+          "author": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0",
+          "request_digest": "2ae740d30b55e5991fe14ba32b3e9d41d247db9e66232f47823048f48067686c",
+          "reference_digest": "1041401ae7c08750497e55652d30fc9119a0a27e6e712c016e13b9faaa1ca9f0",
+          "version": 2
+        }
+      },
+      "startedAt": "2026-09-13T09:22:18.260Z",
+      "callDigest": "ea713f28b1314b2b5780a5cd18f59333cfa1b43dc7c6b888fba7ce342d7202ed",
+      "hash": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "requested_at_utc": "2026-09-13T09:35:50.844Z",
+    "observed_at_utc": "2026-09-13T09:35:52.685Z",
+    "error": "ResourceNotFoundRpcError: Requested resource not found.\n\nDetails: Transaction 0x0000000000000000000000000000000000000000000000000000000000000000 not found\nVersion: viem@2.56.3",
+    "native_ui_retried": false,
+    "journal_mutated": false,
+    "transaction_sent": false
+  },
+  "raw_command": {
+    "chunk_id": "61ce50",
+    "wall_time_seconds": 2.8380486,
+    "exit_code": 1,
+    "original_token_count": 369,
+    "output": "GenLayer RPC error (eth_getTransactionByHash): Transaction 0x0000000000000000000000000000000000000000000000000000000000000000 not found\nREPLYCHECK_MISSING_RESULT\n{\"status\":\"INCONCLUSIVE_PUBLIC_READ_FAILED\",\"candidate\":{\"account\":\"0x7cef5dbbd598ba74ef9c665c9853e573448d97d0\",\"contract\":\"0xBD35B1E68aeC803Bd793Db9c6B9762b60f60029A\",\"chainId\":61999,\"method\":\"submit_review\",\"title\":\"Check this reply\",\"workspace\":\"reply-wallet-20260910-105817\",\"effect\":{\"method\":\"get_review\",\"args\":[\"reply-wallet-20260910-105817\",\"490184259220514dd03d0b7771d03979d45fb13a7f1c65bfb20bd074ac487137\"],\"fields\":{\"id\":\"490184259220514dd03d0b7771d03979d45fb13a7f1c65bfb20bd074ac487137\",\"author\":\"0x7cef5dbbd598ba74ef9c665c9853e573448d97d0\",\"request_digest\":\"2ae740d30b55e5991fe14ba32b3e9d41d247db9e66232f47823048f48067686c\",\"reference_digest\":\"1041401ae7c08750497e55652d30fc9119a0a27e6e712c016e13b9faaa1ca9f0\",\"version\":2}},\"startedAt\":\"2026-09-13T09:22:18.260Z\",\"callDigest\":\"ea713f28b1314b2b5780a5cd18f59333cfa1b43dc7c6b888fba7ce342d7202ed\",\"hash\":\"0x0000000000000000000000000000000000000000000000000000000000000000\"},\"requested_at_utc\":\"2026-09-13T09:35:50.844Z\",\"observed_at_utc\":\"2026-09-13T09:35:52.685Z\",\"error\":\"ResourceNotFoundRpcError: Requested resource not found.\\n\\nDetails: Transaction 0x0000000000000000000000000000000000000000000000000000000000000000 not found\\nVersion: viem@2.56.3\",\"native_ui_retried\":false,\"journal_mutated\":false,\"transaction_sent\":false}\nREPLYCHECK_MISSING_END\n"
+  },
+  "interpretation": "The read test expected a null/unknown outcome, but the actual Studionet client threw ResourceNotFoundRpcError for this exact nonexistent hash. Its unsuccessful test output is preserved; this is not evidence of another transaction or corrupt recovery.",
+  "ui_observation": "The earlier zero-hash browser attempt showed a generic connection-verification error and retained the original hash; its underlying RPC response was not independently captured. A separate contemporaneous lookup of the real hash had a DNS failure.",
+  "source_finding": {
+    "path": "lib/reply/core.ts",
+    "function": "errorMessage",
+    "line": 175,
+    "description": "Resource-not-found errors fall through to the generic connection message. The wording should distinguish an unrecognized transaction hash without exposing raw RPC calldata."
+  },
+  "scope": {
+    "live_public_missing_hash_response_observed": true,
+    "native_missing_receipt_response_correlated": false,
+    "original_recovery_preserved": true,
+    "wording_improvement_implemented": false,
+    "transaction_sent": false
+  }
+}

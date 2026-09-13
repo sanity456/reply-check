@@ -1,0 +1,1379 @@
+'use client';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import {
+  ArrowUpRight,
+  BookOpen,
+  CheckCheck,
+  ChevronDown,
+  FileText,
+  History,
+  Plus,
+  RefreshCw,
+  Search,
+  ShieldCheck,
+  Sparkles,
+  Users,
+  Wallet,
+} from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Textarea } from '@/components/ui/textarea';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
+import {
+  Confirmation,
+  CopyButton,
+  DownloadButton,
+  Empty,
+  Field,
+  Notice,
+  Timestamp,
+} from './common';
+import { ReplyGym } from './reply-gym';
+import { ReviewResult } from './review-result';
+import { Library } from './library';
+import { Team } from './team';
+import { revealRestoredDialogFocus } from '@/lib/reply/dialog-focus';
+import { draftFieldProblem } from '@/lib/reply/draft-feedback';
+import { useReplyChain } from '@/hooks/use-reply-chain';
+import { useReplyTools } from '@/hooks/use-reply-tools';
+import {
+  configured,
+  contractAddress,
+  deployment,
+  read,
+  verifyDeployment,
+} from '@/lib/reply/chain';
+import {
+  CHAIN_ID,
+  PROTOCOL,
+  canApprove,
+  canReview,
+  digest,
+  draftProblem,
+  errorMessage,
+  isId,
+  segments,
+  short,
+  utf8,
+} from '@/lib/reply/core';
+import type {
+  Address,
+  AnswerCard,
+  Bundle,
+  Operation,
+  Pending,
+  Review,
+  Role,
+  Workspace,
+} from '@/lib/reply/types';
+
+const PAGE_SIZE = 12;
+const sectionTitles: Record<string, string> = {
+  check: 'Check a reply',
+  library: 'Knowledge library',
+  history: 'Review history',
+  gym: 'Reply Gym',
+  team: 'Your team',
+};
+export default function ReplyApp() {
+  const [tab, setTab] = useState('check');
+  const [workspaceId, setWorkspaceId] = useState('');
+  const [workspace, setWorkspace] = useState<Workspace | null>(null);
+  const [bundle, setBundle] = useState<Bundle | null>(null);
+  const [storedRole, setRole] = useState<Role>('visitor');
+  const [roleAccount, setRoleAccount] = useState<Address | null>(null);
+  const [invitation, setInvitation] = useState('');
+  const [proposed, setProposed] = useState('');
+  const [members, setMembers] = useState<{ address: Address; role: Role }[]>(
+    [],
+  );
+  const [reviews, setReviews] = useState<Review[]>([]);
+  const [cards, setCards] = useState<AnswerCard[]>([]);
+  const [question, setQuestion] = useState('');
+  const [draft, setDraft] = useState('');
+  const [questionTouched, setQuestionTouched] = useState(false);
+  const [draftTouched, setDraftTouched] = useState(false);
+  const [result, setResult] = useState<Review | null>(null);
+  const [resultBundle, setResultBundle] = useState<Bundle | null>(null);
+  const [historyResult, setHistoryResult] = useState<Review | null>(null);
+  const [historyBundle, setHistoryBundle] = useState<Bundle | null>(null);
+  const [historyQuery, setHistoryQuery] = useState('');
+  const [reviewId, setReviewId] = useState('');
+  const [reviewLoading, setReviewLoading] = useState(false);
+  const [reviewError, setReviewError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [preparing, setPreparing] = useState(false);
+  const [loadError, setLoadError] = useState('');
+  const [operation, setOperation] = useState<Operation | null>(null);
+  const [operationAccount, setOperationAccount] = useState<Address | null>(
+    null,
+  );
+  const [chooser, setChooser] = useState(false);
+  const [directory, setDirectory] = useState<Workspace[]>([]);
+  const [directoryMore, setDirectoryMore] = useState(true);
+  const [lookup, setLookup] = useState('');
+  const [newName, setNewName] = useState('');
+  const [newId, setNewId] = useState('');
+  const [cardReview, setCardReview] = useState<Review | null>(null);
+  const cardReturnFocus = useRef<Element | null>(null);
+  const [cardTitle, setCardTitle] = useState('');
+  const [notice, setNotice] = useState('');
+  const requestRevision = useRef(0);
+  const reviewRequestRevision = useRef(0);
+  const workspaceRef = useRef(workspaceId);
+  const accountRef = useRef<Address | null>(null);
+  const [recoveryHash, setRecoveryHash] = useState('');
+  const [confirmAbsent, setConfirmAbsent] = useState(false);
+  const loadWorkspace = useCallback(
+    async (id: string, wallet: Address | null) => {
+      if (!configured || !isId(id)) return;
+      const revision = ++requestRevision.current;
+      setLoading(true);
+      setLoadError('');
+      setRole('visitor');
+      try {
+        await verifyDeployment();
+        const w = await read<Workspace>('get_workspace', [id]);
+        const [refs, r, invite, owner, history, answers, team] =
+          await Promise.all([
+            w.version
+              ? read<Bundle>('get_references', [id, w.version])
+              : Promise.resolve(null),
+            wallet
+              ? read<Role>('get_role', [id, wallet])
+              : Promise.resolve('visitor' as Role),
+            wallet
+              ? read<string>('get_invitation', [id, wallet])
+              : Promise.resolve(''),
+            read<string>('get_proposed_owner', [id]),
+            read<Review[]>('list_reviews', [
+              id,
+              Math.max(0, w.review_count - PAGE_SIZE),
+              PAGE_SIZE,
+            ]),
+            read<AnswerCard[]>('list_answer_cards', [
+              id,
+              Math.max(0, w.card_count - PAGE_SIZE),
+              PAGE_SIZE,
+            ]),
+            Promise.all(
+              w.member_addresses.map(async (address) => ({
+                address,
+                role: await read<Role>('get_role', [id, address]),
+              })),
+            ),
+          ]);
+        if (revision !== requestRevision.current) return;
+        setWorkspace(w);
+        setBundle(refs);
+        setRole(r);
+        setRoleAccount(wallet);
+        setInvitation(invite);
+        setProposed(owner);
+        setReviews(history.reverse());
+        setCards(answers.reverse());
+        setMembers(team);
+      } catch (error) {
+        if (revision === requestRevision.current)
+          setLoadError(errorMessage(error));
+      } finally {
+        if (revision === requestRevision.current) setLoading(false);
+      }
+    },
+    [],
+  );
+  const chain = useReplyChain(
+    async (record: Pending, stored: unknown) => {
+      if (record.method === 'create_workspace') {
+        reviewRequestRevision.current++;
+        setReviewLoading(false);
+        setReviewError('');
+        setWorkspaceId(record.workspace);
+        setChooser(false);
+        setTab('library');
+      } else if (record.workspace === workspaceRef.current) {
+        await loadWorkspace(record.workspace, accountRef.current);
+        if (record.method === 'submit_review') {
+          const review = stored as Review;
+          const sources = await read<Bundle>('get_references', [
+            record.workspace,
+            review.version,
+          ]);
+          if (workspaceRef.current === record.workspace) {
+            setResult(review);
+            setResultBundle(sources);
+            setTab('check');
+          }
+        }
+      }
+      setNotice(
+        `${record.title}: finalized execution and stored state verified.`,
+      );
+    },
+    () => {
+      setOperation(null);
+      setOperationAccount(null);
+    },
+  );
+  const role: Role = roleAccount === chain.account ? storedRole : 'visitor';
+  useEffect(() => {
+    workspaceRef.current = workspaceId;
+    accountRef.current = chain.account;
+  }, [workspaceId, chain.account]);
+  const invalidateReads = useCallback(() => {
+    requestRevision.current++;
+  }, []);
+  const invalidateReviewReads = useCallback(() => {
+    reviewRequestRevision.current++;
+  }, []);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (workspaceId) void loadWorkspace(workspaceId, chain.account);
+    }, 0);
+    return () => {
+      clearTimeout(timer);
+      invalidateReads();
+    };
+  }, [workspaceId, chain.account, loadWorkspace, invalidateReads]);
+
+  useEffect(() => {
+    if (!configured) return;
+    let disposed = false;
+    const revision = reviewRequestRevision.current;
+    const query = new URLSearchParams(window.location.search),
+      id = query.get('workspace'),
+      review = query.get('review');
+    void Promise.resolve().then(() => {
+      if (disposed || revision !== reviewRequestRevision.current) return;
+      if (id && isId(id)) {
+        if (review && isId(review)) {
+          setReviewId(review);
+          setTab('history');
+        }
+        return verifyDeployment()
+          .then(() => read<Workspace>('get_workspace', [id]))
+          .then(async () => {
+            if (disposed || revision !== reviewRequestRevision.current) return;
+            workspaceRef.current = id;
+            setWorkspaceId(id);
+            if (review && isId(review)) {
+              const record = await read<Review>('get_review', [id, review]);
+              const sources = await read<Bundle>('get_references', [
+                id,
+                record.version,
+              ]);
+              if (
+                !disposed &&
+                revision === reviewRequestRevision.current &&
+                workspaceRef.current === id
+              ) {
+                setHistoryResult(record);
+                setHistoryBundle(sources);
+              }
+            }
+          })
+          .catch((error) => {
+            if (!disposed && revision === reviewRequestRevision.current) {
+              if (review && isId(review))
+                setReviewError(
+                  'Could not load this review. Check the ID and your connection, then try again.',
+                );
+              else setLoadError(errorMessage(error));
+            }
+          });
+      }
+    });
+    return () => {
+      disposed = true;
+      invalidateReviewReads();
+    };
+  }, [invalidateReviewReads]);
+  const busy =
+    loading ||
+    reviewLoading ||
+    preparing ||
+    chain.sending ||
+    !!chain.pending ||
+    !!chain.uncertain ||
+    chain.malformed;
+  const ready = configured && !!chain.account && chain.chainId === CHAIN_ID;
+  const writable =
+    ready && workspace?.id === workspaceId && !workspace.archived && !busy;
+  const problem = draftProblem(question, draft);
+  const questionError =
+    questionTouched || question.length > 0
+      ? draftFieldProblem('question', question)
+      : null;
+  const draftError =
+    draftTouched || draft.length > 0 ? draftFieldProblem('reply', draft) : null;
+  const stage = (op: Operation) => {
+    if (!ready || !chain.account) {
+      chain.setError('Connect your wallet on GenLayer Studionet first.');
+      return;
+    }
+    if (chain.pending || chain.uncertain || chain.malformed || chain.sending) {
+      chain.setError('Finish checking the previous transaction first.');
+      return;
+    }
+    setOperationAccount(chain.account);
+    setOperation(op);
+  };
+  const selectWorkspace = (id: string) => {
+    if (!isId(id)) return;
+    reviewRequestRevision.current++;
+    setReviewLoading(false);
+    setReviewError('');
+    workspaceRef.current = id;
+    setOperation(null);
+    setOperationAccount(null);
+    setWorkspace(null);
+    setBundle(null);
+    setRole('visitor');
+    setReviews([]);
+    setCards([]);
+    setResult(null);
+    setHistoryResult(null);
+    setHistoryBundle(null);
+    setReviewId('');
+    // Preserve unsent work when changing teams, but never carry over an assessment.
+    setWorkspaceId(id);
+    setChooser(false);
+    setTab('check');
+    const url = new URL(window.location.href);
+    url.search = '';
+    url.searchParams.set('workspace', id);
+    window.history.replaceState(null, '', url);
+  };
+  const openDirectory = async () => {
+    setChooser(true);
+    if (!configured || directory.length) return;
+    setLoading(true);
+    try {
+      const page = await read<Workspace[]>('list_workspaces', [0, 12]);
+      setDirectory(page);
+      setDirectoryMore(page.length === 12);
+    } catch (error) {
+      setLoadError(errorMessage(error));
+    } finally {
+      setLoading(false);
+    }
+  };
+  const checkDraft = async () => {
+    if (
+      !workspace ||
+      !chain.account ||
+      problem ||
+      !writable ||
+      !canReview(role)
+    )
+      return;
+    setPreparing(true);
+    try {
+      const q = question.trim(),
+        d = draft.trim(),
+        nonce = crypto.randomUUID(),
+        author = chain.account;
+      const id = await digest([workspace.id, author, nonce]);
+      const inputDigest = await digest([
+        PROTOCOL,
+        workspace.id,
+        workspace.version,
+        author,
+        q,
+        d,
+      ]);
+      stage({
+        method: 'submit_review',
+        args: [workspace.id, workspace.version, q, d, nonce, true],
+        workspace: workspace.id,
+        title: 'Check this reply',
+        containsPublicText: true,
+        details: [
+          `Workspace: ${workspace.name} · references v${workspace.version}`,
+          `Question: ${q}`,
+          `Draft: ${d}`,
+          'GenLayer will assess the complete draft. No customer message is sent.',
+        ],
+        effect: {
+          method: 'get_review',
+          args: [workspace.id, id],
+          fields: {
+            id,
+            author,
+            request_digest: inputDigest,
+            reference_digest: bundle?.digest,
+            version: workspace.version,
+          },
+        },
+      });
+    } catch (error) {
+      chain.setError(errorMessage(error));
+    } finally {
+      setPreparing(false);
+    }
+  };
+  const editDraft = (q: string, d: string) => {
+    setQuestion(q);
+    setDraft(d);
+    setResult(null);
+    setResultBundle(null);
+    setTab('check');
+    setNotice('Draft updated. It needs a fresh check before approval.');
+  };
+  const openReview = async (id: string) => {
+    if (!workspace || workspaceRef.current !== workspace.id || !isId(id))
+      return;
+    const workspaceAtStart = workspace.id;
+    const revision = ++reviewRequestRevision.current;
+    const isCurrent = () =>
+      revision === reviewRequestRevision.current &&
+      workspaceRef.current === workspaceAtStart;
+    // Navigate on the user's action, never when a delayed read completes.
+    setTab('history');
+    setReviewLoading(true);
+    setReviewError('');
+    setHistoryResult(null);
+    setHistoryBundle(null);
+    try {
+      const review = await read<Review>('get_review', [workspaceAtStart, id]);
+      if (!isCurrent()) return;
+      const refs = await read<Bundle>('get_references', [
+        workspaceAtStart,
+        review.version,
+      ]);
+      if (!isCurrent()) return;
+      setHistoryResult(review);
+      setHistoryBundle(refs);
+      setReviewId(id);
+    } catch {
+      if (isCurrent())
+        setReviewError(
+          'Could not load this review. Check the ID and your connection, then try again.',
+        );
+    } finally {
+      if (isCurrent()) setReviewLoading(false);
+    }
+  };
+  const moreRecords = async (kind: 'reviews' | 'cards') => {
+    if (!workspace) return;
+    setLoading(true);
+    const id = workspace.id,
+      total =
+        kind === 'reviews' ? workspace.review_count : workspace.card_count,
+      loaded = kind === 'reviews' ? reviews.length : cards.length,
+      start = Math.max(0, total - loaded - PAGE_SIZE),
+      count = Math.min(PAGE_SIZE, total - loaded);
+    try {
+      if (count < 1) return;
+      if (kind === 'reviews') {
+        const page = await read<Review[]>('list_reviews', [id, start, count]);
+        if (workspaceRef.current === id)
+          setReviews((old) => [
+            ...old,
+            ...page.reverse().filter((v) => !old.some((o) => o.id === v.id)),
+          ]);
+      } else {
+        const page = await read<AnswerCard[]>('list_answer_cards', [
+          id,
+          start,
+          count,
+        ]);
+        if (workspaceRef.current === id)
+          setCards((old) => [
+            ...old,
+            ...page.reverse().filter((v) => !old.some((o) => o.id === v.id)),
+          ]);
+      }
+    } catch (error) {
+      chain.setError(errorMessage(error));
+    } finally {
+      setLoading(false);
+    }
+  };
+  const approve = (review: Review) => {
+    cardReturnFocus.current = document.activeElement;
+    setCardReview(review);
+    setCardTitle(review.question.slice(0, 70));
+  };
+  const cardTitleBytes = utf8(cardTitle.trim());
+  const cardTitleTooLong = cardTitleBytes > 100;
+  const reviewedDraftIsCurrent =
+    !!result &&
+    result.question === question.trim() &&
+    result.draft === draft.trim();
+  useEffect(() => {
+    if ((!question && !draft) || reviewedDraftIsCurrent) return;
+    const warn = (event: BeforeUnloadEvent) => {
+      event.preventDefault();
+    };
+    window.addEventListener('beforeunload', warn);
+    return () => window.removeEventListener('beforeunload', warn);
+  }, [question, draft, reviewedDraftIsCurrent]);
+  useReplyTools(
+    {
+      workspaceId: workspace?.id ?? null,
+      referenceVersion: bundle?.version ?? null,
+      role,
+      liveEnabled: configured,
+      question,
+      draft,
+    },
+    editDraft,
+  );
+  return (
+    <div className="app-shell">
+      <header className="topbar">
+        <Link className="brand" href="/" aria-label="ReplyCheck home">
+          <Image
+            className="brand-mark"
+            src="/brand/replycheck-mark.svg"
+            alt=""
+            width={40}
+            height={40}
+            unoptimized
+          />
+          <span className="brand-wordmark">
+            Reply<span className="brand-accent">Check</span>
+          </span>
+        </Link>
+        <span className="environment">
+          {configured ? 'GenLayer Studionet' : 'Preview'}
+        </span>
+        <div className="topbar-actions">
+          <Button
+            variant="outline"
+            onClick={() => void openDirectory()}
+            disabled={chain.sending}
+          >
+            <span className="workspace-name">
+              {workspace?.name ?? 'Open workspace'}
+            </span>
+            <ChevronDown size={15} />
+          </Button>
+          <Button
+            variant="outline"
+            className="wallet-control"
+            onClick={() =>
+              void chain.connect(!!chain.account && chain.chainId !== CHAIN_ID)
+            }
+            disabled={chain.connecting || chain.sending}
+          >
+            <Wallet size={17} />
+            {chain.connecting
+              ? 'Connecting…'
+              : chain.account
+                ? chain.chainId === CHAIN_ID
+                  ? short(chain.account)
+                  : 'Switch to Studionet'
+                : 'Connect wallet'}
+          </Button>
+        </div>
+      </header>
+      <main id="main-content" className="workspace">
+        <div className="workspace-heading">
+          <h1>{sectionTitles[tab] ?? 'ReplyCheck'}</h1>
+          <span className="workspace-seal">
+            <ShieldCheck size={16} /> Public references only
+          </span>
+        </div>
+        {!configured && (
+          <div className="preview-strip">
+            <span>
+              <span className="preview-dot" aria-hidden="true" />
+              Live reviews aren’t available in this preview.
+            </span>
+            <Button variant="ghost" onClick={() => setTab('gym')}>
+              Try Reply Gym <ArrowUpRight />
+            </Button>
+          </div>
+        )}
+        {workspace && (
+          <div className="workspace-context">
+            <span>
+              <strong>{workspace.name}</strong>
+              <span className="muted">
+                {' '}
+                · {role} · reference v{workspace.version}
+                {workspace.archived ? ' · archived' : ''}
+              </span>
+            </span>
+            <Button
+              variant="ghost"
+              disabled={loading || chain.sending}
+              onClick={() => void loadWorkspace(workspace.id, chain.account)}
+            >
+              <RefreshCw className={loading ? 'spin' : ''} size={15} />{' '}
+              {loading ? 'Refreshing…' : 'Refresh'}
+            </Button>
+          </div>
+        )}
+        {(chain.error || loadError || notice) && (
+          <Notice kind={chain.error || loadError ? 'error' : 'success'}>
+            <div className="notice-row">
+              <span>{chain.error || loadError || notice}</span>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => {
+                  chain.setError('');
+                  setLoadError('');
+                  setNotice('');
+                }}
+              >
+                Dismiss
+              </Button>
+            </div>
+          </Notice>
+        )}
+        {chain.malformed && (
+          <Notice kind="error">
+            Recovery metadata is damaged. Do not send another transaction until
+            wallet Activity has been reconciled.
+          </Notice>
+        )}
+        {chain.uncertain && !chain.sending && (
+          <section className="transaction-panel">
+            <div>
+              <span className="eyebrow">WALLET OUTCOME UNKNOWN</span>
+              <h3>{chain.uncertain.title}</h3>
+              <p className="muted">
+                Check wallet Activity. If a transaction was sent, recover its
+                hash below. No new actions can be sent until this is resolved.
+              </p>
+              <Field
+                id="recover-hash"
+                label="Transaction hash from wallet Activity"
+                value={recoveryHash}
+                onChange={(e) => setRecoveryHash(e.target.value)}
+                placeholder="0x…"
+              />
+              <div className="button-row">
+                <Button
+                  disabled={chain.checking}
+                  onClick={() => void chain.attachHash(recoveryHash.trim())}
+                >
+                  {chain.checking ? 'Checking hash…' : 'Recover transaction'}
+                </Button>
+                <Button
+                  variant="outline"
+                  disabled={chain.checking}
+                  onClick={() => setConfirmAbsent(true)}
+                >
+                  I checked: nothing was sent
+                </Button>
+              </div>
+            </div>
+          </section>
+        )}
+        {chain.pending && (
+          <section
+            className="transaction-panel"
+            aria-label="Transaction recovery"
+          >
+            <div>
+              <span className="eyebrow">
+                {chain.terminal
+                  ? 'TRANSACTION CHECKED'
+                  : 'TRANSACTION IN PROGRESS'}
+              </span>
+              <h3>{chain.pending.title}</h3>
+              <p aria-live="polite">
+                {chain.message || 'Checking network status…'}
+              </p>
+              <p className="mono transaction-hash">{chain.pending.hash}</p>
+              <p className="muted">
+                Wallet {short(chain.pending.account)} ·{' '}
+                {chain.pending.workspace}
+              </p>
+              {!chain.terminal && (
+                <details>
+                  <summary>Wrong hash?</summary>
+                  <Field
+                    id="correct-recovery-hash"
+                    label="Correct transaction hash from wallet Activity"
+                    value={recoveryHash}
+                    onChange={(e) => setRecoveryHash(e.target.value)}
+                    placeholder="0x…"
+                  />
+                  <Button
+                    disabled={chain.checking || chain.sending}
+                    onClick={() => void chain.attachHash(recoveryHash.trim())}
+                  >
+                    {chain.checking
+                      ? 'Checking hash…'
+                      : 'Verify replacement hash'}
+                  </Button>
+                </details>
+              )}
+            </div>
+            <div className="button-row">
+              <CopyButton value={chain.pending.hash} label="Copy hash" />
+              <DownloadButton
+                value={chain.pending}
+                name={`replycheck-transaction-${chain.pending.hash}.json`}
+              />
+              {chain.terminal ? (
+                <Button onClick={chain.dismiss} disabled={chain.checking}>
+                  Done
+                </Button>
+              ) : (
+                <Button
+                  variant="outline"
+                  disabled={chain.checking}
+                  onClick={() => void chain.check(chain.pending!)}
+                >
+                  {chain.checking ? 'Checking…' : 'Check status'}
+                </Button>
+              )}
+            </div>
+          </section>
+        )}
+        <Tabs value={tab} onValueChange={setTab}>
+          <TabsList
+            className="main-tabs"
+            variant="line"
+            aria-label="Workspace sections"
+          >
+            <TabsTrigger value="check" aria-label="Check a reply">
+              <CheckCheck />
+              <span className="tab-label-wide">Check a reply</span>
+              <span className="tab-label-small">Check</span>
+            </TabsTrigger>
+            <TabsTrigger value="library">
+              <BookOpen /> Library
+            </TabsTrigger>
+            <TabsTrigger value="history">
+              <History /> History
+            </TabsTrigger>
+            <TabsTrigger value="gym" aria-label="Reply Gym">
+              <Sparkles />
+              <span className="tab-label-wide">Reply Gym</span>
+              <span className="tab-label-small">Gym</span>
+            </TabsTrigger>
+            <TabsTrigger value="team">
+              <Users /> Team
+            </TabsTrigger>
+          </TabsList>
+          <TabsContent value="check" keepMounted>
+            <div className="review-grid">
+              <div className="editor-column">
+                <section className="panel editor-panel">
+                  <div className="panel-heading">
+                    <h2>Your draft</h2>
+                    <span className="pill">
+                      {bundle ? `References v${bundle.version}` : 'Draft mode'}
+                    </span>
+                  </div>
+                  <div className="editor-label-row">
+                    <label htmlFor="question">Question</label>
+                    <span id="question-count" className="field-count">
+                      {utf8(question.trim()).toLocaleString()} / 1,500 bytes
+                    </span>
+                  </div>
+                  <Textarea
+                    id="question"
+                    placeholder="What are they asking?"
+                    value={question}
+                    onChange={(e) => {
+                      setQuestion(e.target.value);
+                      setResult(null);
+                    }}
+                    onBlur={() => setQuestionTouched(true)}
+                    aria-invalid={!!questionError}
+                    aria-describedby={`question-count${questionError ? ' question-error' : ''}`}
+                  />
+                  <p
+                    id="question-error"
+                    className="text-sm text-destructive"
+                    aria-live="polite"
+                  >
+                    {questionError}
+                  </p>
+                  <div className="editor-label-row">
+                    <label htmlFor="reply">Your reply</label>
+                    <span id="reply-count" className="field-count">
+                      {utf8(draft.trim()).toLocaleString()} / 3,000 bytes
+                    </span>
+                  </div>
+                  <Textarea
+                    id="reply"
+                    className="draft-area"
+                    placeholder="Write or paste your reply…"
+                    value={draft}
+                    onChange={(e) => {
+                      setDraft(e.target.value);
+                      setResult(null);
+                    }}
+                    onBlur={() => setDraftTouched(true)}
+                    aria-invalid={!!draftError}
+                    aria-describedby={`reply-count reply-sentences${draftError ? ' reply-error' : ''}`}
+                  />
+                  <p
+                    id="reply-error"
+                    className="text-sm text-destructive"
+                    aria-live="polite"
+                  >
+                    {draftError}
+                  </p>
+                  <div className="editor-footer">
+                    <div className="editor-meta">
+                      <span className="muted">
+                        <ShieldCheck size={15} /> Public information only
+                      </span>
+                      <span id="reply-sentences" className="field-count">
+                        {segments(draft).length} / 12 sentences
+                      </span>
+                    </div>
+                    <Button
+                      size="lg"
+                      className="review-action"
+                      disabled={
+                        !writable ||
+                        !canReview(role) ||
+                        !workspace?.version ||
+                        !!problem
+                      }
+                      onClick={() => void checkDraft()}
+                    >
+                      {preparing ? 'Preparing…' : 'Review draft'}{' '}
+                      <ArrowUpRight />
+                    </Button>
+                  </div>
+                  <p className="context-hint" aria-live="polite">
+                    {!configured
+                      ? 'Drafts stay in this tab. Copy yours before closing.'
+                      : !workspace
+                        ? 'Open a workspace to check a reply.'
+                        : !ready
+                          ? 'Connect your wallet on Studionet to check this draft.'
+                          : workspace.archived
+                            ? 'This workspace is archived.'
+                            : !canReview(role)
+                              ? 'Ask the owner to invite this wallet, then accept in Team.'
+                              : !workspace.version
+                                ? 'Publish references in the library first.'
+                                : problem
+                                  ? questionError || draftError
+                                    ? ''
+                                    : problem
+                                  : 'Confirm the public submission before signing.'}
+                  </p>
+                </section>
+                {result && reviewedDraftIsCurrent && (
+                  <ReviewResult
+                    review={result}
+                    bundle={resultBundle}
+                    currentVersion={workspace?.version ?? 0}
+                    apply={(replacement) => editDraft(question, replacement)}
+                    approve={writable && canApprove(role) ? approve : undefined}
+                  />
+                )}
+              </div>
+              <aside className="reference-column">
+                <section className="panel source-panel">
+                  <div className="panel-heading">
+                    <h2>
+                      <BookOpen size={18} /> References
+                    </h2>
+                    {bundle && <span className="pill">v{bundle.version}</span>}
+                  </div>
+                  {bundle ? (
+                    <>
+                      <div className="reference-snippets">
+                        {bundle.documents.map((ref) => (
+                          <details className="reference-snippet" key={ref.id}>
+                            <summary>
+                              <FileText size={16} />
+                              {ref.title}
+                            </summary>
+                            <blockquote>{ref.body}</blockquote>
+                          </details>
+                        ))}
+                      </div>
+                      <div className="button-row">
+                        <Button
+                          variant="ghost"
+                          onClick={() => setTab('library')}
+                        >
+                          View library <ArrowUpRight />
+                        </Button>
+                      </div>
+                    </>
+                  ) : (
+                    <div className="source-empty">
+                      <span className="source-icon">
+                        <FileText size={22} />
+                      </span>
+                      <h3>
+                        {workspace
+                          ? 'No references yet'
+                          : 'No references selected'}
+                      </h3>
+                      <p className="muted">
+                        {workspace
+                          ? 'Add the public information your replies should follow.'
+                          : 'Choose a workspace to load its reference library.'}
+                      </p>
+                      <Button
+                        variant="outline"
+                        onClick={() =>
+                          workspace ? setTab('library') : void openDirectory()
+                        }
+                      >
+                        {workspace ? 'Add references' : 'Choose a workspace'}
+                      </Button>
+                    </div>
+                  )}
+                  <div className="source-footer">
+                    Each review keeps its reference version.
+                  </div>
+                </section>
+                <section className="gym-teaser gym-preview">
+                  <div className="panel-heading">
+                    <h2>
+                      <Sparkles size={19} /> Reply Gym
+                    </h2>
+                    <span className="pill">Practice</span>
+                  </div>
+                  <p>Spot the promise that goes too far.</p>
+                  <Button
+                    className="gym-cta"
+                    variant="outline"
+                    onClick={() => setTab('gym')}
+                  >
+                    Start an exercise <ArrowUpRight />
+                  </Button>
+                </section>
+              </aside>
+            </div>
+          </TabsContent>
+          <TabsContent value="library" keepMounted>
+            <Library
+              key={workspace?.id ?? 'none'}
+              workspace={workspace}
+              bundle={bundle}
+              role={role}
+              cards={cards}
+              busy={busy}
+              stage={stage}
+              reuse={editDraft}
+              openReview={(id) => void openReview(id)}
+              more={cards.length < (workspace?.card_count ?? 0)}
+              loadMore={() => void moreRecords('cards')}
+              onError={(e) => chain.setError(errorMessage(e))}
+            />
+          </TabsContent>
+          <TabsContent value="history" keepMounted>
+            <section className="panel">
+              <div className="panel-heading">
+                <h2>Recorded reviews</h2>
+                <History size={22} />
+              </div>
+              <div className="filter-row">
+                <Field
+                  label="Filter loaded reviews"
+                  id="history-search"
+                  value={historyQuery}
+                  onChange={(e) => setHistoryQuery(e.target.value)}
+                  placeholder="Search question or reply…"
+                />
+                <form
+                  className="lookup-form"
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    void openReview(reviewId);
+                  }}
+                >
+                  <Field
+                    label="Open a review ID"
+                    id="review-lookup"
+                    value={reviewId}
+                    onChange={(e) => setReviewId(e.target.value)}
+                    placeholder="Paste a review ID"
+                  />
+                  <Button
+                    type="submit"
+                    variant="outline"
+                    disabled={
+                      !workspace || !isId(reviewId) || loading || reviewLoading
+                    }
+                  >
+                    <Search /> Open
+                  </Button>
+                </form>
+              </div>
+              {reviewLoading && <output>Loading review…</output>}
+              {reviewError && <Notice kind="error">{reviewError}</Notice>}
+              {!reviews.length ? (
+                <Empty title="No reviews yet" icon={<History size={32} />}>
+                  <p>Recorded reviews appear here. Practice exercises don’t.</p>
+                </Empty>
+              ) : (
+                <div className="history-list">
+                  {reviews
+                    .filter((r) =>
+                      `${r.question} ${r.draft}`
+                        .toLowerCase()
+                        .includes(historyQuery.toLowerCase()),
+                    )
+                    .map((review) => (
+                      <button
+                        className="history-row"
+                        key={review.id}
+                        onClick={() => void openReview(review.id)}
+                        disabled={loading || reviewLoading}
+                      >
+                        <span
+                          className={`history-dot ${review.assessment.verdict === 'MATCHES_REFERENCES' ? 'good' : ''}`}
+                        />
+                        <div>
+                          <strong>{review.question}</strong>
+                          <p className="muted">
+                            <Timestamp value={review.recorded_at} /> · v
+                            {review.version}
+                          </p>
+                        </div>
+                        <span className="pill">
+                          {review.assessment.verdict
+                            .toLowerCase()
+                            .replaceAll('_', ' ')}
+                        </span>
+                        <ArrowUpRight size={17} />
+                      </button>
+                    ))}
+                </div>
+              )}
+              {reviews.length < (workspace?.review_count ?? 0) && (
+                <Button
+                  variant="outline"
+                  disabled={loading}
+                  onClick={() => void moreRecords('reviews')}
+                >
+                  Load older reviews
+                </Button>
+              )}
+              {!!reviews.length &&
+                !reviews.some((r) =>
+                  `${r.question} ${r.draft}`
+                    .toLowerCase()
+                    .includes(historyQuery.toLowerCase()),
+                ) && (
+                  <p className="muted">No loaded reviews match this filter.</p>
+                )}
+            </section>
+            {historyResult && (
+              <>
+                <div className="history-context">
+                  <span className="muted">
+                    Question: {historyResult.question}
+                  </span>
+                  <CopyButton
+                    value={
+                      typeof window !== 'undefined'
+                        ? `${window.location.origin}/?workspace=${encodeURIComponent(historyResult.workspace_id)}&review=${historyResult.id}`
+                        : historyResult.id
+                    }
+                    label="Copy review link"
+                  />
+                </div>
+                <ReviewResult
+                  review={historyResult}
+                  bundle={historyBundle}
+                  currentVersion={workspace?.version ?? 0}
+                  approve={writable && canApprove(role) ? approve : undefined}
+                  recheck={(review) => editDraft(review.question, review.draft)}
+                />
+              </>
+            )}
+          </TabsContent>
+          <TabsContent value="gym" keepMounted>
+            <ReplyGym />
+          </TabsContent>
+          <TabsContent value="team" keepMounted>
+            <Team
+              key={workspace?.id ?? 'none'}
+              workspace={workspace}
+              account={chain.account}
+              role={role}
+              invitation={invitation}
+              proposed={proposed}
+              members={members}
+              busy={busy}
+              stage={stage}
+            />
+          </TabsContent>
+        </Tabs>
+      </main>
+      <footer className="site-footer">
+        <span>ReplyCheck</span>
+        <span>Public references only · No automatic sending</span>
+        <details>
+          <summary>Build information</summary>
+          <p>
+            {PROTOCOL} · chain {CHAIN_ID}
+          </p>
+          <p className="mono">{contractAddress ?? 'Contract not deployed'}</p>
+          <p className="mono">Source SHA-256: {deployment.sourceSha256}</p>
+        </details>
+      </footer>
+      <Dialog open={chooser} onOpenChange={setChooser}>
+        <DialogContent className="workspace-dialog">
+          <DialogHeader>
+            <DialogTitle>Open a workspace</DialogTitle>
+            <DialogDescription>
+              Workspaces, references and assessments are public. Your wallet
+              controls your role.
+            </DialogDescription>
+          </DialogHeader>
+          {!configured && (
+            <Notice>
+              Workspaces aren’t available in this preview. Try Reply Gym
+              instead.
+            </Notice>
+          )}
+          <form
+            className="lookup-form"
+            onSubmit={(e) => {
+              e.preventDefault();
+              selectWorkspace(lookup);
+            }}
+          >
+            <Field
+              id="workspace-lookup"
+              label="Open a workspace ID"
+              placeholder="e.g. northstar-support"
+              value={lookup}
+              onChange={(e) => setLookup(e.target.value)}
+            />
+            <Button type="submit" disabled={!configured || !isId(lookup)}>
+              Open
+            </Button>
+          </form>
+          <div className="workspace-directory">
+            {directory.map((w) => (
+              <Button
+                key={w.id}
+                variant="outline"
+                onClick={() => selectWorkspace(w.id)}
+              >
+                <span>
+                  {w.name}
+                  <small>
+                    {w.id}
+                    {w.archived ? ' · archived' : ''}
+                  </small>
+                </span>
+                <ArrowUpRight />
+              </Button>
+            ))}
+          </div>
+          {configured && directoryMore && (
+            <Button
+              variant="ghost"
+              disabled={loading}
+              onClick={async () => {
+                setLoading(true);
+                try {
+                  const page = await read<Workspace[]>('list_workspaces', [
+                    directory.length,
+                    12,
+                  ]);
+                  setDirectory([...directory, ...page]);
+                  setDirectoryMore(page.length === 12);
+                } catch (error) {
+                  setLoadError(errorMessage(error));
+                } finally {
+                  setLoading(false);
+                }
+              }}
+            >
+              Load workspaces
+            </Button>
+          )}
+          <form
+            className="create-workspace"
+            onSubmit={(e) => {
+              e.preventDefault();
+              if (!chain.account) return;
+              stage({
+                method: 'create_workspace',
+                args: [newId, newName.trim(), true],
+                title: 'Create public workspace',
+                workspace: newId,
+                containsPublicText: true,
+                details: [
+                  `Name: ${newName.trim()}`,
+                  `Public ID: ${newId}`,
+                  `Owner: ${chain.account}`,
+                ],
+                effect: {
+                  method: 'get_workspace',
+                  args: [newId],
+                  fields: {
+                    id: newId,
+                    name: newName.trim(),
+                    owner: chain.account,
+                  },
+                },
+              });
+              setChooser(false);
+            }}
+          >
+            <h3>Create a workspace</h3>
+            <div className="two-fields">
+              <Field
+                id="new-name"
+                label="Name"
+                value={newName}
+                onChange={(e) => setNewName(e.target.value)}
+                placeholder="Northstar Support"
+              />
+              <Field
+                id="new-id"
+                label="Public ID"
+                value={newId}
+                onChange={(e) => setNewId(e.target.value)}
+                placeholder="northstar-support"
+                help="1–64 letters, numbers, hyphens or underscores."
+              />
+            </div>
+            <Button
+              type="submit"
+              disabled={
+                !ready ||
+                busy ||
+                !newName.trim() ||
+                utf8(newName.trim()) > 100 ||
+                !isId(newId)
+              }
+            >
+              <Plus /> Review workspace creation
+            </Button>
+            {!chain.account && <p className="muted">Connect a wallet first.</p>}
+          </form>
+        </DialogContent>
+      </Dialog>
+      <Dialog
+        open={!!cardReview}
+        onOpenChangeComplete={(open) => {
+          if (!open) revealRestoredDialogFocus(cardReturnFocus.current);
+        }}
+        onOpenChange={(open) => {
+          if (!open) setCardReview(null);
+        }}
+      >
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Approve an answer card</DialogTitle>
+            <DialogDescription>
+              The reviewed question and exact reply become a reusable team
+              answer.
+            </DialogDescription>
+          </DialogHeader>
+          <Field
+            id="card-title"
+            label="Answer title"
+            value={cardTitle}
+            onChange={(e) => setCardTitle(e.target.value)}
+            aria-invalid={cardTitleTooLong}
+            aria-describedby="card-title-help"
+          />
+          <p id="card-title-help" className="muted" aria-live="polite">
+            {cardTitleTooLong
+              ? `Title too long: ${cardTitleBytes} / 100 bytes. Shorten it to continue.`
+              : `${cardTitleBytes} / 100 bytes. Some characters use more than one byte.`}
+          </p>
+          <p className="card-preview">{cardReview?.draft}</p>
+          <Button
+            disabled={
+              !cardTitle.trim() ||
+              cardTitleTooLong ||
+              !writable ||
+              !canApprove(role)
+            }
+            onClick={() => {
+              if (!workspace || !cardReview) return;
+              const id = crypto.randomUUID();
+              stage({
+                method: 'publish_answer_card',
+                args: [workspace.id, id, cardReview.id, cardTitle.trim()],
+                workspace: workspace.id,
+                title: 'Publish approved answer card',
+                containsPublicText: true,
+                details: [
+                  cardTitle.trim(),
+                  cardReview.draft,
+                  `Review: ${cardReview.id} · reference v${cardReview.version}`,
+                ],
+                effect: {
+                  method: 'get_answer_card',
+                  args: [workspace.id, id],
+                  fields: {
+                    id,
+                    review_id: cardReview.id,
+                    approved_by: chain.account,
+                    title: cardTitle.trim(),
+                    retired: false,
+                  },
+                },
+              });
+              setCardReview(null);
+            }}
+          >
+            Review publication
+          </Button>
+        </DialogContent>
+      </Dialog>
+      <Dialog open={confirmAbsent} onOpenChange={setConfirmAbsent}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Confirm no transaction was sent</DialogTitle>
+            <DialogDescription>
+              Only continue if you checked this wallet’s Activity on Studionet
+              and found no pending or completed transaction for this action.
+              Clearing local recovery metadata does not cancel an on-chain
+              transaction.
+            </DialogDescription>
+          </DialogHeader>
+          <Button variant="outline" onClick={() => setConfirmAbsent(false)}>
+            Keep recovery record
+          </Button>
+          <Button
+            disabled={chain.checking || chain.sending}
+            onClick={async () => {
+              await chain.confirmNotSent();
+              setConfirmAbsent(false);
+            }}
+          >
+            Confirm: no transaction was sent
+          </Button>
+        </DialogContent>
+      </Dialog>
+      <Confirmation
+        key={String(chain.account) + String(chain.chainId) + workspaceId}
+        operation={operation}
+        account={operationAccount}
+        busy={chain.sending}
+        onCancel={() => {
+          setOperation(null);
+          setOperationAccount(null);
+        }}
+        onConfirm={() => {
+          if (!operation || !operationAccount) return;
+          void chain
+            .send(operation, operationAccount)
+            .then(() => setOperation(null))
+            .catch(() => setOperation(null));
+        }}
+      />
+    </div>
+  );
+}

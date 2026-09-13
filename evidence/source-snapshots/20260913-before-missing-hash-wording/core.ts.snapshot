@@ -1,0 +1,211 @@
+import type {
+  Reference,
+  Role,
+  EffectCheck,
+  Pending,
+  Address,
+} from './types.ts';
+
+export const PROTOCOL = 'replycheck-v1';
+export const CHAIN_ID = 61999;
+export const utf8 = (value: string) => new TextEncoder().encode(value).length;
+export const isId = (value: unknown): value is string =>
+  typeof value === 'string' && /^[a-zA-Z0-9_-]{1,64}$/.test(value);
+export const isAddress = (value: unknown): value is Address =>
+  typeof value === 'string' &&
+  /^0x[0-9a-fA-F]{40}$/.test(value) &&
+  !/^0x0{40}$/.test(value);
+export const isHash = (value: unknown): value is Address =>
+  typeof value === 'string' && /^0x[0-9a-fA-F]{64}$/.test(value);
+export const short = (value: string) =>
+  value.length > 18 ? `${value.slice(0, 8)}…${value.slice(-6)}` : value;
+export const canReview = (role: Role) =>
+  ['owner', 'reviewer', 'editor', 'member'].includes(role);
+export const canEdit = (role: Role) => ['owner', 'editor'].includes(role);
+export const canApprove = (role: Role) => ['owner', 'reviewer'].includes(role);
+export const segments = (draft: string) =>
+  draft
+    .split(/(?<=[.!?])\s+|\n+/u)
+    .map((v) => v.trim())
+    .filter(Boolean);
+export const hasControls = (text: string) =>
+  Array.from(text).some((char) => {
+    const code = char.charCodeAt(0);
+    return (
+      code < 9 ||
+      code === 11 ||
+      code === 12 ||
+      (code >= 14 && code <= 31) ||
+      code === 127
+    );
+  });
+export function privacyProblem(text: string): string | null {
+  if (/[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}/u.test(text))
+    return 'Remove email addresses before submitting.';
+  if (
+    /(?:private[ _-]?key|seed[ _-]?phrase|recovery[ _-]?phrase|password|api[ _-]?key)\s*[:=]/iu.test(
+      text,
+    ) ||
+    /\b(?:sk-[a-zA-Z0-9_-]{16,}|gh[pousr]_[A-Za-z0-9]{20,}|0x[a-f0-9]{64})\b/iu.test(
+      text,
+    )
+  )
+    return 'Remove secrets before submitting.';
+  return null;
+}
+export function draftProblem(question: string, draft: string): string | null {
+  if (!question.trim() || utf8(question.trim()) > 1500)
+    return 'Add a question of up to 1,500 UTF-8 bytes.';
+  if (!draft.trim() || utf8(draft.trim()) > 3000)
+    return 'Add a reply of up to 3,000 UTF-8 bytes.';
+  if (hasControls(question + draft)) return 'Remove hidden control characters.';
+  if (segments(draft).length > 12)
+    return 'Keep the draft to 12 sentences or fewer.';
+  return privacyProblem(question + '\n' + draft);
+}
+export function safeAttribution(url: string): boolean {
+  if (!url) return true;
+  return (
+    /^https:\/\/[A-Za-z0-9.-]+(?:\/[\x21-\x7e]*)?$/u.test(url) &&
+    !/[@\\#]/u.test(url)
+  );
+}
+export function normalizeReferences(documents: Reference[]): Reference[] {
+  return documents
+    .map((d) => ({
+      id: d.id,
+      title: d.title.trim(),
+      body: d.body.trim(),
+      url: d.url.trim(),
+    }))
+    .sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
+}
+export function referenceProblem(documents: Reference[]): string | null {
+  if (documents.length < 1 || documents.length > 6)
+    return 'Use one to six public references.';
+  if (new Set(documents.map((d) => d.id)).size !== documents.length)
+    return 'Each reference needs a unique ID.';
+  for (const d of documents) {
+    if (!isId(d.id))
+      return 'Reference IDs use 1–64 letters, numbers, hyphens or underscores.';
+    if (!d.title.trim() || utf8(d.title.trim()) > 100)
+      return 'Each title must contain 1–100 UTF-8 bytes.';
+    if (!d.body.trim() || utf8(d.body.trim()) > 6000)
+      return 'Each reference must contain 1–6,000 UTF-8 bytes.';
+    if (hasControls(d.title + d.body + d.url))
+      return 'Remove hidden control characters.';
+    if (utf8(d.url.trim()) > 1200 || !safeAttribution(d.url.trim()))
+      return 'Use an HTTPS attribution URL without credentials, fragments or backslashes.';
+    if (privacyProblem(d.body)?.includes('secrets'))
+      return 'Remove secrets from the references.';
+  }
+  if (utf8(JSON.stringify(normalizeReferences(documents))) > 18000)
+    return 'The whole reference bundle must fit within 18,000 UTF-8 bytes.';
+  return null;
+}
+export function canonical(value: unknown): string {
+  if (value === null || typeof value !== 'object') return JSON.stringify(value);
+  if (Array.isArray(value)) return '[' + value.map(canonical).join(',') + ']';
+  const record = value as Record<string, unknown>;
+  return (
+    '{' +
+    Object.keys(record)
+      .sort()
+      .map((key) => JSON.stringify(key) + ':' + canonical(record[key]))
+      .join(',') +
+    '}'
+  );
+}
+export async function sha256Bytes(bytes: Uint8Array): Promise<string> {
+  const digest = await crypto.subtle.digest('SHA-256', new Uint8Array(bytes));
+  return Array.from(new Uint8Array(digest))
+    .map((n) => n.toString(16).padStart(2, '0'))
+    .join('');
+}
+export const digest = (value: unknown) =>
+  sha256Bytes(new TextEncoder().encode(canonical(value)));
+export function checkEffect(value: unknown, expected: EffectCheck): boolean {
+  if ('equals' in expected)
+    return canonical(value) === canonical(expected.equals);
+  if (
+    !value ||
+    typeof value !== 'object' ||
+    Array.isArray(value) ||
+    !expected.fields ||
+    !Object.keys(expected.fields).length
+  )
+    return false;
+  return Object.entries(expected.fields).every(
+    ([key, wanted]) =>
+      canonical((value as Record<string, unknown>)[key]) === canonical(wanted),
+  );
+}
+export const roleDescription: Record<Role, string> = {
+  visitor: 'Read public references and reviews.',
+  member: 'Check replies against the published references.',
+  editor: 'Check replies and publish new reference versions.',
+  reviewer: 'Check replies and approve or retire answer cards.',
+  owner: 'Manage references, approvals, members and ownership.',
+};
+export function readPending(
+  raw: string | null,
+  contract: string | null,
+): Pending | null {
+  if (!raw || !contract) return null;
+  try {
+    const p = JSON.parse(raw) as Pending;
+    if (
+      !isHash(p.hash) ||
+      !isAddress(p.account) ||
+      p.contract !== contract ||
+      p.chainId !== CHAIN_ID ||
+      !isId(p.workspace) ||
+      typeof p.title !== 'string' ||
+      typeof p.method !== 'string' ||
+      !p.effect ||
+      !Array.isArray(p.effect.args) ||
+      typeof p.effect.method !== 'string'
+    )
+      return null;
+    return p;
+  } catch {
+    return null;
+  }
+}
+export function errorMessage(error: unknown): string {
+  const e = error as {
+    code?: number;
+    message?: string;
+    shortMessage?: string;
+    cause?: { code?: number };
+  } | null;
+  if (
+    e?.code === 4001 ||
+    e?.cause?.code === 4001 ||
+    /user rejected|user denied|request rejected/i.test(e?.message ?? '')
+  )
+    return 'Request declined in your wallet. Nothing was marked as completed.';
+  const code = e?.message?.match(/\[EXPECTED\]\s+([A-Z_]+)/)?.[1];
+  const messages: Record<string, string> = {
+    REFERENCE_VERSION_CHANGED:
+      'The references changed. Reload them and check your draft again.',
+    ROLE_REQUIRED: 'This wallet no longer has permission for that action.',
+    WORKSPACE_ARCHIVED: 'This workspace is archived.',
+    WORKSPACE_EXISTS: 'That workspace ID is already in use.',
+    PUBLIC_DATA_CONSENT_REQUIRED:
+      'Confirm that the submitted information is public.',
+    RECHECK_REQUIRED:
+      'Check the reply against the current references before approving it.',
+    MATCHING_ASSESSMENT_REQUIRED:
+      'Only replies that match the references can become answer cards.',
+  };
+  if (code)
+    return messages[code] ?? `The contract declined the action: ${code}.`;
+  if (/\[LLM_ERROR\]/.test(e?.message ?? ''))
+    return 'The model did not return a valid assessment. No review was saved.';
+  if (/insufficient funds/i.test(e?.message ?? ''))
+    return 'Your wallet needs Studionet GEN for network fees. No payment is sent to ReplyCheck.';
+  // Never echo raw RPC errors: some providers include the entire submitted calldata.
+  if (e?.message?.startsWith('ReplyCheck: ')) return e.message.slice(12);
+  return 'The request could not be verified. Check your connection; keep any transaction hash before retrying.';
+}

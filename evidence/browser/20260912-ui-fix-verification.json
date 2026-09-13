@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-09-12 20:54:21 UTC",
+  "project": "ReplyCheck",
+  "status": "AUTOMATED_PASS_BROWSER_RETEST_PENDING",
+  "environment": {
+    "os": "Windows",
+    "node": "24.18.0",
+    "python": "3.12.14",
+    "test_dependencies": "Existing locked local dependencies; no new clean install in this UI-fix pass."
+  },
+  "original_audit": {
+    "path": "evidence/browser/20260912-usability-audit.json",
+    "sha256": "a4832aa075a342802f83b821498e7025a5800ad82a46ce4168f23ceabfdaed1f",
+    "unchanged": true,
+    "original_checks": 53,
+    "original_pass": 49,
+    "original_fail": 4
+  },
+  "original_wallet_proof": {
+    "path": "evidence/human-wallet/20260910-105817-after-signing-recovery-wallet-b.json",
+    "sha256": "525515c56bcd79b942f61ee7b74d4a617c3581f816f93dd075d30b82b0ea874d",
+    "unchanged": true,
+    "exact_checks": 17
+  },
+  "fixes": [
+    {
+      "id": "UI-01",
+      "implementation": "Shared popup dynamic height limit and vertical scrolling",
+      "automated": "PASS",
+      "browser": "NOT_RUN"
+    },
+    {
+      "id": "UI-02",
+      "implementation": "Navigation before reads; revision/workspace guards; stale/unmount invalidation; independent loading",
+      "automated": "PASS",
+      "browser": "NOT_RUN"
+    },
+    {
+      "id": "UI-03",
+      "implementation": "Read-specific safe errors; retry clears old read error and assessment; wallet errors preserved",
+      "automated": "PASS",
+      "browser": "NOT_RUN"
+    },
+    {
+      "id": "UI-04",
+      "implementation": "UTF-8 byte guidance, associated invalid/live feedback, unchanged title limit",
+      "automated": "PASS",
+      "browser": "NOT_RUN"
+    }
+  ],
+  "source_pins": {
+    "app/reply.css": "f1b5e306217866749e1198a66d09ac896369f99f9a731ff7dc56d3ce682f80a0",
+    "components/reply/reply-app.tsx": "0528ca0736ed6f9a83bf86f63bf9fd50ac0d4fac33467e28ab918d6f851d037d",
+    "tests/web/ui-audit-regression.test.mjs": "1aa48ed396f174e7ad8013fa7f1c96ce81b3581acd0920eb4f4db308121333d2",
+    "contracts/reply_check.py": "cb09037c7ba0b4dc4a675eb09ee561eb828d82b57ff5eb703d76e204f555c1eb",
+    "hooks/use-reply-chain.ts": "db4601aa0c32d48e147e4d287e9882c6a9a8d8a5fddcbad3e5e312bf6a7883b9",
+    "lib/reply/chain.ts": "39f78a310bacdcaa9b4130a05f808aa3e292aab3140bf35cf049d3f9d32d30f0",
+    "lib/reply/receipt.ts": "5af35ec5c94b65a4bfd4fa51299c74dc29f39a1217b293582823a2d896ce4141",
+    "lib/reply/deployment.json": "63cf020eae7d627b44866726e03c9faa8dc34d6b79a0bf98c2d2de79f8927267",
+    "package-lock.json": "07653e595abb64d6523b2867499e7bd8e9d4d004dea2dd083e4edb5521c83e19",
+    "requirements.lock": "af618b47c494bb9cabeea640ed676bada6dc703b484b7ec99a996e6ff6fbd228"
+  },
+  "commands": [
+    {
+      "command": "npm test",
+      "status": "PASS",
+      "tests": 107,
+      "fail": 0,
+      "skipped": 0,
+      "new_regressions": 13
+    },
+    {
+      "command": ".verify-venv/Scripts/python.exe -m pytest tests/direct tests/consensus -q --tb=short",
+      "env": {
+        "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "status": "PASS",
+      "tests": 97
+    },
+    {
+      "command": "npm run typecheck",
+      "status": "PASS"
+    },
+    {
+      "command": "npm run lint",
+      "status": "PASS"
+    },
+    {
+      "command": "npm run format:check",
+      "status": "PASS"
+    },
+    {
+      "command": "npm run build",
+      "status": "PASS"
+    },
+    {
+      "command": "node evidence/browser/replay-20260912-usability.mjs --historical-ui",
+      "status": "PASS",
+      "meaning": "Original evidence consistency only; preserves four historical failures."
+    },
+    {
+      "command": "node evidence/human-wallet/replays/20260912-after-signing-recovery.mjs --historical-ui",
+      "status": "PASS",
+      "meaning": "Saved public proof replay against original UI snapshots and unchanged execution code; no new chain observation."
+    }
+  ],
+  "browser_retest": {
+    "status": "PENDING",
+    "reason": "Chrome was not running. Installed/enabled extension and valid native-host configuration were observed. Reopening Chrome requires user permission.",
+    "new_dom_observations": 0,
+    "screenshots": 0
+  },
+  "wallet_requests": 0,
+  "transactions_sent": 0,
+  "chain_writes": false,
+  "contract_changed": false,
+  "wallet_signing_changed": false,
+  "deployment_changed": false,
+  "github_push": false,
+  "published": false,
+  "public_ubuntu_ci_verified": false,
+  "full_browser_matrix_complete": false,
+  "submission_ready": false,
+  "limitations": [
+    "Local automated tests do not prove browser layout or assistive-technology behavior.",
+    "No new live model run, receipt capture, deployed-source RPC read, clean dependency installation or public CI run was performed in this UI-fix pass.",
+    "Original audit failures are preserved; no recorded browser outcome was converted into a pass."
+  ]
+}

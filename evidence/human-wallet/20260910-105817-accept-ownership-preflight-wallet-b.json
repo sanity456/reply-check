@@ -1,0 +1,125 @@
+{
+  "format": "replycheck-human-wallet-preflight-v1",
+  "status": "PASS",
+  "purpose": "nominee-ownership-acceptance-preflight",
+  "observed_at_utc": "2026-09-12T12:34:49.040Z",
+  "read_only": true,
+  "network": "studionet",
+  "chain_id": 61999,
+  "contract": "0xBD35B1E68aeC803Bd793Db9c6B9762b60f60029A",
+  "workspace": "reply-wallet-20260910-105817",
+  "before_evidence": {
+    "filename": "20260910-105817-ownership-resume-20260912.json",
+    "sha256": "829481c0b0b67fb80f6732dfb4a1e51da040c42846d8c2b5818a4d22a95e2b7b"
+  },
+  "reverified_prior_transaction": {
+    "hash": "0x07f12cf84653cf6abc2aaee3edd2e92752de2a32c8df8b2562739e12136cb20b",
+    "evidence": {
+      "filename": "20260910-105817-propose-owner-wallet-b.json",
+      "sha256": "4dc4607c176549ab2c8e186b6044a9c94e3f6b3127d6aa71ea21cb1c6a46f291"
+    },
+    "state": "success",
+    "label": "Finalized; execution succeeded.",
+    "exact_call_verified": true,
+    "receipt_created_at": "2026-09-11T10:45:49.345334+00:00"
+  },
+  "source_sha256": "cb09037c7ba0b4dc4a675eb09ee561eb828d82b57ff5eb703d76e204f555c1eb",
+  "observations": [
+    {
+      "key": "workspace",
+      "method": "get_workspace",
+      "args": [
+        "reply-wallet-20260910-105817"
+      ],
+      "state": "LATEST_FINAL",
+      "output": {
+        "archived": false,
+        "card_count": 2,
+        "created_at": "2026-09-10T12:06:06.848821+00:00",
+        "id": "reply-wallet-20260910-105817",
+        "member_addresses": [],
+        "name": "ReplyCheck human wallet test",
+        "owner": "0x29b8b7d7cbf534eba01e56919de19d79d1509360",
+        "review_count": 9,
+        "version": 2
+      }
+    },
+    {
+      "key": "role_a",
+      "method": "get_role",
+      "args": [
+        "reply-wallet-20260910-105817",
+        "0x29b8b7d7cbf534eba01e56919de19d79d1509360"
+      ],
+      "state": "LATEST_FINAL",
+      "output": "owner"
+    },
+    {
+      "key": "role_b",
+      "method": "get_role",
+      "args": [
+        "reply-wallet-20260910-105817",
+        "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0"
+      ],
+      "state": "LATEST_FINAL",
+      "output": "visitor"
+    },
+    {
+      "key": "proposed_owner",
+      "method": "get_proposed_owner",
+      "args": [
+        "reply-wallet-20260910-105817"
+      ],
+      "state": "LATEST_FINAL",
+      "output": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0"
+    },
+    {
+      "key": "invitation_a",
+      "method": "get_invitation",
+      "args": [
+        "reply-wallet-20260910-105817",
+        "0x29b8b7d7cbf534eba01e56919de19d79d1509360"
+      ],
+      "state": "LATEST_FINAL",
+      "output": ""
+    },
+    {
+      "key": "invitation_b",
+      "method": "get_invitation",
+      "args": [
+        "reply-wallet-20260910-105817",
+        "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0"
+      ],
+      "state": "LATEST_FINAL",
+      "output": ""
+    }
+  ],
+  "intended_operation": {
+    "account": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0",
+    "contract": "0xBD35B1E68aeC803Bd793Db9c6B9762b60f60029A",
+    "chainId": 61999,
+    "method": "accept_ownership",
+    "args": [
+      "reply-wallet-20260910-105817"
+    ],
+    "callDigest": "a0a8a22957e41f71cbc90eb52b914e05760cae55ad432ceebbf0fcb8b97eefc9",
+    "attached_value_wei": "0",
+    "expected_return": null,
+    "effect": {
+      "method": "get_workspace",
+      "args": [
+        "reply-wallet-20260910-105817"
+      ],
+      "fields": {
+        "owner": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0"
+      }
+    },
+    "expected_owner_after": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0",
+    "expected_previous_owner_role": "visitor",
+    "expected_nominee_role": "owner",
+    "expected_proposed_owner": "",
+    "expected_invitation_a": "",
+    "expected_invitation_b": ""
+  },
+  "note": "Existing proposal receipt and exact call checked before source and current public preconditions. No transaction submitted. Full history baseline remains linked by the immutable resume artifact; this smaller preflight refreshes only ownership, invitation and complete workspace state. The human must separately consent and approve acceptance; A is still owner until execution succeeds. Observation time is not a chain timestamp."
+}

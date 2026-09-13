@@ -1,0 +1,24 @@
+{
+  "format": "replycheck-human-wallet-resume-v1",
+  "status": "READ_SUCCESS",
+  "observed_at_utc": "2026-09-11T06:25:51.889Z",
+  "network": "studionet",
+  "contract": "0xBD35B1E68aeC803Bd793Db9c6B9762b60f60029A",
+  "source_sha256": "cb09037c7ba0b4dc4a675eb09ee561eb828d82b57ff5eb703d76e204f555c1eb",
+  "invitation_evidence_sha256": "358250502df193e5bfa35f36ee6e3610e8ab848c1bbac311a62c16a678c03f06",
+  "account_b": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0",
+  "current_invitation": "member",
+  "current_role": "visitor",
+  "stored_workspace": {
+    "archived": false,
+    "card_count": 0,
+    "created_at": "2026-09-10T12:06:06.848821+00:00",
+    "id": "reply-wallet-20260910-105817",
+    "member_addresses": [],
+    "name": "ReplyCheck human wallet test",
+    "owner": "0x29b8b7d7cbf534eba01e56919de19d79d1509360",
+    "review_count": 6,
+    "version": 1
+  },
+  "note": "Fresh read-only state check after resuming. Original saved invitation receipt and its hash validated before source/state reads. No wallet signature or transaction was requested."
+}

@@ -1,0 +1,81 @@
+/** Saved recovery evidence; explicit pre-draft-feedback UI scope, not a fresh native test. */
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import ts from 'typescript';
+import { receiptState, verifyReceiptCall } from '../../lib/reply/receipt.ts';
+import { verifyDraftUiPins } from '../verify-draft-ui-pins.mjs';
+const root = new URL('../../', import.meta.url);
+const read = (path) => readFile(new URL(path, root));
+const sha = (bytes) => createHash('sha256').update(bytes).digest('hex');
+const bytes = await read('evidence/local/20260913-recovery-hash-fix.json');
+assert.equal(sha(bytes), '1570b63bcc304f0f0d2c4ff227a449319164763b564deb425bcfefef8a1aec46');
+const proof = JSON.parse(bytes);
+assert.equal(proof.status, 'PASS_SCOPED_RECOVERY_FIX_LOCAL_AND_CHAIN_RECHECK');
+const pinScope = await verifyDraftUiPins(root, proof.current_source_pins, { historicalInventory: true, historicalDraftUi: true });
+for (const pin of Object.values(proof.before_snapshots)) assert.equal(sha(await read(pin.path)), pin.sha256, pin.path);
+assert.equal(sha(await read(proof.paused_network_test.path)), proof.paused_network_test.sha256);
+const paused = JSON.parse(await read(proof.paused_network_test.path));
+assert.equal(paused.status, 'PAUSED_BEFORE_WALLET_REQUEST_FOR_RECOVERY_FIX');
+assert.equal(paused.scope.new_hash_observed, false);
+assert.equal(paused.app_cancel_observation.visible.consent_dialog_open, false);
+assert.equal(paused.app_cancel_observation.visible.recovery_present, false);
+assert.equal(proof.regression_before_fix.exit_code, 1);
+assert.match(proof.regression_before_fix.output, /tests 11/);
+assert.match(proof.regression_before_fix.output, /fail 10/);
+assert.equal(proof.verification.frontend_tests, 159);
+assert.equal(proof.verification.contract_tests, 97);
+assert.equal(proof.verification.total_tests, 256);
+assert.ok(proof.verification.commands.every((command) => command.exit_code === 0));
+assert.ok(proof.verification.commands.find((command) => command.id === 'frontend-static').output.includes('pass 159'));
+assert.ok(proof.verification.commands.find((command) => command.id === 'contract-tooling').output.includes('97 passed'));
+assert.equal(proof.audits.npm.metadata.vulnerabilities.total, 0);
+assert.ok(proof.audits.python.dependencies.every((item) => item.vulns.length === 0));
+
+const source = (bytes) => ts.createSourceFile('hook.ts', bytes.toString(), ts.ScriptTarget.Latest, true);
+const before = source(await read(proof.before_snapshots['hooks/use-reply-chain.ts'].path));
+const after = source(await read('hooks/use-reply-chain.ts'));
+const expression = (tree, name) => {
+  let found;
+  const visit = (node) => {
+    if (ts.isVariableDeclaration(node) && node.name.getText(tree) === name) found = node.initializer.getText(tree);
+    ts.forEachChild(node, visit);
+  };
+  visit(tree); assert.ok(found, name); return found;
+};
+for (const name of ['send', 'check', 'persist', 'connect', 'dismiss']) assert.equal(expression(after, name), expression(before, name), name);
+for (const name of ['attachHash', 'confirmNotSent']) assert.notEqual(expression(after, name), expression(before, name), name);
+assert.ok(expression(after, 'attachHash').includes('await verifyReceiptCall(result.receipt, candidate)'));
+assert.ok(expression(after, 'attachHash').includes('navigator.locks.request'));
+assert.ok(expression(after, 'attachHash').indexOf('await verifyReceiptCall') < expression(after, 'attachHash').indexOf('persist(candidate)'));
+
+const chain = proof.fresh_chain;
+assert.equal(sha(await read(chain.baseline.path)), chain.baseline.sha256);
+assert.equal(sha(await read(chain.generator.path)), chain.generator.sha256);
+const baseline = JSON.parse(await read(chain.baseline.path));
+assert.equal(receiptState(chain.receipt, chain.expected).state, 'success');
+assert.equal(await verifyReceiptCall(chain.receipt, chain.expected), true);
+assert.deepEqual(chain.expected, baseline.expected);
+assert.deepEqual(chain.decoded_return_payload, baseline.stored_review);
+assert.equal(chain.deployed_source.matched, true);
+assert.equal(chain.deployed_source.sha256, proof.current_source_pins['contracts/reply_check.py']);
+assert.equal(chain.observations.length, 10);
+for (const row of chain.observations) {
+  const original = baseline.observations.find((item) => item.key === row.key);
+  assert.equal(row.method, original.method); assert.deepEqual(row.args, original.args); assert.deepEqual(row.output, original.output);
+  assert.ok(Date.parse(row.requested_at_utc) >= Date.parse(chain.deployed_source.verified_at_utc));
+  assert.ok(Date.parse(row.observed_at_utc) >= Date.parse(row.requested_at_utc));
+}
+assert.ok(Object.values(chain.constraints).every((value) => value === false));
+const final = proof.browser.observations.at(-1);
+assert.equal(final.visible.account, 'B');
+assert.equal(final.visible.role, 'owner');
+assert.equal(final.visible.recovery_present, false);
+assert.equal(final.visible.consent_dialog_open, false);
+assert.ok(!final.snapshot.includes('WALLET OUTCOME UNKNOWN'));
+assert.ok(!final.snapshot.includes('Could not load this review.'));
+assert.equal((final.snapshot.match(/- time: /g) || []).length, 13);
+assert.ok(final.snapshot.includes(baseline.expected.review_id));
+assert.equal(proof.native_recovery_hash_correction_e2e, 'NOT_EXERCISED');
+assert.equal(proof.pending_network_test, 'NOT_EXERCISED');
+console.log(JSON.stringify({ fix: 'PASS_SCOPED', pin_scope: pinScope, checkpoint_tests: 256, receipt_fixture_variants: 7, public_state_outputs: 10, unchanged_reviews: 13, preview: 'REBUILT_AND_READ_ONLY_SMOKE_CHECKED', native_wallet_recovery: 'NOT_EXERCISED', public_ci: 'NOT_RUN', note: 'The form UI and append-only inventory use explicit exact historical snapshots; other source pins remain current. Tests and observations describe the saved checkpoint, not a fresh test of the changed form or a new live run.' }, null, 2));

@@ -1,0 +1,262 @@
+{
+  "format": "replycheck-human-wallet-step-v1",
+  "status": "CHAIN_VERIFIED_HUMAN_CONFIRMATION_UNRESOLVED",
+  "observed_at_utc": "2026-09-11T08:02:02.800Z",
+  "network": "studionet",
+  "expected": {
+    "hash": "0xdd71bd7d5a11becfbd625d7c30bcb46eff54f083a375b5c0cc8b103a3e429cda",
+    "account": "0x29b8b7d7cbf534eba01e56919de19d79d1509360",
+    "contract": "0xBD35B1E68aeC803Bd793Db9c6B9762b60f60029A",
+    "chainId": 61999,
+    "method": "invite_member",
+    "callDigest": "b2323f7847f112620246363d79238d47cc1b35441d5c79fb330cdaa6dc881914",
+    "args": [
+      "reply-wallet-20260910-105817",
+      "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0",
+      "reviewer"
+    ],
+    "attached_value_wei": "0",
+    "invitation": "reviewer",
+    "recipient_role_before_acceptance": "member"
+  },
+  "app_transaction_export": {
+    "filename": "replycheck-transaction-0xdd71bd7d5a11becfbd625d7c30bcb46eff54f083a375b5c0cc8b103a3e429cda.json",
+    "sha256": "fc084f8ee720d94221adfc6927510806987a30465a12c3e07fab78d2586aa9c4",
+    "payload": {
+      "account": "0x29b8b7d7cbf534eba01e56919de19d79d1509360",
+      "contract": "0xBD35B1E68aeC803Bd793Db9c6B9762b60f60029A",
+      "chainId": 61999,
+      "method": "invite_member",
+      "title": "Invite a team member",
+      "workspace": "reply-wallet-20260910-105817",
+      "effect": {
+        "method": "get_invitation",
+        "args": [
+          "reply-wallet-20260910-105817",
+          "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0"
+        ],
+        "equals": "reviewer"
+      },
+      "startedAt": "2026-09-11T07:27:05.327Z",
+      "callDigest": "b2323f7847f112620246363d79238d47cc1b35441d5c79fb330cdaa6dc881914",
+      "hash": "0xdd71bd7d5a11becfbd625d7c30bcb46eff54f083a375b5c0cc8b103a3e429cda"
+    }
+  },
+  "before_evidence": {
+    "filename": "20260910-105817-member-reply-wallet-b.json",
+    "sha256": "35f76984b6ac5c848c55372e96cfb842ed39cb7b25fc294cf65a19c764efb101"
+  },
+  "source_sha256": "cb09037c7ba0b4dc4a675eb09ee561eb828d82b57ff5eb703d76e204f555c1eb",
+  "receipt_verifier_sha256": "5af35ec5c94b65a4bfd4fa51299c74dc29f39a1217b293582823a2d896ce4141",
+  "chain_client_sha256": "39f78a310bacdcaa9b4130a05f808aa3e292aab3140bf35cf049d3f9d32d30f0",
+  "package_lock_sha256": "07653e595abb64d6523b2867499e7bd8e9d4d004dea2dd083e4edb5521c83e19",
+  "execution": {
+    "state": "success",
+    "label": "Finalized; execution succeeded."
+  },
+  "checks": [
+    {
+      "name": "reviewer invitation stored",
+      "status": "PASS"
+    },
+    {
+      "name": "recipient remains member until acceptance",
+      "status": "PASS"
+    },
+    {
+      "name": "owner remains owner",
+      "status": "PASS"
+    },
+    {
+      "name": "workspace exactly unchanged",
+      "status": "PASS"
+    }
+  ],
+  "stored_invitation": "reviewer",
+  "stored_recipient_role": "member",
+  "stored_owner_role": "owner",
+  "stored_workspace": {
+    "archived": false,
+    "card_count": 0,
+    "created_at": "2026-09-10T12:06:06.848821+00:00",
+    "id": "reply-wallet-20260910-105817",
+    "member_addresses": [
+      "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0"
+    ],
+    "name": "ReplyCheck human wallet test",
+    "owner": "0x29b8b7d7cbf534eba01e56919de19d79d1509360",
+    "review_count": 7,
+    "version": 1
+  },
+  "receipt": {
+    "hash": "0xdd71bd7d5a11becfbd625d7c30bcb46eff54f083a375b5c0cc8b103a3e429cda",
+    "status": "FINALIZED",
+    "from_address": "0x29B8b7D7CBF534Eba01E56919dE19d79d1509360",
+    "to_address": "0xBD35B1E68aeC803Bd793Db9c6B9762b60f60029A",
+    "value": 0,
+    "created_at": "2026-09-11T07:27:11.858851+00:00",
+    "leader_only": false,
+    "last_leader": "0xE6BD8050758CB15fC88387223E31Ae2708B119dC",
+    "last_round": {
+      "round": "0",
+      "leader_index": "0",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "appeal_bond": "0",
+      "rotations_left": "3",
+      "result": 6,
+      "round_validators": [
+        "0xE6BD8050758CB15fC88387223E31Ae2708B119dC",
+        "0x3E5ee2507cc167C9925Bf10c67D7986581112024",
+        "0x772ffCd1dF6Cc566eC4b8d3f4F4f8eBbb6B36C84",
+        "0x4EDbE1FC9EAeC7b0EBA849b0C76AE73Eb0ad5C47",
+        "0x3D83ab507785b95ca5C208bEc80CCe3D5ca98100"
+      ],
+      "validator_votes_hash": [
+        "0xa51cfdb79e32db96b7cd63e1e316e1381d21737b652c7bf955580843cf205072",
+        "0x73ac9f2cbb8084f9eaeb6e0a9c1d879badb06f8fee5e9fce2be2fefd556f10d1",
+        "0x1f560448618dcc174d22069e2cebc7e7178dd0a754fd5c09e93cc82b4e8af1dd",
+        "0x260512b9cf1a7db4ff6c0828c3997c8e44131b90cd3eac7ba79c1f62960bb541",
+        "0xbb0fc347d64492579ad82d9d4c4a458cf48ab026d7221fc8c77cc84d268a1ca0"
+      ],
+      "validator_votes": [
+        1,
+        1,
+        1,
+        5,
+        5
+      ],
+      "validator_votes_name": [
+        "AGREE",
+        "AGREE",
+        "AGREE",
+        "IDLE",
+        "IDLE"
+      ]
+    },
+    "result": 6,
+    "result_name": "MAJORITY_AGREE",
+    "data": {
+      "calldata": "FgRhcmdzHeQBcmVwbHktd2FsbGV0LTIwMjYwOTEwLTEwNTgxN9QCMHg3Y2VmNWRiYmQ1OThiYTc0ZWY5YzY2NWM5ODUzZTU3MzQ0OGQ5N2QwRHJldmlld2VyBm1ldGhvZGxpbnZpdGVfbWVtYmVy"
+    },
+    "consensus_data": {
+      "votes": {
+        "0x3D83ab507785b95ca5C208bEc80CCe3D5ca98100": "idle",
+        "0x3E5ee2507cc167C9925Bf10c67D7986581112024": "agree",
+        "0x4EDbE1FC9EAeC7b0EBA849b0C76AE73Eb0ad5C47": "idle",
+        "0x772ffCd1dF6Cc566eC4b8d3f4F4f8eBbb6B36C84": "agree",
+        "0xE6BD8050758CB15fC88387223E31Ae2708B119dC": "agree"
+      },
+      "leader_receipt": [
+        {
+          "mode": "leader",
+          "vote": null,
+          "execution_result": "SUCCESS",
+          "result": "AAA=",
+          "node_config": {
+            "address": "0xE6BD8050758CB15fC88387223E31Ae2708B119dC"
+          },
+          "validation_diagnostics": []
+        },
+        {
+          "mode": "validator",
+          "vote": "agree",
+          "execution_result": "SUCCESS",
+          "result": "AAA=",
+          "node_config": {
+            "address": "0xE6BD8050758CB15fC88387223E31Ae2708B119dC"
+          },
+          "validation_diagnostics": []
+        }
+      ]
+    },
+    "consensus_history": {
+      "current_status_changes": [
+        "FINALIZED"
+      ],
+      "consensus_results": [
+        {
+          "consensus_round": "Accepted",
+          "status_changes": [
+            "PENDING",
+            "PROPOSING",
+            "COMMITTING",
+            "REVEALING",
+            "ACCEPTED"
+          ],
+          "leader_result": [
+            {
+              "mode": "leader",
+              "vote": null,
+              "execution_result": "SUCCESS",
+              "result": "AAA=",
+              "node_config": {
+                "address": "0xE6BD8050758CB15fC88387223E31Ae2708B119dC"
+              },
+              "validation_diagnostics": []
+            },
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "execution_result": "SUCCESS",
+              "result": "AAA=",
+              "node_config": {
+                "address": "0xE6BD8050758CB15fC88387223E31Ae2708B119dC"
+              },
+              "validation_diagnostics": []
+            }
+          ],
+          "validator_results": [
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "execution_result": "SUCCESS",
+              "result": "AAA=",
+              "node_config": {
+                "address": "0x3E5ee2507cc167C9925Bf10c67D7986581112024"
+              },
+              "validation_diagnostics": []
+            },
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "execution_result": "SUCCESS",
+              "result": "AAA=",
+              "node_config": {
+                "address": "0x772ffCd1dF6Cc566eC4b8d3f4F4f8eBbb6B36C84"
+              },
+              "validation_diagnostics": []
+            },
+            {
+              "mode": "validator",
+              "vote": "idle",
+              "execution_result": "ERROR",
+              "result": "AmlkbGU=",
+              "node_config": {
+                "address": "0x4EDbE1FC9EAeC7b0EBA849b0C76AE73Eb0ad5C47"
+              },
+              "validation_diagnostics": []
+            },
+            {
+              "mode": "validator",
+              "vote": "idle",
+              "execution_result": "ERROR",
+              "result": "AmlkbGU=",
+              "node_config": {
+                "address": "0x3D83ab507785b95ca5C208bEc80CCe3D5ca98100"
+              },
+              "validation_diagnostics": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "human_confirmation": {
+    "status": "UNRESOLVED",
+    "latest_user_statement": "nothing was sent",
+    "earlier_user_statement": "done",
+    "note": "The network receipt proves the exact call from Wallet A. It does not independently establish who clicked the wallet approval or whether the latest statement refers to a missing new popup. Do not label the human interaction as passed until clarified."
+  },
+  "note": "Read-only diagnosis of the existing hash after the user reported nothing was sent. Final successful execution, exact calldata, sender, target and zero value were verified before fresh source/state reads. No resend, wallet request, account switch, approval or signature was made. The invitation is only a stored role string; no separate invitation timestamp exists. Receipt created_at is preserved without calling it a finalization timestamp."
+}

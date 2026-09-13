@@ -1,0 +1,20 @@
+/** Capture the one human-approved transaction, read-only; never requests a wallet. */
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import { getReceipt } from '../../../lib/reply/chain.ts';
+import { verifyReceiptCall } from '../../../lib/reply/receipt.ts';
+const exportPath = 'C:/Users/user/Downloads/replycheck-transaction-0xeb94cb35bc3bb2d21d8c65059f43a79c5775091b63df40fa3da1ea33e8b7fb99.json';
+const bytes = await readFile(exportPath);
+const expected = JSON.parse(bytes);
+assert.equal(expected.hash, '0xeb94cb35bc3bb2d21d8c65059f43a79c5775091b63df40fa3da1ea33e8b7fb99');
+assert.equal(expected.account, '0x7cef5dbbd598ba74ef9c665c9853e573448d97d0');
+assert.equal(expected.method, 'submit_review');
+assert.equal(expected.chainId, 61999);
+assert.equal(expected.callDigest, '3b006e39fbcbc9eebc461ff6965c747f8af2d55accdb0bdf967808e5d743c6b9');
+const requestedAt = new Date().toISOString();
+const result = await getReceipt(expected);
+const observedAt = new Date().toISOString();
+const exactCallVerified = await verifyReceiptCall(result.receipt, expected);
+const proof = {format:'replycheck-pending-identity-receipt-capture-v1',requested_at_utc:requestedAt,observed_at_utc:observedAt,expected,app_transaction_export:{path:exportPath,sha256:createHash('sha256').update(bytes).digest('hex'),payload:expected},receipt:result.receipt,execution:{state:result.state,label:result.label},exact_call_verified:exactCallVerified,transaction_sent:false,wallet_approved_by_agent:false};
+console.log('REPLYCHECK_RECEIPT_RESULT\n'+JSON.stringify(proof,(_,v)=>typeof v==='bigint'?v.toString():v)+'\nREPLYCHECK_RECEIPT_END');

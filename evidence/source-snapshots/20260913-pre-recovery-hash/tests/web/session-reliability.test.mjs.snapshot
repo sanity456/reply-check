@@ -1,0 +1,492 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { runInNewContext } from 'node:vm';
+import ts from 'typescript';
+import { CHAIN_ID, errorMessage, isHash } from '../../lib/reply/core.ts';
+import { recoveryFor, rejected } from '../../lib/reply/journal.ts';
+
+// Execute the installed hook's actual callbacks. Wallet, storage, locks and RPC
+// boundaries are isolated doubles; this is not a browser or live signing test.
+const source = ts.createSourceFile(
+  'use-reply-chain.ts',
+  readFileSync(
+    new URL('../../hooks/use-reply-chain.ts', import.meta.url),
+    'utf8',
+  ),
+  ts.ScriptTarget.Latest,
+  true,
+);
+function find(predicate, root = source) {
+  if (predicate(root)) return root;
+  return ts.forEachChild(root, (child) => find(predicate, child));
+}
+function expression(name) {
+  const node = find(
+    (n) => ts.isVariableDeclaration(n) && n.name.getText(source) === name,
+  );
+  assert.ok(node?.initializer, name);
+  return node.initializer.getText(source);
+}
+function evaluate(code, bindings) {
+  const compiled = ts.transpileModule(`const actual = ${code};`, {
+    compilerOptions: { target: ts.ScriptTarget.ES2022 },
+  }).outputText;
+  return runInNewContext(`(() => { ${compiled}; return actual; })()`, bindings);
+}
+function deferred() {
+  let resolve, reject;
+  const promise = new Promise((yes, no) => {
+    resolve = yes;
+    reject = no;
+  });
+  return { promise, resolve, reject };
+}
+const flush = () => new Promise((resolve) => setImmediate(resolve));
+const account = '0x' + 'a'.repeat(40);
+const contract = '0x' + 'b'.repeat(40);
+const hash = '0x' + 'c'.repeat(64);
+const otherHash = '0x' + 'd'.repeat(64);
+const key = `replycheck:pending:${CHAIN_ID}:${contract}`;
+const operation = {
+  method: 'submit_review',
+  args: ['test-workspace', 1, 'Question?', 'Fictional reply.', 'nonce', true],
+  title: 'Check this reply',
+  workspace: 'test-workspace',
+  details: [],
+  effect: {
+    method: 'get_review',
+    args: ['test-workspace', 'review-id'],
+    fields: { id: 'review-id' },
+  },
+};
+const pending = {
+  account,
+  contract,
+  chainId: CHAIN_ID,
+  method: operation.method,
+  title: operation.title,
+  workspace: operation.workspace,
+  effect: operation.effect,
+  callDigest: 'e'.repeat(64),
+  startedAt: '2026-09-12T00:00:00Z',
+  hash,
+};
+function sharedEnvironment() {
+  const storage = new Map();
+  const held = new Set();
+  return {
+    storage,
+    held,
+    locks: {
+      async request(name, options, callback) {
+        assert.equal(options.ifAvailable, true);
+        if (held.has(name)) return callback(null);
+        held.add(name);
+        try {
+          return await callback({ name });
+        } finally {
+          held.delete(name);
+        }
+      },
+    },
+  };
+}
+function harness(shared = sharedEnvironment()) {
+  const state = {
+    sending: false,
+    checking: false,
+    memory: null,
+    error: '',
+    message: '',
+    terminalHash: '',
+  };
+  const started = deferred();
+  const h = {
+    state,
+    shared,
+    started,
+    walletCalls: 0,
+    confirmed: [],
+    writes: [],
+    result: async () => hash,
+    storageFailure: () => false,
+    receipt: async () => ({ state: 'pending', label: 'Pending' }),
+    effect: async () => ({ id: 'review-id' }),
+  };
+  const bindings = {
+    CHAIN_ID,
+    account,
+    expectedAccount: account,
+    contractAddress: contract,
+    configured: true,
+    chainId: CHAIN_ID,
+    recovery: null,
+    malformed: false,
+    uncertain: null,
+    sending: false,
+    terminal: false,
+    checking: false,
+    sendLock: { current: false },
+    active: { current: false },
+    mounted: { current: true },
+    pendingKey: () => key,
+    recoveryFor,
+    rejected,
+    errorMessage,
+    isHash,
+    navigator: { locks: shared.locks },
+    localStorage: {
+      getItem: (name) => {
+        if (h.storageFailure('read')) throw new Error('Storage unavailable');
+        return shared.storage.get(name) ?? null;
+      },
+    },
+    saveBrowserValue: (name, value) => {
+      if (h.storageFailure(value)) throw new Error('Storage unavailable');
+      h.writes.push(value);
+      if (value === null) shared.storage.delete(name);
+      else shared.storage.set(name, value);
+    },
+    browserProvider: () => ({}),
+    sendOperation: async (_provider, sender, op, beforeRequest) => {
+      assert.equal(sender, account);
+      assert.equal(op, operation);
+      beforeRequest();
+      h.walletCalls++;
+      started.resolve();
+      return h.result();
+    },
+    useCallback: (callback) => callback,
+    getReceipt: (record) => h.receipt(record),
+    verifyEffect: (effect) => h.effect(effect),
+    confirmed: {
+      current: async (record, stored) => {
+        h.confirmed.push({ record, stored });
+      },
+    },
+  };
+  for (const name of Object.keys(state))
+    bindings[`set${name[0].toUpperCase()}${name.slice(1)}`] = (value) => {
+      state[name] = value;
+    };
+  bindings.persist = evaluate(expression('persist'), bindings);
+  for (const name of [
+    'send',
+    'check',
+    'attachHash',
+    'confirmNotSent',
+    'dismiss',
+  ])
+    h[name] = evaluate(expression(name), bindings);
+  h.bindings = bindings;
+  return h;
+}
+
+test('session: same-tab double send opens only one simulated wallet request', async () => {
+  const h = harness(),
+    reply = deferred();
+  h.result = () => reply.promise;
+  const first = h.send(operation, account);
+  await h.started.promise;
+  await assert.rejects(h.send(operation, account), /previous transaction/);
+  assert.equal(h.walletCalls, 1);
+  reply.resolve(hash);
+  await first;
+  assert.equal(JSON.parse(h.shared.storage.get(key)).hash, hash);
+  assert.equal(h.state.sending, false);
+});
+
+test('session: competing tab loses the Web Lock and never reaches its wallet boundary', async () => {
+  const shared = sharedEnvironment(),
+    a = harness(shared),
+    b = harness(shared),
+    reply = deferred();
+  a.result = () => reply.promise;
+  const first = a.send(operation, account);
+  await a.started.promise;
+  await assert.rejects(
+    b.send(operation, account),
+    /Another tab is using the wallet/,
+  );
+  assert.equal(b.walletCalls, 0);
+  reply.resolve(hash);
+  await first;
+  assert.equal(shared.held.size, 0);
+});
+
+test('session: stale tab state still checks durable intent after the other lock is released', async () => {
+  const shared = sharedEnvironment(),
+    a = harness(shared),
+    b = harness(shared);
+  await a.send(operation, account);
+  assert.equal(b.bindings.recovery, null);
+  await assert.rejects(b.send(operation, account), /unresolved action/);
+  assert.equal(b.walletCalls, 0);
+  assert.equal(JSON.parse(shared.storage.get(key)).hash, hash);
+});
+
+test('session: no Web Locks, wrong identity, wrong network and existing recovery all fail closed', async () => {
+  for (const configure of [
+    (h) => {
+      delete h.bindings.navigator.locks;
+    },
+    (h) => {
+      h.bindings.account = '0x' + 'f'.repeat(40);
+    },
+    (h) => {
+      h.bindings.chainId = 1;
+    },
+    (h) => {
+      h.bindings.recovery = pending;
+    },
+    (h) => {
+      h.bindings.malformed = true;
+    },
+  ]) {
+    const h = harness();
+    configure(h);
+    await assert.rejects(h.send(operation, account));
+    assert.equal(h.walletCalls, 0);
+    assert.equal(h.shared.storage.size, 0);
+  }
+});
+
+test('session: unreadable storage or a failed pre-wallet journal prevents the wallet request', async () => {
+  for (const failure of [
+    (value) => value === 'read',
+    (value) => typeof value === 'string' && value !== 'read',
+  ]) {
+    const h = harness();
+    h.storageFailure = failure;
+    await assert.rejects(h.send(operation, account), /Storage unavailable/);
+    assert.equal(h.walletCalls, 0);
+    assert.equal(h.state.sending, false);
+    assert.equal(h.shared.held.size, 0);
+  }
+});
+
+test('session: intent is saved before requesting and returned-hash storage failure retains an in-memory recovery', async () => {
+  const h = harness();
+  h.result = async () => {
+    const intent = JSON.parse(h.shared.storage.get(key));
+    assert.equal(intent.hash, undefined);
+    assert.equal(intent.account, account);
+    assert.ok(intent.callDigest);
+    return hash;
+  };
+  h.storageFailure = (value) =>
+    typeof value === 'string' && value.includes(`"hash":"${hash}"`);
+  await h.send(operation, account);
+  assert.equal(h.state.memory.hash, hash);
+  assert.equal(JSON.parse(h.shared.storage.get(key)).hash, undefined);
+  assert.match(h.state.error, /Copy the transaction hash/);
+  assert.equal(h.walletCalls, 1);
+});
+
+test('session: explicit wallet rejection clears only the journal and does not retry', async () => {
+  const h = harness();
+  h.result = async () => {
+    throw Object.assign(new Error('Declined'), { code: 4001 });
+  };
+  await assert.rejects(h.send(operation, account));
+  assert.equal(h.walletCalls, 1);
+  assert.equal(h.shared.storage.has(key), false);
+  assert.equal(h.writes.at(-1), null);
+  assert.equal(h.state.terminalHash, '');
+});
+
+test('session: a lost response keeps intent and blocks a retry even from a stale closure', async () => {
+  const h = harness();
+  h.result = async () => {
+    throw new Error('Lost response');
+  };
+  await assert.rejects(h.send(operation, account));
+  assert.equal(JSON.parse(h.shared.storage.get(key)).hash, undefined);
+  assert.match(h.state.message, /Do not send another action/);
+  await assert.rejects(h.send(operation, account), /unresolved action/);
+  assert.equal(h.walletCalls, 1);
+});
+
+test('session: pending, unknown and failed receipts never run a success callback', async () => {
+  for (const outcome of ['pending', 'unknown', 'failed']) {
+    const h = harness();
+    h.receipt = async () => ({ state: outcome, label: `State: ${outcome}` });
+    h.effect = async () =>
+      assert.fail('No state verification without execution success');
+    await h.check(pending);
+    assert.deepEqual(h.confirmed, []);
+    assert.equal(h.state.terminalHash, outcome === 'failed' ? hash : '');
+  }
+});
+
+test('session: execution success still needs stored-state verification before terminal success', async () => {
+  const h = harness();
+  h.receipt = async () => ({ state: 'success', label: 'Execution succeeded' });
+  h.effect = async () => {
+    throw new Error('State read unavailable');
+  };
+  h.shared.storage.set(key, JSON.stringify(pending));
+  await h.check(pending);
+  assert.equal(h.state.terminalHash, '');
+  assert.deepEqual(h.confirmed, []);
+  assert.equal(JSON.parse(h.shared.storage.get(key)).hash, hash);
+  h.effect = async () => ({ id: 'review-id' });
+  await h.check(pending);
+  assert.equal(h.state.terminalHash, hash);
+  assert.equal(h.confirmed.length, 1);
+});
+
+test('session: overlapping status checks share one receipt read without another send', async () => {
+  const h = harness(),
+    response = deferred();
+  let reads = 0;
+  h.receipt = () => {
+    reads++;
+    return response.promise;
+  };
+  const first = h.check(pending);
+  await h.check(pending);
+  assert.equal(reads, 1);
+  response.resolve({ state: 'success', label: 'Verified execution' });
+  await first;
+  assert.equal(h.confirmed.length, 1);
+  assert.equal(h.walletCalls, 0);
+});
+
+test('session: unmount during a receipt read does not publish a stale result', async () => {
+  const h = harness(),
+    response = deferred();
+  h.receipt = () => response.promise;
+  const checking = h.check(pending);
+  h.bindings.mounted.current = false;
+  response.resolve({ state: 'success', label: 'Verified execution' });
+  await checking;
+  assert.equal(h.state.terminalHash, '');
+  assert.deepEqual(h.confirmed, []);
+});
+
+test('session: malformed recovered hash cannot replace intent; a valid hash is saved for verification', () => {
+  const h = harness();
+  h.bindings.uncertain = { ...pending, hash: undefined };
+  h.attachHash('0x1234');
+  assert.equal(h.shared.storage.size, 0);
+  assert.match(h.state.error, /complete transaction hash/);
+  h.attachHash(otherHash);
+  assert.equal(JSON.parse(h.shared.storage.get(key)).hash, otherHash);
+  assert.equal(h.state.terminalHash, '');
+  assert.equal(h.walletCalls, 0);
+});
+
+test('session: pending checks and active wallet requests cannot be dismissed as completed/not sent', () => {
+  const h = harness();
+  h.shared.storage.set(key, JSON.stringify(pending));
+  h.dismiss();
+  assert.equal(h.shared.storage.has(key), true);
+  h.bindings.terminal = true;
+  h.bindings.checking = true;
+  h.dismiss();
+  assert.equal(h.shared.storage.has(key), true);
+  h.bindings.uncertain = { ...pending, hash: undefined };
+  h.bindings.sending = true;
+  h.confirmNotSent();
+  assert.equal(h.shared.storage.has(key), true);
+  h.bindings.checking = false;
+  h.dismiss();
+  assert.equal(h.shared.storage.has(key), false);
+});
+
+function identityHarness() {
+  const effects = [];
+  function collect(node) {
+    if (
+      ts.isCallExpression(node) &&
+      node.expression.getText(source) === 'useEffect'
+    )
+      effects.push(node);
+    ts.forEachChild(node, collect);
+  }
+  collect(source);
+  const effect = effects.find((node) =>
+    node.arguments[0].getText(source).includes('Initial wallet hydration'),
+  );
+  const reads = [],
+    events = new Map(),
+    state = { account: null, chainId: null, error: '', invalidations: 0 };
+  const mounted = { current: false };
+  const cleanup = evaluate(effect.arguments[0].getText(source), {
+    mounted,
+    browserProvider: () => ({
+      on: (name, fn) => events.set(name, fn),
+      removeListener: (name) => events.delete(name),
+    }),
+    walletState: () => {
+      const request = deferred();
+      reads.push(request);
+      return request.promise;
+    },
+    identityChanged: { current: () => state.invalidations++ },
+    setAccount: (value) => {
+      state.account = value;
+    },
+    setChainId: (value) => {
+      state.chainId = value;
+    },
+    setError: (value) => {
+      state.error = value;
+    },
+  })();
+  return { reads, events, state, mounted, cleanup };
+}
+
+test('identity: newer account/network hydration wins over late initial and earlier successful reads', async () => {
+  const h = identityHarness();
+  h.events.get('accountsChanged')();
+  h.events.get('chainChanged')();
+  assert.equal(h.state.invalidations, 2);
+  h.reads[2].resolve({ account, chainId: CHAIN_ID });
+  await flush();
+  h.reads[0].resolve({ account: 'old-initial', chainId: 1 });
+  h.reads[1].resolve({ account: 'old-event', chainId: 1 });
+  await flush();
+  assert.equal(h.state.account, account);
+  assert.equal(h.state.chainId, CHAIN_ID);
+  h.cleanup();
+  assert.equal(h.events.size, 0);
+});
+
+test('identity: a stale failed refresh cannot overwrite newer successful hydration with an error', async () => {
+  const h = identityHarness();
+  h.reads[0].resolve({ account, chainId: CHAIN_ID });
+  await flush();
+  h.events.get('accountsChanged')();
+  h.events.get('chainChanged')();
+  h.reads[2].resolve({ account, chainId: CHAIN_ID });
+  await flush();
+  h.reads[1].reject(
+    new Error('Old RPC failure containing private debug details'),
+  );
+  await flush();
+  assert.equal(h.state.error, '');
+  assert.equal(h.state.account, account);
+  h.cleanup();
+});
+
+test('identity: current read failures stay safe and unmount suppresses later failures', async () => {
+  const h = identityHarness();
+  h.reads[0].resolve({ account, chainId: CHAIN_ID });
+  await flush();
+  h.events.get('accountsChanged')();
+  h.reads[1].reject(new Error('PRIVATE DEBUG PAYLOAD'));
+  await flush();
+  assert.equal(
+    h.state.error,
+    'Could not read wallet state. Reconnect your wallet.',
+  );
+  h.state.error = '';
+  h.events.get('chainChanged')();
+  h.cleanup();
+  h.reads[2].reject(new Error('Late after unmount'));
+  await flush();
+  assert.equal(h.state.error, '');
+});

@@ -1,0 +1,18 @@
+{
+  "format": "replycheck-screen-reader-human-witness-v1",
+  "status": "PARTIAL_LABEL_REPORTED_OTHER_SPEECH_UNCONFIRMED",
+  "setup_path": "evidence/browser/20260913-native-screen-reader-setup.json",
+  "setup_sha256": "402eb79268906380a5be655b1a3823021d32c9cfec33df357e44c2eb3c40783d",
+  "observed_at_utc": "2026-09-13T11:48:48.1963238Z",
+  "user_response_verbatim": "question",
+  "interpretation": "Human reports hearing the Question label. This response does not establish whether invalid state, byte count or associated error text was also announced. No speech failure or complete screen-reader pass is inferred.",
+  "current_runtime": {
+    "narrator_running": false,
+    "process_ids": [],
+    "windows_observation": "Fresh Windows discovery returned no Narrator window. The cause of Narrator stopping is not known; no restart was attempted."
+  },
+  "next_question": "Did it also read the error about adding a question of up to 1,500 bytes, or did it only say Question?",
+  "app_changes": 0,
+  "wallet_requests": 0,
+  "prior_evidence_modified": false
+}

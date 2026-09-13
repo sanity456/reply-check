@@ -1,0 +1,2742 @@
+{
+  "format": "replycheck-pending-account-window-v1",
+  "status": "PASS_PENDING_ACCOUNT_WINDOW_AWAITING_FINAL_RECONCILIATION",
+  "setup_evidence": {
+    "path": "evidence/human-wallet/20260913-fourth-identity-unsigned-setup.json",
+    "sha256": "9539ac89b3b4e605586bf255581458af463a69676eb216d70eaba82b2aea6ff1"
+  },
+  "no_send_acknowledgment": {
+    "path": "evidence/human-wallet/20260913-third-identity-no-send-acknowledgment.json",
+    "sha256": "017379069b5ee7c47f699003dd5ce12a7aaad68c6d96c147acbbcb5c8a0ef303"
+  },
+  "source_pins": {
+    "requirements.lock": "af618b47c494bb9cabeea640ed676bada6dc703b484b7ec99a996e6ff6fbd228",
+    ".github/workflows/verify.yml": "3a42c82d9674dd496103c72c627920903c0ef106e43da5100029c4564c679bc7",
+    "components/reply/reply-app.tsx": "c6d999aec22e8092773435bc40c1ee6f06073659382c286b5a9ed5de9b65ae22",
+    "hooks/use-reply-chain.ts": "616bff6f7f1a61ce5d813fdc13333bb45b59be50e5afcf23b015860dda545088",
+    "components/reply/review-result.tsx": "0e678fada70d1140891f217e4dc631e947ea1c197a72575d2074b21ca72cb6b6",
+    "lib/reply/journal.ts": "b751afd0fdc38a82a946ccedaa45e045abe48b456442f46156252ee655c451d5",
+    "lib/reply/dialog-focus.ts": "c482c9d1963b08141848bc6175e9ecb72e69026348e2e60bd44cd47606700719",
+    "tests/web/accessibility-guards.test.mjs": "43d0f1703e7d5375fa417b2a8cfcc080c8c595577fda879dad1f1965fb71d1e3",
+    "contracts/reply_check.py": "cb09037c7ba0b4dc4a675eb09ee561eb828d82b57ff5eb703d76e204f555c1eb",
+    "tests/web/focus-wording.test.mjs": "f20498c834f93f06cb5baa72b949c02f1df7adfa3bbe17c4795500a52b375eee",
+    "components/ui/dialog.tsx": "8bc85def62538b4e62e8530c6b0ba167a192c38519c05f104bf6e10de73b811f",
+    "app/globals.css": "554769307fa9bf6bff3c629952354c6fa3e89d84658fcaa178b67fb790d4586b",
+    "lib/reply/receipt.ts": "5af35ec5c94b65a4bfd4fa51299c74dc29f39a1217b293582823a2d896ce4141",
+    "lib/reply/chain.ts": "39f78a310bacdcaa9b4130a05f808aa3e292aab3140bf35cf049d3f9d32d30f0",
+    "package.json": "850b859ddea43daeff88f81a58ece6d257094e25f0461fdb6e5622189dcfcd22",
+    ".openai/hosting.json": "1e57531566ba0cda88c259847e0b40818a3356b7ece2b7a09b675c4565f3eca7",
+    "lib/reply/suggestions.ts": "f56c7f9ccfcab0662f29d1bc82fc2ff530634ad099c7cf843a6ef8841117704a",
+    "components/reply/common.tsx": "ad4930794fb3bfa516baa2067480f60b3c089f935365017f882d06714bf7d83a",
+    "lib/reply/deployment.json": "63cf020eae7d627b44866726e03c9faa8dc34d6b79a0bf98c2d2de79f8927267",
+    ".gitattributes": "1bf09ac7aa77483d2a6007d105e24ed6b9db15c6515fb5b0b7e15899e92f71aa",
+    "app/reply.css": "7ac3c54f42e580e06220084817baa731e8b81816f18a1056cbd67312dc366cd2",
+    "tests/web/ui-audit-regression.test.mjs": "1aa48ed396f174e7ad8013fa7f1c96ce81b3581acd0920eb4f4db308121333d2",
+    "tests/web/session-reliability.test.mjs": "9fa2f8bc5b053604718c91808b803c0055ca33cc7a9d1474df18421bf93b09db",
+    "package-lock.json": "07653e595abb64d6523b2867499e7bd8e9d4d004dea2dd083e4edb5521c83e19"
+  },
+  "expected": {
+    "account": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0",
+    "contract": "0xBD35B1E68aeC803Bd793Db9c6B9762b60f60029A",
+    "chainId": 61999,
+    "method": "submit_review",
+    "title": "Check this reply",
+    "workspace": "reply-wallet-20260910-105817",
+    "effect": {
+      "method": "get_review",
+      "args": [
+        "reply-wallet-20260910-105817",
+        "d39b27e554c4f25aa8ac6ebf3a4ca74d63204659bbc967d4e03262a16ea940c0"
+      ],
+      "fields": {
+        "id": "d39b27e554c4f25aa8ac6ebf3a4ca74d63204659bbc967d4e03262a16ea940c0",
+        "author": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0",
+        "request_digest": "2ae740d30b55e5991fe14ba32b3e9d41d247db9e66232f47823048f48067686c",
+        "reference_digest": "1041401ae7c08750497e55652d30fc9119a0a27e6e712c016e13b9faaa1ca9f0",
+        "version": 2
+      }
+    },
+    "startedAt": "2026-09-13T07:39:14.700Z",
+    "callDigest": "e77a15a46a517376da070dda33ba5660cc8f5f67ecce6b93f0521e8b1c9b5f17",
+    "hash": "0x6f8bccb77b08ca2ace92e78a858e84fae002c16e11e0324fa7b619dc187cdfec"
+  },
+  "decoded_call": {
+    "args": [
+      "reply-wallet-20260910-105817",
+      2,
+      "How long do I have to request a refund?",
+      "Refund requests must be submitted within 14 days of purchase.",
+      "db7e8ae8-a091-4b8c-9b1e-79a625733655",
+      true
+    ],
+    "method": "submit_review"
+  },
+  "passing_window": {
+    "before": {
+      "label": "before_public_receipt_sample",
+      "snapshotRequestedAt": "2026-09-13T07:41:22.117Z",
+      "snapshotCompletedAt": "2026-09-13T07:41:22.149Z",
+      "snapshot": "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x29b8b7…509360\":\n    - text: 0x29b8b7…509360\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · visitor · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - region \"Transaction recovery\":\n    - text: TRANSACTION IN PROGRESS\n    - heading \"Check this reply\" [level=3]\n    - paragraph: committing\n    - paragraph: \"0x6f8bccb77b08ca2ace92e78a858e84fae002c16e11e0324fa7b619dc187cdfec\"\n    - paragraph: Wallet 0x7cef5d…8d97d0 · reply-wallet-20260910-105817\n    - button \"Copy hash\":\n      - text: Copy hash\n    - button \"Export JSON\":\n      - text: Export JSON\n    - button \"Check status\"\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 39 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n      - text: How long do I have to request a refund?\n    - generic: Your reply\n    - generic: 61 / 3,000 bytes\n    - textbox \"Your reply\":\n      - /placeholder: Write or paste your reply…\n      - text: Refund requests must be submitted within 14 days of purchase.\n    - text: Public information only\n    - generic: 1 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph: Ask the owner to invite this wallet, then accept in Team.\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\"",
+      "visible": {
+        "account": "A",
+        "role": "visitor",
+        "hash": "0x6f8bccb77b08ca2ace92e78a858e84fae002c16e11e0324fa7b619dc187cdfec",
+        "recovery_present": true,
+        "pending_ui": true,
+        "terminal_ui": false,
+        "recovery_signer_b": true,
+        "valid_draft_denied": true,
+        "consent_dialog_open": false,
+        "off_studionet_ui": false
+      }
+    },
+    "capture": {
+      "format": "replycheck-recovery-receipt-capture-v1",
+      "requested_at_utc": "2026-09-13T07:41:23.863Z",
+      "observed_at_utc": "2026-09-13T07:41:24.744Z",
+      "expected": {
+        "account": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0",
+        "contract": "0xBD35B1E68aeC803Bd793Db9c6B9762b60f60029A",
+        "chainId": 61999,
+        "method": "submit_review",
+        "title": "Check this reply",
+        "workspace": "reply-wallet-20260910-105817",
+        "effect": {
+          "method": "get_review",
+          "args": [
+            "reply-wallet-20260910-105817",
+            "d39b27e554c4f25aa8ac6ebf3a4ca74d63204659bbc967d4e03262a16ea940c0"
+          ],
+          "fields": {
+            "id": "d39b27e554c4f25aa8ac6ebf3a4ca74d63204659bbc967d4e03262a16ea940c0",
+            "author": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0",
+            "request_digest": "2ae740d30b55e5991fe14ba32b3e9d41d247db9e66232f47823048f48067686c",
+            "reference_digest": "1041401ae7c08750497e55652d30fc9119a0a27e6e712c016e13b9faaa1ca9f0",
+            "version": 2
+          }
+        },
+        "startedAt": "2026-09-13T07:39:14.700Z",
+        "callDigest": "e77a15a46a517376da070dda33ba5660cc8f5f67ecce6b93f0521e8b1c9b5f17",
+        "hash": "0x6f8bccb77b08ca2ace92e78a858e84fae002c16e11e0324fa7b619dc187cdfec"
+      },
+      "app_transaction_export": {
+        "path": "C:/Users/user/Downloads/replycheck-transaction-0x6f8bccb77b08ca2ace92e78a858e84fae002c16e11e0324fa7b619dc187cdfec.json",
+        "sha256": "4b08d30e55a923555ec22e7f2dd26a9ffe6a42833d7b36b8aee5d25a8cb24cc3",
+        "payload": {
+          "account": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0",
+          "contract": "0xBD35B1E68aeC803Bd793Db9c6B9762b60f60029A",
+          "chainId": 61999,
+          "method": "submit_review",
+          "title": "Check this reply",
+          "workspace": "reply-wallet-20260910-105817",
+          "effect": {
+            "method": "get_review",
+            "args": [
+              "reply-wallet-20260910-105817",
+              "d39b27e554c4f25aa8ac6ebf3a4ca74d63204659bbc967d4e03262a16ea940c0"
+            ],
+            "fields": {
+              "id": "d39b27e554c4f25aa8ac6ebf3a4ca74d63204659bbc967d4e03262a16ea940c0",
+              "author": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0",
+              "request_digest": "2ae740d30b55e5991fe14ba32b3e9d41d247db9e66232f47823048f48067686c",
+              "reference_digest": "1041401ae7c08750497e55652d30fc9119a0a27e6e712c016e13b9faaa1ca9f0",
+              "version": 2
+            }
+          },
+          "startedAt": "2026-09-13T07:39:14.700Z",
+          "callDigest": "e77a15a46a517376da070dda33ba5660cc8f5f67ecce6b93f0521e8b1c9b5f17",
+          "hash": "0x6f8bccb77b08ca2ace92e78a858e84fae002c16e11e0324fa7b619dc187cdfec"
+        }
+      },
+      "receipt": {
+        "hash": "0x6f8bccb77b08ca2ace92e78a858e84fae002c16e11e0324fa7b619dc187cdfec",
+        "from_address": "0x7Cef5DBbD598ba74EF9C665c9853E573448d97D0",
+        "to_address": "0xBD35B1E68aeC803Bd793Db9c6B9762b60f60029A",
+        "data": {
+          "calldata": "FgRhcmdzNeQBcmVwbHktd2FsbGV0LTIwMjYwOTEwLTEwNTgxNxG8AkhvdyBsb25nIGRvIEkgaGF2ZSB0byByZXF1ZXN0IGEgcmVmdW5kP+wDUmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiAxNCBkYXlzIG9mIHB1cmNoYXNlLqQCZGI3ZThhZTgtYTA5MS00YjhjLTliMWUtNzlhNjI1NzMzNjU1EAZtZXRob2Rsc3VibWl0X3Jldmlldw=="
+        },
+        "value": 0,
+        "type": 2,
+        "status": "COMMITTING",
+        "result": 5,
+        "consensus_data": {
+          "votes": {},
+          "validators": [],
+          "leader_receipt": [
+            {
+              "mode": "leader",
+              "vote": null,
+              "result": "AF4KYXNzZXNzbWVudCYIZmluZGluZ3MNPgljaXRhdGlvbnMNFgVxdW90ZewDUmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiAxNCBkYXlzIG9mIHB1cmNoYXNlLgxyZWZlcmVuY2VfaWQcZmFxBnJlYXNvboQHVGhlIGNsYWltIHRoYXQgcmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiAxNCBkYXlzIG9mIHB1cmNoYXNlIGlzIGRpcmVjdGx5IHN0YXRlZCBpbiB0aGUgcmVmZXJlbmNlLgtyZWFzb25fY29kZXxDTEFJTV9TVVBQT1JURUQKc2VnbWVudF9pZAkKc3VnZ2VzdGlvbgQEdGV4dOwDUmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiAxNCBkYXlzIG9mIHB1cmNoYXNlLgd2ZXJkaWN0TFNVUFBPUlRFRA9xdWVzdGlvbl9zdGF0dXNEQU5TV0VSRUQHc3VtbWFyefwLVGhlIGRyYWZ0IGRpcmVjdGx5IGFuZCBhY2N1cmF0ZWx5IGFuc3dlcnMgdGhlIHF1ZXN0aW9uLiBUaGUgc2luZ2xlIHNlZ21lbnQgc3RhdGVzIHRoYXQgcmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiAxNCBkYXlzIG9mIHB1cmNoYXNlLCB3aGljaCBpcyBmdWxseSBzdXBwb3J0ZWQgYnkgdGhlIHJlZmVyZW5jZS4HdmVyZGljdJQBTUFUQ0hFU19SRUZFUkVOQ0VTBmF1dGhvctQCMHg3Y2VmNWRiYmQ1OThiYTc0ZWY5YzY2NWM5ODUzZTU3MzQ0OGQ5N2QwBWRyYWZ07ANSZWZ1bmQgcmVxdWVzdHMgbXVzdCBiZSBzdWJtaXR0ZWQgd2l0aGluIDE0IGRheXMgb2YgcHVyY2hhc2UuAmlkhARkMzliMjdlNTU0YzRmMjVhYThhYzZlYmYzYTRjYTc0ZDYzMjA0NjU5YmJjOTY3ZDRlMDMyNjJhMTZlYTk0MGMwCHByb3RvY29sbHJlcGx5Y2hlY2stdjEIcXVlc3Rpb268AkhvdyBsb25nIGRvIEkgaGF2ZSB0byByZXF1ZXN0IGEgcmVmdW5kPwtyZWNvcmRlZF9hdIQCMjAyNi0wOS0xM1QwNzo0MTowOS41NDg4MzUrMDA6MDAQcmVmZXJlbmNlX2RpZ2VzdIQEMTA0MTQwMWFlN2MwODc1MDQ5N2U1NTY1MmQzMGZjOTExOWEwYTI3ZTZlNzEyYzAxNmUxM2I5ZmFhYTFjYTlmMA5yZXF1ZXN0X2RpZ2VzdIQEMmFlNzQwZDMwYjU1ZTU5OTFmZTE0YmEzMmIzZTlkNDFkMjQ3ZGI5ZTY2MjMyZjQ3ODIzMDQ4ZjQ4MDY3Njg2Ywd2ZXJzaW9uEQx3b3Jrc3BhY2VfaWTkAXJlcGx5LXdhbGxldC0yMDI2MDkxMC0xMDU4MTc=",
+              "calldata": "FgRhcmdzNeQBcmVwbHktd2FsbGV0LTIwMjYwOTEwLTEwNTgxNxG8AkhvdyBsb25nIGRvIEkgaGF2ZSB0byByZXF1ZXN0IGEgcmVmdW5kP+wDUmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiAxNCBkYXlzIG9mIHB1cmNoYXNlLqQCZGI3ZThhZTgtYTA5MS00YjhjLTliMWUtNzlhNjI1NzMzNjU1EAZtZXRob2Rsc3VibWl0X3Jldmlldw==",
+              "gas_used": 0,
+              "eq_outputs": {
+                "0": "ACYIZmluZGluZ3MNPgljaXRhdGlvbnMNFgVxdW90ZewDUmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiAxNCBkYXlzIG9mIHB1cmNoYXNlLgxyZWZlcmVuY2VfaWQcZmFxBnJlYXNvboQHVGhlIGNsYWltIHRoYXQgcmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiAxNCBkYXlzIG9mIHB1cmNoYXNlIGlzIGRpcmVjdGx5IHN0YXRlZCBpbiB0aGUgcmVmZXJlbmNlLgtyZWFzb25fY29kZXxDTEFJTV9TVVBQT1JURUQKc2VnbWVudF9pZAkKc3VnZ2VzdGlvbgQEdGV4dOwDUmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiAxNCBkYXlzIG9mIHB1cmNoYXNlLgd2ZXJkaWN0TFNVUFBPUlRFRA9xdWVzdGlvbl9zdGF0dXNEQU5TV0VSRUQHc3VtbWFyefwLVGhlIGRyYWZ0IGRpcmVjdGx5IGFuZCBhY2N1cmF0ZWx5IGFuc3dlcnMgdGhlIHF1ZXN0aW9uLiBUaGUgc2luZ2xlIHNlZ21lbnQgc3RhdGVzIHRoYXQgcmVmdW5kIHJlcXVlc3RzIG11c3QgYmUgc3VibWl0dGVkIHdpdGhpbiAxNCBkYXlzIG9mIHB1cmNoYXNlLCB3aGljaCBpcyBmdWxseSBzdXBwb3J0ZWQgYnkgdGhlIHJlZmVyZW5jZS4HdmVyZGljdJQBTUFUQ0hFU19SRUZFUkVOQ0VT"
+              },
+              "node_config": {
+                "stake": 100,
+                "address": "0xcE1d6bBB36B744536153966B4DD42276f5ADd0F8",
+                "primary_model": {
+                  "model": "policy:prd-sonnet",
+                  "config": {
+                    "policy_ir": [
+                      "policy",
+                      [
+                        "and",
+                        [
+                          "meets_req"
+                        ],
+                        [
+                          "not",
+                          [
+                            "is",
+                            "disabled"
+                          ]
+                        ],
+                        [
+                          "cmp",
+                          "success_rate",
+                          "ge",
+                          0.2
+                        ],
+                        [
+                          "or",
+                          [
+                            "family_eq",
+                            "claude-sonnet-4-6"
+                          ],
+                          [
+                            "family_eq",
+                            "gpt-5.4"
+                          ],
+                          [
+                            "family_eq",
+                            "gemini-3-flash-preview"
+                          ]
+                        ]
+                      ],
+                      [
+                        "add",
+                        [
+                          "scale",
+                          100,
+                          [
+                            "gate",
+                            [
+                              "family_eq",
+                              "claude-sonnet-4-6"
+                            ],
+                            [
+                              "lit",
+                              1
+                            ]
+                          ]
+                        ],
+                        [
+                          "scale",
+                          10,
+                          [
+                            "gate",
+                            [
+                              "family_eq",
+                              "gpt-5.4"
+                            ],
+                            [
+                              "lit",
+                              1
+                            ]
+                          ]
+                        ],
+                        [
+                          "scale",
+                          1,
+                          [
+                            "gate",
+                            [
+                              "family_eq",
+                              "gemini-3-flash-preview"
+                            ],
+                            [
+                              "lit",
+                              1
+                            ]
+                          ]
+                        ],
+                        [
+                          "scale",
+                          0.25,
+                          [
+                            "neg",
+                            [
+                              "normalize",
+                              [
+                                "field",
+                                "price_in"
+                              ]
+                            ]
+                          ]
+                        ],
+                        [
+                          "scale",
+                          0.45,
+                          [
+                            "neg",
+                            [
+                              "normalize",
+                              [
+                                "field",
+                                "price_out"
+                              ]
+                            ]
+                          ]
+                        ],
+                        [
+                          "scale",
+                          0.2,
+                          [
+                            "field",
+                            "success_rate"
+                          ]
+                        ],
+                        [
+                          "scale",
+                          0.1,
+                          [
+                            "neg",
+                            [
+                              "normalize",
+                              [
+                                "field",
+                                "latency_ms"
+                              ]
+                            ]
+                          ]
+                        ]
+                      ],
+                      [
+                        "argmax"
+                      ],
+                      [
+                        "id"
+                      ],
+                      [
+                        "always",
+                        {
+                          "action": "next_candidate"
+                        }
+                      ]
+                    ],
+                    "timeout_ms": 22000,
+                    "first_token_timeout_ms": 7000
+                  },
+                  "plugin": "openai-compatible",
+                  "provider": "llm-router",
+                  "plugin_config": {
+                    "api_url": "https://router.ygr.ai",
+                    "api_key_env_var": "LLM_ROUTER_API_KEY"
+                  },
+                  "fallback_validator": "0x14402D49f317CE1a2F35BAE01b1804A2A9703dCb"
+                },
+                "secondary_model": {
+                  "model": "anthropic/claude-sonnet-4.6",
+                  "config": {
+                    "models": [
+                      "anthropic/claude-sonnet-4.6",
+                      "openai/gpt-5.4",
+                      "google/gemini-3-flash-preview"
+                    ]
+                  },
+                  "plugin": "openai-compatible",
+                  "address": "0x14402D49f317CE1a2F35BAE01b1804A2A9703dCb",
+                  "provider": "openrouter",
+                  "plugin_config": {
+                    "api_url": "https://openrouter.ai/api",
+                    "api_key_env_var": "OPENROUTERAPIKEY"
+                  }
+                }
+              },
+              "genvm_result": {
+                "stderr": "",
+                "stdout": "",
+                "raw_error": null,
+                "error_code": null,
+                "error_description": null
+              },
+              "execution_stats": {
+                "llm": {
+                  "tokens": {
+                    "node-0xcE1d6bBB36B744536153966B4DD42276f5ADd0F8/policy:prd-sonnet": {
+                      "input": 1089,
+                      "total": 1278,
+                      "output": 189
+                    }
+                  }
+                },
+                "call_counts": {
+                  "CONSUME_FUEL": 1,
+                  "STORAGE_READ": 268,
+                  "NOTIFY_FINISHED": 1,
+                  "REMAINING_FUEL_AS_GEN": 1
+                },
+                "host_first_method": "STORAGE_READ",
+                "delete_genvm_status": 200,
+                "host_loop_entered_s": 306565.670817508,
+                "host_loop_enter_wait_ms": 3,
+                "host_time_per_method_ms": {
+                  "CONSUME_FUEL": 0,
+                  "STORAGE_READ": 37,
+                  "REMAINING_FUEL_AS_GEN": 0
+                },
+                "host_total_handling_time_ms": 37,
+                "manager_run_attempt_success": {
+                  "attempt": 0,
+                  "duration_ms": 2
+                },
+                "host_first_method_received_s": 306565.670889961,
+                "host_accept_to_first_method_ms": 0
+              },
+              "nondet_disagree": null,
+              "processing_time": 5888,
+              "execution_result": "SUCCESS",
+              "contract_state_hash": "3104fcdd59e523220d2cf9aae7e55e8e679d5087a7b878d2aff21446722bf1f6",
+              "pending_transactions": []
+            }
+          ]
+        },
+        "gaslimit": 14,
+        "nonce": 14,
+        "r": null,
+        "s": null,
+        "v": null,
+        "created_at": "2026-09-13T07:41:09.548835+00:00",
+        "leader_only": false,
+        "execution_mode": "NORMAL",
+        "origin_address": "0x7Cef5DBbD598ba74EF9C665c9853E573448d97D0",
+        "triggered_by": null,
+        "triggered_on": null,
+        "triggered_transactions": [],
+        "appealed": false,
+        "timestamp_awaiting_finalization": null,
+        "appeal_failed": 0,
+        "appeal_undetermined": false,
+        "consensus_history": {
+          "current_monitoring": {
+            "PENDING": 1789285270.664668,
+            "PROPOSING": 1789285270.6800537,
+            "COMMITTING": 1789285276.7739587,
+            "PROPOSING.LEADER.RUN_END": 1789285276.7456808,
+            "PROPOSING.LEADER.RUN_START": 1789285270.7488956,
+            "PROPOSING.LEADER.EXEC_START": 1789285270.7300518,
+            "PROPOSING.VALIDATORS_SELECTED": 1789285270.696554,
+            "COMMITTING.VALIDATORS_PREPARED": 1789285276.783703,
+            "COMMITTING.VALIDATOR_2.RUN_END": 1789285279.8699553,
+            "COMMITTING.VALIDATOR_3.RUN_END": 1789285282.4660506,
+            "PROPOSING.TRANSACTION_EXECUTED": 1789285276.7553015,
+            "COMMITTING.VALIDATOR_0.RUN_START": 1789285276.819351,
+            "COMMITTING.VALIDATOR_1.RUN_START": 1789285276.8487232,
+            "COMMITTING.VALIDATOR_2.RUN_START": 1789285276.8788779,
+            "COMMITTING.VALIDATOR_3.RUN_START": 1789285276.9080389,
+            "COMMITTING.VALIDATOR_4.RUN_START": 1789285276.9376493,
+            "PROPOSING.LEADER.DECODE_COMPLETE": 1789285270.7789419,
+            "PROPOSING.LEADER.RECEIPT_CREATED": 1789285276.750289,
+            "COMMITTING.VALIDATOR_0.EXEC_START": 1789285276.8150277,
+            "COMMITTING.VALIDATOR_1.EXEC_START": 1789285276.8445494,
+            "COMMITTING.VALIDATOR_2.EXEC_START": 1789285276.8735209,
+            "COMMITTING.VALIDATOR_3.EXEC_START": 1789285276.9038653,
+            "COMMITTING.VALIDATOR_4.EXEC_START": 1789285276.933342,
+            "PROPOSING.LEADER.EXECUTION_FINISHED": 1789285276.740354,
+            "COMMITTING.VALIDATOR_2_END.attempt_0": 1789285279.9701936,
+            "COMMITTING.VALIDATOR_3_END.attempt_0": 1789285282.4754176,
+            "COMMITTING.VALIDATORS_EXECUTION_START": 1789285276.7884388,
+            "COMMITTING.VALIDATOR_0.DECODE_COMPLETE": 1789285276.8235567,
+            "COMMITTING.VALIDATOR_0_START.attempt_0": 1789285276.7929907,
+            "COMMITTING.VALIDATOR_1.DECODE_COMPLETE": 1789285276.8530407,
+            "COMMITTING.VALIDATOR_1_START.attempt_0": 1789285276.7976093,
+            "COMMITTING.VALIDATOR_2.DECODE_COMPLETE": 1789285276.8828137,
+            "COMMITTING.VALIDATOR_2.RECEIPT_CREATED": 1789285279.9192822,
+            "COMMITTING.VALIDATOR_2_START.attempt_0": 1789285276.8020256,
+            "COMMITTING.VALIDATOR_3.DECODE_COMPLETE": 1789285276.9121313,
+            "COMMITTING.VALIDATOR_3.RECEIPT_CREATED": 1789285282.4702487,
+            "COMMITTING.VALIDATOR_3_START.attempt_0": 1789285276.8066337,
+            "COMMITTING.VALIDATOR_4.DECODE_COMPLETE": 1789285276.9422007,
+            "COMMITTING.VALIDATOR_4_START.attempt_0": 1789285276.81095,
+            "PROPOSING.LEADER.GENVM_EXECUTION_START": 1789285270.842409,
+            "PROPOSING.LEADER.SNAPSHOT_CREATION_END": 1789285270.8356059,
+            "PROPOSING.LEADER_NODE_CREATED.attempt_0": 1789285270.7236395,
+            "PROPOSING.LEADER.GENVM_PREPARATION_START": 1789285270.8127434,
+            "PROPOSING.LEADER.SNAPSHOT_CREATION_START": 1789285270.8285341,
+            "COMMITTING.VALIDATOR_2.EXECUTION_FINISHED": 1789285279.8236783,
+            "COMMITTING.VALIDATOR_3.EXECUTION_FINISHED": 1789285282.4612465,
+            "COMMITTING.VALIDATOR_0.GENVM_EXECUTION_START": 1789285276.8401346,
+            "COMMITTING.VALIDATOR_0.SNAPSHOT_CREATION_END": 1789285276.8360457,
+            "COMMITTING.VALIDATOR_1.GENVM_EXECUTION_START": 1789285276.8691804,
+            "COMMITTING.VALIDATOR_1.SNAPSHOT_CREATION_END": 1789285276.8650472,
+            "COMMITTING.VALIDATOR_2.GENVM_EXECUTION_START": 1789285276.899327,
+            "COMMITTING.VALIDATOR_2.SNAPSHOT_CREATION_END": 1789285276.8951266,
+            "COMMITTING.VALIDATOR_3.GENVM_EXECUTION_START": 1789285276.9286966,
+            "COMMITTING.VALIDATOR_3.SNAPSHOT_CREATION_END": 1789285276.9245577,
+            "COMMITTING.VALIDATOR_4.GENVM_EXECUTION_START": 1789285276.9588163,
+            "COMMITTING.VALIDATOR_4.SNAPSHOT_CREATION_END": 1789285276.9547267,
+            "COMMITTING.VALIDATOR_0.GENVM_PREPARATION_START": 1789285276.827709,
+            "COMMITTING.VALIDATOR_0.SNAPSHOT_CREATION_START": 1789285276.8318791,
+            "COMMITTING.VALIDATOR_1.GENVM_PREPARATION_START": 1789285276.8570888,
+            "COMMITTING.VALIDATOR_1.SNAPSHOT_CREATION_START": 1789285276.861049,
+            "COMMITTING.VALIDATOR_2.GENVM_PREPARATION_START": 1789285276.8869338,
+            "COMMITTING.VALIDATOR_2.SNAPSHOT_CREATION_START": 1789285276.8909194,
+            "COMMITTING.VALIDATOR_3.GENVM_PREPARATION_START": 1789285276.916231,
+            "COMMITTING.VALIDATOR_3.SNAPSHOT_CREATION_START": 1789285276.920428,
+            "COMMITTING.VALIDATOR_4.GENVM_PREPARATION_START": 1789285276.9465353,
+            "COMMITTING.VALIDATOR_4.SNAPSHOT_CREATION_START": 1789285276.950688
+          },
+          "current_status_changes": [
+            "PENDING",
+            "PROPOSING",
+            "COMMITTING"
+          ]
+        },
+        "timestamp_appeal": null,
+        "appeal_processing_time": 0,
+        "config_rotation_rounds": 3,
+        "num_of_initial_validators": 5,
+        "last_vote_timestamp": "None",
+        "rotation_count": 0,
+        "appeal_leader_timeout": false,
+        "leader_timeout_validators": [],
+        "appeal_validators_timeout": false,
+        "sim_config": {
+          "signed_rollup_transaction": "0xf902090e808307a12094b7278a61aa25c888815afc32ad3cc52ff24fe57580b901a427241a990000000000000000000000007cef5dbbd598ba74ef9c665c9853e573448d97d0000000000000000000000000bd35b1e68aec803bd793db9c6b9762b60f60029a0000000000000000000000000000000000000000000000000000000000000005000000000000000000000000000000000000000000000000000000000000000300000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000cff8cdb8ca16046172677335e4017265706c792d77616c6c65742d32303236303931302d31303538313711bc02486f77206c6f6e6720646f2049206861766520746f2072657175657374206120726566756e643fec03526566756e64207265717565737473206d757374206265207375626d69747465642077697468696e2031342064617973206f662070757263686173652ea40264623765386165382d613039312d346238632d396231652d37396136323537333336353510066d6574686f646c7375626d69745f7265766965770000000000000000000000000000000000008301e481a02276d561698c2b18cf2cd11ca6f6b294fdf26d615d20e6543685edce9be58daba03401695d308d46524f4602348464305d77bbb4265c94d976950ad72000258080"
+        },
+        "value_credited": false,
+        "current_timestamp": "1789285284",
+        "sender": "0x7Cef5DBbD598ba74EF9C665c9853E573448d97D0",
+        "recipient": "0xBD35B1E68aeC803Bd793Db9c6B9762b60f60029A",
+        "tx_slot": "0",
+        "created_timestamp": "1789285269",
+        "random_seed": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "tx_id": "0x6f8bccb77b08ca2ace92e78a858e84fae002c16e11e0324fa7b619dc187cdfec",
+        "read_state_block_range": {
+          "activation_block": "0",
+          "processing_block": "0",
+          "proposal_block": "0"
+        },
+        "activator": "",
+        "last_leader": "0xcE1d6bBB36B744536153966B4DD42276f5ADd0F8",
+        "result_name": "NO_MAJORITY",
+        "tx_data": "f8cdb8ca16046172677335e4017265706c792d77616c6c65742d32303236303931302d31303538313711bc02486f77206c6f6e6720646f2049206861766520746f2072657175657374206120726566756e643fec03526566756e64207265717565737473206d757374206265207375626d69747465642077697468696e2031342064617973206f662070757263686173652ea40264623765386165382d613039312d346238632d396231652d37396136323537333336353510066d6574686f646c7375626d69745f72657669657700",
+        "tx_execution_hash": "",
+        "eq_blocks_outputs": "0xc8c6c28000c0c080c0",
+        "messages": [],
+        "queue_type": "0",
+        "queue_position": "0",
+        "num_of_rounds": "0",
+        "last_round": {
+          "round": "0",
+          "leader_index": "0",
+          "votes_committed": "0",
+          "votes_revealed": "0",
+          "appeal_bond": "0",
+          "rotations_left": "3",
+          "result": 5,
+          "round_validators": [],
+          "validator_votes_hash": [],
+          "validator_votes": [],
+          "validator_votes_name": []
+        }
+      },
+      "execution": {
+        "state": "pending",
+        "label": "committing"
+      },
+      "exact_call_verified": true,
+      "fixture_verified": true,
+      "decoded_call": {
+        "args": [
+          "reply-wallet-20260910-105817",
+          2,
+          "How long do I have to request a refund?",
+          "Refund requests must be submitted within 14 days of purchase.",
+          "db7e8ae8-a091-4b8c-9b1e-79a625733655",
+          true
+        ],
+        "method": "submit_review"
+      },
+      "transaction_sent": false,
+      "wallet_approved_by_agent": false
+    },
+    "after": {
+      "label": "after_public_receipt_sample",
+      "snapshotRequestedAt": "2026-09-13T07:41:24.909Z",
+      "snapshotCompletedAt": "2026-09-13T07:41:24.953Z",
+      "snapshot": "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x29b8b7…509360\":\n    - text: 0x29b8b7…509360\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · visitor · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - region \"Transaction recovery\":\n    - text: TRANSACTION IN PROGRESS\n    - heading \"Check this reply\" [level=3]\n    - paragraph: committing\n    - paragraph: \"0x6f8bccb77b08ca2ace92e78a858e84fae002c16e11e0324fa7b619dc187cdfec\"\n    - paragraph: Wallet 0x7cef5d…8d97d0 · reply-wallet-20260910-105817\n    - button \"Copy hash\":\n      - text: Copy hash\n    - button \"Export JSON\" [active]:\n      - text: Export JSON\n    - button \"Check status\"\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 39 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n      - text: How long do I have to request a refund?\n    - generic: Your reply\n    - generic: 61 / 3,000 bytes\n    - textbox \"Your reply\":\n      - /placeholder: Write or paste your reply…\n      - text: Refund requests must be submitted within 14 days of purchase.\n    - text: Public information only\n    - generic: 1 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph: Ask the owner to invite this wallet, then accept in Team.\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\"",
+      "visible": {
+        "account": "A",
+        "role": "visitor",
+        "hash": "0x6f8bccb77b08ca2ace92e78a858e84fae002c16e11e0324fa7b619dc187cdfec",
+        "recovery_present": true,
+        "pending_ui": true,
+        "terminal_ui": false,
+        "recovery_signer_b": true,
+        "valid_draft_denied": true,
+        "consent_dialog_open": false,
+        "off_studionet_ui": false
+      }
+    },
+    "bracketed_timestamps": true,
+    "pending_account_observed": true
+  },
+  "observer_trace": {
+    "encoding": "Lossless DOM snapshot table; every observation retained with a snapshot_index",
+    "snapshots": [
+      "- link:\n  - /url: \"#main-content\"\n  - text: Skip to workspace\n- banner:\n  - link:\n    - /url: /\n    - generic: ReplyCheck\n  - button:\n    - generic: ReplyCheck human wallet test\n  - button:\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading [level=1]: Check a reply\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button:\n    - text: Refresh\n  - tablist:\n    - tab [selected]:\n      - generic: Check\n    - tab:\n      - text: Library\n    - tab:\n      - text: History\n    - tab:\n      - generic: Gym\n    - tab:\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading [level=2]: Your draft\n    - generic: References v2\n    - generic: Question\n    - generic: 39 / 1,500 bytes\n    - textbox:\n      - /placeholder: What are they asking?\n      - text: How long do I have to request a refund?\n    - generic: Your reply\n    - generic: 61 / 3,000 bytes\n    - textbox:\n      - /placeholder: Write or paste your reply…\n      - text: Refund requests must be submitted within 14 days of purchase.\n    - text: Public information only\n    - generic: 1 / 12 sentences\n    - button:\n      - text: Review draft\n    - paragraph: Confirm the public submission before signing.\n    - complementary:\n      - heading [level=2]:\n        - text: References\n      - generic: v2\n      - text: Fictional refund policy\n      - button:\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button:\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic: Build information\n- dialog \"Check this reply\":\n  - heading \"Check this reply\" [level=2]\n  - paragraph: One wallet-signed action on GenLayer Studionet.\n  - term: Wallet\n  - definition: 0x7cef5d…8d97d0\n  - term: Contract payment\n  - definition: 0 GEN · network fees may apply\n  - paragraph: \"Workspace: ReplyCheck human wallet test · references v2\"\n  - paragraph: \"Question: How long do I have to request a refund?\"\n  - paragraph: \"Draft: Refund requests must be submitted within 14 days of purchase.\"\n  - paragraph: GenLayer will assess the complete draft. No customer message is sent.\n  - status: This content and your wallet address can become public permanently, even if the transaction fails. Remove private tickets, personal details and secrets.\n  - checkbox \"I checked the content and agree to publish it.\" [active]\n  - checkbox\n  - generic: I checked the content and agree to publish it.\n  - button \"Cancel\"\n  - button \"Continue to wallet\" [disabled]\n  - button \"Close\":\n    - generic: Close",
+      "- link:\n  - /url: \"#main-content\"\n  - text: Skip to workspace\n- banner:\n  - link:\n    - /url: /\n    - generic: ReplyCheck\n  - button [disabled]:\n    - generic: ReplyCheck human wallet test\n  - button [disabled]:\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading [level=1]: Check a reply\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button [disabled]:\n    - text: Refresh\n  - tablist:\n    - tab [selected]:\n      - generic: Check\n    - tab:\n      - text: Library\n    - tab:\n      - text: History\n    - tab:\n      - generic: Gym\n    - tab:\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading [level=2]: Your draft\n    - generic: References v2\n    - generic: Question\n    - generic: 39 / 1,500 bytes\n    - textbox:\n      - /placeholder: What are they asking?\n      - text: How long do I have to request a refund?\n    - generic: Your reply\n    - generic: 61 / 3,000 bytes\n    - textbox:\n      - /placeholder: Write or paste your reply…\n      - text: Refund requests must be submitted within 14 days of purchase.\n    - text: Public information only\n    - generic: 1 / 12 sentences\n    - button [disabled]:\n      - text: Review draft\n    - paragraph: Confirm the public submission before signing.\n    - complementary:\n      - heading [level=2]:\n        - text: References\n      - generic: v2\n      - text: Fictional refund policy\n      - button:\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button:\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic: Build information\n- dialog \"Check this reply\":\n  - heading \"Check this reply\" [level=2]\n  - paragraph: One wallet-signed action on GenLayer Studionet.\n  - term: Wallet\n  - definition: 0x7cef5d…8d97d0\n  - term: Contract payment\n  - definition: 0 GEN · network fees may apply\n  - paragraph: \"Workspace: ReplyCheck human wallet test · references v2\"\n  - paragraph: \"Question: How long do I have to request a refund?\"\n  - paragraph: \"Draft: Refund requests must be submitted within 14 days of purchase.\"\n  - paragraph: GenLayer will assess the complete draft. No customer message is sent.\n  - status: This content and your wallet address can become public permanently, even if the transaction fails. Remove private tickets, personal details and secrets.\n  - checkbox \"I checked the content and agree to publish it.\" [disabled]\n  - checkbox [disabled]\n  - generic: I checked the content and agree to publish it.\n  - button \"Cancel\" [disabled]\n  - button \"Waiting for wallet…\" [disabled]",
+      "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x29b8b7…509360\":\n    - text: 0x29b8b7…509360\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · visitor · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - region \"Transaction recovery\":\n    - text: TRANSACTION IN PROGRESS\n    - heading \"Check this reply\" [level=3]\n    - paragraph: committing\n    - paragraph: \"0x6f8bccb77b08ca2ace92e78a858e84fae002c16e11e0324fa7b619dc187cdfec\"\n    - paragraph: Wallet 0x7cef5d…8d97d0 · reply-wallet-20260910-105817\n    - button \"Copy hash\":\n      - text: Copy hash\n    - button \"Export JSON\":\n      - text: Export JSON\n    - button \"Check status\"\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 39 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n      - text: How long do I have to request a refund?\n    - generic: Your reply\n    - generic: 61 / 3,000 bytes\n    - textbox \"Your reply\":\n      - /placeholder: Write or paste your reply…\n      - text: Refund requests must be submitted within 14 days of purchase.\n    - text: Public information only\n    - generic: 1 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph: Ask the owner to invite this wallet, then accept in Team.\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\"",
+      "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x29b8b7…509360\":\n    - text: 0x29b8b7…509360\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · visitor · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - region \"Transaction recovery\":\n    - text: TRANSACTION IN PROGRESS\n    - heading \"Check this reply\" [level=3]\n    - paragraph: committing\n    - paragraph: \"0x6f8bccb77b08ca2ace92e78a858e84fae002c16e11e0324fa7b619dc187cdfec\"\n    - paragraph: Wallet 0x7cef5d…8d97d0 · reply-wallet-20260910-105817\n    - button \"Copy hash\":\n      - text: Copy hash\n    - button \"Export JSON\" [active]:\n      - text: Export JSON\n    - button \"Check status\"\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 39 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n      - text: How long do I have to request a refund?\n    - generic: Your reply\n    - generic: 61 / 3,000 bytes\n    - textbox \"Your reply\":\n      - /placeholder: Write or paste your reply…\n      - text: Refund requests must be submitted within 14 days of purchase.\n    - text: Public information only\n    - generic: 1 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph: Ask the owner to invite this wallet, then accept in Team.\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\""
+    ],
+    "observations": [
+      {
+        "label": "active_capture_armed_before_human_approval",
+        "snapshotRequestedAt": "2026-09-13T07:32:15.519Z",
+        "snapshotCompletedAt": "2026-09-13T07:32:15.552Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:32:15.585Z",
+        "snapshotCompletedAt": "2026-09-13T07:32:15.620Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:32:18.667Z",
+        "snapshotCompletedAt": "2026-09-13T07:32:18.698Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:32:21.719Z",
+        "snapshotCompletedAt": "2026-09-13T07:32:21.756Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:32:24.781Z",
+        "snapshotCompletedAt": "2026-09-13T07:32:24.813Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:32:27.837Z",
+        "snapshotCompletedAt": "2026-09-13T07:32:27.869Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:32:30.896Z",
+        "snapshotCompletedAt": "2026-09-13T07:32:30.928Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:32:33.957Z",
+        "snapshotCompletedAt": "2026-09-13T07:32:33.988Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:32:37.029Z",
+        "snapshotCompletedAt": "2026-09-13T07:32:37.060Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:32:40.087Z",
+        "snapshotCompletedAt": "2026-09-13T07:32:40.120Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:32:43.144Z",
+        "snapshotCompletedAt": "2026-09-13T07:32:43.181Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:32:46.204Z",
+        "snapshotCompletedAt": "2026-09-13T07:32:46.239Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:32:49.286Z",
+        "snapshotCompletedAt": "2026-09-13T07:32:49.319Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:32:52.349Z",
+        "snapshotCompletedAt": "2026-09-13T07:32:52.383Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:32:55.413Z",
+        "snapshotCompletedAt": "2026-09-13T07:32:55.447Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:32:58.478Z",
+        "snapshotCompletedAt": "2026-09-13T07:32:58.511Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "active_capture_armed_before_human_approval",
+        "snapshotRequestedAt": "2026-09-13T07:33:13.921Z",
+        "snapshotCompletedAt": "2026-09-13T07:33:13.956Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:33:13.988Z",
+        "snapshotCompletedAt": "2026-09-13T07:33:14.027Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:33:17.106Z",
+        "snapshotCompletedAt": "2026-09-13T07:33:17.140Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:33:20.173Z",
+        "snapshotCompletedAt": "2026-09-13T07:33:20.206Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:33:23.238Z",
+        "snapshotCompletedAt": "2026-09-13T07:33:23.270Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:33:26.298Z",
+        "snapshotCompletedAt": "2026-09-13T07:33:26.332Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:33:29.360Z",
+        "snapshotCompletedAt": "2026-09-13T07:33:29.393Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:33:32.416Z",
+        "snapshotCompletedAt": "2026-09-13T07:33:32.449Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:33:35.480Z",
+        "snapshotCompletedAt": "2026-09-13T07:33:35.513Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:33:38.541Z",
+        "snapshotCompletedAt": "2026-09-13T07:33:38.575Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:33:41.599Z",
+        "snapshotCompletedAt": "2026-09-13T07:33:41.631Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:33:44.661Z",
+        "snapshotCompletedAt": "2026-09-13T07:33:44.698Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:33:47.720Z",
+        "snapshotCompletedAt": "2026-09-13T07:33:47.754Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:33:50.781Z",
+        "snapshotCompletedAt": "2026-09-13T07:33:50.814Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:33:53.844Z",
+        "snapshotCompletedAt": "2026-09-13T07:33:53.876Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:33:56.901Z",
+        "snapshotCompletedAt": "2026-09-13T07:33:56.934Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "active_capture_armed_before_human_approval",
+        "snapshotRequestedAt": "2026-09-13T07:34:19.799Z",
+        "snapshotCompletedAt": "2026-09-13T07:34:19.839Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:34:19.880Z",
+        "snapshotCompletedAt": "2026-09-13T07:34:19.921Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:34:23.016Z",
+        "snapshotCompletedAt": "2026-09-13T07:34:23.049Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:34:26.101Z",
+        "snapshotCompletedAt": "2026-09-13T07:34:26.134Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:34:29.170Z",
+        "snapshotCompletedAt": "2026-09-13T07:34:29.203Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:34:32.247Z",
+        "snapshotCompletedAt": "2026-09-13T07:34:32.280Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:34:35.315Z",
+        "snapshotCompletedAt": "2026-09-13T07:34:35.347Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:34:38.395Z",
+        "snapshotCompletedAt": "2026-09-13T07:34:38.427Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:34:41.464Z",
+        "snapshotCompletedAt": "2026-09-13T07:34:41.493Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:34:44.530Z",
+        "snapshotCompletedAt": "2026-09-13T07:34:44.562Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:34:47.600Z",
+        "snapshotCompletedAt": "2026-09-13T07:34:47.634Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:34:50.677Z",
+        "snapshotCompletedAt": "2026-09-13T07:34:50.706Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:34:53.746Z",
+        "snapshotCompletedAt": "2026-09-13T07:34:53.776Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:34:56.820Z",
+        "snapshotCompletedAt": "2026-09-13T07:34:56.851Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:34:59.894Z",
+        "snapshotCompletedAt": "2026-09-13T07:34:59.927Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:35:02.982Z",
+        "snapshotCompletedAt": "2026-09-13T07:35:03.014Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "active_capture_armed_before_human_approval",
+        "snapshotRequestedAt": "2026-09-13T07:35:14.195Z",
+        "snapshotCompletedAt": "2026-09-13T07:35:14.227Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:35:14.266Z",
+        "snapshotCompletedAt": "2026-09-13T07:35:14.304Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:35:17.361Z",
+        "snapshotCompletedAt": "2026-09-13T07:35:17.397Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:35:20.436Z",
+        "snapshotCompletedAt": "2026-09-13T07:35:20.470Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:35:23.520Z",
+        "snapshotCompletedAt": "2026-09-13T07:35:23.551Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:35:26.594Z",
+        "snapshotCompletedAt": "2026-09-13T07:35:26.627Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:35:29.677Z",
+        "snapshotCompletedAt": "2026-09-13T07:35:29.717Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:35:32.766Z",
+        "snapshotCompletedAt": "2026-09-13T07:35:32.799Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:35:35.837Z",
+        "snapshotCompletedAt": "2026-09-13T07:35:35.878Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:35:38.917Z",
+        "snapshotCompletedAt": "2026-09-13T07:35:38.957Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:35:42.003Z",
+        "snapshotCompletedAt": "2026-09-13T07:35:42.036Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:35:45.078Z",
+        "snapshotCompletedAt": "2026-09-13T07:35:45.112Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:35:48.153Z",
+        "snapshotCompletedAt": "2026-09-13T07:35:48.187Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:35:51.231Z",
+        "snapshotCompletedAt": "2026-09-13T07:35:51.264Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:35:54.305Z",
+        "snapshotCompletedAt": "2026-09-13T07:35:54.337Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:35:57.383Z",
+        "snapshotCompletedAt": "2026-09-13T07:35:57.416Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "active_capture_armed_before_human_approval",
+        "snapshotRequestedAt": "2026-09-13T07:36:09.334Z",
+        "snapshotCompletedAt": "2026-09-13T07:36:09.367Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:36:09.410Z",
+        "snapshotCompletedAt": "2026-09-13T07:36:09.447Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:36:12.511Z",
+        "snapshotCompletedAt": "2026-09-13T07:36:12.544Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:36:15.576Z",
+        "snapshotCompletedAt": "2026-09-13T07:36:15.607Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:36:18.655Z",
+        "snapshotCompletedAt": "2026-09-13T07:36:18.685Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:36:21.726Z",
+        "snapshotCompletedAt": "2026-09-13T07:36:21.760Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:36:24.802Z",
+        "snapshotCompletedAt": "2026-09-13T07:36:24.833Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:36:27.880Z",
+        "snapshotCompletedAt": "2026-09-13T07:36:27.910Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:36:30.952Z",
+        "snapshotCompletedAt": "2026-09-13T07:36:30.984Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:36:34.032Z",
+        "snapshotCompletedAt": "2026-09-13T07:36:34.064Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:36:37.109Z",
+        "snapshotCompletedAt": "2026-09-13T07:36:37.139Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:36:40.181Z",
+        "snapshotCompletedAt": "2026-09-13T07:36:40.206Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:36:43.247Z",
+        "snapshotCompletedAt": "2026-09-13T07:36:43.287Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:36:46.328Z",
+        "snapshotCompletedAt": "2026-09-13T07:36:46.360Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:36:49.409Z",
+        "snapshotCompletedAt": "2026-09-13T07:36:49.441Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:36:52.486Z",
+        "snapshotCompletedAt": "2026-09-13T07:36:52.519Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 0
+      },
+      {
+        "label": "active_capture_armed_before_human_approval",
+        "snapshotRequestedAt": "2026-09-13T07:39:14.911Z",
+        "snapshotCompletedAt": "2026-09-13T07:39:14.974Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:39:15.048Z",
+        "snapshotCompletedAt": "2026-09-13T07:39:15.127Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:39:18.227Z",
+        "snapshotCompletedAt": "2026-09-13T07:39:18.260Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:39:21.292Z",
+        "snapshotCompletedAt": "2026-09-13T07:39:21.324Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:39:24.359Z",
+        "snapshotCompletedAt": "2026-09-13T07:39:24.391Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:39:27.425Z",
+        "snapshotCompletedAt": "2026-09-13T07:39:27.459Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:39:30.497Z",
+        "snapshotCompletedAt": "2026-09-13T07:39:30.531Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:39:33.565Z",
+        "snapshotCompletedAt": "2026-09-13T07:39:33.600Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:39:36.632Z",
+        "snapshotCompletedAt": "2026-09-13T07:39:36.663Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:39:39.697Z",
+        "snapshotCompletedAt": "2026-09-13T07:39:39.730Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:39:42.766Z",
+        "snapshotCompletedAt": "2026-09-13T07:39:42.799Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:39:45.832Z",
+        "snapshotCompletedAt": "2026-09-13T07:39:45.864Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:39:48.896Z",
+        "snapshotCompletedAt": "2026-09-13T07:39:48.926Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:39:51.959Z",
+        "snapshotCompletedAt": "2026-09-13T07:39:51.990Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:39:55.023Z",
+        "snapshotCompletedAt": "2026-09-13T07:39:55.055Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:39:58.094Z",
+        "snapshotCompletedAt": "2026-09-13T07:39:58.125Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "active_capture_armed_before_human_approval",
+        "snapshotRequestedAt": "2026-09-13T07:40:22.658Z",
+        "snapshotCompletedAt": "2026-09-13T07:40:22.693Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:40:22.725Z",
+        "snapshotCompletedAt": "2026-09-13T07:40:22.765Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:40:25.812Z",
+        "snapshotCompletedAt": "2026-09-13T07:40:25.846Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:40:28.894Z",
+        "snapshotCompletedAt": "2026-09-13T07:40:28.925Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:40:31.973Z",
+        "snapshotCompletedAt": "2026-09-13T07:40:32.006Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:40:35.051Z",
+        "snapshotCompletedAt": "2026-09-13T07:40:35.083Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:40:38.126Z",
+        "snapshotCompletedAt": "2026-09-13T07:40:38.155Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:40:41.202Z",
+        "snapshotCompletedAt": "2026-09-13T07:40:41.236Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:40:44.281Z",
+        "snapshotCompletedAt": "2026-09-13T07:40:44.313Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:40:47.366Z",
+        "snapshotCompletedAt": "2026-09-13T07:40:47.400Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:40:50.448Z",
+        "snapshotCompletedAt": "2026-09-13T07:40:50.480Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:40:53.529Z",
+        "snapshotCompletedAt": "2026-09-13T07:40:53.561Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:40:56.613Z",
+        "snapshotCompletedAt": "2026-09-13T07:40:56.644Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:40:59.693Z",
+        "snapshotCompletedAt": "2026-09-13T07:40:59.725Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:41:02.774Z",
+        "snapshotCompletedAt": "2026-09-13T07:41:02.806Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:41:05.855Z",
+        "snapshotCompletedAt": "2026-09-13T07:41:05.889Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 1
+      },
+      {
+        "label": "active_capture_armed_before_human_approval",
+        "snapshotRequestedAt": "2026-09-13T07:41:22.036Z",
+        "snapshotCompletedAt": "2026-09-13T07:41:22.072Z",
+        "visible": {
+          "account": "A",
+          "role": "visitor",
+          "hash": "0x6f8bccb77b08ca2ace92e78a858e84fae002c16e11e0324fa7b619dc187cdfec",
+          "recovery_present": true,
+          "pending_ui": true,
+          "terminal_ui": false,
+          "recovery_signer_b": true,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 2
+      },
+      {
+        "label": "before_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:41:22.117Z",
+        "snapshotCompletedAt": "2026-09-13T07:41:22.149Z",
+        "visible": {
+          "account": "A",
+          "role": "visitor",
+          "hash": "0x6f8bccb77b08ca2ace92e78a858e84fae002c16e11e0324fa7b619dc187cdfec",
+          "recovery_present": true,
+          "pending_ui": true,
+          "terminal_ui": false,
+          "recovery_signer_b": true,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 2
+      },
+      {
+        "label": "after_public_receipt_sample",
+        "snapshotRequestedAt": "2026-09-13T07:41:24.909Z",
+        "snapshotCompletedAt": "2026-09-13T07:41:24.953Z",
+        "visible": {
+          "account": "A",
+          "role": "visitor",
+          "hash": "0x6f8bccb77b08ca2ace92e78a858e84fae002c16e11e0324fa7b619dc187cdfec",
+          "recovery_present": true,
+          "pending_ui": true,
+          "terminal_ui": false,
+          "recovery_signer_b": true,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false
+        },
+        "snapshot_index": 3
+      }
+    ],
+    "errors": []
+  },
+  "wallet_request_actor_record": {
+    "agent_checked_app_consent": false,
+    "agent_clicked_continue_to_wallet": true,
+    "agent_approved_metamask": false,
+    "agent_signed_transaction": false,
+    "human_wallet_signature_required": true,
+    "native_signature_click_independently_observed": false,
+    "preparation_observations": {
+      "before": {
+        "label": "before_agent_opens_wallet_request",
+        "snapshotRequestedAt": "2026-09-13T07:39:14.146Z",
+        "snapshotCompletedAt": "2026-09-13T07:39:14.192Z",
+        "snapshot": "- link:\n  - /url: \"#main-content\"\n  - text: Skip to workspace\n- banner:\n  - link:\n    - /url: /\n    - generic: ReplyCheck\n  - button:\n    - generic: ReplyCheck human wallet test\n  - button:\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading [level=1]: Check a reply\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button:\n    - text: Refresh\n  - tablist:\n    - tab [selected]:\n      - generic: Check\n    - tab:\n      - text: Library\n    - tab:\n      - text: History\n    - tab:\n      - generic: Gym\n    - tab:\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading [level=2]: Your draft\n    - generic: References v2\n    - generic: Question\n    - generic: 39 / 1,500 bytes\n    - textbox:\n      - /placeholder: What are they asking?\n      - text: How long do I have to request a refund?\n    - generic: Your reply\n    - generic: 61 / 3,000 bytes\n    - textbox:\n      - /placeholder: Write or paste your reply…\n      - text: Refund requests must be submitted within 14 days of purchase.\n    - text: Public information only\n    - generic: 1 / 12 sentences\n    - button:\n      - text: Review draft\n    - paragraph: Confirm the public submission before signing.\n    - complementary:\n      - heading [level=2]:\n        - text: References\n      - generic: v2\n      - text: Fictional refund policy\n      - button:\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button:\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic: Build information\n- dialog \"Check this reply\":\n  - heading \"Check this reply\" [level=2]\n  - paragraph: One wallet-signed action on GenLayer Studionet.\n  - term: Wallet\n  - definition: 0x7cef5d…8d97d0\n  - term: Contract payment\n  - definition: 0 GEN · network fees may apply\n  - paragraph: \"Workspace: ReplyCheck human wallet test · references v2\"\n  - paragraph: \"Question: How long do I have to request a refund?\"\n  - paragraph: \"Draft: Refund requests must be submitted within 14 days of purchase.\"\n  - paragraph: GenLayer will assess the complete draft. No customer message is sent.\n  - status: This content and your wallet address can become public permanently, even if the transaction fails. Remove private tickets, personal details and secrets.\n  - checkbox \"I checked the content and agree to publish it.\" [checked] [active]:\n  - checkbox [checked]\n  - generic: I checked the content and agree to publish it.\n  - button \"Cancel\"\n  - button \"Continue to wallet\"\n  - button \"Close\":\n    - generic: Close",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        }
+      },
+      "consent": {
+        "label": "before_continue_to_wallet_human_signature_required",
+        "snapshotRequestedAt": "2026-09-13T07:39:14.192Z",
+        "snapshotCompletedAt": "2026-09-13T07:39:14.219Z",
+        "snapshot": "- link:\n  - /url: \"#main-content\"\n  - text: Skip to workspace\n- banner:\n  - link:\n    - /url: /\n    - generic: ReplyCheck\n  - button:\n    - generic: ReplyCheck human wallet test\n  - button:\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading [level=1]: Check a reply\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button:\n    - text: Refresh\n  - tablist:\n    - tab [selected]:\n      - generic: Check\n    - tab:\n      - text: Library\n    - tab:\n      - text: History\n    - tab:\n      - generic: Gym\n    - tab:\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading [level=2]: Your draft\n    - generic: References v2\n    - generic: Question\n    - generic: 39 / 1,500 bytes\n    - textbox:\n      - /placeholder: What are they asking?\n      - text: How long do I have to request a refund?\n    - generic: Your reply\n    - generic: 61 / 3,000 bytes\n    - textbox:\n      - /placeholder: Write or paste your reply…\n      - text: Refund requests must be submitted within 14 days of purchase.\n    - text: Public information only\n    - generic: 1 / 12 sentences\n    - button:\n      - text: Review draft\n    - paragraph: Confirm the public submission before signing.\n    - complementary:\n      - heading [level=2]:\n        - text: References\n      - generic: v2\n      - text: Fictional refund policy\n      - button:\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button:\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic: Build information\n- dialog \"Check this reply\":\n  - heading \"Check this reply\" [level=2]\n  - paragraph: One wallet-signed action on GenLayer Studionet.\n  - term: Wallet\n  - definition: 0x7cef5d…8d97d0\n  - term: Contract payment\n  - definition: 0 GEN · network fees may apply\n  - paragraph: \"Workspace: ReplyCheck human wallet test · references v2\"\n  - paragraph: \"Question: How long do I have to request a refund?\"\n  - paragraph: \"Draft: Refund requests must be submitted within 14 days of purchase.\"\n  - paragraph: GenLayer will assess the complete draft. No customer message is sent.\n  - status: This content and your wallet address can become public permanently, even if the transaction fails. Remove private tickets, personal details and secrets.\n  - checkbox \"I checked the content and agree to publish it.\" [checked] [active]:\n  - checkbox [checked]\n  - generic: I checked the content and agree to publish it.\n  - button \"Cancel\"\n  - button \"Continue to wallet\"\n  - button \"Close\":\n    - generic: Close",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false
+        }
+      },
+      "agent_checked_app_consent": false,
+      "human_signature_still_required": true
+    },
+    "after_request_tool_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"label\":\"after_opening_wallet_request_for_human_signature\",\"snapshotRequestedAt\":\"2026-09-13T07:39:14.696Z\",\"snapshotCompletedAt\":\"2026-09-13T07:39:14.745Z\",\"snapshot\":\"- link:\\n  - /url: \\\"#main-content\\\"\\n  - text: Skip to workspace\\n- banner:\\n  - link:\\n    - /url: /\\n    - generic: ReplyCheck\\n  - button [disabled]:\\n    - generic: ReplyCheck human wallet test\\n  - button [disabled]:\\n    - text: 0x7cef5d…8d97d0\\n- main:\\n  - heading [level=1]: Check a reply\\n  - strong: ReplyCheck human wallet test\\n  - generic: · owner · reference v2\\n  - button [disabled]:\\n    - text: Refresh\\n  - tablist:\\n    - tab [selected]:\\n      - generic: Check\\n    - tab:\\n      - text: Library\\n    - tab:\\n      - text: History\\n    - tab:\\n      - generic: Gym\\n    - tab:\\n      - text: Team\\n  - tabpanel \\\"Check a reply\\\":\\n    - heading [level=2]: Your draft\\n    - generic: References v2\\n    - generic: Question\\n    - generic: 39 / 1,500 bytes\\n    - textbox:\\n      - /placeholder: What are they asking?\\n      - text: How long do I have to request a refund?\\n    - generic: Your reply\\n    - generic: 61 / 3,000 bytes\\n    - textbox:\\n      - /placeholder: Write or paste your reply…\\n      - text: Refund requests must be submitted within 14 days of purchase.\\n    - text: Public information only\\n    - generic: 1 / 12 sentences\\n    - button [disabled]:\\n      - text: Review draft\\n    - paragraph: Confirm the public submission before signing.\\n    - complementary:\\n      - heading [level=2]:\\n        - text: References\\n      - generic: v2\\n      - text: Fictional refund policy\\n      - button:\\n        - text: View library\\n      - generic: Each review keeps its reference version.\\n      - heading [level=2]:\\n        - text: Reply Gym\\n      - generic: Practice\\n      - paragraph: Spot the promise that goes too far.\\n      - button:\\n        - text: Start an exercise\\n- contentinfo:\\n  - generic: ReplyCheck\\n  - generic: Public references only · No automatic sending\\n  - generic: Build information\\n- dialog \\\"Check this reply\\\":\\n  - heading \\\"Check this reply\\\" [level=2]\\n  - paragraph: One wallet-signed action on GenLayer Studionet.\\n  - term: Wallet\\n  - definition: 0x7cef5d…8d97d0\\n  - term: Contract payment\\n  - definition: 0 GEN · network fees may apply\\n  - paragraph: \\\"Workspace: ReplyCheck human wallet test · references v2\\\"\\n  - paragraph: \\\"Question: How long do I have to request a refund?\\\"\\n  - paragraph: \\\"Draft: Refund requests must be submitted within 14 days of purchase.\\\"\\n  - paragraph: GenLayer will assess the complete draft. No customer message is sent.\\n  - status: This content and your wallet address can become public permanently, even if the transaction fails. Remove private tickets, personal details and secrets.\\n  - checkbox \\\"I checked the content and agree to publish it.\\\" [disabled]\\n  - checkbox [disabled]\\n  - generic: I checked the content and agree to publish it.\\n  - button \\\"Cancel\\\" [disabled]\\n  - button \\\"Waiting for wallet…\\\" [disabled]\",\"visible\":{\"account\":\"unobserved\",\"role\":\"owner\",\"hash\":null,\"recovery_present\":false,\"pending_ui\":false,\"terminal_ui\":false,\"recovery_signer_b\":false,\"valid_draft_denied\":false,\"consent_dialog_open\":true,\"off_studionet_ui\":false}}"
+        }
+      ],
+      "isError": false
+    },
+    "note": "The original setup artifact is a pre-action checkpoint. After the unsigned dialog remained unchecked, the assistant announced and performed the app consent/Continue steps for the known public fixture; the MetaMask signature was left to the human. This is a pending-account recovery test, not a human-checkbox interaction test."
+  },
+  "verified_checks": [
+    "A appears as visitor before and after the independent pending receipt request",
+    "Both DOM samples retain B as the recovery signer for exactly the same new hash",
+    "The public receipt is COMMITTING/pending with exact B/contract/method/calldata/zero-value binding and the public fixture verified",
+    "The receipt request and completed observation are bracketed by the two A DOM observations",
+    "The known valid public draft is disabled in both pending A snapshots"
+  ],
+  "constraints": {
+    "resubmitted": false,
+    "application_source_changed": false,
+    "agent_wallet_approval": false,
+    "pending_network_switch_exercised": false,
+    "final_execution_success_claimed_by_this_record": false
+  },
+  "remaining": "Verify this same hash reaches successful final execution, then deployed source and the sole twelve-to-thirteen complete-state delta before acknowledging recovery."
+}
+

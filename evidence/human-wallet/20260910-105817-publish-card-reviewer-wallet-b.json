@@ -1,0 +1,370 @@
+{
+  "format": "replycheck-human-wallet-step-v1",
+  "status": "PASS",
+  "observed_at_utc": "2026-09-11T08:17:26.955Z",
+  "network": "studionet",
+  "expected": {
+    "hash": "0xefe60cc47f681b6e7a5b053001a24b85592f55401f47f0c5e1a47f6bf027b6f3",
+    "account": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0",
+    "contract": "0xBD35B1E68aeC803Bd793Db9c6B9762b60f60029A",
+    "chainId": 61999,
+    "method": "publish_answer_card",
+    "callDigest": "89de6c577e4d3ebbbf08c929af82c29113acba7d662562dbfacbdcc9f84247ef",
+    "args": [
+      "reply-wallet-20260910-105817",
+      "01e786c9-2fac-40ac-8bf1-43180ab24769",
+      "2edae1d93ef13458af2363fdece8a709eeaaa72e53f966ba08b961b080b11ce6",
+      "Refund request window"
+    ],
+    "attached_value_wei": "0",
+    "card_id": "01e786c9-2fac-40ac-8bf1-43180ab24769",
+    "review_id": "2edae1d93ef13458af2363fdece8a709eeaaa72e53f966ba08b961b080b11ce6",
+    "title": "Refund request window",
+    "version": 1,
+    "approved_by": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0",
+    "retired": false,
+    "status": "APPROVED"
+  },
+  "app_transaction_export": {
+    "filename": "replycheck-transaction-0xefe60cc47f681b6e7a5b053001a24b85592f55401f47f0c5e1a47f6bf027b6f3.json",
+    "sha256": "64a41f872baf37a4886fe9401718f04dd1a16231a040eba30f186fb9ca1619e1",
+    "payload": {
+      "account": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0",
+      "contract": "0xBD35B1E68aeC803Bd793Db9c6B9762b60f60029A",
+      "chainId": 61999,
+      "method": "publish_answer_card",
+      "title": "Publish approved answer card",
+      "workspace": "reply-wallet-20260910-105817",
+      "effect": {
+        "method": "get_answer_card",
+        "args": [
+          "reply-wallet-20260910-105817",
+          "01e786c9-2fac-40ac-8bf1-43180ab24769"
+        ],
+        "fields": {
+          "id": "01e786c9-2fac-40ac-8bf1-43180ab24769",
+          "review_id": "2edae1d93ef13458af2363fdece8a709eeaaa72e53f966ba08b961b080b11ce6",
+          "approved_by": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0",
+          "title": "Refund request window",
+          "retired": false
+        }
+      },
+      "startedAt": "2026-09-11T08:14:18.943Z",
+      "callDigest": "89de6c577e4d3ebbbf08c929af82c29113acba7d662562dbfacbdcc9f84247ef",
+      "hash": "0xefe60cc47f681b6e7a5b053001a24b85592f55401f47f0c5e1a47f6bf027b6f3"
+    }
+  },
+  "before_evidence": {
+    "filename": "20260910-105817-accept-reviewer-wallet-b.json",
+    "sha256": "44dbea32559ec0e77839fcc2d7aaafb6b5db408e95f5ff7f68bf84c64cbbdff3"
+  },
+  "source_review_evidence": {
+    "filename": "20260910-105817-member-reply-wallet-b.json",
+    "sha256": "35f76984b6ac5c848c55372e96cfb842ed39cb7b25fc294cf65a19c764efb101"
+  },
+  "source_sha256": "cb09037c7ba0b4dc4a675eb09ee561eb828d82b57ff5eb703d76e204f555c1eb",
+  "receipt_verifier_sha256": "5af35ec5c94b65a4bfd4fa51299c74dc29f39a1217b293582823a2d896ce4141",
+  "chain_client_sha256": "39f78a310bacdcaa9b4130a05f808aa3e292aab3140bf35cf049d3f9d32d30f0",
+  "package_lock_sha256": "07653e595abb64d6523b2867499e7bd8e9d4d004dea2dd083e4edb5521c83e19",
+  "execution": {
+    "state": "success",
+    "label": "Finalized; execution succeeded."
+  },
+  "checks": [
+    {
+      "name": "exact answer-card identity, content and reviewer",
+      "status": "PASS"
+    },
+    {
+      "name": "stored approval timestamp preserved",
+      "status": "PASS"
+    },
+    {
+      "name": "decoded final return equals stored card excluding computed status",
+      "status": "PASS"
+    },
+    {
+      "name": "source review and reference bundle unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "only card count changes from zero to one",
+      "status": "PASS"
+    },
+    {
+      "name": "reviewer role remains active",
+      "status": "PASS"
+    },
+    {
+      "name": "public card listing contains exactly the new card",
+      "status": "PASS"
+    }
+  ],
+  "decoded_return_payload": {
+    "approved_at": "2026-09-11T08:14:32.125629+00:00",
+    "approved_by": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0",
+    "draft": "Refund requests must be submitted within 7 days of purchase.",
+    "id": "01e786c9-2fac-40ac-8bf1-43180ab24769",
+    "question": "How long do I have to request a refund?",
+    "retired": false,
+    "review_id": "2edae1d93ef13458af2363fdece8a709eeaaa72e53f966ba08b961b080b11ce6",
+    "title": "Refund request window",
+    "version": 1,
+    "workspace_id": "reply-wallet-20260910-105817"
+  },
+  "stored_card": {
+    "approved_at": "2026-09-11T08:14:32.125629+00:00",
+    "approved_by": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0",
+    "draft": "Refund requests must be submitted within 7 days of purchase.",
+    "id": "01e786c9-2fac-40ac-8bf1-43180ab24769",
+    "question": "How long do I have to request a refund?",
+    "retired": false,
+    "review_id": "2edae1d93ef13458af2363fdece8a709eeaaa72e53f966ba08b961b080b11ce6",
+    "status": "APPROVED",
+    "title": "Refund request window",
+    "version": 1,
+    "workspace_id": "reply-wallet-20260910-105817"
+  },
+  "stored_workspace": {
+    "archived": false,
+    "card_count": 1,
+    "created_at": "2026-09-10T12:06:06.848821+00:00",
+    "id": "reply-wallet-20260910-105817",
+    "member_addresses": [
+      "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0"
+    ],
+    "name": "ReplyCheck human wallet test",
+    "owner": "0x29b8b7d7cbf534eba01e56919de19d79d1509360",
+    "review_count": 7,
+    "version": 1
+  },
+  "stored_reviewer_role": "reviewer",
+  "stored_source_review": {
+    "assessment": {
+      "findings": [
+        {
+          "citations": [
+            {
+              "quote": "Refund requests must be submitted within 7 days of purchase.",
+              "reference_id": "faq"
+            }
+          ],
+          "reason": "The draft exactly matches the refund request window stated in the reference.",
+          "reason_code": "CLAIM_SUPPORTED",
+          "segment_id": 1,
+          "suggestion": "",
+          "text": "Refund requests must be submitted within 7 days of purchase.",
+          "verdict": "SUPPORTED"
+        }
+      ],
+      "question_status": "ANSWERED",
+      "summary": "The draft correctly states that refund requests must be submitted within 7 days of purchase, which is directly supported by the reference.",
+      "verdict": "MATCHES_REFERENCES"
+    },
+    "author": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0",
+    "draft": "Refund requests must be submitted within 7 days of purchase.",
+    "id": "2edae1d93ef13458af2363fdece8a709eeaaa72e53f966ba08b961b080b11ce6",
+    "protocol": "replycheck-v1",
+    "question": "How long do I have to request a refund?",
+    "recorded_at": "2026-09-11T07:18:56.168799+00:00",
+    "reference_digest": "22b7a475d9248d548cfdc66739d230033a27316d76b6eade9c30ac1786233d3c",
+    "request_digest": "15556fb8733203256b2f2308de650b1d5a5478da87d640f4b08b22c363889906",
+    "version": 1,
+    "workspace_id": "reply-wallet-20260910-105817"
+  },
+  "stored_bundle": {
+    "digest": "22b7a475d9248d548cfdc66739d230033a27316d76b6eade9c30ac1786233d3c",
+    "documents": [
+      {
+        "body": "Refund requests must be submitted within 7 days of purchase.",
+        "id": "faq",
+        "title": "Fictional refund policy",
+        "url": ""
+      }
+    ],
+    "published_at": "2026-09-10T12:19:19.107669+00:00",
+    "published_by": "0x29b8b7d7cbf534eba01e56919de19d79d1509360",
+    "version": 1,
+    "workspace_id": "reply-wallet-20260910-105817"
+  },
+  "stored_card_list": [
+    {
+      "approved_at": "2026-09-11T08:14:32.125629+00:00",
+      "approved_by": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0",
+      "draft": "Refund requests must be submitted within 7 days of purchase.",
+      "id": "01e786c9-2fac-40ac-8bf1-43180ab24769",
+      "question": "How long do I have to request a refund?",
+      "retired": false,
+      "review_id": "2edae1d93ef13458af2363fdece8a709eeaaa72e53f966ba08b961b080b11ce6",
+      "status": "APPROVED",
+      "title": "Refund request window",
+      "version": 1,
+      "workspace_id": "reply-wallet-20260910-105817"
+    }
+  ],
+  "receipt": {
+    "hash": "0xefe60cc47f681b6e7a5b053001a24b85592f55401f47f0c5e1a47f6bf027b6f3",
+    "status": "FINALIZED",
+    "from_address": "0x7Cef5DBbD598ba74EF9C665c9853E573448d97D0",
+    "to_address": "0xBD35B1E68aeC803Bd793Db9c6B9762b60f60029A",
+    "value": 0,
+    "created_at": "2026-09-11T08:14:32.125629+00:00",
+    "leader_only": false,
+    "last_leader": "0x9ea87b28DcA2F79fe108CF06a4c13B4c876AC23d",
+    "last_round": {
+      "round": "0",
+      "leader_index": "0",
+      "votes_committed": "5",
+      "votes_revealed": "5",
+      "appeal_bond": "0",
+      "rotations_left": "3",
+      "result": 6,
+      "round_validators": [
+        "0x9ea87b28DcA2F79fe108CF06a4c13B4c876AC23d",
+        "0xE6BD8050758CB15fC88387223E31Ae2708B119dC",
+        "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11",
+        "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE",
+        "0x90402341F0B0e97b23023c0a87de957FB7148E0F"
+      ],
+      "validator_votes_hash": [
+        "0x71f1cd9a91c6f5703dc2d6cedec48209d0f0d112811b100f87c35f417dcfd895",
+        "0x6354ad76f44a1df541a234bd0c9949106c7511442b63069d541d7fbd745591cf",
+        "0xcca20bc10c87fe5b5c9192bcef9f822910a905e4b71f92b380d372668b040002",
+        "0xa50a13a33afc3d846f1decb12d9e40253cd47a65ca615d3237566dc2823f76f9",
+        "0xc96ed595e527625b864f6c102257de1b5c2d7606c4d1530b14b008cb562441a8"
+      ],
+      "validator_votes": [
+        5,
+        5,
+        1,
+        1,
+        1
+      ],
+      "validator_votes_name": [
+        "IDLE",
+        "IDLE",
+        "AGREE",
+        "AGREE",
+        "AGREE"
+      ]
+    },
+    "result": 6,
+    "result_name": "MAJORITY_AGREE",
+    "data": {
+      "calldata": "FgRhcmdzJeQBcmVwbHktd2FsbGV0LTIwMjYwOTEwLTEwNTgxN6QCMDFlNzg2YzktMmZhYy00MGFjLThiZjEtNDMxODBhYjI0NzY5hAQyZWRhZTFkOTNlZjEzNDU4YWYyMzYzZmRlY2U4YTcwOWVlYWFhNzJlNTNmOTY2YmEwOGI5NjFiMDgwYjExY2U2rAFSZWZ1bmQgcmVxdWVzdCB3aW5kb3cGbWV0aG9knAFwdWJsaXNoX2Fuc3dlcl9jYXJk"
+    },
+    "consensus_data": {
+      "votes": {
+        "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11": "agree",
+        "0x90402341F0B0e97b23023c0a87de957FB7148E0F": "agree",
+        "0x9ea87b28DcA2F79fe108CF06a4c13B4c876AC23d": "idle",
+        "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE": "agree",
+        "0xE6BD8050758CB15fC88387223E31Ae2708B119dC": "idle"
+      },
+      "leader_receipt": [
+        {
+          "mode": "leader",
+          "vote": null,
+          "execution_result": "SUCCESS",
+          "result": "AFYLYXBwcm92ZWRfYXSEAjIwMjYtMDktMTFUMDg6MTQ6MzIuMTI1NjI5KzAwOjAwC2FwcHJvdmVkX2J51AIweDdjZWY1ZGJiZDU5OGJhNzRlZjljNjY1Yzk4NTNlNTczNDQ4ZDk3ZDAFZHJhZnTkA1JlZnVuZCByZXF1ZXN0cyBtdXN0IGJlIHN1Ym1pdHRlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLgJpZKQCMDFlNzg2YzktMmZhYy00MGFjLThiZjEtNDMxODBhYjI0NzY5CHF1ZXN0aW9uvAJIb3cgbG9uZyBkbyBJIGhhdmUgdG8gcmVxdWVzdCBhIHJlZnVuZD8HcmV0aXJlZAgJcmV2aWV3X2lkhAQyZWRhZTFkOTNlZjEzNDU4YWYyMzYzZmRlY2U4YTcwOWVlYWFhNzJlNTNmOTY2YmEwOGI5NjFiMDgwYjExY2U2BXRpdGxlrAFSZWZ1bmQgcmVxdWVzdCB3aW5kb3cHdmVyc2lvbgkMd29ya3NwYWNlX2lk5AFyZXBseS13YWxsZXQtMjAyNjA5MTAtMTA1ODE3",
+          "node_config": {
+            "address": "0x9ea87b28DcA2F79fe108CF06a4c13B4c876AC23d"
+          },
+          "validation_diagnostics": []
+        },
+        {
+          "mode": "validator",
+          "vote": "idle",
+          "execution_result": "ERROR",
+          "result": "AmlkbGU=",
+          "node_config": {
+            "address": "0x9ea87b28DcA2F79fe108CF06a4c13B4c876AC23d"
+          },
+          "validation_diagnostics": []
+        }
+      ]
+    },
+    "consensus_history": {
+      "current_status_changes": [
+        "FINALIZED"
+      ],
+      "consensus_results": [
+        {
+          "consensus_round": "Accepted",
+          "status_changes": [
+            "PENDING",
+            "PROPOSING",
+            "COMMITTING",
+            "REVEALING",
+            "ACCEPTED"
+          ],
+          "leader_result": [
+            {
+              "mode": "leader",
+              "vote": null,
+              "execution_result": "SUCCESS",
+              "result": "AFYLYXBwcm92ZWRfYXSEAjIwMjYtMDktMTFUMDg6MTQ6MzIuMTI1NjI5KzAwOjAwC2FwcHJvdmVkX2J51AIweDdjZWY1ZGJiZDU5OGJhNzRlZjljNjY1Yzk4NTNlNTczNDQ4ZDk3ZDAFZHJhZnTkA1JlZnVuZCByZXF1ZXN0cyBtdXN0IGJlIHN1Ym1pdHRlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLgJpZKQCMDFlNzg2YzktMmZhYy00MGFjLThiZjEtNDMxODBhYjI0NzY5CHF1ZXN0aW9uvAJIb3cgbG9uZyBkbyBJIGhhdmUgdG8gcmVxdWVzdCBhIHJlZnVuZD8HcmV0aXJlZAgJcmV2aWV3X2lkhAQyZWRhZTFkOTNlZjEzNDU4YWYyMzYzZmRlY2U4YTcwOWVlYWFhNzJlNTNmOTY2YmEwOGI5NjFiMDgwYjExY2U2BXRpdGxlrAFSZWZ1bmQgcmVxdWVzdCB3aW5kb3cHdmVyc2lvbgkMd29ya3NwYWNlX2lk5AFyZXBseS13YWxsZXQtMjAyNjA5MTAtMTA1ODE3",
+              "node_config": {
+                "address": "0x9ea87b28DcA2F79fe108CF06a4c13B4c876AC23d"
+              },
+              "validation_diagnostics": []
+            },
+            {
+              "mode": "validator",
+              "vote": "idle",
+              "execution_result": "ERROR",
+              "result": "AmlkbGU=",
+              "node_config": {
+                "address": "0x9ea87b28DcA2F79fe108CF06a4c13B4c876AC23d"
+              },
+              "validation_diagnostics": []
+            }
+          ],
+          "validator_results": [
+            {
+              "mode": "validator",
+              "vote": "idle",
+              "execution_result": "ERROR",
+              "result": "AmlkbGU=",
+              "node_config": {
+                "address": "0xE6BD8050758CB15fC88387223E31Ae2708B119dC"
+              },
+              "validation_diagnostics": []
+            },
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "execution_result": "SUCCESS",
+              "result": "AFYLYXBwcm92ZWRfYXSEAjIwMjYtMDktMTFUMDg6MTQ6MzIuMTI1NjI5KzAwOjAwC2FwcHJvdmVkX2J51AIweDdjZWY1ZGJiZDU5OGJhNzRlZjljNjY1Yzk4NTNlNTczNDQ4ZDk3ZDAFZHJhZnTkA1JlZnVuZCByZXF1ZXN0cyBtdXN0IGJlIHN1Ym1pdHRlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLgJpZKQCMDFlNzg2YzktMmZhYy00MGFjLThiZjEtNDMxODBhYjI0NzY5CHF1ZXN0aW9uvAJIb3cgbG9uZyBkbyBJIGhhdmUgdG8gcmVxdWVzdCBhIHJlZnVuZD8HcmV0aXJlZAgJcmV2aWV3X2lkhAQyZWRhZTFkOTNlZjEzNDU4YWYyMzYzZmRlY2U4YTcwOWVlYWFhNzJlNTNmOTY2YmEwOGI5NjFiMDgwYjExY2U2BXRpdGxlrAFSZWZ1bmQgcmVxdWVzdCB3aW5kb3cHdmVyc2lvbgkMd29ya3NwYWNlX2lk5AFyZXBseS13YWxsZXQtMjAyNjA5MTAtMTA1ODE3",
+              "node_config": {
+                "address": "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11"
+              },
+              "validation_diagnostics": []
+            },
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "execution_result": "SUCCESS",
+              "result": "AFYLYXBwcm92ZWRfYXSEAjIwMjYtMDktMTFUMDg6MTQ6MzIuMTI1NjI5KzAwOjAwC2FwcHJvdmVkX2J51AIweDdjZWY1ZGJiZDU5OGJhNzRlZjljNjY1Yzk4NTNlNTczNDQ4ZDk3ZDAFZHJhZnTkA1JlZnVuZCByZXF1ZXN0cyBtdXN0IGJlIHN1Ym1pdHRlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLgJpZKQCMDFlNzg2YzktMmZhYy00MGFjLThiZjEtNDMxODBhYjI0NzY5CHF1ZXN0aW9uvAJIb3cgbG9uZyBkbyBJIGhhdmUgdG8gcmVxdWVzdCBhIHJlZnVuZD8HcmV0aXJlZAgJcmV2aWV3X2lkhAQyZWRhZTFkOTNlZjEzNDU4YWYyMzYzZmRlY2U4YTcwOWVlYWFhNzJlNTNmOTY2YmEwOGI5NjFiMDgwYjExY2U2BXRpdGxlrAFSZWZ1bmQgcmVxdWVzdCB3aW5kb3cHdmVyc2lvbgkMd29ya3NwYWNlX2lk5AFyZXBseS13YWxsZXQtMjAyNjA5MTAtMTA1ODE3",
+              "node_config": {
+                "address": "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE"
+              },
+              "validation_diagnostics": []
+            },
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "execution_result": "SUCCESS",
+              "result": "AFYLYXBwcm92ZWRfYXSEAjIwMjYtMDktMTFUMDg6MTQ6MzIuMTI1NjI5KzAwOjAwC2FwcHJvdmVkX2J51AIweDdjZWY1ZGJiZDU5OGJhNzRlZjljNjY1Yzk4NTNlNTczNDQ4ZDk3ZDAFZHJhZnTkA1JlZnVuZCByZXF1ZXN0cyBtdXN0IGJlIHN1Ym1pdHRlZCB3aXRoaW4gNyBkYXlzIG9mIHB1cmNoYXNlLgJpZKQCMDFlNzg2YzktMmZhYy00MGFjLThiZjEtNDMxODBhYjI0NzY5CHF1ZXN0aW9uvAJIb3cgbG9uZyBkbyBJIGhhdmUgdG8gcmVxdWVzdCBhIHJlZnVuZD8HcmV0aXJlZAgJcmV2aWV3X2lkhAQyZWRhZTFkOTNlZjEzNDU4YWYyMzYzZmRlY2U4YTcwOWVlYWFhNzJlNTNmOTY2YmEwOGI5NjFiMDgwYjExY2U2BXRpdGxlrAFSZWZ1bmQgcmVxdWVzdCB3aW5kb3cHdmVyc2lvbgkMd29ya3NwYWNlX2lk5AFyZXBseS13YWxsZXQtMjAyNjA5MTAtMTA1ODE3",
+              "node_config": {
+                "address": "0x90402341F0B0e97b23023c0a87de957FB7148E0F"
+              },
+              "validation_diagnostics": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "note": "Human reviewer Wallet B publishes the first answer card from its earlier verified member-authored review. Strict successful execution and exact decoded calldata were verified before source/state reads. The final leader return was decoded and compared with stored card fields; status is added by the public read method. Approval time is preserved from chain storage, never substituted with local observation time. No wallet approval, signing, resend or transaction submission by this verifier."
+}

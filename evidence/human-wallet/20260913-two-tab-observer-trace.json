@@ -1,0 +1,1744 @@
+{
+  "format": "replycheck-lossless-two-tab-observer-trace-v1",
+  "status": "COMPLETE_RECONCILED_AND_CLOSED",
+  "hash": "0xf311de10a7afbf3ba0dc72d9736abfb007cc6ca91dd9d420c6e8b02ae144c3a7",
+  "snapshots": [
+    "- link:\n  - /url: \"#main-content\"\n  - text: Skip to workspace\n- banner:\n  - link:\n    - /url: /\n    - generic: ReplyCheck\n  - button [disabled]:\n    - generic: ReplyCheck human wallet test\n  - button [disabled]:\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading [level=1]: Check a reply\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button [disabled]:\n    - text: Refresh\n  - status:\n    - generic: \"Check this reply: finalized execution and stored state verified.\"\n    - button: Dismiss\n  - tablist:\n    - tab [selected]:\n      - generic: Check\n    - tab:\n      - text: Library\n    - tab:\n      - text: History\n    - tab:\n      - generic: Gym\n    - tab:\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading [level=2]: Your draft\n    - generic: References v2\n    - generic: Question\n    - generic: 39 / 1,500 bytes\n    - textbox:\n      - /placeholder: What are they asking?\n      - text: How long do I have to request a refund?\n    - generic: Your reply\n    - generic: 61 / 3,000 bytes\n    - textbox:\n      - /placeholder: Write or paste your reply…\n      - text: Refund requests must be submitted within 14 days of purchase.\n    - text: Public information only\n    - generic: 1 / 12 sentences\n    - button [disabled]:\n      - text: Review draft\n    - paragraph: Confirm the public submission before signing.\n    - region \"Recorded assessment\":\n      - generic: RECORDED REVIEW · V2\n      - heading [level=2]: Matches the references\n      - generic: Current references\n      - paragraph: The draft directly answers the question and matches the reference.\n      - generic: QUESTION COVERAGE\n      - generic: answered\n      - paragraph: Checks your team’s references, not independent truth.\n      - list:\n        - generic: Sentence 1\n        - generic: supported\n        - paragraph: “Refund requests must be submitted within 14 days of purchase.”\n        - paragraph: Matches the stated refund request window.\n        - blockquote: Refund requests must be submitted within 14 days of purchase.\n        - generic: Fictional refund policy · reference v2\n      - button:\n        - text: Copy reviewed reply\n      - button:\n        - text: Export JSON\n      - generic: Review record\n    - complementary:\n      - heading [level=2]:\n        - text: References\n      - generic: v2\n      - text: Fictional refund policy\n      - button:\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button:\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic: Build information\n- dialog \"Check this reply\":\n  - heading \"Check this reply\" [level=2]\n  - paragraph: One wallet-signed action on GenLayer Studionet.\n  - term: Wallet\n  - definition: 0x7cef5d…8d97d0\n  - term: Contract payment\n  - definition: 0 GEN · network fees may apply\n  - paragraph: \"Workspace: ReplyCheck human wallet test · references v2\"\n  - paragraph: \"Question: How long do I have to request a refund?\"\n  - paragraph: \"Draft: Refund requests must be submitted within 14 days of purchase.\"\n  - paragraph: GenLayer will assess the complete draft. No customer message is sent.\n  - status: This content and your wallet address can become public permanently, even if the transaction fails. Remove private tickets, personal details and secrets.\n  - checkbox \"I checked the content and agree to publish it.\" [disabled]\n  - checkbox [disabled]\n  - generic: I checked the content and agree to publish it.\n  - button \"Cancel\" [disabled]\n  - button \"Waiting for wallet…\" [disabled]",
+    "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x7cef5d…8d97d0\":\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - alert:\n    - generic: Another tab is using this recovery record. Finish that check first.\n    - button \"Dismiss\"\n  - text: WALLET OUTCOME UNKNOWN\n  - heading \"Check this reply\" [level=3]\n  - paragraph: Check wallet Activity. If a transaction was sent, recover its hash below. No new actions can be sent until this is resolved.\n  - generic: Transaction hash from wallet Activity\n  - textbox \"Transaction hash from wallet Activity\":\n    - /placeholder: 0x…\n    - text: \"0x88440d641b31d15c9b66cb81e994bc55d1fb57dd89b2b0dc045ede4b83fcd41a\"\n  - button \"Recover transaction\"\n  - 'button \"I checked: nothing was sent\"'\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 39 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n      - text: How long do I have to request a refund?\n    - generic: Your reply\n    - generic: 61 / 3,000 bytes\n    - textbox \"Your reply\":\n      - /placeholder: Write or paste your reply…\n      - text: Refund requests must be submitted within 14 days of purchase.\n    - text: Public information only\n    - generic: 1 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph: Confirm the public submission before signing.\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\"",
+    "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x7cef5d…8d97d0\":\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - status:\n    - generic: \"Check this reply: finalized execution and stored state verified.\"\n    - button \"Dismiss\"\n  - region \"Transaction recovery\":\n    - text: TRANSACTION IN PROGRESS\n    - heading \"Check this reply\" [level=3]\n    - paragraph: Sent. Waiting for finalized execution and stored state.\n    - paragraph: \"0xf311de10a7afbf3ba0dc72d9736abfb007cc6ca91dd9d420c6e8b02ae144c3a7\"\n    - paragraph: Wallet 0x7cef5d…8d97d0 · reply-wallet-20260910-105817\n    - generic \"Wrong hash?\"\n    - button \"Copy hash\":\n      - text: Copy hash\n    - button \"Export JSON\":\n      - text: Export JSON\n    - button \"Checking…\" [disabled]\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 39 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n      - text: How long do I have to request a refund?\n    - generic: Your reply\n    - generic: 61 / 3,000 bytes\n    - textbox \"Your reply\":\n      - /placeholder: Write or paste your reply…\n      - text: Refund requests must be submitted within 14 days of purchase.\n    - text: Public information only\n    - generic: 1 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph: Confirm the public submission before signing.\n    - region \"Recorded assessment\":\n      - generic: RECORDED REVIEW · V2\n      - heading \"Matches the references\" [level=2]\n      - generic: Current references\n      - paragraph: The draft directly answers the question and matches the reference.\n      - generic: QUESTION COVERAGE\n      - generic: answered\n      - paragraph: Checks your team’s references, not independent truth.\n      - list:\n        - generic: Sentence 1\n        - generic: supported\n        - paragraph: “Refund requests must be submitted within 14 days of purchase.”\n        - paragraph: Matches the stated refund request window.\n        - blockquote: Refund requests must be submitted within 14 days of purchase.\n        - generic: Fictional refund policy · reference v2\n      - button \"Copy reviewed reply\":\n        - text: Copy reviewed reply\n      - button \"Export JSON\":\n        - text: Export JSON\n      - generic \"Review record\"\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\"",
+    "- link \"Skip to workspace\":\n  - /url: \"#main-content\"\n- banner:\n  - link \"ReplyCheck home\":\n    - /url: /\n    - generic: ReplyCheck\n  - button \"ReplyCheck human wallet test\":\n    - generic: ReplyCheck human wallet test\n  - button \"0x7cef5d…8d97d0\":\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading \"Check a reply\" [level=1]\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button \"Refresh\":\n    - text: Refresh\n  - region \"Transaction recovery\":\n    - text: TRANSACTION IN PROGRESS\n    - heading \"Check this reply\" [level=3]\n    - paragraph: Review this action in your wallet.\n    - paragraph: \"0xf311de10a7afbf3ba0dc72d9736abfb007cc6ca91dd9d420c6e8b02ae144c3a7\"\n    - paragraph: Wallet 0x7cef5d…8d97d0 · reply-wallet-20260910-105817\n    - generic \"Wrong hash?\"\n    - button \"Copy hash\":\n      - text: Copy hash\n    - button \"Export JSON\":\n      - text: Export JSON\n    - button \"Checking…\" [disabled]\n  - tablist \"Workspace sections\":\n    - tab \"Check a reply\" [selected]:\n      - generic: Check\n    - tab \"Library\":\n      - text: Library\n    - tab \"History\":\n      - text: History\n    - tab \"Reply Gym\":\n      - generic: Gym\n    - tab \"Team\":\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading \"Your draft\" [level=2]\n    - generic: References v2\n    - generic: Question\n    - generic: 39 / 1,500 bytes\n    - textbox \"Question\":\n      - /placeholder: What are they asking?\n      - text: How long do I have to request a refund?\n    - generic: Your reply\n    - generic: 61 / 3,000 bytes\n    - textbox \"Your reply\":\n      - /placeholder: Write or paste your reply…\n      - text: Refund requests must be submitted within 14 days of purchase.\n    - text: Public information only\n    - generic: 1 / 12 sentences\n    - button \"Review draft\" [disabled]:\n      - text: Review draft\n    - paragraph: Confirm the public submission before signing.\n    - complementary:\n      - heading \"References\" [level=2]:\n        - text: References\n      - generic: v2\n      - generic \"Fictional refund policy\":\n        - text: Fictional refund policy\n      - button \"View library\":\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading \"Reply Gym\" [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button \"Start an exercise\":\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic \"Build information\""
+  ],
+  "observations": [
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "capture_cycle_started",
+        "snapshotRequestedAt": "2026-09-13T09:25:58.307Z",
+        "snapshotCompletedAt": "2026-09-13T09:25:58.364Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "capture_cycle_started",
+        "snapshotRequestedAt": "2026-09-13T09:25:58.364Z",
+        "snapshotCompletedAt": "2026-09-13T09:25:58.403Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:25:58.431Z",
+        "snapshotCompletedAt": "2026-09-13T09:25:58.479Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:25:58.479Z",
+        "snapshotCompletedAt": "2026-09-13T09:25:58.527Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:01.071Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:01.164Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:01.164Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:01.197Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:03.749Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:03.796Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:03.796Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:03.844Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:06.391Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:06.438Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:06.438Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:06.475Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:09.021Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:09.081Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:09.081Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:09.128Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:11.677Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:11.724Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:11.724Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:11.755Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:14.300Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:14.381Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:14.381Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:14.408Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:16.944Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:17.030Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:17.030Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:17.076Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:19.625Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:19.703Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:19.703Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:19.747Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:22.300Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:22.389Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:22.389Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:22.422Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:24.973Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:25.068Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:25.068Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:25.103Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:27.659Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:27.725Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:27.725Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:27.772Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:30.336Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:30.400Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:30.400Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:30.442Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:32.982Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:33.049Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:33.049Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:33.092Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:35.642Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:35.688Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:35.688Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:35.730Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:38.280Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:38.337Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:38.337Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:38.378Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:40.925Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:41.004Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:41.004Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:41.040Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "capture_cycle_started",
+        "snapshotRequestedAt": "2026-09-13T09:26:52.573Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:52.625Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "capture_cycle_started",
+        "snapshotRequestedAt": "2026-09-13T09:26:52.625Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:52.654Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:52.687Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:52.734Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:52.734Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:52.773Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:55.348Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:55.439Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:55.439Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:55.482Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:58.026Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:58.099Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:26:58.099Z",
+        "snapshotCompletedAt": "2026-09-13T09:26:58.127Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:27:00.669Z",
+        "snapshotCompletedAt": "2026-09-13T09:27:00.707Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:27:00.707Z",
+        "snapshotCompletedAt": "2026-09-13T09:27:00.747Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:27:03.293Z",
+        "snapshotCompletedAt": "2026-09-13T09:27:03.365Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:27:03.365Z",
+        "snapshotCompletedAt": "2026-09-13T09:27:03.408Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:27:05.969Z",
+        "snapshotCompletedAt": "2026-09-13T09:27:06.034Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:27:06.034Z",
+        "snapshotCompletedAt": "2026-09-13T09:27:06.070Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:27:08.634Z",
+        "snapshotCompletedAt": "2026-09-13T09:27:08.747Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:27:08.747Z",
+        "snapshotCompletedAt": "2026-09-13T09:27:08.798Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:27:11.365Z",
+        "snapshotCompletedAt": "2026-09-13T09:27:11.487Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:27:11.487Z",
+        "snapshotCompletedAt": "2026-09-13T09:27:11.531Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:27:14.106Z",
+        "snapshotCompletedAt": "2026-09-13T09:27:14.210Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:27:14.210Z",
+        "snapshotCompletedAt": "2026-09-13T09:27:14.259Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:27:16.844Z",
+        "snapshotCompletedAt": "2026-09-13T09:27:16.943Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:27:16.943Z",
+        "snapshotCompletedAt": "2026-09-13T09:27:16.988Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:27:19.574Z",
+        "snapshotCompletedAt": "2026-09-13T09:27:19.682Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:27:19.682Z",
+        "snapshotCompletedAt": "2026-09-13T09:27:19.733Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:27:22.331Z",
+        "snapshotCompletedAt": "2026-09-13T09:27:22.413Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:27:22.413Z",
+        "snapshotCompletedAt": "2026-09-13T09:27:22.470Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:27:25.062Z",
+        "snapshotCompletedAt": "2026-09-13T09:27:25.136Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:27:25.136Z",
+        "snapshotCompletedAt": "2026-09-13T09:27:25.197Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:27:27.798Z",
+        "snapshotCompletedAt": "2026-09-13T09:27:27.888Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:27:27.888Z",
+        "snapshotCompletedAt": "2026-09-13T09:27:27.966Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:27:30.588Z",
+        "snapshotCompletedAt": "2026-09-13T09:27:30.672Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:27:30.672Z",
+        "snapshotCompletedAt": "2026-09-13T09:27:30.731Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:27:33.334Z",
+        "snapshotCompletedAt": "2026-09-13T09:27:33.404Z",
+        "visible": {
+          "account": "unobserved",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": false,
+          "consent_dialog_open": true,
+          "off_studionet_ui": false,
+          "waiting_wallet": true,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 0
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:27:33.404Z",
+        "snapshotCompletedAt": "2026-09-13T09:27:33.458Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": null,
+          "recovery_present": false,
+          "pending_ui": false,
+          "terminal_ui": false,
+          "recovery_signer_b": false,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": true,
+          "recovery_input": true,
+          "checking_hash": false
+        },
+        "snapshot_index": 1
+      }
+    },
+    {
+      "primary": {
+        "tab": "primary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:27:36.071Z",
+        "snapshotCompletedAt": "2026-09-13T09:27:36.204Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": "0xf311de10a7afbf3ba0dc72d9736abfb007cc6ca91dd9d420c6e8b02ae144c3a7",
+          "recovery_present": true,
+          "pending_ui": true,
+          "terminal_ui": false,
+          "recovery_signer_b": true,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 2
+      },
+      "secondary": {
+        "tab": "secondary",
+        "label": "watch_original_request_without_resending",
+        "snapshotRequestedAt": "2026-09-13T09:27:36.204Z",
+        "snapshotCompletedAt": "2026-09-13T09:27:36.309Z",
+        "visible": {
+          "account": "B",
+          "role": "owner",
+          "hash": "0xf311de10a7afbf3ba0dc72d9736abfb007cc6ca91dd9d420c6e8b02ae144c3a7",
+          "recovery_present": true,
+          "pending_ui": true,
+          "terminal_ui": false,
+          "recovery_signer_b": true,
+          "valid_draft_denied": true,
+          "consent_dialog_open": false,
+          "off_studionet_ui": false,
+          "waiting_wallet": false,
+          "uncertain": false,
+          "recovery_input": false,
+          "checking_hash": false
+        },
+        "snapshot_index": 3
+      }
+    }
+  ],
+  "errors": [],
+  "full_source": "async function watchSafetyHash(durationMs=45000) {\n const state=load(\"replyHashTwoTabWatchState\");\n if(state.halt_requested||state.hash){text({status:state.status,hash:state.hash});return;}\n const capture=async(label)=>{\n  const r=await tools.mcp__node_repl__js({code:\"console.log(JSON.stringify({primary:await replySafetyCapture('primary',\"+JSON.stringify(label)+\"),secondary:await replySafetyCapture('secondary',\"+JSON.stringify(label)+\")}));\",title:\"Observe the original wallet request in both tabs\",timeout_ms:10000});\n  state.raw_calls.push(r);store(\"replyHashTwoTabWatchState\",state);\n  if(r.isError)throw Error(JSON.stringify(r));let pair;\n  for(const c of r.content??[])if(c.type===\"text\"){try{pair=JSON.parse(c.text);}catch{}}\n  if(!pair)throw Error(\"Missing DOM observations\");state.observations.push(pair);store(\"replyHashTwoTabWatchState\",state);return pair;\n };\n state.active=true;state.status=\"CAPTURING\";const started=Date.now();store(\"replyHashTwoTabWatchState\",state);\n let pair=await capture(\"capture_cycle_started\");\n text({observer:\"ACTIVE\",primary_waiting:pair.primary.visible.waiting_wallet,secondary_uncertain:pair.secondary.visible.uncertain,hash:pair.primary.visible.hash||pair.secondary.visible.hash});await yield_control();\n while(Date.now()-started<durationMs){\n  try {\n   pair=await capture(\"watch_original_request_without_resending\");\n   const hashes=[...new Set([pair.primary.visible.hash,pair.secondary.visible.hash].filter(Boolean))];\n   if(hashes.length>1)throw Error(\"Tabs show conflicting recovery hashes\");\n   if(hashes.length){\n    if(state.prohibited_hashes.includes(hashes[0]))throw Error(\"A completed old hash cannot be used as the new request\");\n    state.hash=hashes[0];state.status=\"FRESH_HASH_OBSERVED\";state.active=false;state.hash_observation=pair;store(\"replyHashTwoTabWatchState\",state);text({status:state.status,hash:state.hash,primary:pair.primary.visible,secondary:pair.secondary.visible});return;\n   }\n   if(!pair.primary.visible.waiting_wallet&&!pair.secondary.visible.waiting_wallet){\n    state.status=(pair.primary.visible.uncertain||pair.secondary.visible.uncertain)?\"UNKNOWN_OUTCOME_INSPECT_WITHOUT_RESENDING\":\"REQUEST_ENDED_WITHOUT_HASH_INSPECT\";state.active=false;state.halt_requested=true;store(\"replyHashTwoTabWatchState\",state);text({status:state.status});return;\n   }\n  }catch(error){state.errors.push(String(error));state.status=\"NEEDS_ATTENTION\";state.active=false;state.halt_requested=true;store(\"replyHashTwoTabWatchState\",state);text({status:state.status,error:String(error)});return;}\n  await new Promise(resolve=>setTimeout(resolve,2500));\n }\n state.active=false;state.status=\"CYCLE_COMPLETE_CAN_CONTINUE\";store(\"replyHashTwoTabWatchState\",state);text({status:state.status,hash:state.hash,observations:state.observations.length});\n}",
+  "note": "Lossless DOM snapshot deduplication; recorded times include bounded-capture-cycle gaps. No native wallet signature click was observed."
+}

@@ -1,0 +1,135 @@
+/** Offline replay with explicit pre-draft-feedback UI scope. No RPC, wallet access or sends. */
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import { abi } from 'genlayer-js';
+import { receiptState, verifyReceiptCall } from '../../../lib/reply/receipt.ts';
+import { digest } from '../../../lib/reply/core.ts';
+import { verifyDraftUiPins } from '../../verify-draft-ui-pins.mjs';
+const root = new URL('../../../', import.meta.url);
+const read = (path) => readFile(new URL(path, root));
+const sha = (bytes) => createHash('sha256').update(bytes).digest('hex');
+const pinned = async (path, hash) => { const bytes = await read(path); assert.equal(sha(bytes), hash, path); return JSON.parse(bytes); };
+const proof = await pinned('evidence/human-wallet/20260913-pending-network-after-fix-reconciled.json', 'f5e52d45238eae85e563b8516e9b356fb565696adb2b659946177cf308f40113');
+assert.equal(proof.status, 'PASS_SCOPED_PENDING_NETWORK_RECOVERY');
+const pinScope = await verifyDraftUiPins(root, proof.source_pins, { historicalInventory: true, historicalDraftUi: true });
+assert.equal(Object.keys(proof.source_pins).length, 29);
+assert.equal(sha(await read(proof.generator.path)), proof.generator.sha256);
+assert.equal(sha(await read(proof.fixed_build.path)), proof.fixed_build.sha256);
+const setup = await pinned(proof.setup_evidence.path, proof.setup_evidence.sha256);
+const pending = await pinned(proof.pending_window_evidence.path, proof.pending_window_evidence.sha256);
+const final = await pinned(proof.final_receipt_evidence.path, proof.final_receipt_evidence.sha256);
+const before = setup.fresh_checkpoint, intended = setup.intended, window = pending.passing_window;
+const expected = final.expected, receipt = final.receipt;
+assert.deepEqual(proof.source_pins, setup.fixed_build.current_source_pins);
+assert.deepEqual(final.expected, window.capture.expected);
+assert.deepEqual(final.app_transaction_export, window.capture.app_transaction_export);
+assert.deepEqual(receipt, proof.receipt);
+assert.equal(receiptState(window.capture.receipt, expected).state, 'pending');
+assert.equal(await verifyReceiptCall(window.capture.receipt, expected), true);
+assert.equal(window.pending_network_observed, true);
+assert.equal(window.capture.fixture_verified, true);
+assert.equal(window.capture.exact_call_verified, true);
+assert.equal(receiptState(receipt, expected).state, 'success');
+assert.equal(await verifyReceiptCall(receipt, expected), true);
+assert.equal(receipt.status, 'FINALIZED');
+const times = [window.before.snapshotRequestedAt, window.before.snapshotCompletedAt, window.capture.requested_at_utc, window.capture.observed_at_utc, window.after.snapshotRequestedAt, window.after.snapshotCompletedAt, final.requested_at_utc, final.observed_at_utc, proof.deployment_verification.verified_at_utc].map(Date.parse);
+assert.ok(times.every(Number.isFinite));
+for (let index = 1; index < times.length; index++) assert.ok(times[index] >= times[index - 1]);
+for (const observation of [window.before, window.after]) {
+  const s = observation.snapshot;
+  const recovery = s.split('  - region "Transaction recovery":')[1]?.split('  - tablist')[0];
+  assert.ok(recovery);
+  assert.ok(s.split('- main:')[0].includes('button "Switch to Studionet"'));
+  assert.ok(recovery.includes('TRANSACTION IN PROGRESS'));
+  assert.ok(!recovery.includes('TRANSACTION CHECKED'));
+  assert.deepEqual([...new Set(recovery.match(/0x[0-9a-f]{64}/g) ?? [])], [expected.hash]);
+  assert.ok(recovery.includes('Wallet 0x7cef5d…8d97d0 · ' + intended.workspace));
+  assert.ok(s.includes('button "Review draft" [disabled]'));
+  assert.ok(s.includes('text: ' + intended.question));
+  assert.ok(s.includes('text: ' + intended.draft));
+  assert.ok(pending.all_observations.some((row) => row.snapshotCompletedAt === observation.snapshotCompletedAt && row.snapshot === observation.snapshot));
+}
+const plain = (value) => {
+  if (value instanceof Map) return Object.fromEntries([...value].map(([key, item]) => [key, plain(item)]));
+  if (Array.isArray(value)) return value.map(plain);
+  if (typeof value === 'bigint') { assert.ok(Number.isSafeInteger(Number(value))); return Number(value); }
+  if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, plain(item)]));
+  return value;
+};
+const call = plain(abi.calldata.decode(Buffer.from(receipt.data.calldata, 'base64')));
+assert.deepEqual(call, proof.decoded_call);
+assert.deepEqual(call, final.decoded_call);
+assert.deepEqual(call, window.capture.decoded_call);
+assert.deepEqual(call.args, [intended.workspace, 2, intended.question, intended.draft, proof.expected.request_id, true]);
+assert.equal(call.method, 'submit_review');
+assert.equal(expected.hash, '0x88440d641b31d15c9b66cb81e994bc55d1fb57dd89b2b0dc045ede4b83fcd41a');
+assert.equal(await digest([call.method, call.args]), expected.callDigest);
+assert.equal(await digest([expected.workspace, expected.account, proof.expected.request_id]), proof.expected.review_id);
+assert.equal(expected.effect.fields.id, proof.expected.review_id);
+assert.equal(expected.account, intended.account);
+assert.equal(expected.contract.toLowerCase(), intended.contract.toLowerCase());
+assert.equal(expected.chainId, intended.chainId);
+assert.equal(intended.prohibited_resubmission_hashes.includes(expected.hash), false);
+assert.notEqual(proof.expected.request_id, before.expected.request_id);
+const leaders = receipt.consensus_data.leader_receipt.filter((entry) => entry.mode === 'leader');
+assert.equal(leaders.length, 1);
+assert.equal(leaders[0].node_config.address.toLowerCase(), receipt.last_leader.toLowerCase());
+const encoded = Buffer.from(typeof leaders[0].result === 'string' ? leaders[0].result : leaders[0].result.raw, 'base64');
+assert.equal(encoded[0], 0);
+assert.deepEqual(plain(abi.calldata.decode(encoded.subarray(1))), proof.stored_review);
+assert.deepEqual(proof.decoded_return_payload, proof.stored_review);
+for (const [key, value] of Object.entries({ id: proof.expected.review_id, author: intended.account, workspace_id: intended.workspace, question: intended.question, draft: intended.draft, version: 2, request_digest: intended.request_digest, reference_digest: intended.reference_digest })) assert.equal(proof.stored_review[key], value, key);
+assert.equal(proof.stored_review.assessment.verdict, intended.expected_verdict);
+assert.equal(proof.stored_review.assessment.question_status, intended.expected_question_status);
+assert.deepEqual(proof.stored_review.assessment.findings.map((finding) => finding.reason_code), intended.expected_reason_codes);
+assert.deepEqual(proof.stored_review.assessment.findings[0].citations, [{ quote: intended.draft, reference_id: 'faq' }]);
+assert.equal(proof.stored_review.recorded_at, '2026-09-13T08:54:57.538340+00:00');
+assert.equal(proof.stored_review.recorded_at, proof.timing.stored_recorded_at);
+assert.equal(proof.deployment_verification.matched, true);
+assert.equal(proof.deployment_verification.source_sha256, proof.source_pins['contracts/reply_check.py']);
+assert.equal(proof.observations.length, 10);
+assert.deepEqual(proof.observations.map((row) => row.key), before.observations.map((row) => row.key));
+for (const row of proof.observations) {
+  const old = before.observations.find((entry) => entry.key === row.key);
+  assert.equal(row.method, old.method); assert.deepEqual(row.args, old.args);
+  assert.ok(Date.parse(row.observed_at_utc) >= Date.parse(row.requested_at_utc));
+  assert.ok(Date.parse(row.requested_at_utc) >= Date.parse(proof.deployment_verification.verified_at_utc));
+  if (row.key === 'workspace') assert.deepEqual(row.output, { ...old.output, review_count: 14 });
+  else if (row.key === 'reviews') {
+    assert.equal(old.output.length, 13); assert.equal(row.output.length, 14);
+    assert.deepEqual(row.output.filter((review) => review.id !== proof.expected.review_id), old.output);
+    assert.deepEqual(row.output.filter((review) => review.id === proof.expected.review_id), [proof.stored_review]);
+  } else assert.deepEqual(row.output, old.output, row.key);
+}
+assert.equal(proof.verified_checks.length, 8);
+assert.ok(Object.values(proof.constraints).every((value) => value === false));
+for (const key of ['agent_checked_consent', 'agent_clicked_continue_to_wallet', 'agent_approved_wallet', 'agent_signed', 'human_signature_click_independently_observed']) assert.equal(proof.actors[key], false);
+assert.equal(proof.actors.exact_alternative_chain_id_unobserved, true);
+const closing = await pinned('evidence/human-wallet/20260913-pending-network-after-fix-browser-close.json', 'fc4ed9af566f8c5a34a312547b4dcc5cc0f986d9775d798ef76695d4f3d90e2c');
+assert.equal(closing.status, 'PASS_SCOPED_BROWSER_CLOSE');
+assert.equal(closing.reconciliation.sha256, sha(await read(closing.reconciliation.path)));
+assert.equal(closing.observations.length, 5);
+assert.equal(closing.verified_checks.length, 4);
+assert.ok(Object.values(closing.constraints).every((value) => value === false));
+assert.ok(closing.observations[0].snapshot.includes(expected.hash));
+assert.ok(closing.observations[0].snapshot.includes('TRANSACTION CHECKED'));
+assert.ok(Date.parse(closing.observations[0].snapshotRequestedAt) >= Date.parse(proof.observed_at_utc));
+for (const observation of closing.observations.slice(1)) {
+  assert.ok(!observation.snapshot.includes('region "Transaction recovery"'));
+  assert.ok(!observation.snapshot.includes('WALLET OUTCOME UNKNOWN'));
+  assert.ok(!observation.snapshot.includes('dialog "Check this reply"'));
+  assert.ok(observation.snapshot.includes('button "Switch to Studionet"'));
+}
+const last = closing.observations.at(-1).snapshot;
+assert.ok(last.includes('text: ' + proof.expected.review_id));
+assert.ok(last.includes('paragraph: ' + proof.stored_review.assessment.summary));
+assert.ok(!last.includes('button "Load older reviews"'));
+assert.ok(!last.includes('Loading review…'));
+assert.equal((last.match(/- time: /g) ?? []).length, 14);
+for (const review of proof.observations.find((row) => row.key === 'reviews').output) {
+  const displayed = new Date(review.recorded_at).toISOString().slice(0, 19).replace('T', ' ') + ' UTC';
+  assert.ok(last.includes('- time: ' + displayed));
+}
+assert.equal(closing.wrong_candidate_hash_case.status, 'NOT_EXERCISED');
+console.log(JSON.stringify({ pending_network_recovery: 'PASS_SCOPED', pin_scope: pinScope, verification_groups: 8, public_state_outputs: 10, reviews_before: 13, reviews_after: 14, hash: expected.hash, final_execution: 'SUCCESS', browser_close: 'PASS', wrong_candidate_hash: 'NOT_EXERCISED', public_ci: 'NOT_RUN', note: 'Exact historical form UI and inventory snapshots; other source pins remain current. No fresh changed-form test, transaction or network call. Not a whole-release claim.' }, null, 2));

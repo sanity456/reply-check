@@ -1,0 +1,81 @@
+{
+  "format": "replycheck-human-wallet-browser-staging-v1",
+  "status": "AWAITING_HUMAN_APPROVAL",
+  "step": "fresh_after_signing_reload_recovery_review",
+  "observed_at_utc": "2026-09-12T14:58:46.948Z",
+  "workspace": "reply-wallet-20260910-105817",
+  "contract": "0xBD35B1E68aeC803Bd793Db9c6B9762b60f60029A",
+  "account": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0",
+  "chain_id": 61999,
+  "preflight_evidence": "20260910-105817-after-signing-preflight-20260912-1454.json",
+  "preflight_evidence_sha256": "f119e2ca5d7f7889cbfc942c5cc65351f087dd340338c69e9d5750b55b8dfbcd",
+  "preflight_checks": 13,
+  "ui": {
+    "observedAtUtc": "2026-09-12T14:58:46.948Z",
+    "tabId": "329573059",
+    "dialogCount": 1,
+    "snapshot": "- link:\n  - /url: \"#main-content\"\n  - text: Skip to workspace\n- banner:\n  - link:\n    - /url: /\n    - generic: ReplyCheck\n  - button:\n    - generic: ReplyCheck human wallet test\n  - button:\n    - text: 0x7cef5d…8d97d0\n- main:\n  - heading [level=1]: Check a reply\n  - strong: ReplyCheck human wallet test\n  - generic: · owner · reference v2\n  - button:\n    - text: Refresh\n  - tablist:\n    - tab [selected]:\n      - generic: Check\n    - tab:\n      - text: Library\n    - tab:\n      - text: History\n    - tab:\n      - generic: Gym\n    - tab:\n      - text: Team\n  - tabpanel \"Check a reply\":\n    - heading [level=2]: Your draft\n    - generic: References v2\n    - generic: Question\n    - generic: 39 / 1,500 bytes\n    - textbox:\n      - /placeholder: What are they asking?\n      - text: How long do I have to request a refund?\n    - generic: Your reply\n    - generic: 61 / 3,000 bytes\n    - textbox:\n      - /placeholder: Write or paste your reply…\n      - text: Refund requests must be submitted within 14 days of purchase.\n    - text: Public information only\n    - generic: 1 / 12 sentences\n    - button:\n      - text: Review draft\n    - paragraph: Confirm the public submission before signing.\n    - complementary:\n      - heading [level=2]:\n        - text: References\n      - generic: v2\n      - text: Fictional refund policy\n      - button:\n        - text: View library\n      - generic: Each review keeps its reference version.\n      - heading [level=2]:\n        - text: Reply Gym\n      - generic: Practice\n      - paragraph: Spot the promise that goes too far.\n      - button:\n        - text: Start an exercise\n- contentinfo:\n  - generic: ReplyCheck\n  - generic: Public references only · No automatic sending\n  - generic: Build information\n- dialog \"Check this reply\":\n  - heading \"Check this reply\" [level=2]\n  - paragraph: One wallet-signed action on GenLayer Studionet.\n  - term: Wallet\n  - definition: 0x7cef5d…8d97d0\n  - term: Contract payment\n  - definition: 0 GEN · network fees may apply\n  - paragraph: \"Workspace: ReplyCheck human wallet test · references v2\"\n  - paragraph: \"Question: How long do I have to request a refund?\"\n  - paragraph: \"Draft: Refund requests must be submitted within 14 days of purchase.\"\n  - paragraph: GenLayer will assess the complete draft. No customer message is sent.\n  - status: This content and your wallet address can become public permanently, even if the transaction fails. Remove private tickets, personal details and secrets.\n  - checkbox \"I checked the content and agree to publish it.\" [active]\n  - checkbox\n  - generic: I checked the content and agree to publish it.\n  - button \"Cancel\"\n  - button \"Continue to wallet\" [disabled]\n  - button \"Close\":\n    - generic: Close",
+    "consent": "false",
+    "continueEnabled": false,
+    "walletMetadata": [
+      {
+        "text": "0x7cef5d…8d97d0",
+        "title": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0"
+      },
+      {
+        "text": "0 GEN · network fees may apply",
+        "title": null
+      }
+    ]
+  },
+  "inputs": {
+    "account": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0",
+    "contract": "0xBD35B1E68aeC803Bd793Db9c6B9762b60f60029A",
+    "chainId": 61999,
+    "method": "submit_review",
+    "workspace": "reply-wallet-20260910-105817",
+    "version": 2,
+    "question": "How long do I have to request a refund?",
+    "draft": "Refund requests must be submitted within 14 days of purchase.",
+    "public_consent": true,
+    "attached_value_wei": "0",
+    "args_template": [
+      "reply-wallet-20260910-105817",
+      2,
+      "How long do I have to request a refund?",
+      "Refund requests must be submitted within 14 days of purchase.",
+      "<fresh app-generated request_id>",
+      true
+    ],
+    "request_id": null,
+    "call_digest": null,
+    "request_digest": "2ae740d30b55e5991fe14ba32b3e9d41d247db9e66232f47823048f48067686c",
+    "reference_digest": "1041401ae7c08750497e55652d30fc9119a0a27e6e712c016e13b9faaa1ca9f0",
+    "nonce_note": "The app generates a fresh UUID when staging; the unsigned public confirmation does not expose it. After any later human-approved send, bind the public recovery export to exact receipt calldata, extract and validate request_id, and compute the expected review ID and call digest. No exact nonce, review ID or call digest is claimed at preflight.",
+    "expected_verdict": "MATCHES_REFERENCES",
+    "expected_reason_codes": [
+      "CLAIM_SUPPORTED"
+    ],
+    "expected_supported_quote": "Refund requests must be submitted within 14 days of purchase.",
+    "expected_workspace_if_later_successful": {
+      "archived": false,
+      "card_count": 2,
+      "created_at": "2026-09-10T12:06:06.848821+00:00",
+      "id": "reply-wallet-20260910-105817",
+      "member_addresses": [],
+      "name": "ReplyCheck human wallet test",
+      "owner": "0x7cef5dbbd598ba74ef9c665c9853e573448d97d0",
+      "review_count": 10,
+      "version": 2
+    },
+    "expected_unchanged": "Owner, roles, invitations, ownership proposal, reference bundles, both answer cards, and all nine pre-existing complete reviews with their original timestamp strings.",
+    "expected_new_review_timestamp": "Use the stored recorded_at after final successful execution; do not derive it from the local clock.",
+    "expected_question_status": "ANSWERED"
+  },
+  "expected_user_action": "Review the public fictional 14-day answer, tick the public-content consent, Continue to wallet, and approve only this new ReplyCheck review in MetaMask from B on Studionet. Do not refresh or send another action. Agent will observe a hash and actual lifecycle status before reloading. Reply done after approving.",
+  "controlled_reload_scope": "Record the known fictional draft and any returned hash. If necessary to avoid the unsaved-draft browser prompt, clear only these known draft inputs after the wallet returns a hash, then reload the same sender page and re-enter them. Recovery metadata is never manually cleared. This is not an automatic draft-persistence test.",
+  "expected_result": "A hash-bound recovery record survives same-tab reload without another wallet request. If genuinely unfinalized before reload, capture actual pre/post lifecycle evidence; otherwise label only already-finalized recovery. After strict exact successful execution, verify source, final leader output and the predeclared one-review-only delta, including all unchanged full history and raw stored timestamps.",
+  "wallet_request_initiated_by_agent": false,
+  "agent_wallet_approval": false,
+  "transaction_hash": null
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "singleQuote": true,
+  "printWidth": 80,
+  "sortPackageJson": false,
+  "ignorePatterns": [
+    ".venv/**",
+    ".verify-venv/**",
+    ".tooling/**",
+    "requirements.lock",
+    "components/ui/**",
+    "hooks/use-mobile.ts",
+    "node_modules/**",
+    "dist/**",
+    "evidence/**",
+    "tests/fixtures/**",
+    "package-lock.json",
+    "pnpm-lock.yaml",
+    "yarn.lock",
+    "bun.lock",
+    "bun.lockb"
+  ]
+}

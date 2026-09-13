@@ -1,0 +1,159 @@
+[
+  {
+    "path": "evidence/browser/replay-20260912-usability.mjs",
+    "args": [
+      "--historical-ui",
+      "--historical-workflow",
+      "--historical-recovery-ui"
+    ],
+    "scope": "Historical browser audit, including preserved failures"
+  },
+  {
+    "path": "evidence/browser/replay-20260912-ui-fix-browser.mjs",
+    "args": [
+      "--historical-ui",
+      "--historical-workflow",
+      "--historical-recovery-ui"
+    ],
+    "scope": "Historical UI-fix browser observations"
+  },
+  {
+    "path": "evidence/browser/replay-20260912-focus-wording.mjs",
+    "args": [
+      "--historical-ui",
+      "--historical-workflow",
+      "--historical-recovery-ui"
+    ],
+    "scope": "Historical focus and wording observations"
+  },
+  {
+    "path": "evidence/human-wallet/replays/20260912-after-signing-recovery.mjs",
+    "args": [
+      "--historical-ui",
+      "--historical-workflow",
+      "--historical-recovery-ui"
+    ],
+    "scope": "Observed after-signing reload and exact final outcome"
+  },
+  {
+    "path": "evidence/browser/replay-20260912-reliability-accessibility.mjs",
+    "args": [
+      "--historical-workflow",
+      "--historical-recovery-ui"
+    ],
+    "scope": "Scoped local session and accessibility observations"
+  },
+  {
+    "path": "evidence/human-wallet/replays/20260913-checked-consent-account-switch.mjs",
+    "args": [
+      "--historical-workflow",
+      "--historical-recovery-ui"
+    ],
+    "scope": "checked-consent-account-switch"
+  },
+  {
+    "path": "evidence/human-wallet/replays/20260913-checked-consent-owner-return.mjs",
+    "args": [
+      "--historical-workflow",
+      "--historical-recovery-ui"
+    ],
+    "scope": "checked-consent-owner-return"
+  },
+  {
+    "path": "evidence/human-wallet/replays/20260913-checked-consent-network-switch.mjs",
+    "args": [
+      "--historical-workflow",
+      "--historical-recovery-ui"
+    ],
+    "scope": "checked-consent-network-switch"
+  },
+  {
+    "path": "evidence/human-wallet/replays/20260913-checked-consent-studionet-return.mjs",
+    "args": [
+      "--historical-workflow",
+      "--historical-recovery-ui"
+    ],
+    "scope": "checked-consent-studionet-return"
+  },
+  {
+    "path": "evidence/human-wallet/replays/20260913-pending-identity-preflight.mjs",
+    "args": [
+      "--historical-workflow",
+      "--historical-recovery-ui"
+    ],
+    "scope": "pending-identity-preflight"
+  },
+  {
+    "path": "evidence/human-wallet/replays/20260913-first-identity-attempt.mjs",
+    "args": [
+      "--historical-workflow",
+      "--historical-recovery-ui"
+    ],
+    "scope": "first-identity-attempt"
+  },
+  {
+    "path": "evidence/human-wallet/replays/20260913-second-identity-setup.mjs",
+    "args": [
+      "--historical-workflow",
+      "--historical-recovery-ui"
+    ],
+    "scope": "second-identity-setup"
+  },
+  {
+    "path": "evidence/human-wallet/replays/20260913-second-identity-attempt.mjs",
+    "args": [
+      "--historical-workflow",
+      "--historical-recovery-ui"
+    ],
+    "scope": "second-identity-attempt"
+  },
+  {
+    "path": "evidence/human-wallet/replays/20260913-third-identity-preparation.mjs",
+    "args": [
+      "--historical-workflow",
+      "--historical-recovery-ui"
+    ],
+    "scope": "third-identity-preparation"
+  },
+  {
+    "path": "evidence/human-wallet/replays/20260913-third-identity-cancellation.mjs",
+    "args": [
+      "--historical-workflow",
+      "--historical-recovery-ui"
+    ],
+    "scope": "third-identity-cancellation"
+  },
+  {
+    "path": "evidence/human-wallet/replays/20260913-fourth-identity-attempt.mjs",
+    "args": [
+      "--historical-workflow",
+      "--historical-recovery-ui"
+    ],
+    "scope": "fourth-identity-attempt"
+  },
+  {
+    "path": "evidence/human-wallet/replays/20260913-pending-network-preparation.mjs",
+    "args": [
+      "--historical-workflow",
+      "--historical-recovery-ui"
+    ],
+    "scope": "pending-network-preparation"
+  },
+  {
+    "path": "scripts/verify-live-evidence.mjs",
+    "args": [
+      "evidence/studionet/749f58e6-6c2c-4401-9848-e2a03df7326e.json"
+    ],
+    "scope": "Saved completed automated Studionet run; no new live execution"
+  },
+  {
+    "path": "evidence/browser/replay-20260913-recovery-hash-fix.mjs",
+    "args": [],
+    "scope": "Current-source recovery-hash fix, full local suite and unchanged public-chain checkpoint"
+  },
+  {
+    "path": "evidence/human-wallet/replays/20260913-pending-network-after-fix.mjs",
+    "args": [],
+    "scope": "Recovery-fixed pending-network case, exact single-review outcome and browser closure"
+  }
+]

@@ -1,0 +1,52 @@
+{
+  "format": "replycheck-native-screen-reader-reply-witness-v1",
+  "status": "INCONCLUSIVE_PAGE_SPEECH_REPLY_GUIDANCE_NOT_YET_CONFIRMED",
+  "observed_at_utc": "2026-09-13T11:54:51.2086975Z",
+  "prior_record": {
+    "path": "evidence/browser/20260913-native-screen-reader-question-witness.json",
+    "sha256": "5714ed4c9b1275faaac327f64c9ea8ce2a53e3224abaf2cdcf43858bc06e6ef4"
+  },
+  "user_response_verbatim": "it read the site",
+  "interpretation": "Human reports general page speech. No specific reply label, invalid state or associated error announcement is established; not classified as a product failure.",
+  "before_refocus": {
+    "at": "2026-09-13T11:54:51.516Z",
+    "dialogCount": 0,
+    "fields": [
+      {
+        "describedBy": "question-count",
+        "id": "question",
+        "invalid": "false",
+        "value": "How long do I have to request a refund?"
+      },
+      {
+        "describedBy": "reply-count reply-sentences reply-error",
+        "id": "reply",
+        "invalid": "true",
+        "value": ""
+      }
+    ],
+    "focus": "",
+    "replyError": "Add a reply of up to 3,000 UTF-8 bytes.",
+    "reviewDisabled": true
+  },
+  "refocus": {
+    "method": "Click Your reply, Shift+Tab to Question, then Tab back to Your reply through Chrome controls.",
+    "ready": {
+      "at": "2026-09-13T11:55:15.181Z",
+      "describedBy": "reply-count reply-sentences reply-error",
+      "error": "Add a reply of up to 3,000 UTF-8 bytes.",
+      "focus": "reply",
+      "invalid": "true"
+    }
+  },
+  "narrator_running_before_refocus": true,
+  "human_confirmation": "PENDING",
+  "question_guidance": "Previously reported heard; remains a separate scoped result.",
+  "safety": {
+    "app_changes": 0,
+    "wallet_requests": 0,
+    "transactions": 0,
+    "old_evidence_modified": false
+  },
+  "restoration": "Narrator remains on and the reply is empty for the pending listening check. Restore original public reply/history and Narrator off after the test."
+}
